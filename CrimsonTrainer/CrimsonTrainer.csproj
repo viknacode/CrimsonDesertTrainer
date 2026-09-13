@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- The game is a 64-bit process; the trainer must be 64-bit too to read its
+         modules and address space. -->
+    <PlatformTarget>x64</PlatformTarget>
+    <!-- Required by the LibraryImport source generator (P/Invoke). -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>CrimsonTrainer</AssemblyName>
+    <RootNamespace>CrimsonTrainer</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Resources/logo.ico</ApplicationIcon>
+    <Version>2.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources/item_names.json" LogicalName="item_names.json" />
+    <EmbeddedResource Include="Resources/icon_index.json" LogicalName="icon_index.json" />
+    <!-- Logo shown in the nav rail and on the Credits page (pack URI /Resources/logo.png);
+         the .ico is the exe icon (ApplicationIcon) and the window/taskbar icon (Window.Icon). -->
+    <Resource Include="Resources/logo.png" />
+    <Resource Include="Resources/logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Iced" Version="1.21.0" />
+  </ItemGroup>
+
+</Project>

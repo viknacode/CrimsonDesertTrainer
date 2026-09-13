@@ -1,0 +1,967 @@
+<Window x:Class="CrimsonTrainer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:CrimsonTrainer.ViewModels"
+        xmlns:items="clr-namespace:CrimsonTrainer.Items"
+        Title="Crimson Desert Trainer"
+        Icon="/Resources/logo.ico"
+        Width="1100" Height="760" MinWidth="960" MinHeight="640"
+        MaxHeight="{x:Static SystemParameters.MaximizedPrimaryScreenHeight}"
+        MaxWidth="{x:Static SystemParameters.MaximizedPrimaryScreenWidth}"
+        WindowStyle="None"
+        ResizeMode="CanResize"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource Bg0}"
+        Foreground="{StaticResource Text}"
+        FontFamily="{StaticResource UiFont}"
+        FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="ClearType"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
+        PreviewKeyDown="Window_PreviewKeyDown">
+
+    <!-- Custom chrome: the section header is the drag area; we draw our own caption buttons. -->
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="72"
+                      ResizeBorderThickness="6"
+                      GlassFrameThickness="-1"
+                      CornerRadius="0"
+                      UseAeroCaptionButtons="False"/>
+    </WindowChrome.WindowChrome>
+
+    <Window.Resources>
+        <!-- Navigation list -->
+        <Style x:Key="NavList" TargetType="ListBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Foreground" Value="{StaticResource Muted}"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                        <Setter Property="Margin" Value="12,2"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Border x:Name="Root" CornerRadius="10" Padding="12,10" Background="Transparent">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock x:Name="Icon" FontFamily="{StaticResource IconFont}" FontSize="15" Text="{Binding Glyph}"
+                                                       Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding Title}" FontSize="13.5" FontWeight="SemiBold"
+                                                       Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center"/>
+                                            <Rectangle x:Name="Marker" Grid.ColumnSpan="2" Width="3" HorizontalAlignment="Left" Margin="-12,2,0,2"
+                                                       RadiusX="2" RadiusY="2" Fill="{StaticResource AccentGradient}" Visibility="Collapsed"/>
+                                        </Grid>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="Root" Property="Background" Value="#0FFFFFFF"/>
+                                            <Setter Property="Foreground" Value="{StaticResource Text}"/>
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="Root" Property="Background" Value="#1AFFFFFF"/>
+                                            <Setter Property="Foreground" Value="{StaticResource Text}"/>
+                                            <Setter TargetName="Icon" Property="Foreground" Value="{StaticResource Accent}"/>
+                                            <Setter TargetName="Marker" Property="Visibility" Value="Visible"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="StatLabel" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource Muted}"/>
+            <Setter Property="FontSize" Value="12.5"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="StatValue" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource Text}"/>
+            <Setter Property="FontFamily" Value="{StaticResource MonoFont}"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="14,0,0,0"/>
+        </Style>
+
+        <Style x:Key="StatTrack" TargetType="Border">
+            <Setter Property="Height" Value="7"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Background" Value="{StaticResource Bg3}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="ScalePresetButton" TargetType="Button" BasedOn="{StaticResource SmallButton}">
+            <Setter Property="Margin" Value="0,6,6,0"/>
+        </Style>
+
+        <!-- Inventory grid: one tile per occupied slot -->
+        <Style x:Key="SlotGrid" TargetType="ListBox" BasedOn="{StaticResource DarkListBox}">
+            <Setter Property="VirtualizingPanel.IsVirtualizing" Value="False"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                        <Setter Property="ToolTip" Value="{Binding ToolTipText}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Border x:Name="Tile" Width="98" Height="98" Margin="3" CornerRadius="10" Padding="7,6"
+                                            Background="{StaticResource Bg3}" BorderBrush="{StaticResource Border}" BorderThickness="1">
+                                        <ContentPresenter/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="Tile" Property="Background" Value="{StaticResource Bg4}"/>
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="Tile" Property="BorderBrush" Value="{StaticResource Accent}"/>
+                                            <Setter TargetName="Tile" Property="BorderThickness" Value="2"/>
+                                            <Setter TargetName="Tile" Property="Background" Value="{StaticResource Bg4}"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="228"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- ================= Navigation rail ================= -->
+        <Grid Grid.Column="0" Grid.RowSpan="2" Background="{StaticResource RailGradient}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Margin="24,24,20,18">
+                <Image Source="/Resources/logo.png" Width="64" Height="64" HorizontalAlignment="Left"
+                       Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Margin="0,0,0,12"/>
+                <TextBlock FontSize="10.5" FontWeight="SemiBold" Foreground="{StaticResource Accent}" Text="TRAINER  ·  v2.0"/>
+                <TextBlock FontSize="22" FontWeight="Bold" Margin="0,4,0,0">
+                    <Run Text="Crimson "/><Run Text="Desert" Foreground="{StaticResource AccentGradient}"/>
+                </TextBlock>
+                <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0" Text="CE table v21 · patch 2.01.00"/>
+            </StackPanel>
+
+            <ListBox Grid.Row="1" Style="{StaticResource NavList}" ItemsSource="{Binding Sections}" SelectedItem="{Binding SelectedSection}"/>
+
+            <StackPanel Grid.Row="2" Margin="20,0,20,20">
+                <Border Style="{StaticResource Pill}" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="8" Height="8" Margin="0,0,9,0" Style="{StaticResource StatusDot}"/>
+                        <TextBlock Text="{Binding StatusText}" FontWeight="SemiBold" FontSize="12" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                <TextBlock Style="{StaticResource Small}" Margin="6,8,0,0" Text="{Binding ActiveText}"/>
+            </StackPanel>
+
+            <Rectangle Grid.RowSpan="3" Width="1" HorizontalAlignment="Right" Fill="{StaticResource Border}"/>
+        </Grid>
+
+        <!-- ================= Content ================= -->
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header (drag area) -->
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top"
+                            WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Button Style="{StaticResource TitleBarButton}" Click="Minimize_Click" ToolTip="Minimize" AutomationProperties.Name="Minimize" Content="&#xE921;"/>
+                    <Button Style="{StaticResource TitleBarButton}" Click="Maximize_Click" ToolTip="Maximize" AutomationProperties.Name="Maximize" Content="&#xE922;"/>
+                    <Button Style="{StaticResource TitleBarCloseButton}" Click="Close_Click" ToolTip="Close" AutomationProperties.Name="Close" Content="&#xE8BB;"/>
+                </StackPanel>
+                <StackPanel Margin="32,34,32,0">
+                    <TextBlock Style="{StaticResource SectionTitle}" Text="{Binding SelectedSection.Title}"/>
+                    <TextBlock Style="{StaticResource Body}" Margin="0,2,0,0" Text="{Binding SelectedSection.Subtitle}"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Body -->
+            <Grid Grid.Row="1" Margin="0,18,0,0">
+
+                <ScrollViewer x:Name="BodyScroll" AutomationProperties.AutomationId="BodyScroll" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="32,0,22,0">
+                    <ScrollViewer.Style>
+                        <Style TargetType="ScrollViewer">
+                            <Setter Property="Visibility" Value="Visible"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SelectedSection.Key}" Value="activity">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ScrollViewer.Style>
+                    <Grid Margin="0,0,0,24" MaxWidth="820" HorizontalAlignment="Left">
+
+                        <!-- ===== Player ===== -->
+                        <StackPanel Visibility="{Binding SelectedSection.Key, Converter={StaticResource EqualsToVisibility}, ConverterParameter=player}">
+                            <ContentControl Content="{Binding PlayerTracking}"/>
+
+                            <Border Style="{StaticResource Card}">
+                                <StackPanel>
+                                    <Grid>
+                                        <TextBlock Style="{StaticResource CardTitle}" Text="Live stats"/>
+                                        <TextBlock HorizontalAlignment="Right" Style="{StaticResource Small}" VerticalAlignment="Center"
+                                                   Text="Turn on Player tracking to read these"
+                                                   Visibility="{Binding Player.IsTracking, Converter={StaticResource InverseBoolToVisibility}}"/>
+                                    </Grid>
+
+                                    <Grid Margin="0,12,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Grid.Row="0" Style="{StaticResource StatLabel}" Text="Health"/>
+                                        <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource StatTrack}" x:Name="HealthTrack">
+                                            <Border CornerRadius="4" HorizontalAlignment="Left" Background="{StaticResource Danger}">
+                                                <Border.Width>
+                                                    <MultiBinding Converter="{StaticResource RatioToWidth}">
+                                                        <Binding Path="Player.HealthRatio"/>
+                                                        <Binding ElementName="HealthTrack" Path="ActualWidth"/>
+                                                    </MultiBinding>
+                                                </Border.Width>
+                                            </Border>
+                                        </Border>
+                                        <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StatValue}" Text="{Binding Player.HealthText}" Margin="14,6,0,6"/>
+
+                                        <TextBlock Grid.Row="1" Style="{StaticResource StatLabel}" Text="Stamina"/>
+                                        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource StatTrack}" x:Name="StaminaTrack">
+                                            <Border CornerRadius="4" HorizontalAlignment="Left" Background="{StaticResource Success}">
+                                                <Border.Width>
+                                                    <MultiBinding Converter="{StaticResource RatioToWidth}">
+                                                        <Binding Path="Player.StaminaRatio"/>
+                                                        <Binding ElementName="StaminaTrack" Path="ActualWidth"/>
+                                                    </MultiBinding>
+                                                </Border.Width>
+                                            </Border>
+                                        </Border>
+                                        <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StatValue}" Text="{Binding Player.StaminaText}" Margin="14,6,0,6"/>
+
+                                        <TextBlock Grid.Row="2" Style="{StaticResource StatLabel}" Text="Spirit"/>
+                                        <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource StatTrack}" x:Name="SpiritTrack">
+                                            <Border CornerRadius="4" HorizontalAlignment="Left" Background="{StaticResource Info}">
+                                                <Border.Width>
+                                                    <MultiBinding Converter="{StaticResource RatioToWidth}">
+                                                        <Binding Path="Player.SpiritRatio"/>
+                                                        <Binding ElementName="SpiritTrack" Path="ActualWidth"/>
+                                                    </MultiBinding>
+                                                </Border.Width>
+                                            </Border>
+                                        </Border>
+                                        <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StatValue}" Text="{Binding Player.SpiritText}" Margin="14,6,0,6"/>
+                                    </Grid>
+
+                                    <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0" Text="{Binding Player.RawText}"/>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                        <TextBlock Style="{StaticResource StatLabel}" Text="Attack"/>
+                                        <TextBlock Style="{StaticResource StatValue}" Margin="10,0,24,0" Text="{Binding Player.AttackText}"/>
+                                        <TextBlock Style="{StaticResource StatLabel}" Text="Defense"/>
+                                        <TextBlock Style="{StaticResource StatValue}" Margin="10,0,0,0" Text="{Binding Player.DefenseText}"/>
+                                    </StackPanel>
+
+                                    <Rectangle Height="1" Fill="{StaticResource Border}" Margin="0,14,0,4"/>
+
+                                    <!-- Keep-full switches -->
+                                    <Grid Margin="0,6,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Grid.Row="0" Text="Keep Health full" Style="{StaticResource Body}" Foreground="{StaticResource Text}" VerticalAlignment="Center" Margin="0,6"/>
+                                        <ContentControl Grid.Row="0" Grid.Column="1" Content="{Binding Player.KeepBindings[0]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="12,0"/>
+                                        <CheckBox Grid.Row="0" Grid.Column="2" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Player.KeepHealthFull}" IsEnabled="{Binding Player.CanTrack}"/>
+
+                                        <TextBlock Grid.Row="1" Text="Keep Stamina full" Style="{StaticResource Body}" Foreground="{StaticResource Text}" VerticalAlignment="Center" Margin="0,6"/>
+                                        <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding Player.KeepBindings[1]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="12,0"/>
+                                        <CheckBox Grid.Row="1" Grid.Column="2" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Player.KeepStaminaFull}" IsEnabled="{Binding Player.CanTrack}"/>
+
+                                        <TextBlock Grid.Row="2" Text="Keep Spirit full" Style="{StaticResource Body}" Foreground="{StaticResource Text}" VerticalAlignment="Center" Margin="0,6"/>
+                                        <ContentControl Grid.Row="2" Grid.Column="1" Content="{Binding Player.KeepBindings[2]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="12,0"/>
+                                        <CheckBox Grid.Row="2" Grid.Column="2" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Player.KeepSpiritFull}" IsEnabled="{Binding Player.CanTrack}"/>
+
+                                        <StackPanel Grid.Row="3" Margin="0,12,0,4">
+                                            <TextBlock Text="Godmode" Style="{StaticResource Body}" Foreground="{StaticResource Text}"/>
+                                            <TextBlock Style="{StaticResource Small}" Text="Raises Health, Stamina and Spirit to 999,999 and keeps them full. The game's own maximums come back when you turn it off. Replaces the table script, whose hook no longer exists in 2.01.00."/>
+                                        </StackPanel>
+                                        <ContentControl Grid.Row="3" Grid.Column="1" Content="{Binding Player.KeepBindings[3]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="12,14,12,0" VerticalAlignment="Top"/>
+                                        <CheckBox Grid.Row="3" Grid.Column="2" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Player.GodmodeOn}" IsEnabled="{Binding Player.CanTrack}" VerticalAlignment="Top" Margin="0,12,0,0"/>
+
+                                        <StackPanel Grid.Row="4" Margin="0,8,0,4">
+                                            <TextBlock Text="Max Attack &amp; Defense" Style="{StaticResource Body}" Foreground="{StaticResource Text}"/>
+                                            <TextBlock Style="{StaticResource Small}" Text="Sets Attack and Defense to 999,999 (restored on turn-off). Resistances could not be located in 2.01.00 — use the attribute editor below to find them."/>
+                                        </StackPanel>
+                                        <ContentControl Grid.Row="4" Grid.Column="1" Content="{Binding Player.KeepBindings[4]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="12,10,12,0" VerticalAlignment="Top"/>
+                                        <CheckBox Grid.Row="4" Grid.Column="2" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Player.MaxCombatOn}" IsEnabled="{Binding Player.CanTrack}" VerticalAlignment="Top" Margin="0,8,0,0"/>
+                                    </Grid>
+                                    <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0"
+                                               Text="Keep full refills the value to its maximum five times a second. Turning any of these on also turns on Player tracking."/>
+
+                                    <Rectangle Height="1" Fill="{StaticResource Border}" Margin="0,14,0,0"/>
+                                    <ItemsControl ItemsSource="{Binding Player.Fields}" ItemTemplate="{StaticResource ValueFieldTemplate}"/>
+
+                                    <Rectangle Height="1" Fill="{StaticResource Border}" Margin="0,16,0,0"/>
+                                    <Grid Margin="0,12,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel>
+                                            <TextBlock Style="{StaticResource CardTitle}" FontSize="14" Text="Combat attributes (advanced)"/>
+                                            <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0" Text="The 42 values of the player's combat array, live, in HUD units. [0] and [1] are Attack and Defense; the rest are unlabeled — equip or remove gear and watch which entry changes to find crit, speed and the resistances, then edit it here."/>
+                                        </StackPanel>
+                                        <CheckBox Grid.Column="1" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Player.ShowAttributes}" Margin="14,0,0,0" VerticalAlignment="Top"/>
+                                    </Grid>
+                                    <ItemsControl ItemsSource="{Binding Player.CombatEntries}" Margin="0,6,0,0"
+                                                  Visibility="{Binding Player.ShowAttributes, Converter={StaticResource BoolToVisibility}}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type vm:CombatEntryViewModel}">
+                                                <Grid Margin="0,4">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="44"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="120"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Style="{StaticResource Mono}" Text="{Binding IndexText}" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Column="1" Style="{StaticResource Small}" Foreground="{StaticResource Muted}" Text="{Binding Name}" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Column="2" Style="{StaticResource Mono}" Foreground="{StaticResource Text}" Text="{Binding LiveText}" VerticalAlignment="Center"/>
+                                                    <TextBox Grid.Column="3" Style="{StaticResource MonoTextBox}" Width="130" DataContext="{Binding Field}" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBox.InputBindings>
+                                                            <KeyBinding Key="Return" Command="{Binding ApplyCommand}"/>
+                                                        </TextBox.InputBindings>
+                                                    </TextBox>
+                                                    <Button Grid.Column="4" Style="{StaticResource SmallButton}" Content="Apply" Command="{Binding Field.ApplyCommand}" Margin="8,0,0,0"/>
+                                                    <TextBlock Grid.Column="5" Style="{StaticResource Small}" Foreground="{StaticResource Danger}" Margin="10,0,0,0" VerticalAlignment="Center"
+                                                               Text="{Binding Field.Error}" Visibility="{Binding Field.Error, Converter={StaticResource NotEmptyToVisibility}}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </Border>
+
+                            <ItemsControl ItemsSource="{Binding PlayerCheats}"/>
+                        </StackPanel>
+
+                        <!-- ===== Inventory ===== -->
+                        <StackPanel Visibility="{Binding SelectedSection.Key, Converter={StaticResource EqualsToVisibility}, ConverterParameter=inventory}">
+                            <!-- Inventory slots (capacity of the main inventory) -->
+                            <Border Style="{StaticResource Card}" AutomationProperties.AutomationId="InventorySlotsCard">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel>
+                                            <TextBlock Style="{StaticResource CardTitle}" Text="Inventory slots"/>
+                                            <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0" Text="{Binding InventorySlots.Status}"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,16,0">
+                                            <TextBlock Style="{StaticResource Eyebrow}" Text="IN GAME" HorizontalAlignment="Right"/>
+                                            <TextBlock Style="{StaticResource Mono}" Foreground="{StaticResource Text}" FontSize="16" HorizontalAlignment="Right" Text="{Binding InventorySlots.CurrentText}"/>
+                                        </StackPanel>
+                                        <Button Grid.Column="2" Style="{StaticResource SmallButton}" Content="Restore" Command="{Binding InventorySlots.RestoreCommand}" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <Button Grid.Column="3" Style="{StaticResource PrimaryButton}" Content="Find" Command="{Binding InventorySlots.ScanCommand}" VerticalAlignment="Center" AutomationProperties.AutomationId="InventorySlotsFind"/>
+                                    </Grid>
+                                    <ProgressBar Style="{StaticResource ThinProgress}" Margin="0,12,0,0" Value="{Binding InventorySlots.Progress, Mode=OneWay}"
+                                                 Visibility="{Binding InventorySlots.IsScanning, Converter={StaticResource BoolToVisibility}}"/>
+                                    <TextBlock Style="{StaticResource Body}" Margin="0,8,0,0"
+                                               Text="Raises the slot limit of the main inventory (the “239 / 240” in the inventory header). The game keeps two copies of the inventory and both are written. Turn on Keep so the number is re-applied every second, and use the field's hotkey to apply it from inside the game."/>
+
+                                    <ContentControl Content="{Binding InventorySlots.Slots}" ContentTemplate="{StaticResource ValueFieldTemplate}"/>
+
+                                    <Grid Margin="0,12,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel>
+                                            <TextBlock Text="Keep slot capacity" Style="{StaticResource Body}" Foreground="{StaticResource Text}"/>
+                                            <TextBlock Style="{StaticResource Small}" Text="Re-applies the number above once a second, so it survives whatever the game recalculates."/>
+                                        </StackPanel>
+                                        <ContentControl Grid.Column="1" Content="{Binding InventorySlots.Bindings[1]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="12,0" VerticalAlignment="Top"/>
+                                        <CheckBox Grid.Column="2" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding InventorySlots.Keep}" IsEnabled="{Binding InventorySlots.IsFound}" VerticalAlignment="Top"/>
+                                    </Grid>
+                                    <Grid Margin="0,10,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Hotkey: apply the capacity" Style="{StaticResource Small}" VerticalAlignment="Center"/>
+                                        <ContentControl Grid.Column="1" Content="{Binding InventorySlots.Bindings[0]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="12,0,0,0"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+
+                            <ItemsControl ItemsSource="{Binding InventoryCheats}"/>
+                        </StackPanel>
+
+                        <!-- ===== Items (inventory grid + spawner) ===== -->
+                        <StackPanel Visibility="{Binding SelectedSection.Key, Converter={StaticResource EqualsToVisibility}, ConverterParameter=items}">
+
+                            <!-- Inventory grid -->
+                            <Border Style="{StaticResource Card}" AutomationProperties.AutomationId="InventoryGridCard">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel>
+                                            <TextBlock Style="{StaticResource CardTitle}" Text="Your inventory"/>
+                                            <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0" Text="{Binding InventoryGrid.Status}"/>
+                                        </StackPanel>
+                                        <Button Grid.Column="1" Style="{StaticResource SmallButton}" Content="Refresh" Command="{Binding InventoryGrid.RefreshCommand}" VerticalAlignment="Center"/>
+                                    </Grid>
+
+                                    <!-- Container tabs (main items first) — same segmented look as the cheat cards -->
+                                    <Grid Margin="0,12,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="260"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Background="{StaticResource Bg2}" BorderBrush="{StaticResource Border}" BorderThickness="1"
+                                                CornerRadius="11" Padding="2" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                            <ItemsControl ItemsSource="{Binding InventoryGrid.Containers}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate DataType="{x:Type vm:ContainerChoiceViewModel}">
+                                                        <RadioButton Style="{StaticResource Segment}" GroupName="containers" Content="{Binding Label}" IsChecked="{Binding IsSelected}" MinWidth="100"/>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </Border>
+                                        <Grid Grid.Column="1" VerticalAlignment="Top" Margin="12,0,0,0">
+                                            <TextBox x:Name="GridSearchBox" AutomationProperties.AutomationId="GridSearchBox" Style="{StaticResource DarkTextBox}"
+                                                     Text="{Binding InventoryGrid.Filter, UpdateSourceTrigger=PropertyChanged}"/>
+                                            <TextBlock Text="Filter slots…" Foreground="{StaticResource Faint}" Margin="12,0,0,0" VerticalAlignment="Center" IsHitTestVisible="False">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Text, ElementName=GridSearchBox}" Value="">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Grid>
+                                    </Grid>
+
+                                    <ListBox Style="{StaticResource SlotGrid}" MaxHeight="440" Margin="0,6,0,0" AutomationProperties.AutomationId="SlotGrid"
+                                             ItemsSource="{Binding InventoryGrid.Slots}" SelectedItem="{Binding InventoryGrid.SelectedSlot}">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type vm:SlotViewModel}">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid>
+                                                        <TextBlock Style="{StaticResource Small}" FontSize="10" Text="{Binding SlotText}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                        <Border Background="{StaticResource Bg0}" CornerRadius="6" Padding="4,1" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                                Visibility="{Binding CountText, Converter={StaticResource NotEmptyToVisibility}}">
+                                                            <TextBlock Text="{Binding CountText}" FontSize="10" FontWeight="SemiBold" Foreground="{StaticResource Text}" FontFamily="{StaticResource MonoFont}"/>
+                                                        </Border>
+                                                    </Grid>
+                                                    <TextBlock Grid.Row="1" Text="{Binding Initial}" FontSize="24" FontWeight="Bold" Foreground="{Binding CategoryBrush}"
+                                                               HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                               Visibility="{Binding HasIcon, Converter={StaticResource InverseBoolToVisibility}}"/>
+                                                    <Image Grid.Row="1" Source="{Binding Icon}" Width="44" Height="44" Stretch="Uniform"
+                                                           RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                           Visibility="{Binding HasIcon, Converter={StaticResource BoolToVisibility}}"/>
+                                                    <TextBlock Grid.Row="2" Text="{Binding Name}" FontSize="10.5" Foreground="{StaticResource Text}" TextWrapping="Wrap"
+                                                               MaxHeight="28" LineHeight="14" LineStackingStrategy="BlockLineHeight" VerticalAlignment="Bottom" TextAlignment="Center"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                    <TextBlock Style="{StaticResource Small}" Margin="0,8,0,0"
+                                               Text="Read straight from the game every 2 s. Icons come from the crimsondb.gg item database (downloaded once, then cached); items it does not have show a letter coloured by category. The badge is the count. Click a slot: it becomes the target for the item picker below."/>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Item picker: replace the selected slot, or just set its count -->
+                            <Border Style="{StaticResource Card}">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel>
+                                            <TextBlock Style="{StaticResource CardTitle}" Text="Put an item in the selected slot"/>
+                                            <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0" Text="{Binding Spawner.TableStatus}"/>
+                                        </StackPanel>
+                                        <TextBlock Grid.Column="1" Style="{StaticResource Small}" VerticalAlignment="Center" Margin="0,0,12,0" Text="{Binding Spawner.ResultsText}"/>
+                                        <Button Grid.Column="2" Style="{StaticResource SmallButton}" Content="Reload table" Command="{Binding ReloadItemTableCommand}" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Margin="0,14,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Style="{StaticResource Eyebrow}" Text="TARGET SLOT" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                        <TextBlock Grid.Column="1" Style="{StaticResource Mono}" Foreground="{StaticResource Text}" VerticalAlignment="Center" Text="{Binding InventoryGrid.SelectedSlotText}" TextTrimming="CharacterEllipsis"/>
+                                        <TextBlock Grid.Column="2" Style="{StaticResource Small}" VerticalAlignment="Center" Margin="12,0,8,0" Text="Count"/>
+                                        <TextBox Grid.Column="3" Style="{StaticResource MonoTextBox}" Width="90" AutomationProperties.AutomationId="CountBox"
+                                                 Text="{Binding Spawner.CountText, UpdateSourceTrigger=PropertyChanged}" ToolTip="Filled with the slot's current count when you click a slot. Used by Set count and by Put.">
+                                            <TextBox.InputBindings>
+                                                <KeyBinding Key="Return" Command="{Binding InventoryGrid.SetCountCommand}"/>
+                                            </TextBox.InputBindings>
+                                        </TextBox>
+                                        <Button Grid.Column="4" Style="{StaticResource SmallButton}" Content="Max" Margin="6,0,0,0" VerticalAlignment="Center"
+                                                Command="{Binding InventoryGrid.MaxCountCommand}" ToolTip="Sets the count to the item's max stack (999 when unknown)."/>
+                                        <Button Grid.Column="5" Style="{StaticResource PrimaryButton}" Content="Set count" Margin="8,0,0,0" VerticalAlignment="Center"
+                                                Command="{Binding InventoryGrid.SetCountCommand}" AutomationProperties.AutomationId="SetCountButton" ToolTip="Writes the count into the selected slot, keeping its item."/>
+                                    </Grid>
+
+                                    <Grid Margin="0,12,0,0">
+                                        <TextBox x:Name="SearchBox" AutomationProperties.AutomationId="SearchBox" Style="{StaticResource DarkTextBox}" Text="{Binding Spawner.SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBlock Text="Search by name, runtime # or item key…" Foreground="{StaticResource Faint}" Margin="12,0,0,0"
+                                                   VerticalAlignment="Center" IsHitTestVisible="False">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Text, ElementName=SearchBox}" Value="">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                    </Grid>
+
+                                    <ListBox Style="{StaticResource DarkListBox}" Height="280" Margin="0,10,0,0"
+                                             ItemsSource="{Binding Spawner.Results}" SelectedItem="{Binding Spawner.Selected}">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type vm:SpawnItem}">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="34"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="70"/>
+                                                        <ColumnDefinition Width="90"/>
+                                                        <ColumnDefinition Width="56"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border Width="28" Height="28" CornerRadius="6" Background="{StaticResource Bg3}" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                        <Image Source="{Binding Icon}" Width="24" Height="24" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                                    </Border>
+                                                    <TextBlock Grid.Column="1" Text="{Binding Name}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                    <Border Grid.Column="2" Style="{StaticResource Chip}" Margin="8,0">
+                                                        <TextBlock Style="{StaticResource ChipText}" Text="{Binding Category}"/>
+                                                    </Border>
+                                                    <TextBlock Grid.Column="3" Style="{StaticResource Mono}" Foreground="{StaticResource Text}" Text="{Binding IndexText}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                                                    <TextBlock Grid.Column="4" Style="{StaticResource Mono}" Foreground="{StaticResource Faint}" Text="{Binding KeyText}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                                                    <TextBlock Grid.Column="5" Style="{StaticResource Mono}" Foreground="{StaticResource Faint}" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                                        <Run Text="×"/><Run Text="{Binding StackText, Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+
+                                    <Grid Margin="0,12,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Style="{StaticResource Body}" VerticalAlignment="Center" Foreground="{StaticResource Text}"
+                                                   Visibility="{Binding Spawner.HasSelection, Converter={StaticResource BoolToVisibility}}">
+                                            <Run Text="Selected:"/>
+                                            <Run Text="{Binding Spawner.Selected.Name, Mode=OneWay}" FontWeight="SemiBold"/>
+                                            <Run Text=" · "/><Run Text="{Binding Spawner.Selected.IndexText, Mode=OneWay}" FontFamily="{StaticResource MonoFont}"/>
+                                            <Run Text=" · max stack "/><Run Text="{Binding Spawner.Selected.StackText, Mode=OneWay}" FontFamily="{StaticResource MonoFont}"/>
+                                        </TextBlock>
+                                        <Button Grid.Column="1" Style="{StaticResource PrimaryButton}" Content="{Binding InventoryGrid.PutText}" Margin="10,0,0,0"
+                                                Command="{Binding InventoryGrid.PutCommand}" AutomationProperties.AutomationId="PutButton" ToolTip="Replaces the item in the target slot with the selected one, using the count above."/>
+                                    </Grid>
+                                    <TextBlock Style="{StaticResource Small}" Margin="0,8,0,0"
+                                               Text="Both copies the game keeps of the slot are written. The count goes in as-is (the game may clamp it to the item's max stack). Close and reopen the inventory to see the change."/>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Advanced: hook-based swap (the old flow) -->
+                            <CheckBox x:Name="ShowHookOptions" Content="Show advanced: swap on use / drop (hook)" Foreground="{StaticResource Muted}" Margin="4,0,0,10" Cursor="Hand"/>
+                            <StackPanel Visibility="{Binding IsChecked, ElementName=ShowHookOptions, Converter={StaticResource BoolToVisibility}}">
+                                <ContentControl Content="{Binding ItemSwapper}"/>
+                                <Border Style="{StaticResource Card}">
+                                    <StackPanel>
+                                        <TextBlock Style="{StaticResource CardTitle}" Text="Swap on next use / drop"/>
+                                        <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0"
+                                                   Text="With the hook on, the next stack you use or drop in the game turns into the item selected above (×1). The hook also remembers the last entry the game touched."/>
+                                        <Grid Margin="0,12,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Style="{StaticResource Eyebrow}" Text="LAST CHANGED SLOT" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                            <TextBlock Grid.Column="1" Style="{StaticResource Mono}" Foreground="{StaticResource Text}" VerticalAlignment="Center" Text="{Binding Spawner.HoveredText}"/>
+                                            <Button Grid.Column="2" Style="{StaticResource SmallButton}" Content="Spawn into that entry" Margin="8,0,0,0" Command="{Binding Spawner.SpawnNowCommand}"/>
+                                            <Button Grid.Column="3" Style="{StaticResource SmallButton}" Content="Swap on next use / drop" Margin="8,0,0,0" Command="{Binding Spawner.UseSelectedCommand}"/>
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!-- ===== Teleport ===== -->
+                        <StackPanel Visibility="{Binding SelectedSection.Key, Converter={StaticResource EqualsToVisibility}, ConverterParameter=teleport}">
+                            <Border Style="{StaticResource InfoBanner}" Margin="0,0,0,12">
+                                <TextBlock TextWrapping="Wrap" Foreground="{StaticResource Info}" FontSize="12.5"
+                                           Text="Needs Player tracking (turned on automatically). The position is X / Y / Z in world units; the game pauses whenever its window loses focus, so use the hotkeys from inside the game. Teleporting into the ground or the air can hurt — keep Godmode on while trying places."/>
+                            </Border>
+
+                            <!-- Position + go-to -->
+                            <Border Style="{StaticResource Card}">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel>
+                                            <TextBlock Style="{StaticResource CardTitle}" Text="Position"/>
+                                            <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0" Text="Live from the player object; three copies are kept in sync by the game and all three are written."/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource Eyebrow}" Text="X · Y · Z" HorizontalAlignment="Right"/>
+                                            <TextBlock Style="{StaticResource Mono}" Foreground="{StaticResource Text}" FontSize="16" HorizontalAlignment="Right" Text="{Binding Teleport.PositionText}" AutomationProperties.AutomationId="PositionText"/>
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <Grid Margin="0,14,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="170"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Style="{StaticResource Body}" Foreground="{StaticResource Text}" FontSize="12.5" VerticalAlignment="Center" Text="Go to coordinates"/>
+                                        <TextBox Grid.Column="1" Style="{StaticResource MonoTextBox}" Width="110" Text="{Binding Teleport.TargetX, UpdateSourceTrigger=PropertyChanged}" ToolTip="X"/>
+                                        <TextBox Grid.Column="2" Style="{StaticResource MonoTextBox}" Width="110" Margin="6,0,0,0" Text="{Binding Teleport.TargetY, UpdateSourceTrigger=PropertyChanged}" ToolTip="Y"/>
+                                        <TextBox Grid.Column="3" Style="{StaticResource MonoTextBox}" Width="110" Margin="6,0,0,0" Text="{Binding Teleport.TargetZ, UpdateSourceTrigger=PropertyChanged}" ToolTip="Z"/>
+                                        <Button Grid.Column="4" Style="{StaticResource SmallButton}" Content="Use current" Margin="8,0,0,0" VerticalAlignment="Center" Command="{Binding Teleport.UseCurrentCommand}"/>
+                                        <Button Grid.Column="5" Style="{StaticResource PrimaryButton}" Content="Teleport" Margin="8,0,0,0" VerticalAlignment="Center" Command="{Binding Teleport.GoCommand}"/>
+                                        <ContentControl Grid.Column="6" Content="{Binding Teleport.Bindings[3]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="12,0,0,0" HorizontalAlignment="Right"/>
+                                    </Grid>
+
+                                    <Rectangle Height="1" Fill="{StaticResource Border}" Margin="0,14,0,0"/>
+                                    <TextBlock Style="{StaticResource Eyebrow}" Text="TEST NUDGES" Margin="0,12,0,4"/>
+                                    <TextBlock Style="{StaticResource Small}" Text="Each one moves you 5 units on one axis — bind them and press inside the game to find which axis is up and to confirm the game obeys the write."/>
+                                    <ItemsControl ItemsSource="{Binding Teleport.Bindings}" ItemTemplate="{StaticResource LabeledHotkeyTemplate}" AlternationCount="1000" Margin="0,6,0,0">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemContainerStyle>
+                                            <Style TargetType="ContentPresenter">
+                                                <Style.Triggers>
+                                                    <Trigger Property="ItemsControl.AlternationIndex" Value="3"><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+                                                    <Trigger Property="ItemsControl.AlternationIndex" Value="4"><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+                                                    <Trigger Property="ItemsControl.AlternationIndex" Value="5"><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ItemsControl.ItemContainerStyle>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Waypoints -->
+                            <Border Style="{StaticResource Card}">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel>
+                                            <TextBlock Style="{StaticResource CardTitle}" Text="Waypoints"/>
+                                            <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0" Text="Your own list of places, kept in settings.json. Select one and press Go (or its hotkey)."/>
+                                        </StackPanel>
+                                        <TextBox Grid.Column="1" Style="{StaticResource DarkTextBox}" Width="200" VerticalAlignment="Center" Text="{Binding Teleport.NewWaypointName, UpdateSourceTrigger=PropertyChanged}" ToolTip="Name for the new waypoint (optional)"/>
+                                        <Button Grid.Column="2" Style="{StaticResource SmallButton}" Content="Save current position" Margin="8,0,0,0" VerticalAlignment="Center" Command="{Binding Teleport.SaveWaypointCommand}"/>
+                                        <ContentControl Grid.Column="3" Content="{Binding Teleport.Bindings[5]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="8,0,0,0"/>
+                                    </Grid>
+                                    <ListBox Style="{StaticResource DarkListBox}" MaxHeight="240" Margin="0,12,0,0" ItemsSource="{Binding Teleport.Waypoints}" SelectedItem="{Binding Teleport.SelectedWaypoint}">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type vm:WaypointViewModel}">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Column="1" Style="{StaticResource Mono}" Foreground="{StaticResource Muted}" Text="{Binding PositionText}" VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                    <Grid Margin="0,12,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Grid.Column="1" Style="{StaticResource SmallButton}" Content="Delete" Margin="0,0,8,0" Command="{Binding Teleport.DeleteWaypointCommand}"/>
+                                        <Button Grid.Column="2" Style="{StaticResource PrimaryButton}" Content="Go to waypoint" Command="{Binding Teleport.GoToWaypointCommand}"/>
+                                        <ContentControl Grid.Column="3" Content="{Binding Teleport.Bindings[4]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="12,0,0,0"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+
+                        <!-- ===== World ===== -->
+                        <StackPanel Visibility="{Binding SelectedSection.Key, Converter={StaticResource EqualsToVisibility}, ConverterParameter=world}">
+                            <ItemsControl ItemsSource="{Binding WorldCheats}"/>
+                        </StackPanel>
+
+                        <!-- ===== Character ===== -->
+                        <StackPanel Visibility="{Binding SelectedSection.Key, Converter={StaticResource EqualsToVisibility}, ConverterParameter=character}">
+                            <Border Style="{StaticResource InfoBanner}" Margin="0,0,0,12">
+                                <TextBlock TextWrapping="Wrap" Foreground="{StaticResource Info}" FontSize="12.5"
+                                           Text="For fun. The scan walks the whole process memory (a few seconds). Once a value is changed the pattern no longer matches, so the address is kept until the game restarts. Credits: bobdandy / MPElite."/>
+                            </Border>
+                            <ItemsControl ItemsSource="{Binding BodyScales}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:BodyScaleViewModel}">
+                                        <Border Style="{StaticResource Card}">
+                                            <StackPanel>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackPanel>
+                                                        <TextBlock Style="{StaticResource CardTitle}" Text="{Binding Name}"/>
+                                                        <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0" Text="{Binding Status}"/>
+                                                    </StackPanel>
+                                                    <Button Grid.Column="1" Style="{StaticResource SmallButton}" Content="Reset to default" Command="{Binding ResetCommand}" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                                    <Button Grid.Column="2" Style="{StaticResource PrimaryButton}" Content="Scan" Command="{Binding ScanCommand}" VerticalAlignment="Center"/>
+                                                </Grid>
+                                                <ProgressBar Style="{StaticResource ThinProgress}" Margin="0,12,0,0" Value="{Binding Progress, Mode=OneWay}"
+                                                             Visibility="{Binding IsScanning, Converter={StaticResource BoolToVisibility}}"/>
+
+                                                <ContentControl Content="{Binding Body}" ContentTemplate="{StaticResource ValueFieldTemplate}"/>
+                                                <ItemsControl ItemsSource="{Binding BodyPresets}" Margin="170,0,0,0">
+                                                    <ItemsControl.ItemsPanel>
+                                                        <ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate>
+                                                    </ItemsControl.ItemsPanel>
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate DataType="{x:Type vm:ScalePreset}">
+                                                            <Button Style="{StaticResource ScalePresetButton}" Content="{Binding Label}"
+                                                                    Command="{Binding DataContext.ApplyBodyPresetCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                                                    CommandParameter="{Binding}"/>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+
+                                                <ContentControl Content="{Binding Head}" ContentTemplate="{StaticResource ValueFieldTemplate}"/>
+                                                <ItemsControl ItemsSource="{Binding HeadPresets}" Margin="170,0,0,0">
+                                                    <ItemsControl.ItemsPanel>
+                                                        <ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate>
+                                                    </ItemsControl.ItemsPanel>
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate DataType="{x:Type vm:ScalePreset}">
+                                                            <Button Style="{StaticResource ScalePresetButton}" Content="{Binding Label}"
+                                                                    Command="{Binding DataContext.ApplyHeadPresetCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                                                    CommandParameter="{Binding}"/>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+
+                        <!-- ===== Credits ===== -->
+                        <StackPanel Visibility="{Binding SelectedSection.Key, Converter={StaticResource EqualsToVisibility}, ConverterParameter=credits}">
+                            <Border Style="{StaticResource Card}" Padding="24,22">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="/Resources/logo.png" Width="128" Height="128" VerticalAlignment="Top"
+                                           Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Margin="0,0,28,0"/>
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource Eyebrow}" Foreground="{StaticResource Accent}" Text="CRIMSON DESERT TRAINER"/>
+                                        <TextBlock FontSize="24" FontWeight="Bold" Margin="0,4,0,0">
+                                            <Run Text="Developed by "/><Run Text="ViknaCode" Foreground="{StaticResource AccentGradient}"/>
+                                        </TextBlock>
+                                        <TextBlock Style="{StaticResource Body}" Margin="0,8,0,0"
+                                                   Text="Free and open source. Source code, releases and issue tracker live on GitHub — star the repo if the trainer helped you."/>
+                                        <Border Style="{StaticResource Pill}" HorizontalAlignment="Left" Margin="0,14,0,0" Padding="12,6">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontFamily="{StaticResource IconFont}" FontSize="13" Text="&#xE71B;" Foreground="{StaticResource Muted}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                                                <TextBlock Style="{StaticResource Mono}" Foreground="{StaticResource Text}" Text="{x:Static vm:MainViewModel.GitHubUrl}" VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Border>
+                                        <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+                                            <Button Style="{StaticResource PrimaryButton}" Command="{Binding OpenGitHubCommand}" ToolTip="{x:Static vm:MainViewModel.GitHubUrl}">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock FontFamily="{StaticResource IconFont}" FontSize="13" Text="&#xE8A7;" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                                                    <TextBlock Text="Open on GitHub" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Button>
+                                            <Button Style="{StaticResource SmallButton}" Content="Copy link" Command="{Binding CopyGitHubLinkCommand}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <Border Style="{StaticResource Card}">
+                                <StackPanel>
+                                    <TextBlock Style="{StaticResource CardTitle}" Text="About"/>
+                                    <Grid Margin="0,10,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/><RowDefinition/><RowDefinition/><RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Row="0" Style="{StaticResource StatLabel}" Text="Version" Margin="0,0,24,6"/>
+                                        <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource Mono}" Foreground="{StaticResource Text}" Text="{Binding VersionText}" VerticalAlignment="Center" Margin="0,0,0,6"/>
+                                        <TextBlock Grid.Row="1" Style="{StaticResource StatLabel}" Text="Author" Margin="0,0,24,6"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource Mono}" Foreground="{StaticResource Text}" Text="{x:Static vm:MainViewModel.Author}" VerticalAlignment="Center" Margin="0,0,0,6"/>
+                                        <TextBlock Grid.Row="2" Style="{StaticResource StatLabel}" Text="Game" Margin="0,0,24,6"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource Mono}" Foreground="{StaticResource Text}" Text="Crimson Desert · patch 2.01.00 (CrimsonDesert.exe, x64)" VerticalAlignment="Center" Margin="0,0,0,6"/>
+                                        <TextBlock Grid.Row="3" Style="{StaticResource StatLabel}" Text="Stack" Margin="0,0,24,0"/>
+                                        <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource Mono}" Foreground="{StaticResource Text}" Text="C# · .NET 10 · WPF · Iced (x64 disassembler)" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Style="{StaticResource Card}">
+                                <StackPanel>
+                                    <TextBlock Style="{StaticResource CardTitle}" Text="Acknowledgements"/>
+                                    <TextBlock Style="{StaticResource Body}" Margin="0,8,0,0">
+                                        <Run Text="Cheat Engine table v21 by "/><Run Text="bobdandy" Foreground="{StaticResource Text}"/><Run Text=" and "/><Run Text="MPElite" Foreground="{StaticResource Text}"/><Run Text=" — the AOB patterns and scripts this trainer re-implements."/>
+                                    </TextBlock>
+                                    <TextBlock Style="{StaticResource Body}" Margin="0,6,0,0">
+                                        <Run Text="Item icons and names from "/><Run Text="crimsondb.gg" Foreground="{StaticResource Text}"/><Run Text=" (downloaded once, then cached locally)."/>
+                                    </TextBlock>
+                                    <TextBlock Style="{StaticResource Body}" Margin="0,6,0,0">
+                                        <Run Text="Crimson Desert is a trademark of "/><Run Text="Pearl Abyss" Foreground="{StaticResource Text}"/><Run Text=". This trainer is an independent fan project and is not affiliated with or endorsed by them."/>
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Style="{StaticResource InfoBanner}">
+                                <TextBlock TextWrapping="Wrap" Foreground="{StaticResource Info}" FontSize="12.5"
+                                           Text="Made for single-player fun. Every patch is restored when the trainer closes; if the game updates and a cheat stops working, open an issue on GitHub with the trainer's Activity log."/>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+
+                <!-- ===== Activity (fills the viewport, own scrolling) ===== -->
+                <Border Style="{StaticResource Card}" Margin="32,0,22,24" Padding="0"
+                        Visibility="{Binding SelectedSection.Key, Converter={StaticResource EqualsToVisibility}, ConverterParameter=activity}">
+                    <ScrollViewer x:Name="LogScroll" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="18,12,10,12">
+                        <ItemsControl ItemsSource="{Binding Log}"/>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <!-- ================= Status bar ================= -->
+        <Border Grid.Column="1" Grid.Row="1" Background="{StaticResource Bg1}" BorderBrush="{StaticResource Border}" BorderThickness="0,1,0,0" Padding="32,8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Style="{StaticResource Mono}" Foreground="{StaticResource Faint}" Text="{Binding LastLog.TimeText}" Margin="0,0,12,0" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" DataContext="{Binding LastLog}" Style="{StaticResource LogText}" FontSize="12.5" Text="{Binding Message}"
+                           TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2" Style="{StaticResource Small}" Foreground="{StaticResource Accent}" VerticalAlignment="Center" Margin="16,0,0,0"
+                           Text="Press a key combination · Esc cancels · Backspace clears"
+                           Visibility="{Binding IsCapturing, Converter={StaticResource BoolToVisibility}}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,137 @@
+# CrimsonTrainer v2 (C# / WPF)
+
+Trainer com interface gráfica que porta os scripts da tabela Cheat Engine `CrimsonDesertv21.CT`
+(MPElite · Tuuuup! · Austin · bobdandy · supex0) para código C#, mais extras construídos em cima da
+cadeia de ponteiros do jogador, hotkeys globais configuráveis e um spawner com busca nos 6.022 itens
+de `item_names.json`.
+
+Dependências: .NET 10 + WPF + [Iced](https://github.com/icedland/iced) (assembler x64 gerenciado,
+usado para montar as caves em vez de codificar bytes na mão).
+
+## Recursos e estado no patch 2.01.00
+
+A tabela v21 é anterior ao 2.01.00; só o "Items don't decrease" veio com AOB atualizado. Os demais
+foram pesquisados na memória do jogo em execução (padrões relaxados + desmontagem do contexto).
+
+| Seção | Recurso | Estado |
+|---|---|---|
+| Player | Player tracking (cplayer / csplayer) | funciona |
+| Player | Stats ao vivo, Keep Health/Stamina/Spirit full, editar máximos / Attack / Defense | funciona (cadeia de ponteiros) |
+| Player | Godmode | reimplementado por ponteiro: máximos → 999.999 + keep full, restaura ao desligar |
+| Player | Max Attack & Defense | reimplementado por ponteiro (restaura ao desligar); resistências não localizadas — editor dos 42 atributos de combate para descobrir |
+| Player | Max contribution | rebaseado (match único, mesma sequência de instruções) |
+| Player | Max trust (people/pets) | **não portado** |
+| Player | Max trust (horse) | funciona (AOB original) |
+| Inventory | Items don't decrease v1 / v2 | funciona (hook unificado) |
+| Inventory | Gain multiplier ×9 / ×99 / ×99999 | rebaseado no hook unificado |
+| Inventory | 99.999 copper ao vender | rebaseado (`[rbx+D0]` → `[rbx+D8]`, match único) |
+| Inventory | Stack lock | rebaseado no hook unificado |
+| Inventory | Inventory slots (capacidade "239 / 240") | novo: acha os containers do inventário principal na heap (~2 s) e grava a capacidade (50–1.400; padrão 1.000) nas duas cópias que o jogo mantém; *Keep* reaplica a cada segundo. Ver "Slots do inventário" abaixo |
+| Items | Grade do inventário + spawner | a tela mostra o inventário como grade de slots lida do jogo a cada 2 s (ícone do item vindo do crimsondb.gg — baixado uma vez e guardado em `%LocalAppData%CrimsonTrainericons` —, letra colorida por categoria quando não há ícone, badge com a contagem, abas por container, filtro); clicar num slot e escolher um item da lista grava índice runtime + contagem nas duas cópias do slot ("Put in slot") ou só a contagem ("Set count only"). Lista lida da **tabela runtime do jogo** (`[[CrimsonDesert.exe+6C2E2E8]+28]`, 6.813 itens); o slot guarda o **índice runtime**, não o itemKey. O fluxo antigo por hook (troca no próximo uso/drop) fica em "advanced" |
+| World | Time scale | rebaseado (`CD0/CD4` → `CE0/CE4`, código ao redor idêntico) |
+| World | Instant horse capture | **não portado** |
+| World | Wild West archery | **não portado** |
+| World | Durabilidade 100 / sem dano | rebaseado, **não verificado in-game** |
+| World | Perfect parry | AOB encontrado; marcado BROKEN na própria tabela |
+| Character | Kliff / Damiane body & head scale | scan de memória inteira (como o Lua da tabela) |
+
+Cheats cujo padrão não existe na versão instalada aparecem esmaecidos com o motivo. Cada cheat tem
+**hotkey global** própria (clique em *Set key*, pressione a combinação; Esc cancela, Backspace limpa);
+cheats com variantes ciclam entre as opções com a hotkey.
+
+### Hook unificado de inventário
+
+No 2.01.00 toda alteração de contagem de slot passa por `add rdx,r8 / mov [rbx+10],rdx`
+(rbx = slot: id em +8, count em +10). Uma única cave nesse ponto (`TableScripts.InventoryCount`)
+implementa don't-decrease, multiplicador, stack lock e swapper por variáveis de modo, então eles
+podem ser combinados; o hook entra com a primeira feature ligada e sai com a última
+(`SharedInjection` / `SharedFeature` em [Cheats/Cheat.cs](Cheats/Cheat.cs)).
+
+### Slots do inventário
+
+O "239 / 240" do inventário não é peso: é o container do inventário principal
+([Cheats/InventorySlots.cs](Cheats/InventorySlots.cs)). Cada container é um objeto de 0x30 bytes:
+
+```
++00 ponteiro para o pool de entradas   +08 entradas do pool (1460)   +0C idem
++10 tipo (int16, 1 = inventário)       +12 slots usados              +14 capacidade  ← "239 / 240"
++16 bônus de slots                     +18 bônus A                   +1A bônus B
+```
+
+capacidade = base (50 para o tipo 1) + bônus. O pool tem sempre 1.460 entradas de 0xC8 bytes
+(as mesmas entradas que o hook de contagem recebe em `rbx`), por isso a capacidade pode subir até
+~1.400 sem o jogo precisar realocar nada — é o motivo de outros trainers pararem em 1.000. O jogo
+mantém duas cópias sincronizadas do inventário (a que o código de itens grava e a que a UI lê);
+o trainer acha as duas por assinatura na heap do jogo (endereços ≥ 0x4'0000'0000, ~3 GB, ~2 s —
+a memória abaixo disso é compartilhada com a GPU e lê a ~20 MB/s, só é varrida se nada for
+encontrado) e grava capacidade + bônus nas duas, movendo o bônus pelo mesmo delta para que um
+recálculo `base + bônus` caia no mesmo número.
+
+### Ícones dos itens
+
+Os ícones ficam dentro dos pacotes de assets criptografados do jogo, então vêm da base
+comunitária [crimsondb.gg](https://crimsondb.gg): `Resources/icon_index.json` (gerado pelo
+`crawl-icons.ps1` do scratchpad a partir das listas por categoria do site) mapeia nome em inglês →
+caminho do ícone, e [Items/IconCache.cs](Items/IconCache.cs) baixa cada um sob demanda como PNG
+64×64 pelo proxy de imagens do site (`/_ipx/f_png&s_64x64/images/items/<categoria>/<hash>.webp`),
+guardando em `%LocalAppData%\CrimsonTrainer\icons`. Cobre ~3.800 dos 6.022 nomes; sem rede ou sem
+ícone, o tile mostra a letra colorida por categoria.
+
+## Como funciona
+
+Cada script vira uma `Injection` ([Cheats/Injection.cs](Cheats/Injection.cs)): os mesmos slots em
+`freejumpmem = módulo+0x500`, a mesma estrutura de cave (montada com Iced a partir de
+[Cheats/TableScripts.cs](Cheats/TableScripts.cs), com o assembly original nos comentários).
+
+| Script CE | Equivalente |
+|---|---|
+| `aobscanmodule` | `AobPattern.ScanBytes` sobre uma leitura única do módulo |
+| `alloc(newmem)` / `dealloc` | `VirtualAllocEx` / `VirtualFreeEx` |
+| `fullaccess(freejumpmem,$1000)` | `VirtualProtectEx` RWX |
+| `freejumpmem+XX: jmp newmem` | `FF 25 + endereço` (jump absoluto) |
+| `hook: jmp freejumpmem+XX / nop` | `E9 rel32 + 90…` com threads suspensas |
+| `label: dd 0` (swapId, TimeScaleFloat…) | variáveis qword dentro da cave (`ReadVar` / `WriteVar`) |
+| `[DISABLE]` | restaura os bytes originais e libera a cave |
+
+Diferenças deliberadas em relação à tabela:
+- Antes de aplicar um hook o trainer confere que a instrução ainda tem os bytes originais — se outro
+  cheat (ou a tabela CE) já a patchou, recusa e explica no log.
+- "Max Trust (people)" faz backup dos 12 bytes que sobrescreve (a tabela só salvava 5).
+- "Durability — no damage" pula só o store e mantém o `jns` original (a tabela pulava os dois).
+- No leitor de hover o `cmp` original é reexecutado com o imediato real lido do jogo.
+- v1 do don't-decrease só ignora decrementos (a tabela ignorava também incrementos).
+
+## Compilar
+
+```bash
+dotnet build CrimsonTrainer -c Release
+```
+
+Único `.exe` autocontido:
+
+```bash
+dotnet publish CrimsonTrainer -c Release -r win-x64 --self-contained -p:PublishSingleFile=true
+```
+
+Se `OpenProcess` falhar (erro 5), execute como Administrador. `--pid N` anexa só a esse processo.
+Não deixe a tabela CE ativa ao mesmo tempo. As preferências (hotkeys e valores) ficam em
+`%LocalAppData%\CrimsonTrainer\settings.json`.
+
+## Estrutura
+
+```
+CrimsonTrainer/
+  App.xaml, MainWindow.xaml(.cs)      janela (rail de navegação, seções, barra de status, captura de hotkey)
+  Themes/Theme.xaml                   paleta e estilos (switch, segmentado, chips, textbox, listbox…)
+  Views/CheatTemplates.xaml           templates dos cards de cheat, campos e hotkeys
+  ViewModels/                         MainViewModel (sessão), CheatViewModel, Player/Spawner/InventoryGrid/InventorySlots/BodyScale
+  Cheats/Injection.cs                 cave + hooks + slots + variáveis (Iced)
+  Cheats/TableScripts.cs              scripts (originais da tabela e rebaseados para 2.01.00)
+  Cheats/Cheat.cs, CheatCatalog.cs    modelo (toggle / choice / feature compartilhada) e catálogo
+  Cheats/PlayerStats.cs, BodyScale.cs cadeia de ponteiros e escala corporal
+  Items/ItemDatabase.cs               busca nos itens (JSON embutido em Resources/)
+  Items/InventoryScanner.cs           containers (header 0x30) e entradas (0xC8) do inventário do jogador
+  Hotkeys/                            RegisterHotKey + captura
+  Settings/AppSettings.cs             persistência
+  Memory/, Native/                    processo, AOB, P/Invoke
+```
