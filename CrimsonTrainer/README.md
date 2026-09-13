@@ -18,9 +18,9 @@ foram pesquisados na memória do jogo em execução (padrões relaxados + desmon
 | Player | Player tracking (cplayer / csplayer) | funciona |
 | Player | Stats ao vivo, Keep Health/Stamina/Spirit full, editar máximos / Attack / Defense | funciona (cadeia de ponteiros) |
 | Player | Godmode | reimplementado por ponteiro: máximos → 999.999 + keep full, restaura ao desligar |
-| Player | Max Attack & Defense | reimplementado por ponteiro (restaura ao desligar); resistências não localizadas — editor dos 42 atributos de combate para descobrir |
+| Player | Max Attack & Defense + resistências | reimplementado por ponteiro (restaura ao desligar): Attack, Defense e qualquer atributo marcado **MAX** no editor dos 42 atributos de combate (a instrução de incremento que a tabela hookava não existe mais). As resistências ainda não têm índice conhecido — ver "Resistências" abaixo |
 | Player | Max contribution | rebaseado (match único, mesma sequência de instruções) |
-| Player | Max trust (people/pets) | **não portado** |
+| Player | Max trust (people/pets) | rebaseado no *upsert* do registro de confiança (0x68 bytes; caminho "achou → copia por cima", match único), **não verificado in-game** |
 | Player | Max trust (horse) | funciona (AOB original) |
 | Inventory | Items don't decrease v1 / v2 | funciona (hook unificado) |
 | Inventory | Gain multiplier ×9 / ×99 / ×99999 | rebaseado no hook unificado |
@@ -29,8 +29,8 @@ foram pesquisados na memória do jogo em execução (padrões relaxados + desmon
 | Inventory | Inventory slots (capacidade "239 / 240") | novo: acha os containers do inventário principal na heap (~2 s) e grava a capacidade (50–1.400; padrão 1.000) nas duas cópias que o jogo mantém; *Keep* reaplica a cada segundo. Ver "Slots do inventário" abaixo |
 | Items | Grade do inventário + spawner | a tela mostra o inventário como grade de slots lida do jogo a cada 2 s (ícone do item vindo do crimsondb.gg — baixado uma vez e guardado em `%LocalAppData%CrimsonTrainericons` —, letra colorida por categoria quando não há ícone, badge com a contagem, abas por container, filtro); clicar num slot e escolher um item da lista grava índice runtime + contagem nas duas cópias do slot ("Put in slot") ou só a contagem ("Set count only"). Lista lida da **tabela runtime do jogo** (`[[CrimsonDesert.exe+6C2E2E8]+28]`, 6.813 itens); o slot guarda o **índice runtime**, não o itemKey. O fluxo antigo por hook (troca no próximo uso/drop) fica em "advanced" |
 | World | Time scale | rebaseado (`CD0/CD4` → `CE0/CE4`, código ao redor idêntico) |
-| World | Instant horse capture | **não portado** |
-| World | Wild West archery | **não portado** |
+| World | Instant horse capture | rebaseado no integrador do medidor (progresso += tempo × taxa, min em +18 / máx em +1C como na tabela), **não verificado in-game** |
+| World | Wild West archery | rebaseado (`mov eax,[rsi+10] / cmp [rsi+14],eax / setae dl`, match único; mesma semântica alvo/pontuação), **não verificado in-game** |
 | World | Durabilidade 100 / sem dano | rebaseado, **não verificado in-game** |
 | World | Perfect parry | AOB encontrado; marcado BROKEN na própria tabela |
 | Character | Kliff / Damiane body & head scale | scan de memória inteira (como o Lua da tabela) |
@@ -67,6 +67,19 @@ a memória abaixo disso é compartilhada com a GPU e lê a ~20 MB/s, só é varr
 encontrado) e grava capacidade + bônus nas duas, movendo o bônus pelo mesmo delta para que um
 recálculo `base + bônus` caia no mesmo número.
 
+### Resistências (Fire / Ice / Lightning)
+
+O script "Max Resistance Stats" da tabela hookava `add [rcx+r14*8],rsi / add rdx,rsi` — o incremento
+de um slot do array de 42 atributos de combate (`[[[cplayer+68]+20]+18]+38`, int64 × 1000) que roda
+ao trocar de equipamento. No 2.01.00 essa instrução não existe em nenhuma forma reconhecível
+(nenhum `add [base+idx*8],r64` seguido de `add r,r`, nem com deslocamento +38), então o trainer faz
+o mesmo efeito por ponteiro: **Max Attack, Defense & selected attributes** segura em 999.999 os
+índices 0 e 1 (Attack / Defense) e qualquer atributo marcado **MAX** no editor "Combat attributes".
+Os índices das resistências ainda não são conhecidos — o binário tem as strings `FireResistance`,
+`IceResistance` e `ElectricityResistance`, mas a ordem do array vem dos dados do jogo. Para achar:
+abra o editor, equipe/desequipe uma peça com resistência a fogo e o índice que mudar acende
+**CHANGED** por ~6 s; marque-o **MAX** (fica salvo em `settings.json`).
+
 ### Ícones dos itens
 
 Os ícones ficam dentro dos pacotes de assets criptografados do jogo, então vêm da base
@@ -96,7 +109,8 @@ Cada script vira uma `Injection` ([Cheats/Injection.cs](Cheats/Injection.cs)): o
 Diferenças deliberadas em relação à tabela:
 - Antes de aplicar um hook o trainer confere que a instrução ainda tem os bytes originais — se outro
   cheat (ou a tabela CE) já a patchou, recusa e explica no log.
-- "Max Trust (people)" faz backup dos 12 bytes que sobrescreve (a tabela só salvava 5).
+- "Max Trust (people)" mantém a cópia original dos bytes +20..+3F do registro e só depois grava 100 em +20 (a tabela pulava a cópia inteira).
+- "Instant horse capture" carrega o limite em xmm6 (preservado pela chamada de fpclassify) em vez de só gravar em [rdi], porque o clamp que vem logo depois regravaria o progresso antigo.
 - "Durability — no damage" pula só o store e mantém o `jns` original (a tabela pulava os dois).
 - No leitor de hover o `cmp` original é reexecutado com o imediato real lido do jogo.
 - v1 do don't-decrease só ignora decrementos (a tabela ignorava também incrementos).

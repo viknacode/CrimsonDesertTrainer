@@ -341,8 +341,8 @@
                                         <CheckBox Grid.Row="3" Grid.Column="2" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Player.GodmodeOn}" IsEnabled="{Binding Player.CanTrack}" VerticalAlignment="Top" Margin="0,12,0,0"/>
 
                                         <StackPanel Grid.Row="4" Margin="0,8,0,4">
-                                            <TextBlock Text="Max Attack &amp; Defense" Style="{StaticResource Body}" Foreground="{StaticResource Text}"/>
-                                            <TextBlock Style="{StaticResource Small}" Text="Sets Attack and Defense to 999,999 (restored on turn-off). Resistances could not be located in 2.01.00 — use the attribute editor below to find them."/>
+                                            <TextBlock Text="Max Attack, Defense &amp; selected attributes" Style="{StaticResource Body}" Foreground="{StaticResource Text}"/>
+                                            <TextBlock Style="{StaticResource Small}" Text="Holds Attack, Defense and every attribute marked MAX below at 999,999 (restored on turn-off). Replaces the table's resistance hook, whose instruction no longer exists in 2.01.00: find the Fire / Ice / Lightning resistance entries in the editor and mark them MAX."/>
                                         </StackPanel>
                                         <ContentControl Grid.Row="4" Grid.Column="1" Content="{Binding Player.KeepBindings[4]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="12,10,12,0" VerticalAlignment="Top"/>
                                         <CheckBox Grid.Row="4" Grid.Column="2" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Player.MaxCombatOn}" IsEnabled="{Binding Player.CanTrack}" VerticalAlignment="Top" Margin="0,8,0,0"/>
@@ -361,7 +361,7 @@
                                         </Grid.ColumnDefinitions>
                                         <StackPanel>
                                             <TextBlock Style="{StaticResource CardTitle}" FontSize="14" Text="Combat attributes (advanced)"/>
-                                            <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0" Text="The 42 values of the player's combat array, live, in HUD units. [0] and [1] are Attack and Defense; the rest are unlabeled — equip or remove gear and watch which entry changes to find crit, speed and the resistances, then edit it here."/>
+                                            <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0" Text="The 42 values of the player's combat array, live, in HUD units. [0] and [1] are Attack and Defense; the rest are unlabeled — equip or remove a piece of gear with Fire / Ice / Lightning resistance and the entry that moves lights up as CHANGED for a few seconds. Edit it here, or mark it MAX so the toggle above holds it at 999,999 (remembered between sessions)."/>
                                         </StackPanel>
                                         <CheckBox Grid.Column="1" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Player.ShowAttributes}" Margin="14,0,0,0" VerticalAlignment="Top"/>
                                     </Grid>
@@ -376,19 +376,39 @@
                                                         <ColumnDefinition Width="120"/>
                                                         <ColumnDefinition Width="Auto"/>
                                                         <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
                                                         <ColumnDefinition Width="*"/>
                                                     </Grid.ColumnDefinitions>
                                                     <TextBlock Style="{StaticResource Mono}" Text="{Binding IndexText}" VerticalAlignment="Center"/>
                                                     <TextBlock Grid.Column="1" Style="{StaticResource Small}" Foreground="{StaticResource Muted}" Text="{Binding Name}" VerticalAlignment="Center"/>
-                                                    <TextBlock Grid.Column="2" Style="{StaticResource Mono}" Foreground="{StaticResource Text}" Text="{Binding LiveText}" VerticalAlignment="Center"/>
-                                                    <TextBox Grid.Column="3" Style="{StaticResource MonoTextBox}" Width="130" DataContext="{Binding Field}" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}">
+                                                    <TextBlock Grid.Column="2" Text="{Binding LiveText}" VerticalAlignment="Center">
+                                                        <TextBlock.Style>
+                                                            <Style TargetType="TextBlock" BasedOn="{StaticResource Mono}">
+                                                                <Setter Property="Foreground" Value="{StaticResource Text}"/>
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding IsChanged}" Value="True">
+                                                                        <Setter Property="Foreground" Value="{StaticResource Success}"/>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                                    </TextBlock>
+                                                    <CheckBox Grid.Column="3" Style="{StaticResource PillToggle}" Content="MAX" Margin="0,0,10,0"
+                                                              IsChecked="{Binding IncludeInMax}" IsEnabled="{Binding IsCoreStat, Converter={StaticResource InverseBool}}"
+                                                              ToolTip="Hold this attribute at 999,999 while 'Max Attack, Defense &amp; selected attributes' is on."/>
+                                                    <TextBox Grid.Column="4" Style="{StaticResource MonoTextBox}" Width="130" DataContext="{Binding Field}" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}">
                                                         <TextBox.InputBindings>
                                                             <KeyBinding Key="Return" Command="{Binding ApplyCommand}"/>
                                                         </TextBox.InputBindings>
                                                     </TextBox>
-                                                    <Button Grid.Column="4" Style="{StaticResource SmallButton}" Content="Apply" Command="{Binding Field.ApplyCommand}" Margin="8,0,0,0"/>
-                                                    <TextBlock Grid.Column="5" Style="{StaticResource Small}" Foreground="{StaticResource Danger}" Margin="10,0,0,0" VerticalAlignment="Center"
-                                                               Text="{Binding Field.Error}" Visibility="{Binding Field.Error, Converter={StaticResource NotEmptyToVisibility}}"/>
+                                                    <Button Grid.Column="5" Style="{StaticResource SmallButton}" Content="Apply" Command="{Binding Field.ApplyCommand}" Margin="8,0,0,0"/>
+                                                    <StackPanel Grid.Column="6" Orientation="Horizontal" Margin="10,0,0,0" VerticalAlignment="Center">
+                                                        <Border Style="{StaticResource Chip}" Background="#2E3DD68C" Visibility="{Binding IsChanged, Converter={StaticResource BoolToVisibility}}">
+                                                            <TextBlock Style="{StaticResource ChipText}" Foreground="{StaticResource Success}" Text="CHANGED"/>
+                                                        </Border>
+                                                        <TextBlock Style="{StaticResource Small}" Foreground="{StaticResource Danger}" Margin="8,0,0,0" VerticalAlignment="Center"
+                                                                   Text="{Binding Field.Error}" Visibility="{Binding Field.Error, Converter={StaticResource NotEmptyToVisibility}}"/>
+                                                    </StackPanel>
                                                 </Grid>
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>

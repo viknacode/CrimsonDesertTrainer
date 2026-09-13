@@ -2,19 +2,24 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using CrimsonTrainer.Cheats;
 using CrimsonTrainer.Infrastructure;
+using CrimsonTrainer.Settings;
 
 namespace CrimsonTrainer.ViewModels;
 
 /// <summary>One slot of the 42-entry combat attribute array (live value + editor).</summary>
 public sealed class CombatEntryViewModel : ObservableObject
 {
+    private readonly Action<CombatEntryViewModel> _onIncludeChanged;
     private string _liveText = "—";
+    private bool _isChanged, _includeInMax;
+    private int _changedTicks;
 
-    internal CombatEntryViewModel(int index, string? name, ValueFieldViewModel field)
+    internal CombatEntryViewModel(int index, string? name, ValueFieldViewModel field, Action<CombatEntryViewModel> onIncludeChanged)
     {
         Index = index;
         Name = name ?? $"attribute {index}";
         Field = field;
+        _onIncludeChanged = onIncludeChanged;
     }
 
     public int Index { get; }
@@ -22,10 +27,46 @@ public sealed class CombatEntryViewModel : ObservableObject
     public string IndexText => $"[{Index}]";
     public ValueFieldViewModel Field { get; }
 
+    /// <summary>Always maxed (Attack / Defense) — the checkbox is shown checked and locked.</summary>
+    public bool IsCoreStat => Index is 0 or 1;
+
     public string LiveText
     {
         get => _liveText;
         internal set => Set(ref _liveText, value);
+    }
+
+    /// <summary>True for a few seconds after the live value moved — equip gear and watch this light up.</summary>
+    public bool IsChanged
+    {
+        get => _isChanged;
+        private set => Set(ref _isChanged, value);
+    }
+
+    /// <summary>Part of "Max Attack &amp; Defense": kept at 999,999 while that toggle is on.</summary>
+    public bool IncludeInMax
+    {
+        get => _includeInMax || IsCoreStat;
+        set
+        {
+            if (IsCoreStat || !Set(ref _includeInMax, value)) return;
+            _onIncludeChanged(this);
+        }
+    }
+
+    internal void SetIncludeSilently(bool value)
+    {
+        _includeInMax = value;
+        Raise(nameof(IncludeInMax));
+    }
+
+    /// <summary>Called on every refresh; keeps the marker up for <paramref name="holdRefreshes"/> refreshes after a change.</summary>
+    internal void Update(long raw, bool changed, int holdRefreshes)
+    {
+        LiveText = PlayerPanelViewModel.HudText(raw);
+        if (changed) _changedTicks = holdRefreshes;
+        else if (_changedTicks > 0) _changedTicks--;
+        IsChanged = _changedTicks > 0;
     }
 }
 
@@ -47,20 +88,25 @@ public sealed class PlayerPanelViewModel : ObservableObject
         CombatNames[1] = "Defense";
     }
 
+    private const int ChangedHoldRefreshes = 10;   // refreshes happen every 3 ticks (~0.6 s) → marker stays ~6 s
+
     private readonly ITrainerHost _host;
     private readonly ToggleCheatViewModel _tracking;
+    private readonly AppSettings _settings;
     private PlayerStats? _stats;
     private PlayerSnapshot? _snapshot;
+    private long[]? _lastCombatValues;
     private bool _keepHealth, _keepStamina, _keepSpirit;
     private bool _godmode, _maxCombat, _showAttributes;
     private (long Health, long Stamina, long Spirit)? _godmodeOriginals;
-    private (long Attack, long Defense)? _combatOriginals;
+    private readonly Dictionary<int, long> _combatOriginals = new();   // attribute index → value before maxing
     private int _tick;
 
-    internal PlayerPanelViewModel(ITrainerHost host, ToggleCheatViewModel tracking)
+    internal PlayerPanelViewModel(ITrainerHost host, ToggleCheatViewModel tracking, AppSettings settings)
     {
         _host = host;
         _tracking = tracking;
+        _settings = settings;
         tracking.PropertyChanged += (_, e) =>
         {
             if (e.PropertyName is nameof(ToggleCheatViewModel.IsOn) or nameof(ToggleCheatViewModel.IsAvailable))
@@ -79,7 +125,9 @@ public sealed class PlayerPanelViewModel : ObservableObject
         };
 
         CombatEntries = new ObservableCollection<CombatEntryViewModel>(
-            Enumerable.Range(0, PlayerStats.CombatCount).Select(i => new CombatEntryViewModel(i, CombatNames[i], CombatField(i))));
+            Enumerable.Range(0, PlayerStats.CombatCount).Select(i => new CombatEntryViewModel(i, CombatNames[i], CombatField(i), OnIncludeInMaxChanged)));
+        foreach (int index in settings.MaxedAttributes)
+            if (index >= 0 && index < CombatEntries.Count) CombatEntries[index].SetIncludeSilently(true);
 
         KeepBindings = new ObservableCollection<HotkeyBindingViewModel>
         {
@@ -87,7 +135,7 @@ public sealed class PlayerPanelViewModel : ObservableObject
             new("player.keep_stamina", "Keep Stamina full", () => KeepStaminaFull = !KeepStaminaFull, host.BeginCapture),
             new("player.keep_spirit", "Keep Spirit full", () => KeepSpiritFull = !KeepSpiritFull, host.BeginCapture),
             new("player.godmode", "Godmode", () => GodmodeOn = !GodmodeOn, host.BeginCapture),
-            new("player.max_combat", "Max Attack & Defense", () => MaxCombatOn = !MaxCombatOn, host.BeginCapture),
+            new("player.max_combat", "Max Attack, Defense & selected", () => MaxCombatOn = !MaxCombatOn, host.BeginCapture),
         };
     }
 
@@ -147,7 +195,11 @@ public sealed class PlayerPanelViewModel : ObservableObject
         }
     }
 
-    /// <summary>Pointer-based replacement for "Max Attack &amp; Defense" (resistances were not located).</summary>
+    /// <summary>
+    /// Pointer-based replacement for the table's "Max Resistance Stats + Attack &amp; Defense" hook
+    /// (its increment instruction no longer exists): Attack, Defense and every attribute ticked in
+    /// the editor are held at 999,999; the originals come back when it is turned off.
+    /// </summary>
     public bool MaxCombatOn
     {
         get => _maxCombat;
@@ -165,11 +217,15 @@ public sealed class PlayerPanelViewModel : ObservableObject
         set => Set(ref _showAttributes, value);
     }
 
+    /// <summary>Attribute indices currently covered by <see cref="MaxCombatOn"/> (Attack, Defense and the ticked ones).</summary>
+    public IEnumerable<int> MaxedIndices => CombatEntries.Where(e => e.IncludeInMax).Select(e => e.Index);
+
     internal void Bind(PlayerStats? stats)
     {
         _stats = stats;
         _godmodeOriginals = null;
-        _combatOriginals = null;
+        _combatOriginals.Clear();
+        _lastCombatValues = null;
         if (stats is null)
         {
             _godmode = _maxCombat = false;
@@ -209,7 +265,7 @@ public sealed class PlayerPanelViewModel : ObservableObject
         try
         {
             if (_godmode) ApplyGodmode(snapshot);
-            if (_maxCombat) ApplyMaxCombat(snapshot);
+            if (_maxCombat) ApplyMaxCombat();
 
             bool fillHealth = _keepHealth || _godmode, fillStamina = _keepStamina || _godmode, fillSpirit = _keepSpirit || _godmode;
             if (fillHealth && snapshot.Health < snapshot.HealthMax) _stats.WriteStat(StatKind.Health, false, snapshot.HealthMax);
@@ -249,34 +305,72 @@ public sealed class PlayerPanelViewModel : ObservableObject
             ok ? LogLevel.Info : LogLevel.Warning);
     }
 
-    private void ApplyMaxCombat(PlayerSnapshot snapshot)
+    private void ApplyMaxCombat()
     {
         if (_stats is null) return;
-        if (_combatOriginals is null)
+        var values = _stats.ReadCombatArray();
+        if (values is null) return;
+
+        bool first = _combatOriginals.Count == 0;
+        var added = new List<string>();
+        foreach (int index in MaxedIndices)
         {
-            _combatOriginals = (snapshot.Attack, snapshot.Defense);
-            _host.Log($"Max Attack & Defense → ON (were {Hud(snapshot.Attack)} / {Hud(snapshot.Defense)})", LogLevel.Success);
+            if (!_combatOriginals.ContainsKey(index))
+            {
+                _combatOriginals[index] = values[index];
+                if (!first) added.Add($"{EntryLabel(index)} (was {Hud(values[index])})");
+            }
+            if (values[index] != GodValue) _stats.WriteCombat(index * 8, GodValue);
         }
-        if (snapshot.Attack != GodValue) _stats.WriteCombat(PlayerStats.Attack, GodValue);
-        if (snapshot.Defense != GodValue) _stats.WriteCombat(PlayerStats.Defense, GodValue);
+        if (first)
+            _host.Log($"Max Attack & Defense → ON: {string.Join(", ", _combatOriginals.Select(kv => $"{EntryLabel(kv.Key)} was {Hud(kv.Value)}"))}", LogLevel.Success);
+        else if (added.Count > 0)
+            _host.Log($"Max Attack & Defense now also covers {string.Join(", ", added)}", LogLevel.Success);
     }
 
     private void RestoreCombat()
     {
-        if (_stats is null || _combatOriginals is null) return;
-        var (attack, defense) = _combatOriginals.Value;
-        _combatOriginals = null;
-        bool ok = _stats.WriteCombat(PlayerStats.Attack, attack) && _stats.WriteCombat(PlayerStats.Defense, defense);
-        _host.Log(ok ? $"Max Attack & Defense → OFF, restored ({Hud(attack)} / {Hud(defense)})" : "Max Attack & Defense → OFF, but the values could not be restored.",
+        if (_stats is null || _combatOriginals.Count == 0) return;
+        bool ok = true;
+        var restored = new List<string>();
+        foreach (var (index, value) in _combatOriginals)
+        {
+            ok &= _stats.WriteCombat(index * 8, value);
+            restored.Add($"{EntryLabel(index)} {Hud(value)}");
+        }
+        _combatOriginals.Clear();
+        _host.Log(ok ? $"Max Attack & Defense → OFF, restored {string.Join(", ", restored)}" : "Max Attack & Defense → OFF, but the values could not be restored.",
             ok ? LogLevel.Info : LogLevel.Warning);
     }
+
+    /// <summary>An attribute was ticked or unticked in the editor: persist it and, if maxing is on, apply or undo right away.</summary>
+    private void OnIncludeInMaxChanged(CombatEntryViewModel entry)
+    {
+        _settings.MaxedAttributes = CombatEntries.Where(e => e.IncludeInMax && !e.IsCoreStat).Select(e => e.Index).ToList();
+        _host.SaveSettings();
+        if (!_maxCombat || _stats is null) return;
+
+        if (entry.IncludeInMax)
+        {
+            if (_snapshot is not null) ApplyMaxCombat();
+        }
+        else if (_combatOriginals.Remove(entry.Index, out long original))
+        {
+            bool ok = _stats.WriteCombat(entry.Index * 8, original);
+            _host.Log(ok ? $"{EntryLabel(entry.Index)} restored to {Hud(original)}" : $"{EntryLabel(entry.Index)} could not be restored.", ok ? LogLevel.Info : LogLevel.Warning);
+        }
+    }
+
+    private static string EntryLabel(int index) => CombatNames[index] is { } name ? name : $"[{index}]";
 
     private void RefreshCombatEntries()
     {
         var values = _stats?.ReadCombatArray();
         if (values is null) return;
+        var previous = _lastCombatValues;
         for (int i = 0; i < values.Length && i < CombatEntries.Count; i++)
-            CombatEntries[i].LiveText = Hud(values[i]);
+            CombatEntries[i].Update(values[i], previous is not null && previous[i] != values[i], ChangedHoldRefreshes);
+        _lastCombatValues = values;
     }
 
     private ValueFieldViewModel Field(string key, string label, StatKind kind) =>
@@ -309,7 +403,9 @@ public sealed class PlayerPanelViewModel : ObservableObject
         return true;
     }
 
-    private static string Hud(long raw)
+    private static string Hud(long raw) => HudText(raw);
+
+    internal static string HudText(long raw)
     {
         double v = (double)raw / PlayerStats.Scale;
         return v == Math.Floor(v) ? v.ToString("N0", CultureInfo.InvariantCulture) : v.ToString("N1", CultureInfo.InvariantCulture);

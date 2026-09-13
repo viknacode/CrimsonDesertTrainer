@@ -96,7 +96,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
             return Guard(() => swapper.Cheat.SetVar("swapId", value));
         });
 
-        Player = new PlayerPanelViewModel(this, Toggle(CheatCatalog.PlayerPointersId));
+        Player = new PlayerPanelViewModel(this, Toggle(CheatCatalog.PlayerPointersId), _settings);
         Spawner = new SpawnerViewModel(this, db, Icons, swapper, swapField, dispatcher);
         InventorySlots = new InventorySlotsViewModel(this);
         InventoryGrid = new InventoryGridViewModel(this, Spawner, InventorySlots);
