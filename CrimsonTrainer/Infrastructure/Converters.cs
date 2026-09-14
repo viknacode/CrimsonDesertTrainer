@@ -54,3 +54,23 @@ public sealed class RatioToWidthConverter : IMultiValueConverter
 
     public object[] ConvertBack(object value, Type[] targetTypes, object? parameter, CultureInfo culture) => throw new NotSupportedException();
 }
+
+/// <summary>
+/// (ActualWidth, ActualHeight) → a rounded RectangleGeometry, so the content of a rounded panel
+/// (scroll bars included) is clipped to the same corners as its border. The radius comes from
+/// the ConverterParameter (default 10).
+/// </summary>
+public sealed class RoundedClipConverter : IMultiValueConverter
+{
+    public object Convert(object[] values, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (values.Length < 2 || values[0] is not double width || values[1] is not double height || width <= 0 || height <= 0)
+            return System.Windows.Media.Geometry.Empty;
+        double radius = parameter is string s && double.TryParse(s, NumberStyles.Float, CultureInfo.InvariantCulture, out double r) ? r : 10;
+        var geometry = new System.Windows.Media.RectangleGeometry(new System.Windows.Rect(0, 0, width, height), radius, radius);
+        geometry.Freeze();
+        return geometry;
+    }
+
+    public object[] ConvertBack(object value, Type[] targetTypes, object? parameter, CultureInfo culture) => throw new NotSupportedException();
+}

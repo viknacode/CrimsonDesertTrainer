@@ -91,19 +91,23 @@ const sets = [];
 for (const [grp, title, img, armorClass, resistance, abyss, source] of rows) {
   const cfg = aliases[title] || { keys: defaultKeys(title).map(k => k.replace(/^THE /i, '')) };
   const pool = [];
-  for (const key of cfg.keys) {
+  cfg.keys.forEach((key, keyRank) => {
     const found = db.filter(i => !excl.test(i.name) && !exclInternal.test(i.internalName) && slotFor(i.name) && matches(i, key))
-      .map(i => ({ ...i, key, startsWith: norm(i.name).startsWith(norm(key)) || norm(i.name).endsWith(norm(key)) }));
-    if (found.length && !cfg.merge) { pool.push(...found); break; }
+      .map(i => ({ ...i, key, keyRank, startsWith: norm(i.name).startsWith(norm(key)) || norm(i.name).endsWith(norm(key)) }));
+    if (found.length && !cfg.merge) { pool.push(...found); return; }
     pool.push(...found);
-  }
+  });
   const pieces = [];
   for (const slot of slotOrder) {
     const cands = pool.filter(i => slotFor(i.name) === slot);
     if (!cands.length) continue;
-    cands.sort((a, b) => (demote.test(a.name) - demote.test(b.name)) || (b.startsWith - a.startsWith) || (variantRank(a) - variantRank(b)) || (a.itemKey - b.itemKey));
-    const pick = cands[0];
-    pieces.push({ slot, key: pick.itemKey, name: pick.name, variants: cands.length - 1 });
+    cands.sort((a, b) => (demote.test(a.name) - demote.test(b.name)) || (a.keyRank - b.keyRank) || (b.startsWith - a.startsWith) || (variantRank(a) - variantRank(b)) || (a.itemKey - b.itemKey));
+    const seen = new Set();
+    const options = cands.filter(c => !seen.has(c.itemKey) && seen.add(c.itemKey)).map(c => ({ key: c.itemKey, name: c.name, internal: c.internalName.trim() }));
+    // same display name twice (player / NPC variants): tell them apart by the internal name
+    for (const o of options) if (options.filter(x => x.name === o.name).length > 1) o.name = o.name + ' (' + o.internal + ')';
+    const pick = options[0];
+    pieces.push({ slot, key: pick.key, name: pick.name, variants: options.length - 1, options });
   }
   const m = title.match(/^(.*?)\s*(?:\((.*)\))?$/);
   sets.push({

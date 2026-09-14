@@ -5,12 +5,22 @@ using System.Text.Json.Serialization;
 
 namespace CrimsonTrainer.Items;
 
-/// <summary>One piece of an armor set: the equipment slot it fills and the item key that fills it.</summary>
+/// <summary>One item that can fill a set slot (the item list often has several variants of a piece).</summary>
+public sealed record ArmorPieceOption(
+    [property: JsonPropertyName("key")] long Key,
+    [property: JsonPropertyName("name")] string Name,
+    [property: JsonPropertyName("internal")] string Internal);
+
+/// <summary>
+/// One piece of an armor set: the equipment slot it fills, the item picked for it and every
+/// other item in the list that could fill the same slot (ranked, the pick first).
+/// </summary>
 public sealed record ArmorPiece(
     [property: JsonPropertyName("slot")] string Slot,
     [property: JsonPropertyName("key")] long Key,
     [property: JsonPropertyName("name")] string Name,
-    [property: JsonPropertyName("variants")] int Variants)
+    [property: JsonPropertyName("variants")] int Variants,
+    [property: JsonPropertyName("options")] List<ArmorPieceOption> Options)
 {
     public string SlotLabel => Slot switch
     {

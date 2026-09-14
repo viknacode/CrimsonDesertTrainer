@@ -112,7 +112,9 @@ total, embutidas como `Resource`).
 
 Como o trainer não cria entradas novas no pool do inventário (os campos internos de uma entrada
 — id de instância, tags, timestamps — não são conhecidos o bastante para sintetizar uma), *Spawn set*
-faz o mesmo que "Put in slot" para cada peça: escolhe as N entradas do inventário principal com o
+faz o mesmo que "Put in slot" para cada peça (o painel ao lado da galeria lista as peças; cada uma pode ser
+desmarcada e, quando a lista de itens tem variantes com o mesmo nome — versão do jogador vs. versão de NPC —,
+escolhida entre elas): escolhe as N entradas do inventário principal com o
 maior valor em `+90` (hora de criação, ou seja, os itens pegos mais recentemente), nunca uma que já
 seja peça do set, mostra antes a lista "WILL REPLACE" (slot, item e quantidade que somem) e grava
 índice runtime + contagem 1 nas duas cópias do container. Dica: pegue N itens de lixo antes de

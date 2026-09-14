@@ -10,6 +10,7 @@
     <infra:InverseBoolConverter x:Key="InverseBool"/>
     <infra:RatioToWidthConverter x:Key="RatioToWidth"/>
     <infra:EnumEqualsConverter x:Key="EnumEquals"/>
+    <infra:RoundedClipConverter x:Key="RoundedClip"/>
 
     <!-- ========== Palette ========== -->
     <Color x:Key="Bg0Color">#0B0D11</Color>
@@ -252,6 +253,41 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
+                    <Border x:Name="Pill" CornerRadius="999" Padding="9,3" Background="{StaticResource Bg3}"
+                            BorderBrush="{StaticResource Border}" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          TextElement.FontSize="10.5" TextElement.FontWeight="Bold"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Pill" Property="BorderBrush" Value="{StaticResource Faint}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Text}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Pill" Property="Background" Value="{StaticResource AccentGradient}"/>
+                            <Setter TargetName="Pill" Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.45"/>
+                            <Setter Property="Cursor" Value="Arrow"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Same pill look for a RadioButton (variant pickers). -->
+    <Style x:Key="PillRadio" TargetType="RadioButton">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{StaticResource Muted}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
                     <Border x:Name="Pill" CornerRadius="999" Padding="9,3" Background="{StaticResource Bg3}"
                             BorderBrush="{StaticResource Border}" BorderThickness="1">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -564,10 +600,19 @@
             <Setter.Value>
                 <ControlTemplate TargetType="ListBox">
                     <Border CornerRadius="10" Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="4">
-                        <ScrollViewer Focusable="False">
-                            <ItemsPresenter/>
-                        </ScrollViewer>
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <!-- Clip the scroll viewer (and its scroll bar) to the rounded shape so nothing pokes out of the corners. -->
+                        <Grid x:Name="ClipHost">
+                            <Grid.Clip>
+                                <MultiBinding Converter="{StaticResource RoundedClip}" ConverterParameter="9">
+                                    <Binding ElementName="ClipHost" Path="ActualWidth"/>
+                                    <Binding ElementName="ClipHost" Path="ActualHeight"/>
+                                </MultiBinding>
+                            </Grid.Clip>
+                            <ScrollViewer Focusable="False" Padding="4">
+                                <ItemsPresenter/>
+                            </ScrollViewer>
+                        </Grid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

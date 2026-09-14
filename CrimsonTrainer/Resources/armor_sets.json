@@ -16,31 +16,66 @@
      "slot": "head",
      "key": 101101,
      "name": "Ashad Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101101,
+       "name": "Ashad Plate Helm",
+       "internal": "Ashad_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111168,
      "name": "Ashad Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111168,
+       "name": "Ashad Plate Armor",
+       "internal": "Ashad_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 121033,
      "name": "Ashad Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 121033,
+       "name": "Ashad Plate Gloves",
+       "internal": "Ashad_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 131023,
      "name": "Ashad Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 131023,
+       "name": "Ashad Plate Boots",
+       "internal": "Ashad_PlateArmor_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000681,
      "name": "Ashad Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000681,
+       "name": "Ashad Plate Cloak",
+       "internal": "Ashad_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -59,31 +94,91 @@
      "slot": "head",
      "key": 101053,
      "name": "Black Bears' Leather Helm",
-     "variants": 1
+     "variants": 1,
+     "options": [
+      {
+       "key": 101053,
+       "name": "Black Bears' Leather Helm",
+       "internal": "Beoneck_Leather_Helm"
+      },
+      {
+       "key": 14507,
+       "name": "Black Bear Gas Mask",
+       "internal": "Brimstone_Leather_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
-     "key": 1000873,
-     "name": "Black Bear Leather Armor",
-     "variants": 2
+     "key": 2113163,
+     "name": "Ashclaw Leather Armor",
+     "variants": 2,
+     "options": [
+      {
+       "key": 2113163,
+       "name": "Ashclaw Leather Armor",
+       "internal": "Tibbletanus_Leather_Armor"
+      },
+      {
+       "key": 1000873,
+       "name": "Black Bear Leather Armor",
+       "internal": "Drunk_BlackBears_Leather_Armor"
+      },
+      {
+       "key": 1002720,
+       "name": "Black Bear Officer's Leather Armor",
+       "internal": "Drunk_BlackBears_Elite_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 123318,
-     "name": "Black Bear Leather Gloves",
-     "variants": 2
+     "name": "Black Bear Leather Gloves (BlackBear_Leather_Gloves)",
+     "variants": 2,
+     "options": [
+      {
+       "key": 123318,
+       "name": "Black Bear Leather Gloves (BlackBear_Leather_Gloves)",
+       "internal": "BlackBear_Leather_Gloves"
+      },
+      {
+       "key": 1000879,
+       "name": "Black Bear Leather Gloves",
+       "internal": "Drunk_BlackBears_Leather_Gloves"
+      },
+      {
+       "key": 1002719,
+       "name": "Black Bear Officer's Leather Gloves",
+       "internal": "Drunk_BlackBears_Elite_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000995,
      "name": "Black Bear Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000995,
+       "name": "Black Bear Leather Boots",
+       "internal": "Drunk_BlackBears_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000846,
      "name": "Black Bears' Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000846,
+       "name": "Black Bears' Cloth Cloak",
+       "internal": "Tibbletanus_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -102,25 +197,53 @@
      "slot": "head",
      "key": 101046,
      "name": "Tarandus Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101046,
+       "name": "Tarandus Plate Helm",
+       "internal": "Tarandus_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111039,
      "name": "Tarandus Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111039,
+       "name": "Tarandus Plate Armor",
+       "internal": "Tarandus_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 121025,
      "name": "Tarandus Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 121025,
+       "name": "Tarandus Plate Gloves",
+       "internal": "Tarandus_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 133164,
      "name": "Tarandus Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 133164,
+       "name": "Tarandus Leather Boots",
+       "internal": "Tarandus_Leather_Boots"
+      }
+     ]
     }
    ]
   },
@@ -139,25 +262,53 @@
      "slot": "body",
      "key": 1163251,
      "name": "Ashen Wolf's Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1163251,
+       "name": "Ashen Wolf's Leather Armor",
+       "internal": "Oongka_Basic_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1002101,
      "name": "Ashen Wolf's Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002101,
+       "name": "Ashen Wolf's Leather Gloves",
+       "internal": "Oongka_Basic_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 133072,
      "name": "Ashen Wolf's Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 133072,
+       "name": "Ashen Wolf's Leather Boots",
+       "internal": "Langust_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000678,
      "name": "Ashen Wolf's Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000678,
+       "name": "Ashen Wolf's Leather Cloak",
+       "internal": "Oongka_Basic_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -176,25 +327,53 @@
      "slot": "head",
      "key": 101009,
      "name": "Ator's Will Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101009,
+       "name": "Ator's Will Helm",
+       "internal": "Makutan_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 114300,
      "name": "Ator's Will Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 114300,
+       "name": "Ator's Will Cloth Armor",
+       "internal": "Wintharden_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 124071,
      "name": "Ator's Will Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 124071,
+       "name": "Ator's Will Leather Gloves",
+       "internal": "Antumbra_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 133269,
      "name": "Ator's Will Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 133269,
+       "name": "Ator's Will Leather Boots",
+       "internal": "Tirtit_Leather_Boots"
+      }
+     ]
     }
    ]
   },
@@ -213,31 +392,66 @@
      "slot": "head",
      "key": 1000993,
      "name": "Belkandor Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000993,
+       "name": "Belkandor Plate Helm",
+       "internal": "Oongka_PlateArmor_Helm_III"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000978,
      "name": "Belkandor Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000978,
+       "name": "Belkandor Plate Armor",
+       "internal": "Oongka_PlateArmor_Armor_III"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000987,
      "name": "Belkandor Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000987,
+       "name": "Belkandor Plate Gloves",
+       "internal": "Oongka_PlateArmor_Gloves_III"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000874,
      "name": "Belkandor Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000874,
+       "name": "Belkandor Plate Boots",
+       "internal": "Oongka_PlateArmor_Boots_III"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000982,
      "name": "Belkandor Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000982,
+       "name": "Belkandor Plate Cloak",
+       "internal": "Oongka_PlateArmor_Cloak_III"
+      }
+     ]
     }
    ]
   },
@@ -268,13 +482,27 @@
      "slot": "body",
      "key": 1002268,
      "name": "Bandit Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002268,
+       "name": "Bandit Cloth Armor",
+       "internal": "Laviren_Fabric_Armor_1"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1003675,
      "name": "Bandit Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1003675,
+       "name": "Bandit Cloth Cloak",
+       "internal": "Laviren_Fabric_Cloak_I"
+      }
+     ]
     }
    ]
   },
@@ -293,19 +521,40 @@
      "slot": "head",
      "key": 101090,
      "name": "Bedure Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101090,
+       "name": "Bedure Plate Helm",
+       "internal": "Madacus_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 114521,
      "name": "Bedure Chain Mail",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 114521,
+       "name": "Bedure Chain Mail",
+       "internal": "Vdure_ChainMail_Armor"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000268,
      "name": "Bedure Chain Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000268,
+       "name": "Bedure Chain Cloak",
+       "internal": "Vdure_ChainMail_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -324,25 +573,53 @@
      "slot": "body",
      "key": 1164002,
      "name": "Beekeeping Suit",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1164002,
+       "name": "Beekeeping Suit",
+       "internal": "Optionary_Beekeeping_Cloth"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 12413,
      "name": "Beekeeping Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12413,
+       "name": "Beekeeping Gloves",
+       "internal": "Optionary_Beekeeping_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 12312,
      "name": "Beekeeping Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12312,
+       "name": "Beekeeping Boots",
+       "internal": "Optionary_Beekeeping_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000321,
      "name": "Beekeeping Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000321,
+       "name": "Beekeeping Cloak",
+       "internal": "Optionary_Beekeeping_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -361,31 +638,66 @@
      "slot": "head",
      "key": 14415,
      "name": "Blackwing Mask",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14415,
+       "name": "Blackwing Mask",
+       "internal": "CrowMan_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 113023,
      "name": "Blackwing Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 113023,
+       "name": "Blackwing Leather Armor",
+       "internal": "Douglas_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 12406,
      "name": "Blackwing Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12406,
+       "name": "Blackwing Leather Gloves",
+       "internal": "Douglas_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 133348,
      "name": "Blackwing Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 133348,
+       "name": "Blackwing Leather Boots",
+       "internal": "Bainian_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000270,
      "name": "Blackwing Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000270,
+       "name": "Blackwing Leather Cloak",
+       "internal": "Douglas_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -404,13 +716,67 @@
      "slot": "head",
      "key": 2133115,
      "name": "Blinding Arrows' Cloth Cap",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2133115,
+       "name": "Blinding Arrows' Cloth Cap",
+       "internal": "Light_Arrowhead_Fabric_Helm_V"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 2133093,
-     "name": "Blinding Arrows Scout's Cloth Armor",
-     "variants": 8
+     "name": "Blinding Arrows Scout's Cloth Armor (Light_Arrowhead_Fabric_Armor_I)",
+     "variants": 8,
+     "options": [
+      {
+       "key": 2133093,
+       "name": "Blinding Arrows Scout's Cloth Armor (Light_Arrowhead_Fabric_Armor_I)",
+       "internal": "Light_Arrowhead_Fabric_Armor_I"
+      },
+      {
+       "key": 2133095,
+       "name": "Blinding Arrows Scout's Cloth Armor (Light_Arrowhead_Fabric_Armor_II)",
+       "internal": "Light_Arrowhead_Fabric_Armor_II"
+      },
+      {
+       "key": 2133097,
+       "name": "Blinding Arrows Scout's Cloth Armor (Light_Arrowhead_Fabric_Armor_III)",
+       "internal": "Light_Arrowhead_Fabric_Armor_III"
+      },
+      {
+       "key": 2133098,
+       "name": "Blinding Arrows Rider's Cloth Armor",
+       "internal": "Light_Arrowhead_Fabric_Armor_IV"
+      },
+      {
+       "key": 2133103,
+       "name": "Blinding Arrows Scout's Leather Armor (Light_Arrowhead_Leather_Armor_VII)",
+       "internal": "Light_Arrowhead_Leather_Armor_VII"
+      },
+      {
+       "key": 2133104,
+       "name": "Blinding Arrows Scout's Cloth Armor (Light_Arrowhead_Fabric_Armor_V)",
+       "internal": "Light_Arrowhead_Fabric_Armor_V"
+      },
+      {
+       "key": 2133105,
+       "name": "Blinding Arrows Scout's Cloth Armor (Light_Arrowhead_Fabric_Armor_VI)",
+       "internal": "Light_Arrowhead_Fabric_Armor_VI"
+      },
+      {
+       "key": 2133106,
+       "name": "Blinding Arrows Scout's Cloth Armor",
+       "internal": "Light_Arrowhead_Fabric_Armor_VII"
+      },
+      {
+       "key": 2133107,
+       "name": "Blinding Arrows Scout's Leather Armor",
+       "internal": "Light_Arrowhead_Leather_Armor_VIII"
+      }
+     ]
     }
    ]
   },
@@ -429,25 +795,53 @@
      "slot": "head",
      "key": 101002,
      "name": "Bolton Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101002,
+       "name": "Bolton Plate Helm",
+       "internal": "Keredig_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111165,
      "name": "Bolton Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111165,
+       "name": "Bolton Plate Armor",
+       "internal": "Bolton_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 133097,
      "name": "Bolton Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 133097,
+       "name": "Bolton Leather Boots",
+       "internal": "Cardion_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000308,
      "name": "Bolton Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000308,
+       "name": "Bolton Plate Cloak",
+       "internal": "Bolton_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -466,31 +860,66 @@
      "slot": "head",
      "key": 101122,
      "name": "Canta Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101122,
+       "name": "Canta Plate Helm",
+       "internal": "Luknian_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 2111103,
      "name": "Canta Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2111103,
+       "name": "Canta Plate Armor",
+       "internal": "Canta_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 121013,
      "name": "Canta Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 121013,
+       "name": "Canta Plate Gloves",
+       "internal": "Keredig_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 131013,
      "name": "Canta Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 131013,
+       "name": "Canta Plate Boots",
+       "internal": "Grace_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000313,
      "name": "Canta Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000313,
+       "name": "Canta Plate Cloak",
+       "internal": "Canta_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -509,25 +938,53 @@
      "slot": "head",
      "key": 14417,
      "name": "Carta Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14417,
+       "name": "Carta Plate Helm",
+       "internal": "Carta_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111214,
      "name": "Carta Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111214,
+       "name": "Carta Plate Armor",
+       "internal": "Carta_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 12412,
      "name": "Carta Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12412,
+       "name": "Carta Leather Gloves",
+       "internal": "Carta_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 12307,
      "name": "Carta Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12307,
+       "name": "Carta Plate Boots",
+       "internal": "Carta_Plated_Boots"
+      }
+     ]
     }
    ]
   },
@@ -546,25 +1003,58 @@
      "slot": "head",
      "key": 1001258,
      "name": "Catfish Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001258,
+       "name": "Catfish Plate Helm",
+       "internal": "Catfish_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000041,
      "name": "Sir Catfish's Armor",
-     "variants": 1
+     "variants": 1,
+     "options": [
+      {
+       "key": 1000041,
+       "name": "Sir Catfish's Armor",
+       "internal": "Sir_Catfish_PlateArmor_Armor"
+      },
+      {
+       "key": 1000164,
+       "name": "Dancing Catfish Cloth Armor",
+       "internal": "Pirate_Fabric_Armor_II"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000139,
      "name": "Sir Catfish's Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000139,
+       "name": "Sir Catfish's Plate Gloves",
+       "internal": "Sir_Catfish_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000140,
      "name": "Sir Catfish's Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000140,
+       "name": "Sir Catfish's Plate Boots",
+       "internal": "Sir_Catfish_Plate_Boots"
+      }
+     ]
     }
    ]
   },
@@ -583,25 +1073,53 @@
      "slot": "head",
      "key": 101054,
      "name": "Chelcia Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101054,
+       "name": "Chelcia Plate Helm",
+       "internal": "Checia_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 114629,
      "name": "Chelcia Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 114629,
+       "name": "Chelcia Plate Armor",
+       "internal": "Demeniss_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 131022,
      "name": "Chelcia Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 131022,
+       "name": "Chelcia Plate Boots",
+       "internal": "Chelcia_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000307,
      "name": "Chelcia Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000307,
+       "name": "Chelcia Plate Cloak",
+       "internal": "Demeniss_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -620,7 +1138,14 @@
      "slot": "back",
      "key": 1000324,
      "name": "Disguise Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000324,
+       "name": "Disguise Cloak",
+       "internal": "Optionary_Demeniss_Spy_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -639,19 +1164,40 @@
      "slot": "head",
      "key": 1002768,
      "name": "Condemner's Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002768,
+       "name": "Condemner's Plate Helm",
+       "internal": "Braxen_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 2062522806,
      "name": "Condemner's Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2062522806,
+       "name": "Condemner's Plate Armor",
+       "internal": "Kurinan_PlateArmor_Armor_I"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1003674,
      "name": "Condemner's Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1003674,
+       "name": "Condemner's Plate Cloak",
+       "internal": "Kurinan_PlateArmor_Cloak_I"
+      }
+     ]
     }
    ]
   },
@@ -670,31 +1216,66 @@
      "slot": "head",
      "key": 14405,
      "name": "Crimson Chaser Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14405,
+       "name": "Crimson Chaser Plate Helm",
+       "internal": "Redsentinel_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 8700,
      "name": "Crimson Chaser Mail",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 8700,
+       "name": "Crimson Chaser Mail",
+       "internal": "Redsentinel_ChainMail_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 14302,
      "name": "Crimson Chaser Chain Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14302,
+       "name": "Crimson Chaser Chain Gloves",
+       "internal": "Redsentinel_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1001922,
      "name": "Crimson Warden's Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001922,
+       "name": "Crimson Warden's Leather Boots",
+       "internal": "Scarlet_Excecutioner_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000287,
      "name": "Crimson Chaser Chain Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000287,
+       "name": "Crimson Chaser Chain Cloak",
+       "internal": "Redsentinel_ChainMail_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -713,31 +1294,66 @@
      "slot": "head",
      "key": 14401,
      "name": "Plate Helm of Cursed Soul",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14401,
+       "name": "Plate Helm of Cursed Soul",
+       "internal": "Redknight_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 14101,
      "name": "Plate Armor of Cursed Soul",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14101,
+       "name": "Plate Armor of Cursed Soul",
+       "internal": "Redknight_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 14301,
      "name": "Plate Gloves of Cursed Soul",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14301,
+       "name": "Plate Gloves of Cursed Soul",
+       "internal": "Redknight_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 14201,
      "name": "Plate Boots of Cursed Soul",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14201,
+       "name": "Plate Boots of Cursed Soul",
+       "internal": "Redknight_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000315,
      "name": "Plate Cloak of Cursed Soul",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000315,
+       "name": "Plate Cloak of Cursed Soul",
+       "internal": "Redknight_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -756,25 +1372,53 @@
      "slot": "body",
      "key": 1000057,
      "name": "Dark Marksman's Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000057,
+       "name": "Dark Marksman's Plate Armor",
+       "internal": "Samuel_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000058,
      "name": "Dark Marksman's Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000058,
+       "name": "Dark Marksman's Plate Gloves",
+       "internal": "Samuel_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000059,
      "name": "Dark Marksman's Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000059,
+       "name": "Dark Marksman's Plate Boots",
+       "internal": "Samuel_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000310,
      "name": "Dark Marksman's Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000310,
+       "name": "Dark Marksman's Plate Cloak",
+       "internal": "Samuel_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -793,25 +1437,53 @@
      "slot": "head",
      "key": 104132,
      "name": "Dark Ringleader's Cloth Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 104132,
+       "name": "Dark Ringleader's Cloth Helm",
+       "internal": "Chartian_Fabric_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 2113206,
      "name": "Dark Ringleader's Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2113206,
+       "name": "Dark Ringleader's Cloth Armor",
+       "internal": "Tychaon_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 123279,
      "name": "Dark Ringleader's Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 123279,
+       "name": "Dark Ringleader's Leather Gloves",
+       "internal": "Tikan_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000273,
      "name": "Dark Ringleader's Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000273,
+       "name": "Dark Ringleader's Cloth Cloak",
+       "internal": "Tychaon_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -830,13 +1502,27 @@
      "slot": "body",
      "key": 114606,
      "name": "Delesyian Cloth Attire",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 114606,
+       "name": "Delesyian Cloth Attire",
+       "internal": "Varantine_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000278,
      "name": "Delesyian Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000278,
+       "name": "Delesyian Cloth Cloak",
+       "internal": "Varantine_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -855,13 +1541,27 @@
      "slot": "body",
      "key": 1000897,
      "name": "Delesyian Guard Captain's Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000897,
+       "name": "Delesyian Guard Captain's Armor",
+       "internal": "Delesian_Soldier_General_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000896,
      "name": "Delesyian Guard Captain's Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000896,
+       "name": "Delesyian Guard Captain's Cloth Cloak",
+       "internal": "Delesian_Soldier_General_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -892,19 +1592,40 @@
      "slot": "head",
      "key": 2101035,
      "name": "Demeniss Ceremonial Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2101035,
+       "name": "Demeniss Ceremonial Plate Helm",
+       "internal": "Maint_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1163804,
      "name": "Demeniss Ceremonial Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1163804,
+       "name": "Demeniss Ceremonial Plate Armor",
+       "internal": "Optionary_Demeniss_Soldier_Armor"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000323,
      "name": "Demeniss Ceremonial Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000323,
+       "name": "Demeniss Ceremonial Cloak",
+       "internal": "Optionary_Demeniss_Soldier_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -923,7 +1644,14 @@
      "slot": "body",
      "key": 1000839,
      "name": "Bastier Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000839,
+       "name": "Bastier Armor",
+       "internal": "Bastion_PlateArmor_Armor"
+      }
+     ]
     }
    ]
   },
@@ -942,7 +1670,14 @@
      "slot": "head",
      "key": 2101021,
      "name": "Demenissian Soldier Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2101021,
+       "name": "Demenissian Soldier Plate Helm",
+       "internal": "Duemeniss_PlateArmor_Helm"
+      }
+     ]
     }
    ]
   },
@@ -961,19 +1696,50 @@
      "slot": "head",
      "key": 1000007,
      "name": "Desert Marauder's Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000007,
+       "name": "Desert Marauder's Plate Helm",
+       "internal": "Optionary_Desert_Plunderer_Helmet"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1001169,
-     "name": "Desert Marauder's Plate Armor",
-     "variants": 2
+     "name": "Desert Marauder's Plate Armor (Desert_Harrier_PlateArmor_Armor_III)",
+     "variants": 2,
+     "options": [
+      {
+       "key": 1001169,
+       "name": "Desert Marauder's Plate Armor (Desert_Harrier_PlateArmor_Armor_III)",
+       "internal": "Desert_Harrier_PlateArmor_Armor_III"
+      },
+      {
+       "key": 2133055,
+       "name": "Desert Marauder's Plate Armor (Desert_Harrier_PlateArmor_Armor_I)",
+       "internal": "Desert_Harrier_PlateArmor_Armor_I"
+      },
+      {
+       "key": 2133056,
+       "name": "Desert Marauder's Plate Armor",
+       "internal": "Desert_Harrier_PlateArmor_Armor_II"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000318,
      "name": "Desert Marauder's Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000318,
+       "name": "Desert Marauder's Cloak",
+       "internal": "Desert_Harrier_PlateArmor_Cloak_I"
+      }
+     ]
     }
    ]
   },
@@ -992,19 +1758,40 @@
      "slot": "head",
      "key": 1003211,
      "name": "Dewhaven Standard Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1003211,
+       "name": "Dewhaven Standard Plate Helm",
+       "internal": "Dewhaven_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 113524,
      "name": "Dewhaven Standard Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 113524,
+       "name": "Dewhaven Standard Leather Armor",
+       "internal": "Harald_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1001574,
      "name": "Dewhaven Standard Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001574,
+       "name": "Dewhaven Standard Cloth Cloak",
+       "internal": "Harald_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1023,19 +1810,40 @@
      "slot": "head",
      "key": 104184,
      "name": "Dragon Flame Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 104184,
+       "name": "Dragon Flame Helm",
+       "internal": "Dragon_Knight_Commander_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 112078,
      "name": "Dragon Flame Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 112078,
+       "name": "Dragon Flame Armor",
+       "internal": "Dragon_Knight_Commander_ChainMail_Armor"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000286,
      "name": "Dragon Flame Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000286,
+       "name": "Dragon Flame Cloak",
+       "internal": "Dragon_Knight_Commander_ChainMail_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1054,19 +1862,40 @@
      "slot": "body",
      "key": 2113218,
      "name": "Duskfang Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2113218,
+       "name": "Duskfang Leather Armor",
+       "internal": "Hemon_Vindel_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 123329,
      "name": "Duskfang Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 123329,
+       "name": "Duskfang Leather Gloves",
+       "internal": "Srasika_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000293,
      "name": "Duskfang Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000293,
+       "name": "Duskfang Leather Cloak",
+       "internal": "Hemon_Vindel_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1085,31 +1914,66 @@
      "slot": "head",
      "key": 103023,
      "name": "Leather Helm of the Fallen Kingdom",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 103023,
+       "name": "Leather Helm of the Fallen Kingdom",
+       "internal": "Deer_King_Leather_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 113561,
      "name": "Leather Armor of the Fallen Kingdom",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 113561,
+       "name": "Leather Armor of the Fallen Kingdom",
+       "internal": "Deerking_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 121081,
      "name": "Plate Gloves of the Fallen Kingdom",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 121081,
+       "name": "Plate Gloves of the Fallen Kingdom",
+       "internal": "Deerking_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 131046,
      "name": "Plate Boots of the Fallen Kingdom",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 131046,
+       "name": "Plate Boots of the Fallen Kingdom",
+       "internal": "Deerking_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000290,
      "name": "Leather Cloak of the Fallen Kingdom",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000290,
+       "name": "Leather Cloak of the Fallen Kingdom",
+       "internal": "Deerking_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1128,31 +1992,66 @@
      "slot": "head",
      "key": 101011,
      "name": "Ferman Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101011,
+       "name": "Ferman Plate Helm",
+       "internal": "Pycian_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 2111099,
      "name": "Ferman Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2111099,
+       "name": "Ferman Plate Armor",
+       "internal": "Makan_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 121043,
      "name": "Ferman Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 121043,
+       "name": "Ferman Plate Gloves",
+       "internal": "Parmen_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 2133023,
      "name": "Ferman Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2133023,
+       "name": "Ferman Leather Boots",
+       "internal": "Diorness_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000306,
      "name": "Ferman Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000306,
+       "name": "Ferman Plate Cloak",
+       "internal": "Makan_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1170,14 +2069,33 @@
     {
      "slot": "head",
      "key": 1001927,
-     "name": "Flame Knight's Plate Helm",
-     "variants": 1
+     "name": "Flame Knight's Plate Helm (Flame_Knights_PlateArmor_Helm)",
+     "variants": 1,
+     "options": [
+      {
+       "key": 1001927,
+       "name": "Flame Knight's Plate Helm (Flame_Knights_PlateArmor_Helm)",
+       "internal": "Flame_Knights_PlateArmor_Helm"
+      },
+      {
+       "key": 1002143,
+       "name": "Flame Knight's Plate Helm",
+       "internal": "Flame_Knights_PlateArmor_Helm_I"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 2133203,
      "name": "Flame Knight's Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2133203,
+       "name": "Flame Knight's Leather Boots",
+       "internal": "Dragon_Slayer_Leather_Boots"
+      }
+     ]
     }
    ]
   },
@@ -1196,13 +2114,27 @@
      "slot": "body",
      "key": 2113099,
      "name": "Wandering Freesword's Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2113099,
+       "name": "Wandering Freesword's Leather Armor",
+       "internal": "Wandering_Mercenary_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 131106998,
      "name": "Northern Freesword's Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 131106998,
+       "name": "Northern Freesword's Leather Gloves",
+       "internal": "North_Mercenary_Leather_Gloves_III"
+      }
+     ]
     }
    ]
   },
@@ -1221,31 +2153,66 @@
      "slot": "head",
      "key": 14416,
      "name": "Frostcursed Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14416,
+       "name": "Frostcursed Plate Helm",
+       "internal": "SkullKnight_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111005,
      "name": "Frostcursed Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111005,
+       "name": "Frostcursed Plate Armor",
+       "internal": "king_LostPeople_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 121017,
      "name": "Frostcursed Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 121017,
+       "name": "Frostcursed Plate Gloves",
+       "internal": "Skull_Knight_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 14202,
      "name": "Frostcursed Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14202,
+       "name": "Frostcursed Plate Boots",
+       "internal": "Skull_Knight_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000305,
      "name": "Frostcursed Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000305,
+       "name": "Frostcursed Plate Cloak",
+       "internal": "king_LostPeople_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1264,25 +2231,53 @@
      "slot": "body",
      "key": 14109,
      "name": "Frozen Heart Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14109,
+       "name": "Frozen Heart Plate Armor",
+       "internal": "Legendary_MarniGolem_Plate_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 14304,
      "name": "Frozen Heart Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14304,
+       "name": "Frozen Heart Plate Gloves",
+       "internal": "Legendary_Orc_Plate_Glove"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000900,
      "name": "Frozen Heart Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000900,
+       "name": "Frozen Heart Plate Boots",
+       "internal": "Legendary_MarniGolem_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000299,
      "name": "Frozen Heart Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000299,
+       "name": "Frozen Heart Plate Cloak",
+       "internal": "Legendary_MarniGolem_Plate_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1301,25 +2296,68 @@
      "slot": "head",
      "key": 1000624,
      "name": "Golden Free Company's Plate Helm",
-     "variants": 1
+     "variants": 1,
+     "options": [
+      {
+       "key": 1000624,
+       "name": "Golden Free Company's Plate Helm",
+       "internal": "Twilight_Whistlers_PlateArmor_Helm_II"
+      },
+      {
+       "key": 1000635,
+       "name": "Twilight Messengers' Plate Helm",
+       "internal": "Twilight_Whistlers_PlateArmor_Helm_I"
+      }
+     ]
     },
     {
      "slot": "body",
-     "key": 1002759,
-     "name": "Twilight Messengers' Plate Armor",
-     "variants": 2
+     "key": 1002761,
+     "name": "Golden Free Company's Plate Armor",
+     "variants": 2,
+     "options": [
+      {
+       "key": 1002761,
+       "name": "Golden Free Company's Plate Armor",
+       "internal": "Twilight_Whistlers_PlateArmor_Armor_II"
+      },
+      {
+       "key": 1002759,
+       "name": "Twilight Messengers' Plate Armor (Twilight_Whistlers_PlateArmor_Armor_I)",
+       "internal": "Twilight_Whistlers_PlateArmor_Armor_I"
+      },
+      {
+       "key": 1002760,
+       "name": "Twilight Messengers' Plate Armor",
+       "internal": "Twilight_Whistlers_PlateArmor_Armor_III"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1002661,
      "name": "Twilight Messengers' Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002661,
+       "name": "Twilight Messengers' Plate Gloves",
+       "internal": "Twilight_Whistlers_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1002758,
      "name": "Twilight Messengers' Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002758,
+       "name": "Twilight Messengers' Cloak",
+       "internal": "Twilight_Whistlers_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1338,31 +2376,66 @@
      "slot": "head",
      "key": 1000906,
      "name": "Golden Greed Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000906,
+       "name": "Golden Greed Plate Helm",
+       "internal": "Golden_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111253,
      "name": "Golden Greed Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111253,
+       "name": "Golden Greed Plate Armor",
+       "internal": "Golden_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 121071,
      "name": "Golden Greed Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 121071,
+       "name": "Golden Greed Plate Gloves",
+       "internal": "Gaeljude_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 131002,
      "name": "Golden Greed Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 131002,
+       "name": "Golden Greed Plate Boots",
+       "internal": "Gaeljude_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000301,
      "name": "Golden Greed Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000301,
+       "name": "Golden Greed Plate Cloak",
+       "internal": "Golden_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1381,19 +2454,75 @@
      "slot": "head",
      "key": 1002625,
      "name": "Greymane Leather Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002625,
+       "name": "Greymane Leather Helm",
+       "internal": "Greyfur_Leather_Helm_II"
+      }
+     ]
     },
     {
      "slot": "body",
-     "key": 113662,
-     "name": "Greymanes' Leather Armor",
-     "variants": 8
+     "key": 1001848,
+     "name": "Greymane Cloth Armor",
+     "variants": 7,
+     "options": [
+      {
+       "key": 1001848,
+       "name": "Greymane Cloth Armor",
+       "internal": "Greyfur_Fabric_Armor_MIII"
+      },
+      {
+       "key": 1002603,
+       "name": "Greymane's Leather Armor",
+       "internal": "Greyfur_Leather_Armor_LXXXIII"
+      },
+      {
+       "key": 113662,
+       "name": "Greymanes' Leather Armor (Greyfur_Leather_Armor)",
+       "internal": "Greyfur_Leather_Armor"
+      },
+      {
+       "key": 1001742,
+       "name": "Greymanes' Leather Armor (Greyfur_Leather_Armor_I)",
+       "internal": "Greyfur_Leather_Armor_I"
+      },
+      {
+       "key": 1001743,
+       "name": "Greymanes' Leather Armor (Greyfur_Leather_Armor_II)",
+       "internal": "Greyfur_Leather_Armor_II"
+      },
+      {
+       "key": 1001770,
+       "name": "Greymanes' Leather Armor (Greyfur_Leather_Armor_III)",
+       "internal": "Greyfur_Leather_Armor_III"
+      },
+      {
+       "key": 1001771,
+       "name": "Greymanes' Leather Armor (Greyfur_Leather_Armor_IV)",
+       "internal": "Greyfur_Leather_Armor_IV"
+      },
+      {
+       "key": 1001876,
+       "name": "Greymanes' Leather Armor",
+       "internal": "Greyfur_Leather_Armor_LXXXII"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1001279,
      "name": "Greymane Cloth Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001279,
+       "name": "Greymane Cloth Gloves",
+       "internal": "Greyfur_Fabric_Gloves"
+      }
+     ]
     }
    ]
   },
@@ -1412,25 +2541,63 @@
      "slot": "body",
      "key": 111050,
      "name": "Grey Wolf Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111050,
+       "name": "Grey Wolf Leather Armor",
+       "internal": "Mercenary_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 121050,
      "name": "Grey Wolf Leather Gloves",
-     "variants": 1
+     "variants": 1,
+     "options": [
+      {
+       "key": 121050,
+       "name": "Grey Wolf Leather Gloves",
+       "internal": "Mercenary_Gloves"
+      },
+      {
+       "key": 123320,
+       "name": "Grey Wolf Cloth Gloves",
+       "internal": "Lacklean_Fabric_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 131050,
      "name": "Grey Wolf Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 131050,
+       "name": "Grey Wolf Leather Boots",
+       "internal": "Mercenary_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000294,
      "name": "Grey Wolf Leather Cloak",
-     "variants": 1
+     "variants": 1,
+     "options": [
+      {
+       "key": 1000294,
+       "name": "Grey Wolf Leather Cloak",
+       "internal": "Mercenary_Leather_Cloak"
+      },
+      {
+       "key": 1002800,
+       "name": "Grey Wolf Cloth Cloak",
+       "internal": "Demian_Greyfur_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1449,25 +2616,53 @@
      "slot": "body",
      "key": 12218,
      "name": "Helfryn Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12218,
+       "name": "Helfryn Leather Armor",
+       "internal": "Hailbrin_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 12410,
      "name": "Helfryn Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12410,
+       "name": "Helfryn Leather Gloves",
+       "internal": "Hailbrin_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 133011,
      "name": "Helfryn Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 133011,
+       "name": "Helfryn Leather Boots",
+       "internal": "Hailbrin_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000291,
      "name": "Helfryn Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000291,
+       "name": "Helfryn Leather Cloak",
+       "internal": "Hailbrin_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1486,13 +2681,27 @@
      "slot": "feet",
      "key": 12311,
      "name": "Hernandian Banquet Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12311,
+       "name": "Hernandian Banquet Leather Boots",
+       "internal": "Hernand_Party_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000326,
      "name": "Hernandian Banquet Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000326,
+       "name": "Hernandian Banquet Cloak",
+       "internal": "Optionary_Hernand_Party_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1511,25 +2720,53 @@
      "slot": "body",
      "key": 9102,
      "name": "Hernandian Honor Guard Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 9102,
+       "name": "Hernandian Honor Guard Armor",
+       "internal": "Hernand_GuardCaptain_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 12409,
      "name": "Hernandian Honor Guard Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12409,
+       "name": "Hernandian Honor Guard Gloves",
+       "internal": "Hernand_GuardCaptain_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 12308,
      "name": "Hernandian Honor Guard Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12308,
+       "name": "Hernandian Honor Guard Boots",
+       "internal": "Hernand_GuardCaptain_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000272,
      "name": "Hernandian Honor Guard Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000272,
+       "name": "Hernandian Honor Guard Cloak",
+       "internal": "Hernand_GuardCaptain_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1548,25 +2785,53 @@
      "slot": "body",
      "key": 12217,
      "name": "Hungering Fang Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12217,
+       "name": "Hungering Fang Leather Armor",
+       "internal": "Ludvic_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 12408,
      "name": "Hungering Fang Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12408,
+       "name": "Hungering Fang Leather Gloves",
+       "internal": "Ludvic_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 12306,
      "name": "Hungering Fang Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12306,
+       "name": "Hungering Fang Leather Boots",
+       "internal": "Ludvic_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000289,
      "name": "Hungering Fang Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000289,
+       "name": "Hungering Fang Leather Cloak",
+       "internal": "Ludvic_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1585,31 +2850,66 @@
      "slot": "head",
      "key": 101008,
      "name": "Icewing Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101008,
+       "name": "Icewing Plate Helm",
+       "internal": "Entura_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111257,
      "name": "Icewing Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111257,
+       "name": "Icewing Plate Armor",
+       "internal": "Corvo_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 121069,
      "name": "Icewing Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 121069,
+       "name": "Icewing Plate Gloves",
+       "internal": "Corvo_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 131007,
      "name": "Icewing Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 131007,
+       "name": "Icewing Plate Boots",
+       "internal": "Ladete_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000311,
      "name": "Icewing Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000311,
+       "name": "Icewing Plate Cloak",
+       "internal": "Corvo_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1628,25 +2928,53 @@
      "slot": "body",
      "key": 1163551,
      "name": "Ironwilled Guardian's Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1163551,
+       "name": "Ironwilled Guardian's Leather Armor",
+       "internal": "Paulus_Basic_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 123137,
      "name": "Ironwilled Guardian's Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 123137,
+       "name": "Ironwilled Guardian's Leather Gloves",
+       "internal": "Paulus_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 133076,
      "name": "Ironwilled Guardian's Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 133076,
+       "name": "Ironwilled Guardian's Leather Boots",
+       "internal": "Paulus_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000342,
      "name": "Ironwilled Guardian's Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000342,
+       "name": "Ironwilled Guardian's Leather Cloak",
+       "internal": "Paulus_Basic_Leather_cloak"
+      }
+     ]
     }
    ]
   },
@@ -1664,20 +2992,71 @@
     {
      "slot": "head",
      "key": 1000349,
-     "name": "Jackals' Leather Helm",
-     "variants": 1
+     "name": "Jackals' Leather Helm (Jackal_Leather_Helm)",
+     "variants": 1,
+     "options": [
+      {
+       "key": 1000349,
+       "name": "Jackals' Leather Helm (Jackal_Leather_Helm)",
+       "internal": "Jackal_Leather_Helm"
+      },
+      {
+       "key": 1001105,
+       "name": "Jackals' Leather Helm",
+       "internal": "Jackal_Leather_Helm_II"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 2133172,
-     "name": "Jackals' Leather Armor",
-     "variants": 5
+     "name": "Jackals' Leather Armor (North_Mercenary_Leather_Armor_I)",
+     "variants": 5,
+     "options": [
+      {
+       "key": 2133172,
+       "name": "Jackals' Leather Armor (North_Mercenary_Leather_Armor_I)",
+       "internal": "North_Mercenary_Leather_Armor_I"
+      },
+      {
+       "key": 2133173,
+       "name": "Jackals' Leather Armor (North_Mercenary_Leather_Armor_II)",
+       "internal": "North_Mercenary_Leather_Armor_II"
+      },
+      {
+       "key": 2133174,
+       "name": "Jackals' Leather Armor (North_Mercenary_Leather_Armor_III)",
+       "internal": "North_Mercenary_Leather_Armor_III"
+      },
+      {
+       "key": 2133177,
+       "name": "Jackals' Leather Armor",
+       "internal": "North_Mercenary_Leather_Armor_IV"
+      },
+      {
+       "key": 1000376,
+       "name": "One-Armed Jackals' Leather Armor",
+       "internal": "Ludvic_OneArmed_Leather_Armor"
+      },
+      {
+       "key": 1002983,
+       "name": "Lonely Jackals' Leather Armor",
+       "internal": "Ludvic_Leather_Armor_II"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1002984,
      "name": "Jackals' Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002984,
+       "name": "Jackals' Leather Gloves",
+       "internal": "Ludvic_Leather_Gloves_II"
+      }
+     ]
     }
    ]
   },
@@ -1696,25 +3075,53 @@
      "slot": "head",
      "key": 104175,
      "name": "Jester Leather Mask",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 104175,
+       "name": "Jester Leather Mask",
+       "internal": "Abyss_Surreal_Wolf_Leather_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 114624,
      "name": "Jester Leather Coat",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 114624,
+       "name": "Jester Leather Coat",
+       "internal": "Abyss_Surreal_Wolf_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 124069,
      "name": "Jester Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 124069,
+       "name": "Jester Leather Gloves",
+       "internal": "Abyss_Surreal_Wolf_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000297,
      "name": "Jester Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000297,
+       "name": "Jester Leather Cloak",
+       "internal": "Abyss_Surreal_Wolf_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1745,25 +3152,53 @@
      "slot": "head",
      "key": 2101033,
      "name": "Lauques Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2101033,
+       "name": "Lauques Plate Helm",
+       "internal": "Lauqus_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 2114095,
      "name": "Lauques Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2114095,
+       "name": "Lauques Cloth Armor",
+       "internal": "Tartinan_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 2133045,
      "name": "Lauques Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2133045,
+       "name": "Lauques Leather Boots",
+       "internal": "Atanti_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000330,
      "name": "Lauques Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000330,
+       "name": "Lauques Cloth Cloak",
+       "internal": "Tartinan_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1782,25 +3217,53 @@
      "slot": "head",
      "key": 1001325,
      "name": "Lightning Bolt Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001325,
+       "name": "Lightning Bolt Plate Helm",
+       "internal": "Titan_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1001326,
      "name": "Lightning Bolt Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001326,
+       "name": "Lightning Bolt Plate Armor",
+       "internal": "Titan_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1001327,
      "name": "Lightning Bolt Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001327,
+       "name": "Lightning Bolt Plate Gloves",
+       "internal": "Titan_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1001328,
      "name": "Lightning Bolt Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001328,
+       "name": "Lightning Bolt Plate Boots",
+       "internal": "Titan_Plate_Boots"
+      }
+     ]
     }
    ]
   },
@@ -1819,19 +3282,40 @@
      "slot": "head",
      "key": 103035,
      "name": "Helm of Loyal Friendship",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 103035,
+       "name": "Helm of Loyal Friendship",
+       "internal": "Tesslit_Leather_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111210,
      "name": "Armor of Loyal Friendship",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111210,
+       "name": "Armor of Loyal Friendship",
+       "internal": "Delesian_Friend_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000317,
      "name": "Cloak of Loyal Friendship",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000317,
+       "name": "Cloak of Loyal Friendship",
+       "internal": "Delesian_Friend_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1850,25 +3334,53 @@
      "slot": "body",
      "key": 1000319,
      "name": "Trukan Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000319,
+       "name": "Trukan Cloth Armor",
+       "internal": "OrcuMer_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000473,
      "name": "Trukan Cloth Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000473,
+       "name": "Trukan Cloth Gloves",
+       "internal": "OrcuMer_Fabric_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000472,
      "name": "Trukan Cloth Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000472,
+       "name": "Trukan Cloth Boots",
+       "internal": "OrcuMer_Fabric_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1001926,
      "name": "Trukan Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001926,
+       "name": "Trukan Cloth Cloak",
+       "internal": "OrcuMer_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1886,26 +3398,79 @@
     {
      "slot": "head",
      "key": 1001951,
-     "name": "Mistcloaked Owl Plate Helm",
-     "variants": 1
+     "name": "Mistcloaked Owl Plate Helm (Owls_of_the_Mist_PlateArmor_Helm)",
+     "variants": 1,
+     "options": [
+      {
+       "key": 1001951,
+       "name": "Mistcloaked Owl Plate Helm (Owls_of_the_Mist_PlateArmor_Helm)",
+       "internal": "Owls_of_the_Mist_PlateArmor_Helm"
+      },
+      {
+       "key": 1002360,
+       "name": "Mistcloaked Owl Plate Helm",
+       "internal": "Owls_of_the_Mist_PlateArmor_Helm_II"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000743,
-     "name": "Mistcloaked Owl Leather Armor",
-     "variants": 4
+     "name": "Mistcloaked Owl Leather Armor (Owls_of_the_Mist_Leahter_Armor_I)",
+     "variants": 4,
+     "options": [
+      {
+       "key": 1000743,
+       "name": "Mistcloaked Owl Leather Armor (Owls_of_the_Mist_Leahter_Armor_I)",
+       "internal": "Owls_of_the_Mist_Leahter_Armor_I"
+      },
+      {
+       "key": 1000744,
+       "name": "Mistcloaked Owl Leather Armor (Owls_of_the_Mist_Leahter_Armor_II)",
+       "internal": "Owls_of_the_Mist_Leahter_Armor_II"
+      },
+      {
+       "key": 1000745,
+       "name": "Mistcloaked Owl Leather Armor (Owls_of_the_Mist_Leahter_Armor_III)",
+       "internal": "Owls_of_the_Mist_Leahter_Armor_III"
+      },
+      {
+       "key": 1000746,
+       "name": "Mistcloaked Owl Leather Armor (Owls_of_the_Mist_Leahter_Armor_IV)",
+       "internal": "Owls_of_the_Mist_Leahter_Armor_IV"
+      },
+      {
+       "key": 1002358,
+       "name": "Mistcloaked Owl Leather Armor",
+       "internal": "Owls_of_the_Mist_Leahter_Armor_V"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1002359,
      "name": "Mistcloaked Owl Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002359,
+       "name": "Mistcloaked Owl Leather Boots",
+       "internal": "Owls_of_the_Mist_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1003264,
      "name": "Mistcloaked Owl Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1003264,
+       "name": "Mistcloaked Owl Leather Cloak",
+       "internal": "Owls_of_the_Mist_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -1924,25 +3489,63 @@
      "slot": "head",
      "key": 101048,
      "name": "Musket Border Guard Standard Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101048,
+       "name": "Musket Border Guard Standard Helm",
+       "internal": "ReiGhis_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1001177,
      "name": "Musket Border Guard Standard Armor",
-     "variants": 2
+     "variants": 2,
+     "options": [
+      {
+       "key": 1001177,
+       "name": "Musket Border Guard Standard Armor",
+       "internal": "Hymns_of_Dusk_Fabric_Armor_I"
+      },
+      {
+       "key": 1001178,
+       "name": "Dusksongs Leather Armor",
+       "internal": "Hymns_of_Dusk_Leather_Armor_I"
+      },
+      {
+       "key": 1001180,
+       "name": "Dusksongs Plate Armor",
+       "internal": "Hymns_of_Dusk_PlateArmor_Armor_I"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1001181,
      "name": "Dusksongs Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001181,
+       "name": "Dusksongs Plate Gloves",
+       "internal": "Hymns_of_Dusk_PlateArmor_Gloves_I"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1001179,
      "name": "Dusksongs Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001179,
+       "name": "Dusksongs Leather Boots",
+       "internal": "Hymns_of_Dusk_Leather_Boots_I"
+      }
+     ]
     }
    ]
   },
@@ -1961,13 +3564,27 @@
      "slot": "head",
      "key": 2133199,
      "name": "Goldleaf Soldier Cloth Headband",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2133199,
+       "name": "Goldleaf Soldier Cloth Headband",
+       "internal": "Goblin_Merchant_Fabric_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000187,
      "name": "Nibrak Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000187,
+       "name": "Nibrak Cloth Armor",
+       "internal": "Goblin_Merchant_Fabric_Armor_"
+      }
+     ]
     }
    ]
   },
@@ -1986,31 +3603,66 @@
      "slot": "head",
      "key": 101117,
      "name": "Northern Fighter's Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101117,
+       "name": "Northern Fighter's Plate Helm",
+       "internal": "Tarbal_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1164512,
      "name": "Northern Fighter's Chain Mail",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1164512,
+       "name": "Northern Fighter's Chain Mail",
+       "internal": "Lyfellen_ChainMail_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 2133150,
      "name": "Northern Fighter's Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2133150,
+       "name": "Northern Fighter's Leather Gloves",
+       "internal": "Lyfellen_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 2131008,
      "name": "Northern Fighter's Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2131008,
+       "name": "Northern Fighter's Leather Boots",
+       "internal": "Nickna_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000285,
      "name": "Northern Fighter's Chain Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000285,
+       "name": "Northern Fighter's Chain Cloak",
+       "internal": "Lyfellen_ChainMail_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2029,31 +3681,66 @@
      "slot": "head",
      "key": 1000051,
      "name": "Odeck's Protector Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000051,
+       "name": "Odeck's Protector Plate Helm",
+       "internal": "OrcuMer_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000052,
      "name": "Odeck's Protector Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000052,
+       "name": "Odeck's Protector Plate Armor",
+       "internal": "OrcuMer_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000053,
      "name": "Odeck's Protector Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000053,
+       "name": "Odeck's Protector Plate Gloves",
+       "internal": "OrcuMer_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000054,
      "name": "Odeck's Protector Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000054,
+       "name": "Odeck's Protector Plate Boots",
+       "internal": "OrcuMer_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1002283,
      "name": "Odeck's Protector Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002283,
+       "name": "Odeck's Protector Plate Cloak",
+       "internal": "OrcuMer_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2072,31 +3759,66 @@
      "slot": "head",
      "key": 104169,
      "name": "Pailunese Hat",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 104169,
+       "name": "Pailunese Hat",
+       "internal": "Abidon_Fabric_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 114600,
      "name": "Pailunese Attire",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 114600,
+       "name": "Pailunese Attire",
+       "internal": "Lunosier_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 14306,
      "name": "Pailunese Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14306,
+       "name": "Pailunese Gloves",
+       "internal": "Lutis_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 134011,
      "name": "Pailunese Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 134011,
+       "name": "Pailunese Boots",
+       "internal": "Lutis_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000277,
      "name": "Pailunese Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000277,
+       "name": "Pailunese Cloak",
+       "internal": "Lunosier_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2115,31 +3837,66 @@
      "slot": "head",
      "key": 1000380,
      "name": "Plate Helm of the Shadows",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000380,
+       "name": "Plate Helm of the Shadows",
+       "internal": "DarknessKing_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000225,
      "name": "Plate Armor of the Shadows",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000225,
+       "name": "Plate Armor of the Shadows",
+       "internal": "DarknessKing_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000381,
      "name": "Plate Gloves of the Shadows",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000381,
+       "name": "Plate Gloves of the Shadows",
+       "internal": "DarknessKing_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000382,
      "name": "Plate Boots of the Shadows",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000382,
+       "name": "Plate Boots of the Shadows",
+       "internal": "DarknessKing_PlateArmor_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000383,
      "name": "Plate Cloak of the Shadows",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000383,
+       "name": "Plate Cloak of the Shadows",
+       "internal": "DarknessKing_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2158,19 +3915,40 @@
      "slot": "head",
      "key": 356742259,
      "name": "Pororin Petal Hat",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 356742259,
+       "name": "Pororin Petal Hat",
+       "internal": "Florin_Fabric_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1165011,
      "name": "Pororin Cloth Attire",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1165011,
+       "name": "Pororin Cloth Attire",
+       "internal": "Optionary_Florin_Cloth"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000032,
      "name": "Pororin Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000032,
+       "name": "Pororin Cloth Cloak",
+       "internal": "Florin_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2189,19 +3967,40 @@
      "slot": "head",
      "key": 104176,
      "name": "Rabbit Leather Mask",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 104176,
+       "name": "Rabbit Leather Mask",
+       "internal": "Abyss_Surreal_Human_Leather_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 114623,
      "name": "Rabbit Leather Coat",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 114623,
+       "name": "Rabbit Leather Coat",
+       "internal": "Abyss_Surreal_Human_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 134057,
      "name": "Rabbit Cloth Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 134057,
+       "name": "Rabbit Cloth Boots",
+       "internal": "Abyss_Surreal_Human_Fabric_Boots"
+      }
+     ]
     }
    ]
   },
@@ -2220,25 +4019,53 @@
      "slot": "head",
      "key": 1000247,
      "name": "Leather Riding Hat",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000247,
+       "name": "Leather Riding Hat",
+       "internal": "riding_Leather_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000246,
      "name": "Riding Attire",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000246,
+       "name": "Riding Attire",
+       "internal": "Riding_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000249,
      "name": "Riding Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000249,
+       "name": "Riding Boots",
+       "internal": "riding_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000274,
      "name": "Riding Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000274,
+       "name": "Riding Cloak",
+       "internal": "Riding_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2257,25 +4084,53 @@
      "slot": "head",
      "key": 2101037,
      "name": "Sahazhad Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2101037,
+       "name": "Sahazhad Plate Helm",
+       "internal": "Lacsha_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111255,
      "name": "Sahazhad Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111255,
+       "name": "Sahazhad Plate Armor",
+       "internal": "Sazahan_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 131041,
      "name": "Sahazhad Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 131041,
+       "name": "Sahazhad Plate Boots",
+       "internal": "Gamelot_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000314,
      "name": "Sahazhad Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000314,
+       "name": "Sahazhad Plate Cloak",
+       "internal": "Sazahan_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2294,13 +4149,27 @@
      "slot": "head",
      "key": 333963940,
      "name": "Scarlet Blades Gas Mask",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 333963940,
+       "name": "Scarlet Blades Gas Mask",
+       "internal": "Drug_Leather_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 114640,
      "name": "Scarlet Blades Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 114640,
+       "name": "Scarlet Blades Cloth Armor",
+       "internal": "Optionary_Bleed_Fabric_Armor"
+      }
+     ]
     }
    ]
   },
@@ -2319,25 +4188,53 @@
      "slot": "head",
      "key": 103112,
      "name": "Scholastone Cap",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 103112,
+       "name": "Scholastone Cap",
+       "internal": "Huroi_Leather_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1165010,
      "name": "Scholastone Uniform",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1165010,
+       "name": "Scholastone Uniform",
+       "internal": "Optionary_Scholar_Stone_Cloth"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 12310,
      "name": "Scholastone Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12310,
+       "name": "Scholastone Boots",
+       "internal": "Huroi_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000337,
      "name": "Scholastone Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000337,
+       "name": "Scholastone Cloak",
+       "internal": "Optionary_Scholar_Stone_cloak"
+      }
+     ]
     }
    ]
   },
@@ -2356,19 +4253,40 @@
      "slot": "head",
      "key": 103029,
      "name": "Schtump Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 103029,
+       "name": "Schtump Plate Helm",
+       "internal": "Duratti_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111108,
      "name": "Schtump Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111108,
+       "name": "Schtump Cloth Armor",
+       "internal": "Schtump_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1001940,
      "name": "Schtump Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001940,
+       "name": "Schtump Cloth Cloak",
+       "internal": "Schtump_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2387,31 +4305,66 @@
      "slot": "head",
      "key": 101056,
      "name": "Scorchflame Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101056,
+       "name": "Scorchflame Plate Helm",
+       "internal": "Londel_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111249,
      "name": "Scorchflame Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111249,
+       "name": "Scorchflame Plate Armor",
+       "internal": "Paphneil_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 121026,
      "name": "Scorchflame Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 121026,
+       "name": "Scorchflame Plate Gloves",
+       "internal": "Londel_PlateArmor_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 133178,
      "name": "Scorchflame Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 133178,
+       "name": "Scorchflame Leather Boots",
+       "internal": "Londel_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000300,
      "name": "Scorchflame Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000300,
+       "name": "Scorchflame Plate Cloak",
+       "internal": "Paphneil_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2430,31 +4383,76 @@
      "slot": "head",
      "key": 2133206,
      "name": "Shadowleaf Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2133206,
+       "name": "Shadowleaf Helm",
+       "internal": "Optionary_Ent_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1001886,
      "name": "Shadowleaf Leather Armor",
-     "variants": 1
+     "variants": 1,
+     "options": [
+      {
+       "key": 1001886,
+       "name": "Shadowleaf Leather Armor",
+       "internal": "EntHunter_Leather_Armor"
+      },
+      {
+       "key": 2133205,
+       "name": "Shadowleaf Outfit",
+       "internal": "Optionary_Ent_Cloth"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 2133207,
      "name": "Shadowleaf Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2133207,
+       "name": "Shadowleaf Gloves",
+       "internal": "Optionary_Ent_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 2133208,
      "name": "Shadowleaf Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2133208,
+       "name": "Shadowleaf Boots",
+       "internal": "Optionary_Ent_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000331,
      "name": "Shadowleaf Cloak",
-     "variants": 1
+     "variants": 1,
+     "options": [
+      {
+       "key": 1000331,
+       "name": "Shadowleaf Cloak",
+       "internal": "Optionary_Ent_Cloak"
+      },
+      {
+       "key": 1001891,
+       "name": "Shadowleaf Leather Cloak",
+       "internal": "EntHunter_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2473,25 +4471,53 @@
      "slot": "head",
      "key": 9401,
      "name": "Skyblazer Cloth Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 9401,
+       "name": "Skyblazer Cloth Helm",
+       "internal": "Scalaphynion_Fabric_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 114590,
      "name": "Skyblazer Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 114590,
+       "name": "Skyblazer Cloth Armor",
+       "internal": "Scalaphynion_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 12407,
      "name": "Skyblazer Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12407,
+       "name": "Skyblazer Leather Gloves",
+       "internal": "Scalaphynion_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000276,
      "name": "Skyblazer Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000276,
+       "name": "Skyblazer Cloth Cloak",
+       "internal": "Scalaphynion_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2510,31 +4536,71 @@
      "slot": "head",
      "key": 101102,
      "name": "Solas Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101102,
+       "name": "Solas Plate Helm",
+       "internal": "Solas_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111169,
      "name": "Solas Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111169,
+       "name": "Solas Plate Armor",
+       "internal": "Solas_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 121034,
      "name": "Solas Plate Gloves",
-     "variants": 1
+     "variants": 1,
+     "options": [
+      {
+       "key": 121034,
+       "name": "Solas Plate Gloves",
+       "internal": "Solas_PlateArmor_Gloves"
+      },
+      {
+       "key": 1000840,
+       "name": "Eclipsed Solas Plate Gloves",
+       "internal": "Solas_PlateArmor_Gloves_I"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 131024,
      "name": "Solas Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 131024,
+       "name": "Solas Plate Boots",
+       "internal": "Solas_PlateArmor_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000682,
      "name": "Solas Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000682,
+       "name": "Solas Plate Cloak",
+       "internal": "Solas_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2553,19 +4619,40 @@
      "slot": "head",
      "key": 9402,
      "name": "St. Halssius Priest's Hat",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 9402,
+       "name": "St. Halssius Priest's Hat",
+       "internal": "Volcker_Fabric_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000021,
      "name": "St. Halssius Priest Attire",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000021,
+       "name": "St. Halssius Priest Attire",
+       "internal": "Optionary_Monk_Cloth"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000325,
      "name": "St. Halssius Priest's Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000325,
+       "name": "St. Halssius Priest's Cloak",
+       "internal": "Optionary_Monk_cloak"
+      }
+     ]
     }
    ]
   },
@@ -2584,13 +4671,27 @@
      "slot": "head",
      "key": 1002484,
      "name": "Sungrove Standard Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002484,
+       "name": "Sungrove Standard Plate Helm",
+       "internal": "Valoric_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1001402,
      "name": "Sungrove Standard Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001402,
+       "name": "Sungrove Standard Plate Armor",
+       "internal": "Noble_Retainer_PlateArmor_Armor"
+      }
+     ]
     }
    ]
   },
@@ -2609,25 +4710,53 @@
      "slot": "body",
      "key": 113742,
      "name": "Sunset Reed Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 113742,
+       "name": "Sunset Reed Leather Armor",
+       "internal": "Reeddevil_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 124067,
      "name": "Sunset Reed Cloth Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 124067,
+       "name": "Sunset Reed Cloth Gloves",
+       "internal": "Reeddevil_Fabric_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 134056,
      "name": "Sunset Reed Cloth Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 134056,
+       "name": "Sunset Reed Cloth Boots",
+       "internal": "Reeddevil_Fabric_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000292,
      "name": "Sunset Reed Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000292,
+       "name": "Sunset Reed Leather Cloak",
+       "internal": "Reeddevil_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2646,25 +4775,53 @@
      "slot": "body",
      "key": 9103,
      "name": "Tariv Cloth Attire",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 9103,
+       "name": "Tariv Cloth Attire",
+       "internal": "Tarif_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 9302,
      "name": "Tariv Cloth Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 9302,
+       "name": "Tariv Cloth Gloves",
+       "internal": "Tarif_Fabric_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 9201,
      "name": "Tariv Cloth Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 9201,
+       "name": "Tariv Cloth Boots",
+       "internal": "Tarif_Fabric_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000275,
      "name": "Tariv Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000275,
+       "name": "Tariv Cloth Cloak",
+       "internal": "Tarif_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2683,13 +4840,27 @@
      "slot": "head",
      "key": 101111,
      "name": "The Faceless's Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101111,
+       "name": "The Faceless's Plate Helm",
+       "internal": "Arghai_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 111151,
      "name": "The Faceless's Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 111151,
+       "name": "The Faceless's Cloth Armor",
+       "internal": "Bayur_Fabric_Armor"
+      }
+     ]
     }
    ]
   },
@@ -2720,25 +4891,53 @@
      "slot": "body",
      "key": 114595,
      "name": "The Masked Liberator's Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 114595,
+       "name": "The Masked Liberator's Cloth Armor",
+       "internal": "Heisellen_Fabric_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 123240,
      "name": "The Masked Liberator's Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 123240,
+       "name": "The Masked Liberator's Leather Gloves",
+       "internal": "Volghan_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 133172,
      "name": "The Masked Liberator's Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 133172,
+       "name": "The Masked Liberator's Leather Boots",
+       "internal": "Stugrub_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000279,
      "name": "The Masked Liberator's Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000279,
+       "name": "The Masked Liberator's Cloth Cloak",
+       "internal": "Heisellen_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2757,13 +4956,27 @@
      "slot": "body",
      "key": 1002134,
      "name": "Tiorant Cloth Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002134,
+       "name": "Tiorant Cloth Armor",
+       "internal": "Taorant_Fabric_Armor_II"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1002135,
      "name": "Tiorant Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002135,
+       "name": "Tiorant Cloth Cloak",
+       "internal": "Taorant_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2782,7 +4995,14 @@
      "slot": "head",
      "key": 101003,
      "name": "Cassius Morten's Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101003,
+       "name": "Cassius Morten's Plate Helm",
+       "internal": "Dragon_Slayer_Ohyoon_PlateArmor_Helm"
+      }
+     ]
     }
    ]
   },
@@ -2801,25 +5021,53 @@
      "slot": "head",
      "key": 101138,
      "name": "Unyielding Warrior's Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 101138,
+       "name": "Unyielding Warrior's Plate Helm",
+       "internal": "Tarchet_PlateArmor_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 113696,
      "name": "Unyielding Warrior's Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 113696,
+       "name": "Unyielding Warrior's Plate Armor",
+       "internal": "Pitspec_PlateArmor_Armor"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 131001,
      "name": "Unyielding Warrior's Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 131001,
+       "name": "Unyielding Warrior's Plate Boots",
+       "internal": "Lekia_Plate_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000312,
      "name": "Unyielding Warrior's Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000312,
+       "name": "Unyielding Warrior's Plate Cloak",
+       "internal": "Pitspec_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2838,31 +5086,66 @@
      "slot": "head",
      "key": 1000992,
      "name": "Valortread Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000992,
+       "name": "Valortread Plate Helm",
+       "internal": "Oongka_PlateArmor_Helm_II"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000953,
      "name": "Valortread Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000953,
+       "name": "Valortread Plate Armor",
+       "internal": "Oongka_PlateArmor_Armor_II"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000985,
      "name": "Valortread Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000985,
+       "name": "Valortread Plate Gloves",
+       "internal": "Oongka_PlateArmor_Gloves_II"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000872,
      "name": "Valortread Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000872,
+       "name": "Valortread Plate Boots",
+       "internal": "Oongka_PlateArmor_Boots_II"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000981,
      "name": "Valortread Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000981,
+       "name": "Valortread Plate Cloak",
+       "internal": "Oongka_PlateArmor_Cloak_II"
+      }
+     ]
     }
    ]
   },
@@ -2881,25 +5164,53 @@
      "slot": "body",
      "key": 12219,
      "name": "Weasel Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12219,
+       "name": "Weasel Leather Armor",
+       "internal": "Weasel_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 12411,
      "name": "Weasel Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12411,
+       "name": "Weasel Leather Gloves",
+       "internal": "Weasel_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 12309,
      "name": "Weasel Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 12309,
+       "name": "Weasel Leather Boots",
+       "internal": "Weasel_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000295,
      "name": "Weasel Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000295,
+       "name": "Weasel Leather Cloak",
+       "internal": "Weasel_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2918,7 +5229,14 @@
      "slot": "body",
      "key": 1001413,
      "name": "Windmere Standard Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001413,
+       "name": "Windmere Standard Plate Armor",
+       "internal": "Noble_Retainer_PlateArmor_Armor_XI"
+      }
+     ]
     }
    ]
   },
@@ -2937,31 +5255,71 @@
      "slot": "head",
      "key": 1000200,
      "name": "Wolf Tracker Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000200,
+       "name": "Wolf Tracker Helm",
+       "internal": "Wolf_Pursuer_Fabric_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000179,
      "name": "Wolf Tracker Cloth Armor",
-     "variants": 1
+     "variants": 1,
+     "options": [
+      {
+       "key": 1000179,
+       "name": "Wolf Tracker Cloth Armor",
+       "internal": "Wolf_Pursuer_Fabric_Armor"
+      },
+      {
+       "key": 1002267,
+       "name": "Wolf Tracker Leather Armor",
+       "internal": "Wolf_Pursuer_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000180,
      "name": "Wolf Tracker Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000180,
+       "name": "Wolf Tracker Leather Gloves",
+       "internal": "Wolf_Pursuer_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000181,
      "name": "Wolf Tracker Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000181,
+       "name": "Wolf Tracker Leather Boots",
+       "internal": "Wolf_Pursuer_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1003286,
      "name": "Wolf Tracker Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1003286,
+       "name": "Wolf Tracker Cloth Cloak",
+       "internal": "Wolf_Pursuer_Fabric_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -2980,7 +5338,14 @@
      "slot": "head",
      "key": 104106,
      "name": "Wyvernflame Cloth Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 104106,
+       "name": "Wyvernflame Cloth Helm",
+       "internal": "Sirius_Barley_Fabric_Helm"
+      }
+     ]
     }
    ]
   },
@@ -2999,25 +5364,53 @@
      "slot": "body",
      "key": 1163044,
      "name": "Ynitium Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1163044,
+       "name": "Ynitium Leather Armor",
+       "internal": "Inytium_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1163045,
      "name": "Ynitium Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1163045,
+       "name": "Ynitium Leather Gloves",
+       "internal": "Inytium_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1163046,
      "name": "Ynitium Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1163046,
+       "name": "Ynitium Leather Boots",
+       "internal": "Inytium_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000296,
      "name": "Ynitium Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000296,
+       "name": "Ynitium Leather Cloak",
+       "internal": "Inytium_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -3036,13 +5429,27 @@
      "slot": "body",
      "key": 1002282,
      "name": "Yrkabel Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002282,
+       "name": "Yrkabel Leather Armor",
+       "internal": "Deer_King_Follower_Leather_Armor_VI"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1002742,
      "name": "Yrkabel Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002742,
+       "name": "Yrkabel Cloth Cloak",
+       "internal": "Deer_King_Follower_Cloak_I"
+      }
+     ]
     }
    ]
   },
@@ -3061,19 +5468,45 @@
      "slot": "head",
      "key": 2133137,
      "name": "Ziggurat Cloth Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2133137,
+       "name": "Ziggurat Cloth Helm",
+       "internal": "Ziggurat_Fabric_Helm"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000882,
      "name": "Ziggurat Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000882,
+       "name": "Ziggurat Leather Armor",
+       "internal": "Deshret_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 2133133,
-     "name": "Ziggurat Leather Gloves",
-     "variants": 1
+     "name": "Ziggurat Leather Gloves (Ziggurat_Leather_Gloves_I)",
+     "variants": 1,
+     "options": [
+      {
+       "key": 2133133,
+       "name": "Ziggurat Leather Gloves (Ziggurat_Leather_Gloves_I)",
+       "internal": "Ziggurat_Leather_Gloves_I"
+      },
+      {
+       "key": 2133139,
+       "name": "Ziggurat Leather Gloves",
+       "internal": "Ziggurat_Leather_Gloves_II"
+      }
+     ]
     }
    ]
   },
@@ -3092,31 +5525,66 @@
      "slot": "head",
      "key": 1000769,
      "name": "Autumn Banquet Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000769,
+       "name": "Autumn Banquet Plate Helm",
+       "internal": "Demian_PlateArmor_Helm_VI"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000008,
      "name": "Autumn Banquet Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000008,
+       "name": "Autumn Banquet Leather Armor",
+       "internal": "Demian_Leather_Armor_IV"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000107,
      "name": "Autumn Banquet Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000107,
+       "name": "Autumn Banquet Leather Gloves",
+       "internal": "Demian_Leather_Gloves_III"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000011,
      "name": "Autumn Banquet Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000011,
+       "name": "Autumn Banquet Leather Boots",
+       "internal": "DamianOnly_Leather_Boots_IV"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1001131,
      "name": "Autumn Banquet Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001131,
+       "name": "Autumn Banquet Cloth Cloak",
+       "internal": "Demian_Fabric_Cloak_III"
+      }
+     ]
     }
    ]
   },
@@ -3135,25 +5603,53 @@
      "slot": "body",
      "key": 1001559,
      "name": "Demenissian Uniform Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001559,
+       "name": "Demenissian Uniform Leather Armor",
+       "internal": "Damian_Demeniss_Uniform_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1002297,
      "name": "Demenissian Uniform Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1002297,
+       "name": "Demenissian Uniform Leather Gloves",
+       "internal": "Damian_Demeniss_Uniform_Leather_Gloves"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1001579,
      "name": "Demenissian Uniform Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001579,
+       "name": "Demenissian Uniform Leather Boots",
+       "internal": "Damian_Demeniss_Uniform_Leather_Boots"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1001560,
      "name": "Demenissian Uniform Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001560,
+       "name": "Demenissian Uniform Leather Cloak",
+       "internal": "Damian_Demeniss_Uniform_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -3172,25 +5668,53 @@
      "slot": "body",
      "key": 1000009,
      "name": "Leather Armor of Earth's Honor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000009,
+       "name": "Leather Armor of Earth's Honor",
+       "internal": "Demian_Leather_Armor"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000043,
      "name": "Leather Gloves of Earth's Honor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000043,
+       "name": "Leather Gloves of Earth's Honor",
+       "internal": "Demian_Leather_Gloves_II"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000031,
      "name": "Leather Boots of Earth's Honor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000031,
+       "name": "Leather Boots of Earth's Honor",
+       "internal": "DamianOnly_Leather_Boots_VII"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000679,
      "name": "Leather Cloak of Earth's Honor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000679,
+       "name": "Leather Cloak of Earth's Honor",
+       "internal": "Demian_Leather_Cloak"
+      }
+     ]
     }
    ]
   },
@@ -3209,31 +5733,66 @@
      "slot": "head",
      "key": 1000891,
      "name": "Elegant Carmine Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000891,
+       "name": "Elegant Carmine Plate Helm",
+       "internal": "Demian_PlateArmor_Helm_XIII"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000884,
      "name": "Elegant Carmine Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000884,
+       "name": "Elegant Carmine Leather Armor",
+       "internal": "Demian_Leather_Armor_V"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000886,
      "name": "Elegant Carmine Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000886,
+       "name": "Elegant Carmine Plate Gloves",
+       "internal": "Demian_PlateArmor_Gloves_VI"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000887,
      "name": "Elegant Carmine Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000887,
+       "name": "Elegant Carmine Plate Boots",
+       "internal": "Demian_Plate_Boots_IV"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000885,
      "name": "Elegant Carmine Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000885,
+       "name": "Elegant Carmine Leather Cloak",
+       "internal": "Demian_Leather_Cloak_I"
+      }
+     ]
     }
    ]
   },
@@ -3252,25 +5811,53 @@
      "slot": "head",
      "key": 1000842,
      "name": "Executioner of Darkness Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000842,
+       "name": "Executioner of Darkness Plate Helm",
+       "internal": "Demian_PlateArmor_Helm_XI"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 14300,
      "name": "Executioner of Darkness Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14300,
+       "name": "Executioner of Darkness Plate Gloves",
+       "internal": "Demian_PlateArmor_Gloves_V"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 14200,
      "name": "Executioner of Darkness Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14200,
+       "name": "Executioner of Darkness Plate Boots",
+       "internal": "Demian_Plate_Boots_V"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000686,
      "name": "Executioner of Darkness Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000686,
+       "name": "Executioner of Darkness Plate Cloak",
+       "internal": "Demian_PlateArmor_Cloak_V"
+      }
+     ]
     }
    ]
   },
@@ -3289,13 +5876,27 @@
      "slot": "hands",
      "key": 2600031,
      "name": "Fluttering Radiance Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2600031,
+       "name": "Fluttering Radiance Plate Gloves",
+       "internal": "Demian_PlateArmor_Gloves_I"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000111,
      "name": "Fluttering Radiance Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000111,
+       "name": "Fluttering Radiance Plate Boots",
+       "internal": "Demian_Pure_White_Plate_Boots_II"
+      }
+     ]
     }
    ]
   },
@@ -3314,25 +5915,53 @@
      "slot": "head",
      "key": 2600045,
      "name": "Goldlight Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2600045,
+       "name": "Goldlight Plate Helm",
+       "internal": "Demian_PlateArmor_Helm_IV"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 2600043,
      "name": "Goldlight Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2600043,
+       "name": "Goldlight Plate Gloves",
+       "internal": "Demian_PlateArmor_Gloves_IV"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 2600046,
      "name": "Goldlight Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2600046,
+       "name": "Goldlight Plate Boots",
+       "internal": "Demian_Plate_Boots_III"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000685,
      "name": "Goldlight Plate Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000685,
+       "name": "Goldlight Plate Cloak",
+       "internal": "Demian_PlateArmor_Cloak_III"
+      }
+     ]
     }
    ]
   },
@@ -3351,31 +5980,66 @@
      "slot": "head",
      "key": 1000805,
      "name": "Light of the Battlefield Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000805,
+       "name": "Light of the Battlefield Plate Helm",
+       "internal": "Demian_PlateArmor_Helm_VIII"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 2600012,
      "name": "Light of the Battlefield Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2600012,
+       "name": "Light of the Battlefield Plate Armor",
+       "internal": "Demian_PlateArmor_Armor_II"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 2600032,
      "name": "Light of the Battlefield Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2600032,
+       "name": "Light of the Battlefield Plate Gloves",
+       "internal": "Demian_PlateArmor_Gloves_II"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000255,
      "name": "Light of the Battlefield Plate Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000255,
+       "name": "Light of the Battlefield Plate Boots",
+       "internal": "Demian_Plate_Boots_VI"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000127,
      "name": "Light of the Battlefield Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000127,
+       "name": "Light of the Battlefield Cloth Cloak",
+       "internal": "Demian_Fabric_Cloak_I"
+      }
+     ]
     }
    ]
   },
@@ -3394,31 +6058,66 @@
      "slot": "head",
      "key": 1000802,
      "name": "Official Knight's Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000802,
+       "name": "Official Knight's Plate Helm",
+       "internal": "Demian_PlateArmor_Helm_VII"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000013,
      "name": "Official Knight's Plate Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000013,
+       "name": "Official Knight's Plate Armor",
+       "internal": "Demian_PlateArmor_Armor_VI"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000010,
      "name": "Official Knight's Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000010,
+       "name": "Official Knight's Leather Gloves",
+       "internal": "Demian_Leather_Gloves_I"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000012,
      "name": "Official Knight's Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000012,
+       "name": "Official Knight's Leather Boots",
+       "internal": "DamianOnly_Leather_Boots_V"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1001133,
      "name": "Official Knight's Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001133,
+       "name": "Official Knight's Cloth Cloak",
+       "internal": "Demian_Fabric_Cloak_IV"
+      }
+     ]
     }
    ]
   },
@@ -3437,31 +6136,66 @@
      "slot": "head",
      "key": 14400,
      "name": "Wanderer of Faith's Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 14400,
+       "name": "Wanderer of Faith's Plate Helm",
+       "internal": "Demian_PlateArmor_Helm_V"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 1000892,
      "name": "Wanderer of Faith Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000892,
+       "name": "Wanderer of Faith Leather Armor",
+       "internal": "Demian_Leather_Armor_VI"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 1000894,
      "name": "Wanderer of Faith Leather Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000894,
+       "name": "Wanderer of Faith Leather Gloves",
+       "internal": "Demian_Leather_Gloves_IV"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 1000895,
      "name": "Wanderer of Faith Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000895,
+       "name": "Wanderer of Faith Leather Boots",
+       "internal": "DamianOnly_Leather_Boots_VI"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1000893,
      "name": "Wanderer of Faith Leather Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1000893,
+       "name": "Wanderer of Faith Leather Cloak",
+       "internal": "Demian_Leather_Cloak_II"
+      }
+     ]
     }
    ]
   },
@@ -3480,31 +6214,66 @@
      "slot": "head",
      "key": 2600019,
      "name": "White Bloodwind Plate Helm",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2600019,
+       "name": "White Bloodwind Plate Helm",
+       "internal": "Demian_PlateArmor_Helm_I"
+      }
+     ]
     },
     {
      "slot": "body",
      "key": 113460,
      "name": "White Bloodwind Leather Armor",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 113460,
+       "name": "White Bloodwind Leather Armor",
+       "internal": "Demian_Leather_Armor_III"
+      }
+     ]
     },
     {
      "slot": "hands",
      "key": 2600030,
      "name": "White Bloodwind Plate Gloves",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2600030,
+       "name": "White Bloodwind Plate Gloves",
+       "internal": "Demian_PlateArmor_Gloves_III"
+      }
+     ]
     },
     {
      "slot": "feet",
      "key": 2600036,
      "name": "White Bloodwind Leather Boots",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 2600036,
+       "name": "White Bloodwind Leather Boots",
+       "internal": "DamianOnly_Leather_Boots_III"
+      }
+     ]
     },
     {
      "slot": "back",
      "key": 1001259,
      "name": "White Bloodwind Cloth Cloak",
-     "variants": 0
+     "variants": 0,
+     "options": [
+      {
+       "key": 1001259,
+       "name": "White Bloodwind Cloth Cloak",
+       "internal": "Demian_Fabric_Cloak_II"
+      }
+     ]
     }
    ]
   }

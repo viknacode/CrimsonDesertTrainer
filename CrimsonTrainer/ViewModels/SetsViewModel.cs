@@ -10,39 +10,112 @@ using CrimsonTrainer.Memory;
 
 namespace CrimsonTrainer.ViewModels;
 
-/// <summary>One piece of the selected set and whether the running game can spawn it.</summary>
-public sealed class SetPieceViewModel : ObservableObject
+/// <summary>One item that can fill a slot of the selected set.</summary>
+public sealed class SetPieceOptionViewModel : ObservableObject
 {
+    private readonly SetPieceViewModel _owner;
     private SpawnItem? _item;
-    private string _statusText = "";
+    private bool _isSelected;
 
-    internal SetPieceViewModel(ArmorPiece piece) => Piece = piece;
+    internal SetPieceOptionViewModel(SetPieceViewModel owner, ArmorPieceOption option)
+    {
+        _owner = owner;
+        Option = option;
+    }
 
-    public ArmorPiece Piece { get; }
-    public string SlotLabel => Piece.SlotLabel;
-    public string Name => Piece.Name;
-    public string KeyText => $"key {Piece.Key}";
-    public string VariantsText => Piece.Variants > 0 ? $"+{Piece.Variants} variant{(Piece.Variants == 1 ? "" : "s")}" : "";
+    public ArmorPieceOption Option { get; }
+    public string Name => Option.Name;
+    public string ToolTipText => $"{Option.Name}\nkey {Option.Key} · {Option.Internal}";
 
-    /// <summary>The runtime-table row for this piece; null while the table is not loaded or the key is gone.</summary>
+    /// <summary>The runtime-table row for this item; null while the table is not loaded or the key is gone.</summary>
     public SpawnItem? Item
     {
         get => _item;
         internal set
         {
-            if (!Set(ref _item, value)) return;
-            Raise(nameof(IsReady));
-            Raise(nameof(Icon));
+            if (Set(ref _item, value)) Raise(nameof(IsReady));
         }
     }
 
     public bool IsReady => _item is not null;
-    public ImageSource? Icon => _item?.Icon;
+
+    public bool IsSelected
+    {
+        get => _isSelected;
+        set
+        {
+            if (!Set(ref _isSelected, value)) return;
+            if (value) _owner.OnOptionSelected(this);
+        }
+    }
+
+    internal void SetSelectedSilently(bool value)
+    {
+        _isSelected = value;
+        Raise(nameof(IsSelected));
+    }
+}
+
+/// <summary>One slot of the selected set: which item fills it, whether it is included, and whether the game can spawn it.</summary>
+public sealed class SetPieceViewModel : ObservableObject
+{
+    private readonly Action _changed;
+    private SetPieceOptionViewModel _selected;
+    private bool _include = true;
+    private string _statusText = "";
+
+    internal SetPieceViewModel(ArmorPiece piece, Action changed)
+    {
+        Piece = piece;
+        _changed = changed;
+        Options = piece.Options.Select(o => new SetPieceOptionViewModel(this, o)).ToList();
+        _selected = Options[0];
+        _selected.SetSelectedSilently(true);
+    }
+
+    public ArmorPiece Piece { get; }
+    public IReadOnlyList<SetPieceOptionViewModel> Options { get; }
+    public bool HasVariants => Options.Count > 1;
+    public string SlotLabel => Piece.SlotLabel;
+
+    /// <summary>The variant that will be spawned.</summary>
+    public SetPieceOptionViewModel Selected => _selected;
+    public string Name => _selected.Name;
+    public SpawnItem? Item => _selected.Item;
+    public bool IsReady => _selected.IsReady;
+
+    /// <summary>Unticked pieces are skipped by Spawn (e.g. one that the character cannot equip).</summary>
+    public bool Include
+    {
+        get => _include;
+        set
+        {
+            if (Set(ref _include, value)) _changed();
+        }
+    }
 
     public string StatusText
     {
         get => _statusText;
         internal set => Set(ref _statusText, value);
+    }
+
+    internal void OnOptionSelected(SetPieceOptionViewModel option)
+    {
+        if (ReferenceEquals(option, _selected)) return;
+        _selected.SetSelectedSilently(false);
+        _selected = option;
+        Raise(nameof(Selected));
+        Raise(nameof(Name));
+        Raise(nameof(Item));
+        Raise(nameof(IsReady));
+        _changed();
+    }
+
+    internal void RaiseResolved()
+    {
+        Raise(nameof(Item));
+        Raise(nameof(IsReady));
     }
 }
 
@@ -58,10 +131,10 @@ public sealed class ArmorSetViewModel : ObservableObject
 {
     private static readonly Dictionary<string, BitmapImage> ImageCache = new();
 
-    internal ArmorSetViewModel(ArmorSet set)
+    internal ArmorSetViewModel(ArmorSet set, Action changed)
     {
         Set = set;
-        Pieces = set.Pieces.Select(p => new SetPieceViewModel(p)).ToList();
+        Pieces = set.Pieces.Select(p => new SetPieceViewModel(p, changed)).ToList();
     }
 
     public ArmorSet Set { get; }
@@ -147,7 +220,7 @@ public sealed class SetsViewModel : ObservableObject
         _host = host;
         _spawner = spawner;
         _scan = scan;
-        _all = catalog.Sets.Select(s => new ArmorSetViewModel(s)).ToList();
+        _all = catalog.Sets.Select(s => new ArmorSetViewModel(s, OnPiecesChanged)).ToList();
         SourceUrl = catalog.Source;
         SpawnCommand = new RelayCommand(() => _ = SpawnAsync(), () => CanSpawn);
         scan.Scanned += () => Replan(force: true);
@@ -254,9 +327,16 @@ public sealed class SetsViewModel : ObservableObject
         if (keep is not null && !Sets.Contains(keep)) Selected = null;
     }
 
-    private static List<SetPieceViewModel> ReadyPieces(ArmorSetViewModel set) => set.Pieces.Where(p => p.IsReady).ToList();
+    private static List<SetPieceViewModel> ReadyPieces(ArmorSetViewModel set) => set.Pieces.Where(p => p.Include && p.IsReady).ToList();
 
-    /// <summary>Maps every piece of the selected set to a row of the game's item table.</summary>
+    /// <summary>A piece was ticked / unticked or its variant changed.</summary>
+    private void OnPiecesChanged()
+    {
+        UpdatePieceStatus();
+        Replan(force: true);
+    }
+
+    /// <summary>Maps every variant of every piece of the selected set to a row of the game's item table.</summary>
     private void ResolvePieces()
     {
         _tableVersion = _spawner.TableVersion;
@@ -264,13 +344,23 @@ public sealed class SetsViewModel : ObservableObject
         if (set is null) return;
         foreach (var piece in set.Pieces)
         {
-            var item = _game is null || !_spawner.IsTableLoaded ? null : _spawner.LookupKey(piece.Piece.Key);
-            piece.Item = item;
+            foreach (var option in piece.Options)
+                option.Item = _game is null || !_spawner.IsTableLoaded ? null : _spawner.LookupKey(option.Option.Key);
+            piece.RaiseResolved();
+        }
+        UpdatePieceStatus();
+    }
+
+    private void UpdatePieceStatus()
+    {
+        var set = _selected;
+        if (set is null) return;
+        foreach (var piece in set.Pieces)
             piece.StatusText = _game is null ? "waiting for the game"
                 : !_spawner.IsTableLoaded ? "item table not loaded yet"
-                : item is null ? "not in this game version"
-                : $"runtime #{item.Index}";
-        }
+                : !piece.Include ? "skipped"
+                : piece.Item is null ? "not in this game version"
+                : $"runtime #{piece.Item.Index}";
     }
 
     /// <summary>Picks the entries that the pieces will overwrite and describes them.</summary>
@@ -318,7 +408,7 @@ public sealed class SetsViewModel : ObservableObject
             var (entry, item) = candidates[i];
             string what = item?.Name ?? $"Unknown #{entry.RuntimeIndex}";
             string count = entry.Count == 1 ? "" : $" ×{entry.Count:N0}";
-            lines.Add($"slot #{entry.Slot}  {what}{count}  →  {ready[i].Name}");
+            lines.Add($"#{entry.Slot} {what}{count} → {ready[i].Name}");
         }
         PlanText = string.Join("\n", lines);
         int missing = set.Pieces.Count - ready.Count;
