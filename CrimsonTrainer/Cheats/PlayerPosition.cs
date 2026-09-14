@@ -9,16 +9,18 @@ public readonly record struct Vector3F(float X, float Y, float Z)
 }
 
 /// <summary>
-/// The player's world position (patch 2.01.00). The game keeps the same X/Y/Z triple in
-/// several places: three hang off the actor the "Current Player Pointers" hook captures
-/// (the client-side actor) and a few more live in the server-side actor, which is what the
-/// simulation obeys. The client copies are reached by pointer chains; the rest are found by
-/// scanning the heap for the exact same triple and cached until they stop matching.
+/// The player's world position (patch 2.01.00). The copy the simulation obeys is the character
+/// controller's transform (position at +90/+94/+98), captured by the
+/// <see cref="TableScripts.PlayerTransform"/> hook the way mul0's table did it; that is what
+/// teleports write. The game mirrors the triple in several other places — three hang off the
+/// actor the "Current Player Pointers" hook captures:
 /// <code>
 ///   A  [[[cplayer+68]+48]+18]+44
 ///   B  [[cplayer+168]+7A0]+3BC
 ///   C  [[[cplayer+168]+658]+60]+F8
 /// </code>
+/// and those are written too (plus, when the transform is not captured yet, every other place
+/// in the heap holding the same triple, found by scanning and cached).
 /// </summary>
 internal sealed class PlayerPosition
 {
@@ -31,17 +33,27 @@ internal sealed class PlayerPosition
 
     private const long HeapStart = 0x4_0000_0000;
 
+    private const int TransformPosition = 0x90;
+
     private readonly GameProcess _game;
     private readonly Injection _pointers;
+    private readonly Injection _transform;
     private readonly List<nint> _otherCopies = new();
 
-    public PlayerPosition(GameProcess game, Injection playerPointers)
+    public PlayerPosition(GameProcess game, Injection playerPointers, Injection playerTransform)
     {
         _game = game;
         _pointers = playerPointers;
+        _transform = playerTransform;
     }
 
     public nint Actor => _pointers.TryReadVar("cplayer", out long actor) ? (nint)actor : 0;
+
+    /// <summary>The controller transform captured by the hook (0 until the game ran the hooked code).</summary>
+    public nint Transform => _transform.TryReadVar("pCoords", out long t) ? (nint)t : 0;
+
+    /// <summary>Address of the authoritative X/Y/Z, or 0 while the transform is not captured.</summary>
+    public nint TransformPositionAddress => Transform is var t and not 0 ? t + TransformPosition : 0;
 
     /// <summary>How many copies outside the actor chains were written last time.</summary>
     public int OtherCopies => _otherCopies.Count;
@@ -62,6 +74,8 @@ internal sealed class PlayerPosition
 
     public Vector3F? Read()
     {
+        nint transform = TransformPositionAddress;
+        if (transform != 0 && ReadAt(transform) is { } fromTransform) return fromTransform;
         var copies = Resolve();
         if (copies.Count == 0) return null;
         return ReadAt(copies[0]);
@@ -81,11 +95,14 @@ internal sealed class PlayerPosition
     /// </summary>
     public int Write(Vector3F v)
     {
+        nint transform = TransformPositionAddress;
         var chainCopies = Resolve();
-        if (chainCopies.Count == 0) return 0;
-        var current = ReadAt(chainCopies[0]);
-        var targets = new List<nint>(chainCopies);
-        if (current is { } now) targets.AddRange(FindOtherCopies(now, chainCopies));
+        if (transform == 0 && chainCopies.Count == 0) return 0;
+        var targets = new List<nint>();
+        if (transform != 0) targets.Add(transform);
+        targets.AddRange(chainCopies);
+        // Without the transform, fall back to every heap copy of the current triple (the old way).
+        if (transform == 0 && ReadAt(chainCopies[0]) is { } now) targets.AddRange(FindOtherCopies(now, chainCopies));
 
         var bytes = new byte[12];
         BitConverter.TryWriteBytes(bytes.AsSpan(0), v.X);

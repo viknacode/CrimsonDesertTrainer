@@ -940,7 +940,7 @@
                         <StackPanel Visibility="{Binding SelectedSection.Key, Converter={StaticResource EqualsToVisibility}, ConverterParameter=teleport}">
                             <Border Style="{StaticResource InfoBanner}" Margin="0,0,0,12">
                                 <TextBlock TextWrapping="Wrap" Foreground="{StaticResource Info}" FontSize="12.5"
-                                           Text="Needs Player tracking (turned on automatically). The position is X / Y / Z in world units; the game pauses whenever its window loses focus, so use the hotkeys from inside the game. Teleporting into the ground or the air can hurt — keep Godmode on while trying places."/>
+                                           Text="Uses the Player transform hook (turned on automatically): it captures the character controller’s own position — the one the simulation obeys — the way mul0’s table does; the pointer-chain copies are written too. The position is X / Y / Z in world units; the game pauses whenever its window loses focus, so use the hotkeys from inside the game (bind them to key combinations, not plain letters). Teleporting into the ground or the air can hurt — keep Godmode on while trying places."/>
                             </Border>
 
                             <!-- Position + go-to -->

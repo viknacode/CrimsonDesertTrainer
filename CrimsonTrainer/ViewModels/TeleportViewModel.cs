@@ -38,6 +38,7 @@ public sealed class TeleportViewModel : ObservableObject
 {
     private readonly ITrainerHost _host;
     private readonly ToggleCheatViewModel _tracking;
+    private readonly ToggleCheatViewModel _transform;
     private readonly AppSettings _settings;
     private PlayerPosition? _position;
     private Vector3F? _last;
@@ -48,10 +49,11 @@ public sealed class TeleportViewModel : ObservableObject
     private int _tick;
     private bool _isActive;
 
-    internal TeleportViewModel(ITrainerHost host, ToggleCheatViewModel tracking, AppSettings settings)
+    internal TeleportViewModel(ITrainerHost host, ToggleCheatViewModel tracking, ToggleCheatViewModel transform, AppSettings settings)
     {
         _host = host;
         _tracking = tracking;
+        _transform = transform;
         _settings = settings;
         foreach (var w in settings.Waypoints) Waypoints.Add(new WaypointViewModel(w.Name, new Vector3F(w.X, w.Y, w.Z)));
 
@@ -74,6 +76,10 @@ public sealed class TeleportViewModel : ObservableObject
         {
             if (e.PropertyName is nameof(ToggleCheatViewModel.IsOn) or nameof(ToggleCheatViewModel.IsAvailable)) { Raise(nameof(IsReady)); Raise(nameof(CanTrack)); RelayCommand.Requery(); }
         };
+        transform.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName is nameof(ToggleCheatViewModel.IsOn) or nameof(ToggleCheatViewModel.IsAvailable)) { Raise(nameof(IsReady)); Raise(nameof(CanTrack)); RelayCommand.Requery(); }
+        };
     }
 
     public ObservableCollection<WaypointViewModel> Waypoints { get; } = new();
@@ -84,22 +90,28 @@ public sealed class TeleportViewModel : ObservableObject
     public ICommand GoToWaypointCommand { get; }
     public ICommand DeleteWaypointCommand { get; }
 
-    /// <summary>The Teleport section is on screen: make sure Player tracking is on so the position resolves.</summary>
+    /// <summary>The Teleport section is on screen: make sure the hooks the position needs are on.</summary>
     public bool IsActive
     {
         get => _isActive;
         set
         {
-            if (Set(ref _isActive, value) && value && _position is not null && !_tracking.IsOn && _tracking.IsAvailable)
+            if (!Set(ref _isActive, value) || !value || _position is null) return;
+            if (!_transform.IsOn && _transform.IsAvailable)
             {
-                _host.Log("Teleport: turning Player tracking on (the position hangs off the player pointer).", LogLevel.Info);
+                _host.Log("Teleport: turning the Player transform hook on (it captures the position the game obeys).", LogLevel.Info);
+                _ = _transform.EnsureOnAsync();
+            }
+            if (!_tracking.IsOn && _tracking.IsAvailable)
+            {
+                _host.Log("Teleport: turning Player tracking on (the mirrored position copies hang off the player pointer).", LogLevel.Info);
                 _ = _tracking.EnsureOnAsync();
             }
         }
     }
 
-    public bool CanTrack => _tracking.IsAvailable;
-    public bool IsReady => _position is not null && _tracking.IsOn;
+    public bool CanTrack => _tracking.IsAvailable || _transform.IsAvailable;
+    public bool IsReady => _position is not null && (_transform.IsOn || _tracking.IsOn);
 
     public string PositionText
     {
@@ -140,10 +152,10 @@ public sealed class TeleportViewModel : ObservableObject
     internal void Tick()
     {
         if (_position is null) return;
-        if (!_tracking.IsOn)
+        if (!_transform.IsOn && !_tracking.IsOn)
         {
             if (_last is not null) { _last = null; RelayCommand.Requery(); }
-            PositionText = _tracking.IsAvailable ? "Player tracking is off — turn it on (Player section)" : "Player tracking not available in this game version";
+            PositionText = CanTrack ? "Hooks are off — open this section again or turn on Player transform (Player section)" : "Position hooks not available in this game version";
             return;
         }
         if (++_tick % 2 != 0) return;   // 2-3 reads per second are plenty
@@ -152,15 +164,19 @@ public sealed class TeleportViewModel : ObservableObject
         catch (Exception) { now = null; }
         bool had = _last is not null;
         _last = now;
-        PositionText = now?.ToString() ?? "waiting for the player pointer — move a little in the game (it pauses while unfocused)";
+        PositionText = now is null
+            ? "waiting for the game to touch the player — move a little (it pauses while unfocused)"
+            : _position.Transform != 0 ? now.ToString() : $"{now} (mirror copy — transform not captured yet)";
         if (had != (now is not null)) RelayCommand.Requery();
     }
 
     private async Task<bool> EnsureTrackingAsync()
     {
-        if (_tracking.IsOn) return true;
-        if (!_tracking.IsAvailable) { _host.Log("Teleport needs Player tracking, which is not available in this game version.", LogLevel.Error); return false; }
-        return await _tracking.EnsureOnAsync();
+        bool any = false;
+        if (_transform.IsAvailable) any |= _transform.IsOn || await _transform.EnsureOnAsync();
+        if (_tracking.IsAvailable) any |= _tracking.IsOn || await _tracking.EnsureOnAsync();
+        if (!any) _host.Log("Teleport needs the Player transform hook or Player tracking, neither is available in this game version.", LogLevel.Error);
+        return any;
     }
 
     private async Task NudgeAsync(Vector3F delta)
@@ -171,7 +187,7 @@ public sealed class TeleportViewModel : ObservableObject
         var target = new Vector3F(now.Value.X + delta.X, now.Value.Y + delta.Y, now.Value.Z + delta.Z);
         int written = 0;
         await _host.RunAsync(() => written = _position.Write(target), null);
-        _host.Log($"Nudge {delta}: {now} → {target} ({written} copies written, {_position.OtherCopies} of them outside the actor). Did the character move?", LogLevel.Info);
+        _host.Log($"Nudge {delta}: {now} → {target} ({written} copies written{(_position.Transform != 0 ? ", transform included" : $", {_position.OtherCopies} heap copies, transform not captured")}). Did the character move?", LogLevel.Info);
     }
 
     private async Task TeleportAsync(Vector3F target, string what)
@@ -180,7 +196,7 @@ public sealed class TeleportViewModel : ObservableObject
         var from = _position.Read();
         int written = 0;
         bool ok = await _host.RunAsync(() => written = _position.Write(target), null);
-        if (ok) _host.Log(written == 0 ? "Teleport: the position could not be resolved — move a little and try again." : $"Teleport → {what} {target} (from {from?.ToString() ?? "?"}).", written == 0 ? LogLevel.Warning : LogLevel.Success);
+        if (ok) _host.Log(written == 0 ? "Teleport: the position could not be resolved — move a little and try again." : $"Teleport → {what} {target} (from {from?.ToString() ?? "?"}, {written} copies{(_position.Transform != 0 ? ", transform included" : ", transform not captured yet")}).", written == 0 ? LogLevel.Warning : LogLevel.Success);
     }
 
     private static bool TryParse(string s, out float v) =>

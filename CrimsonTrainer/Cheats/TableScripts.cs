@@ -524,6 +524,35 @@ internal static class TableScripts
     }
 
     // ------------------------------------------------------------------
+    // Player transform (mul0's "getCoords")  (freejumpmem+1B0)
+    //   1.00.04: movups xmm8,[rax+90] in a per-frame player function reached through
+    //            [[[this+18]+140]+248]; rax kept as pCoords, teleport = write X/Y/Z at +90/+94/+98.
+    //   2.01.00: same function, transform now at +2B8 (unique):
+    //     mov rax,[rbx+18] / mov rcx,[rax+140] / mov rax,[rcx+2B8] / vxorps / vinsertps
+    //     vmulps xmm1,xmm0,[rax+180] / vmovups xmm0,[rax+90] <- hook (+28, 8 bytes)
+    //   This is the transform the character controller integrates (see MoveSpeed), i.e. the copy
+    //   the simulation actually obeys — the pointer-chain copies only mirror it.
+    // ------------------------------------------------------------------
+    public static Injection PlayerTransform(GameProcess game)
+    {
+        var hook = new HookSite
+        {
+            Name = "PlayerTransform",
+            Pattern = P("48 8B 43 18 48 8B 88 40 01 00 00 48 8B 81 B8 02 00 00 C5 F8 57 C0 C4 E3 79 21 05 ?? ?? ?? ?? 10 C5 F8 59 88 80 01 00 00 C5 F8 10 80 90 00 00 00"),
+            Offset = 0x28, Length = 8, Slot = 0x1B0, Entry = "newmem", Expect = P("C5 F8 10 80 90 00 00 00"),
+        };
+        return new Injection(game, "Player transform", new[] { hook }, (b, _) =>
+        {
+            var a = b.Asm;
+            var pCoords = b.Var("pCoords");
+            b.Entry("newmem");
+            a.mov(__qword_ptr[pCoords], rax);           // transform: position at +90/+94/+98
+            a.vmovups(xmm0, __xmmword_ptr[rax + 0x90]); // original
+            b.Return(hook);
+        });
+    }
+
+    // ------------------------------------------------------------------
     // Durability  (freejumpmem+B0 / +F0)
     //   table:   mov [rbp+40],ax / jns +0B
     //   2.01.00: movzx eax,di / add ax,r12w / mov [rsi+40],ax / jns +04   (only such site in the binary)

@@ -68,7 +68,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
             _ => throw new InvalidOperationException($"Unknown cheat type {c.GetType().Name}"),
         }).ToList();
 
-        PlayerCheats = Cheats.Where(c => c.Section == CheatSection.Player && c.Id != CheatCatalog.PlayerPointersId && c.Id != CheatCatalog.LevelRecordId).ToList();
+        PlayerCheats = Cheats.Where(c => c.Section == CheatSection.Player && c.Id is not (CheatCatalog.PlayerPointersId or CheatCatalog.LevelRecordId or CheatCatalog.PlayerTransformId)).ToList();
         InventoryCheats = Cheats.Where(c => c.Section == CheatSection.Inventory && c.Id != CheatCatalog.ItemSwapperId).ToList();
         WorldCheats = Cheats.Where(c => c.Section == CheatSection.World).ToList();
 
@@ -121,7 +121,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
         {
             if (e.PropertyName == nameof(SpawnerViewModel.IsTableLoaded)) PushMoneyIndex();
         };
-        Teleport = new TeleportViewModel(this, Toggle(CheatCatalog.PlayerPointersId), _settings);
+        Teleport = new TeleportViewModel(this, Toggle(CheatCatalog.PlayerPointersId), Toggle(CheatCatalog.PlayerTransformId), _settings);
         InventorySlots.PropertyChanged += (_, e) =>
         {
             if (e.PropertyName == nameof(InventorySlotsViewModel.Keep)) { Raise(nameof(ActiveCount)); Raise(nameof(ActiveText)); }

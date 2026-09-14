@@ -26,6 +26,7 @@ internal sealed class CheatCatalog
     public const string LevelRecordId = "level_record";
     public const string MoveSpeedId = "move_speed";
     public const string JumpHeightId = "jump_height";
+    public const string PlayerTransformId = "player_transform";
 
     private const string Rebased = "AOB re-located for patch 2.01.00 by scanning the live game (the table's original no longer exists).";
     private const string Unverified = " The new site could not be verified in-game yet — if it does nothing or misbehaves, turn it off and report it.";
@@ -43,6 +44,7 @@ internal sealed class CheatCatalog
     {
         var playerPointers = TableScripts.PlayerPointers(game);
         var levelRecord = TableScripts.LevelRecord(game);
+        var playerTransform = TableScripts.PlayerTransform(game);
 
         // One hook shared by four inventory features (see TableScripts.InventoryCount).
         var inventory = new SharedInjection(TableScripts.InventoryCount(game));
@@ -80,6 +82,12 @@ internal sealed class CheatCatalog
                 Id = MaxTrustNewId, Name = "Max trust — shop NPCs & new acquaintances", Section = CheatSection.Player,
                 Description = "The other half of the trust hook: when the game creates a trust record for someone you had no record with yet (shop NPCs, first greeting), it is created with 100 trust. mul0's \"Max Trust Shop NPC\", rebased to the two new-record paths of the 2.01.00 upsert." + Unverified,
                 HowTo = "Talk to, greet or trade with an NPC you have never interacted with.",
+                Credits = "mul0",
+            },
+            new ToggleCheat(playerTransform)
+            {
+                Id = PlayerTransformId, Name = "Player transform (teleport)", Section = CheatSection.Player,
+                Description = "Captures the character controller's transform — the position the simulation obeys. Teleport turns it on by itself. mul0's \"getCoords\", rebased to 2.01.00.",
                 Credits = "mul0",
             },
             new ToggleCheat(levelRecord)
@@ -197,7 +205,7 @@ internal sealed class CheatCatalog
         };
 
         PlayerStats = new PlayerStats(game, playerPointers);
-        PlayerPosition = new PlayerPosition(game, playerPointers);
+        PlayerPosition = new PlayerPosition(game, playerPointers, playerTransform);
         LevelRecord = new LevelRecord(game, levelRecord);
         BodyScales = new[] { BodyScaleTarget.Kliff(), BodyScaleTarget.Damiane() };
     }

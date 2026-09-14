@@ -32,6 +32,7 @@ foram pesquisados na memória do jogo em execução (padrões relaxados + desmon
 | Inventory | Inventory slots (capacidade "239 / 240") | novo: acha os containers do inventário principal na heap (~2 s) e grava a capacidade (50–1.400; padrão 1.000) nas duas cópias que o jogo mantém; *Keep* reaplica a cada segundo. Ver "Slots do inventário" abaixo |
 | Items | Grade do inventário + spawner | a tela mostra o inventário como grade de slots lida do jogo a cada 2 s (ícone do item vindo do crimsondb.gg — baixado uma vez e guardado em `%LocalAppData%CrimsonTrainericons` —, letra colorida por categoria quando não há ícone, badge com a contagem, abas por container, filtro); clicar num slot e escolher um item da lista grava índice runtime + contagem nas duas cópias do slot ("Put in slot") ou só a contagem ("Set count only"). Lista lida da **tabela runtime do jogo** (`[[CrimsonDesert.exe+6C2E2E8]+28]`, 6.813 itens); o slot guarda o **índice runtime**, não o itemKey. O fluxo antigo por hook (troca no próximo uso/drop) fica em "advanced" |
 | Sets | Galeria de conjuntos de armadura | novo: os 103 conjuntos do catálogo do vulkk.com (foto, classe, resistência, região, personagem) com as peças resolvidas na lista de itens (99 conjuntos com peça, 362 peças); clicar num set e em *Spawn set* grava cada peça por cima de um item do inventário principal. Ver "Conjuntos de armadura" abaixo |
+| Teleport | Posição, ir para coordenadas, waypoints, nudge | reescrito em cima do "getCoords" do mul0: o hook *Player transform* captura o transform do controlador (`[[[ator+18]+140]+2B8]`, posição em +90/+94/+98) — a cópia que a simulação obedece; as cópias das cadeias de ponteiro são gravadas junto. Antes só as cópias-espelho eram gravadas, por isso não teleportava. **Não verificado in-game** |
 | World | Time scale | rebaseado (`CD0/CD4` → `CE0/CE4`, código ao redor idêntico) |
 | World | Instant horse capture | rebaseado no integrador do medidor (progresso += tempo × taxa, min em +18 / máx em +1C como na tabela), **não verificado in-game** |
 | World | Wild West archery | rebaseado (`mov eax,[rsi+10] / cmp [rsi+14],eax / setae dl`, match único; mesma semântica alvo/pontuação), **não verificado in-game** |
@@ -93,8 +94,8 @@ não tinha foi rebaseado para o 2.01.00 em [Cheats/TableScripts.cs](Cheats/Table
 (`MaxTrustNewRecords`, `LevelRecord`, `MoveSpeed`, `JumpHeight`) e no modo `moneyMode` do hook
 unificado. Sites que ficam a um deslocamento fixo de uma âncora (os dois caminhos do trust) levam
 `HookSite.Expect` com os bytes esperados, para uma mudança de layout ser recusada em vez de patchar a
-instrução errada. O "Teleport" e o "Max Trust" dela já existiam aqui (seção Teleport / Max trust — people
-& pets).
+instrução errada. O "Max Trust" dela já existia aqui (Max trust — people & pets); o "Teleport" dela
+virou a base do nosso (hook `PlayerTransform`, ver a linha Teleport da tabela).
 
 ### Conjuntos de armadura (Sets)
 
