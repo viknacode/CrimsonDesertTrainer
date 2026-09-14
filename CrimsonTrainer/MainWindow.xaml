@@ -740,6 +740,7 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Style="{StaticResource Body}" VerticalAlignment="Center" Foreground="{StaticResource Text}"
                                                    Visibility="{Binding Spawner.HasSelection, Converter={StaticResource BoolToVisibility}}">
@@ -748,11 +749,13 @@
                                             <Run Text=" · "/><Run Text="{Binding Spawner.Selected.IndexText, Mode=OneWay}" FontFamily="{StaticResource MonoFont}"/>
                                             <Run Text=" · max stack "/><Run Text="{Binding Spawner.Selected.StackText, Mode=OneWay}" FontFamily="{StaticResource MonoFont}"/>
                                         </TextBlock>
-                                        <Button Grid.Column="1" Style="{StaticResource PrimaryButton}" Content="{Binding InventoryGrid.PutText}" Margin="10,0,0,0"
+                                        <Button Grid.Column="1" Style="{StaticResource PrimaryButton}" Content="{Binding InventoryGrid.AddText}" Margin="10,0,0,0"
+                                                Command="{Binding InventoryGrid.AddCommand}" AutomationProperties.AutomationId="AddButton" ToolTip="Creates a new entry in the first free slot of this container — nothing is replaced."/>
+                                        <Button Grid.Column="2" Style="{StaticResource SmallButton}" Content="{Binding InventoryGrid.PutText}" Margin="8,0,0,0" VerticalAlignment="Center"
                                                 Command="{Binding InventoryGrid.PutCommand}" AutomationProperties.AutomationId="PutButton" ToolTip="Replaces the item in the target slot with the selected one, using the count above."/>
                                     </Grid>
                                     <TextBlock Style="{StaticResource Small}" Margin="0,8,0,0"
-                                               Text="Both copies the game keeps of the slot are written. The count goes in as-is (the game may clamp it to the item's max stack). Close and reopen the inventory to see the change."/>
+                                               Text="Add creates a brand-new item in a free slot (like the older trainers did); Put rebuilds the selected slot as a new item. Both copies the game keeps are written and every spawned item gets a fresh item id, which is what makes it equippable. Close and reopen the inventory to see the change."/>
                                 </StackPanel>
                             </Border>
 

@@ -10,8 +10,12 @@ public sealed record ItemInfo(
     [property: JsonPropertyName("name")] string Name,
     [property: JsonPropertyName("category")] string Category,
     [property: JsonPropertyName("internalName")] string InternalName,
-    [property: JsonPropertyName("maxStack")] long MaxStack)
+    [property: JsonPropertyName("maxStack")] long MaxStack,
+    [property: JsonPropertyName("derived")] bool Derived = false)
 {
+    /// <summary>The display name is only derived from the internal name (item added after the name list was made).</summary>
+    public bool IsDerived => Derived;
+
     public string IdText => Id.ToString();
     public string StackText => MaxStack >= 1_000_000_000 ? "∞" : MaxStack.ToString("N0");
 }

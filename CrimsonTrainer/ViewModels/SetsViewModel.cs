@@ -205,6 +205,7 @@ public sealed class SetsViewModel : ObservableObject
     private readonly InventorySlotsViewModel _scan;
     private readonly List<ArmorSetViewModel> _all;
     private GameProcess? _game;
+    private InventoryWriter? _writer;
     private ArmorSetViewModel? _selected;
     private string _searchText = "";
     private SetCharacterFilter _characterFilter = SetCharacterFilter.All;
@@ -214,6 +215,7 @@ public sealed class SetsViewModel : ObservableObject
     private int _tableVersion = -1;
     private DateTime _lastPlan = DateTime.MinValue;
     private List<(InventoryEntry Entry, SpawnItem? Item)> _targets = new();
+    private int _freeSlots;
 
     internal SetsViewModel(ITrainerHost host, ArmorSetCatalog catalog, SpawnerViewModel spawner, InventorySlotsViewModel scan)
     {
@@ -296,12 +298,14 @@ public sealed class SetsViewModel : ObservableObject
         private set => Set(ref _spawnHint, value);
     }
 
-    public bool CanSpawn => _game is not null && _selected is not null && ReadyPieces(_selected).Count > 0 && _targets.Count >= ReadyPieces(_selected).Count;
+    public bool CanSpawn => _game is not null && _selected is not null && ReadyPieces(_selected).Count > 0 && _freeSlots + _targets.Count >= ReadyPieces(_selected).Count;
 
     internal void Bind(GameProcess? game)
     {
         _game = game;
+        _writer = game is null ? null : new InventoryWriter(game);
         _targets.Clear();
+        _freeSlots = 0;
         ResolvePieces();
         Replan(force: true);
         RelayCommand.Requery();
@@ -380,40 +384,53 @@ public sealed class SetsViewModel : ObservableObject
         if (containers.Count == 0) { Fail("Main inventory not found yet — load into the world, then press Find in the Inventory section."); return; }
 
         List<InventoryEntry> entries;
-        try { entries = InventoryScanner.ReadEntries(game, containers[0]); }
+        int freeSlots;
+        try
+        {
+            entries = InventoryScanner.ReadEntries(game, containers[0]);
+            var occupied = entries.Select(e => e.Slot).ToHashSet();
+            freeSlots = Enumerable.Range(0, Math.Min(containers[0].Capacity, containers[0].PoolEntries)).Count(s => !occupied.Contains(s));
+        }
         catch (Win32Exception) { Fail("Could not read the inventory."); return; }
 
+        // Free slots take the pieces first; only what does not fit replaces the most recently picked-up items.
+        int toReplace = Math.Max(0, ready.Count - freeSlots);
         var pieceIndices = ready.Select(p => p.Item!.Index).ToHashSet();
         var candidates = entries
             .Where(e => !pieceIndices.Contains(e.RuntimeIndex))                  // never overwrite a piece of this set
             .OrderByDescending(e => e.Created).ThenByDescending(e => e.Slot)     // most recently obtained first
-            .Take(ready.Count)
+            .Take(toReplace)
             .Select(e => (Entry: e, Item: _spawner.Lookup(e.RuntimeIndex)))
             .ToList();
 
-        bool changed = force || candidates.Count != _targets.Count || candidates.Zip(_targets).Any(z => z.First.Entry.Slot != z.Second.Entry.Slot || z.First.Entry.RuntimeIndex != z.Second.Entry.RuntimeIndex || z.First.Entry.Count != z.Second.Entry.Count);
+        bool changed = force || freeSlots != _freeSlots || candidates.Count != _targets.Count || candidates.Zip(_targets).Any(z => z.First.Entry.Slot != z.Second.Entry.Slot || z.First.Entry.RuntimeIndex != z.Second.Entry.RuntimeIndex || z.First.Entry.Count != z.Second.Entry.Count);
         _targets = candidates;
+        _freeSlots = freeSlots;
         if (!changed) return;
 
-        if (candidates.Count < ready.Count)
+        if (candidates.Count < toReplace)
         {
             PlanText = "";
-            Fail($"The set needs {ready.Count} items to replace, but the inventory only has {candidates.Count} that can be used. Pick up some junk first.");
+            Fail($"The set needs {ready.Count} slots: {freeSlots} are free and only {candidates.Count} items could be replaced. Drop or sell something first.");
             return;
         }
 
+        int intoFree = ready.Count - toReplace;
         var lines = new List<string>();
-        for (int i = 0; i < ready.Count; i++)
+        for (int i = 0; i < intoFree; i++) lines.Add($"free slot → {ready[i].Name}");
+        for (int i = 0; i < toReplace; i++)
         {
             var (entry, item) = candidates[i];
             string what = item?.Name ?? $"Unknown #{entry.RuntimeIndex}";
             string count = entry.Count == 1 ? "" : $" ×{entry.Count:N0}";
-            lines.Add($"#{entry.Slot} {what}{count} → {ready[i].Name}");
+            lines.Add($"#{entry.Slot} {what}{count} → {ready[intoFree + i].Name}");
         }
-        PlanText = string.Join("\n", lines);
+        PlanText = toReplace == 0 ? "" : string.Join("\n", lines.Skip(intoFree));
         int missing = set.Pieces.Count - ready.Count;
-        SpawnHint = $"Replaces the {ready.Count} most recently picked-up items with the set" + (missing > 0 ? $" ({missing} piece{(missing == 1 ? "" : "s")} not in this game version, skipped)." : ".")
-                    + " Close and reopen the inventory afterwards to see them.";
+        string skipped = missing > 0 ? $" {missing} piece{(missing == 1 ? "" : "s")} not in this game version, skipped." : "";
+        SpawnHint = toReplace == 0
+            ? $"Adds the {ready.Count} pieces into free slots ({freeSlots} free of {containers[0].Capacity})." + skipped + " Close and reopen the inventory afterwards to see them."
+            : $"{intoFree} piece{(intoFree == 1 ? "" : "s")} go into free slots; the other {toReplace} replace the most recently picked-up items listed above." + skipped + " Close and reopen the inventory afterwards.";
         RelayCommand.Requery();
 
         void Fail(string why)
@@ -428,31 +445,30 @@ public sealed class SetsViewModel : ObservableObject
     private async Task SpawnAsync()
     {
         var game = _game;
+        var writer = _writer;
         var set = _selected;
-        if (game is null || set is null) return;
+        if (game is null || writer is null || set is null) return;
         Replan(force: true);   // fresh targets: the inventory may have changed since the preview
         var ready = ReadyPieces(set);
         var targets = _targets;
-        if (ready.Count == 0 || targets.Count < ready.Count) { _host.Log($"Spawn set: {SpawnHint}", LogLevel.Error); return; }
+        int toReplace = Math.Max(0, ready.Count - _freeSlots);
+        if (ready.Count == 0 || targets.Count < toReplace) { _host.Log($"Spawn set: {SpawnHint}", LogLevel.Error); return; }
         var copies = _scan.AllContainers.Where(c => c.Type == 1).OrderBy(c => (long)c.Address).ToList();
 
         var written = new List<string>();
         bool ok = await _host.RunAsync(() =>
         {
-            for (int i = 0; i < ready.Count; i++)
+            int replaced = 0;
+            foreach (var piece in ready)
             {
-                var entry = targets[i].Entry;
-                var item = ready[i].Item!;
-                bool any = false;
-                foreach (var copy in copies)
+                var item = piece.Item!;
+                var result = writer.Create(copies, item.Index, 1);
+                if (result is null && replaced < targets.Count)
                 {
-                    var address = copy.Entry(entry.Slot);
-                    if (game.ReadInt64(address) == -1) continue;   // the slot emptied meanwhile
-                    game.WriteInt64(address + 0x08, item.Index);
-                    game.WriteInt64(address + 0x10, 1);
-                    any = true;
+                    var entry = targets[replaced++].Entry;
+                    result = writer.Replace(copies, entry.Slot, item.Index, 1);
                 }
-                if (any) written.Add($"{ready[i].Name} (#{item.Index}) in slot #{entry.Slot}");
+                if (result is not null) written.Add($"{piece.Name} (#{item.Index}) in slot #{result.Slot}");
             }
         }, null);
         if (!ok) return;

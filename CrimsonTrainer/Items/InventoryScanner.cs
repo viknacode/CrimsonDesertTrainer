@@ -34,8 +34,9 @@ public sealed record InventoryContainer(nint Address, nint Pool, int PoolEntries
 
 /// <summary>
 /// One occupied pool entry (0xC8 bytes): <c>+00</c> instance id (-1 when free), <c>+08</c> runtime
-/// item index (low dword), <c>+10</c> count, <c>+60</c> per-instance data, <c>+90</c> creation time
-/// (<see cref="Created"/>, larger = obtained more recently).
+/// item index (uint16; the byte at +0A is the enhancement level), <c>+10</c> count, <c>+60</c> the
+/// slot's per-instance object, <c>+98</c> creation time in unix seconds (<see cref="Created"/>,
+/// larger = obtained more recently). See <see cref="InventoryWriter"/> for the full layout.
 /// </summary>
 public sealed record InventoryEntry(int Slot, nint Address, long InstanceId, int RuntimeIndex, long Count, long Created = 0);
 
@@ -126,9 +127,9 @@ internal static class InventoryScanner
             long id = BitConverter.ToInt64(buf, o);
             if (id == -1) continue;
             long count = BitConverter.ToInt64(buf, o + 0x10);
-            int index = (int)(BitConverter.ToInt64(buf, o + 8) & 0xFFFF_FFFF);
-            if (count < 0 || index < 0) continue;
-            entries.Add(new InventoryEntry(i, container.Entry(i), id, index, count, BitConverter.ToInt64(buf, o + 0x90)));
+            int index = BitConverter.ToUInt16(buf, o + 8);
+            if (count < 0) continue;
+            entries.Add(new InventoryEntry(i, container.Entry(i), id, index, count, BitConverter.ToInt64(buf, o + 0x98)));
         }
         return entries;
     }

@@ -97,6 +97,30 @@ unificado. Sites que ficam a um deslocamento fixo de uma âncora (os dois caminh
 instrução errada. O "Max Trust" dela já existia aqui (Max trust — people & pets); o "Teleport" dela
 virou a base do nosso (hook `PlayerTransform`, ver a linha Teleport da tabela).
 
+### Entradas do inventário: por que os itens spawnados não eram utilizáveis
+
+Uma entrada do pool (0xC8 bytes, patch 2.01.00, ver [Items/InventoryWriter.cs](Items/InventoryWriter.cs)):
+
+```
++00 id da instância (int64, -1 = livre)  +08 índice runtime (uint16), +0A nível de encantamento
++10 contagem (int64)                     +28/+2C 1/1        +38 constante do build (0x3E7DEC)
++40 0xFFFF   +58 ?                       +60 objeto por slot (pré-alocado pelo jogo, 0x20 bytes)
++68/+6C 5/5  +8C -1                      +90 índice de novo  +98 criação (unix)  +A0 1 se livre
+```
+
+O jogo identifica cada item pelo **id da instância**: trocar só o índice de uma entrada existente
+(o "Put in slot" antigo) produz um item que aparece mas não equipa, e que o jogo reverte para o
+original na próxima sincronização — foi isso que aconteceu com o set Ashad. O trainer do mul0/"Nova
+pasta" cria entradas novas com id novo, e por isso os itens dele funcionam. Agora o trainer faz o
+mesmo: **Add to inventory** cria a entrada no primeiro slot livre abaixo da capacidade (id em
+500000+, faixa que o jogo não usa — o contador dele está em 1.000.000+), e **Put in slot** reconstrói
+o slot como item novo. O objeto em +60 é o do próprio slot (o jogo pré-aloca um por slot), então não
+há alocação externa. `Resources/item_defs_2.01.00.tsv` é a tabela runtime completa lida do jogo
+(índice, key, nome interno, chaves de localização do nome/descrição); `merge-defs.js` acrescenta em
+`item_names.json` os 798 itens que a lista antiga não tinha, com nome derivado do nome interno
+(`"derived": true`) — os nomes exibidos de verdade estão na tabela de localização do jogo, ainda não
+localizada em memória.
+
 ### Conjuntos de armadura (Sets)
 
 `Resources/armor_sets.json` vem do [catálogo do vulkk.com](https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/)
@@ -112,9 +136,9 @@ total, embutidas como `Resource`).
 
 Como o trainer não cria entradas novas no pool do inventário (os campos internos de uma entrada
 — id de instância, tags, timestamps — não são conhecidos o bastante para sintetizar uma), *Spawn set*
-faz o mesmo que "Put in slot" para cada peça (o painel ao lado da galeria lista as peças; cada uma pode ser
-desmarcada e, quando a lista de itens tem variantes com o mesmo nome — versão do jogador vs. versão de NPC —,
-escolhida entre elas): escolhe as N entradas do inventário principal com o
+cria cada peça num slot livre (como "Add to inventory"; o painel ao lado da galeria lista as peças; cada uma pode
+ser desmarcada e, quando a lista de itens tem variantes com o mesmo nome — versão do jogador vs. versão de NPC —,
+escolhida entre elas); só quando faltam slots livres ele escolhe as N entradas do inventário principal com o
 maior valor em `+90` (hora de criação, ou seja, os itens pegos mais recentemente), nunca uma que já
 seja peça do set, mostra antes a lista "WILL REPLACE" (slot, item e quantidade que somem) e grava
 índice runtime + contagem 1 nas duas cópias do container. Dica: pegue N itens de lixo antes de

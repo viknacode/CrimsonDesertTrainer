@@ -244,6 +244,19 @@
        "internal": "Tarandus_Leather_Boots"
       }
      ]
+    },
+    {
+     "slot": "back",
+     "key": 1004632,
+     "name": "Tarandus Plate Armor Cloak",
+     "variants": 0,
+     "options": [
+      {
+       "key": 1004632,
+       "name": "Tarandus Plate Armor Cloak",
+       "internal": "Tarandus_PlateArmor_Cloak"
+      }
+     ]
     }
    ]
   },

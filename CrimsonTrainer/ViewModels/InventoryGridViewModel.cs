@@ -116,6 +116,7 @@ public sealed class InventoryGridViewModel : ObservableObject
     private readonly SpawnerViewModel _spawner;
     private readonly InventorySlotsViewModel _scan;
     private GameProcess? _game;
+    private InventoryWriter? _writer;
     private ContainerChoiceViewModel? _selectedContainer;
     private SlotViewModel? _selectedSlot;
     private string _status = "Waiting for the game";
@@ -133,11 +134,12 @@ public sealed class InventoryGridViewModel : ObservableObject
         scan.Scanned += OnScanned;
         RefreshCommand = new RelayCommand(() => Refresh(force: true), () => _game is not null && _selectedContainer is not null);
         PutCommand = new RelayCommand(() => _ = PutAsync(), () => CanWrite && _spawner.Selected is not null);
+        AddCommand = new RelayCommand(() => _ = AddAsync(), () => CanAdd);
         SetCountCommand = new RelayCommand(() => _ = SetCountAsync(), () => CanWrite);
         MaxCountCommand = new RelayCommand(SetMaxCount, () => _spawner.Selected is not null || _selectedSlot is not null);
         spawner.PropertyChanged += (_, e) =>
         {
-            if (e.PropertyName == nameof(SpawnerViewModel.Selected)) { Raise(nameof(PutText)); RelayCommand.Requery(); }
+            if (e.PropertyName == nameof(SpawnerViewModel.Selected)) { Raise(nameof(PutText)); Raise(nameof(AddText)); Raise(nameof(CanAdd)); RelayCommand.Requery(); }
         };
     }
 
@@ -148,6 +150,7 @@ public sealed class InventoryGridViewModel : ObservableObject
 
     public ICommand RefreshCommand { get; }
     public ICommand PutCommand { get; }
+    public ICommand AddCommand { get; }
     public ICommand SetCountCommand { get; }
     public ICommand MaxCountCommand { get; }
 
@@ -209,9 +212,14 @@ public sealed class InventoryGridViewModel : ObservableObject
     public string PutText => _selectedSlot is null ? "Put in slot" : _spawner.Selected is null ? $"Put in slot #{_selectedSlot.Slot}" : $"Put {_spawner.Selected.Name} in slot #{_selectedSlot.Slot}";
     public bool CanWrite => _game is not null && _selectedContainer is not null && _selectedSlot is not null;
 
+    /// <summary>A picked item can go into a free slot of the current container.</summary>
+    public bool CanAdd => _game is not null && _selectedContainer is not null && _spawner.Selected is not null;
+    public string AddText => _spawner.Selected is null ? "Add to inventory" : $"Add {_spawner.Selected.Name} to inventory";
+
     internal void Bind(GameProcess? game)
     {
         _game = game;
+        _writer = game is null ? null : new InventoryWriter(game);
         Containers.Clear();
         _all.Clear();
         Slots.Clear();
@@ -315,27 +323,44 @@ public sealed class InventoryGridViewModel : ObservableObject
         _spawner.CountText = max.ToString();
     }
 
-    /// <summary>Replaces whatever is in the selected slot with the item picked in the spawner list.</summary>
+    /// <summary>Replaces whatever is in the selected slot with the item picked in the spawner list (rebuilt as a fresh item).</summary>
     private async Task PutAsync()
     {
-        var game = _game; var container = _selectedContainer; var slot = _selectedSlot; var item = _spawner.Selected;
-        if (game is null || container is null || slot is null || item is null) return;
+        var game = _game; var writer = _writer; var container = _selectedContainer; var slot = _selectedSlot; var item = _spawner.Selected;
+        if (game is null || writer is null || container is null || slot is null || item is null) return;
         if (!ValueFieldViewModel.TryParseLong(_spawner.CountText, out long count, 1, 999_999))
         {
             _host.Log("Put: enter a count between 1 and 999,999.", LogLevel.Error);
             return;
         }
-        bool ok = await _host.RunAsync(() =>
+        InventoryWriter.Written? written = null;
+        bool ok = await _host.RunAsync(() => written = writer.Replace(container.Copies, slot.Slot, item.Index, count), null);
+        if (!ok) return;
+        _host.Log(written is null
+                ? $"Slot #{slot.Slot} emptied before the write — nothing changed."
+                : $"Slot #{slot.Slot}: {slot.Name} → {count:N0} × {item.Name} (#{item.Index}, new item id {written.InstanceId}). Close and reopen the inventory to see it.",
+            written is null ? LogLevel.Warning : LogLevel.Success);
+        Refresh(force: true);
+    }
+
+    /// <summary>Puts the picked item into the first free slot of the current container (no item is sacrificed).</summary>
+    private async Task AddAsync()
+    {
+        var game = _game; var writer = _writer; var container = _selectedContainer; var item = _spawner.Selected;
+        if (game is null || writer is null || container is null || item is null) return;
+        if (!ValueFieldViewModel.TryParseLong(_spawner.CountText, out long count, 1, 999_999))
         {
-            foreach (var copy in container.Copies)
-            {
-                var entry = copy.Entry(slot.Slot);
-                if (game.ReadInt64(entry) == -1) continue;   // the slot emptied meanwhile
-                game.WriteInt64(entry + 0x08, item.Index);
-                game.WriteInt64(entry + 0x10, count);
-            }
-        }, $"Slot #{slot.Slot}: {slot.Name} → {count:N0} × {item.Name} (#{item.Index}). Close and reopen the inventory to see it.");
-        if (ok) Refresh(force: true);
+            _host.Log("Add: enter a count between 1 and 999,999.", LogLevel.Error);
+            return;
+        }
+        InventoryWriter.Written? written = null;
+        bool ok = await _host.RunAsync(() => written = writer.Create(container.Copies, item.Index, count), null);
+        if (!ok) return;
+        _host.Log(written is null
+                ? "Add: no free slot below the container's capacity — drop something or raise the slot capacity (Inventory section)."
+                : $"Added {count:N0} × {item.Name} (#{item.Index}) in slot #{written.Slot} (item id {written.InstanceId}). Close and reopen the inventory to see it.",
+            written is null ? LogLevel.Warning : LogLevel.Success);
+        Refresh(force: true);
     }
 
     /// <summary>Writes only the count of the selected slot.</summary>

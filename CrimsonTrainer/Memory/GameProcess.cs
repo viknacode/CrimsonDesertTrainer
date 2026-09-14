@@ -149,6 +149,7 @@ internal sealed class GameProcess : IDisposable
         return ok;
     }
 
+    public void WriteInt16(nint address, short value) => Write(address, BitConverter.GetBytes(value));
     public void WriteInt32(nint address, int value) => Write(address, BitConverter.GetBytes(value));
     public void WriteInt64(nint address, long value) => Write(address, BitConverter.GetBytes(value));
     public void WriteSingle(nint address, float value) => Write(address, BitConverter.GetBytes(value));

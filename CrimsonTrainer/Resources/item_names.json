@@ -38207,11 +38207,419 @@
       "maxStack": 20
     },
     {
+      "itemKey": 1003774,
+      "name": "Item gimmick foodstorage 0002",
+      "category": "Misc",
+      "internalName": "Item_gimmick_foodstorage_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
       "itemKey": 1003775,
       "name": "Greymane's Token",
       "category": "Misc",
       "internalName": "Graymane_Token",
       "maxStack": 1
+    },
+    {
+      "itemKey": 1003776,
+      "name": "Star One Hand Rapier",
+      "category": "Misc",
+      "internalName": "Star_OneHandRapier",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003777,
+      "name": "Notice Paper Skill Lunge Combination",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_LungeCombination",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003778,
+      "name": "Notice Paper Skill Turn Bash II",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_TurnBash_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003779,
+      "name": "Notice Paper Skill Move Cutting II",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_MoveCutting_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003780,
+      "name": "Notice Paper Skill Rotation Bash II",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_RotationBash_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003781,
+      "name": "Notice Paper Skill Sword Rush",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_SwordRush",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003782,
+      "name": "Notice Paper Skill Charge Shot",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Charge_Shot",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003783,
+      "name": "Notice Paper Skill Multi Shot",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_MultiShot",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003784,
+      "name": "Notice Paper Skill Evade Shot",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_EvadeShot",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003785,
+      "name": "Notice Paper Skill Evade Explosion Shot",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_EvadeExplosionShot",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003786,
+      "name": "Notice Paper Skill Un Armed Combination",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_UnArmedCombination",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003787,
+      "name": "Notice Paper Skill Sky Kick",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_SkyKick",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003788,
+      "name": "Notice Paper Skill Double Kick I",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_DoubleKick_I",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003789,
+      "name": "Notice Paper Skill Drop Kick",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_DropKick",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003790,
+      "name": "Notice Paper Skill Jump Step",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_JumpStep",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003791,
+      "name": "Notice Paper Skill Wrestle Lariat",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Wrestle_Lariat",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003792,
+      "name": "Notice Paper Skill Wrestle Air Body Slam",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Wrestle_AirBodySlam",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003793,
+      "name": "Notice Paper Skill Shield Just Guard Attack",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_ShieldJustGuard_Attack",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003794,
+      "name": "Notice Paper Skill Double Jump",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_DoubleJump",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003795,
+      "name": "Notice Paper Skill Roll Cancel",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_RollCancel",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003796,
+      "name": "Notice Paper Skill Greywolf Detect",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Greywolf_Detect",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003797,
+      "name": "Notice Paper Skill Lift",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Lift",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003798,
+      "name": "Notice Paper Skill Mabongpa",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Mabongpa",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003799,
+      "name": "Notice Paper Skill Ji Jeong Ta I",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_JiJeongTa_I",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003800,
+      "name": "Notice Paper Skill Ji Jeong Ta Deep",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_JiJeongTa_Deep",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003801,
+      "name": "Notice Paper Skill Tathagata mini",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Tathagata_mini",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003802,
+      "name": "Notice Paper Skill Greywolf Detect Unleash",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Greywolf_Detect_Unleash",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003803,
+      "name": "Notice Paper Skill Crow Wing Dash",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_CrowWing_Dash",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003804,
+      "name": "Notice Paper Skill Clone Attack",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_CloneAttack",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003805,
+      "name": "Notice Paper Skill Mp Fire",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_MpFire",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003806,
+      "name": "Notice Paper Skill Mp Ice",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_MpIce",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003807,
+      "name": "Notice Paper Skill Mp Lightning",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_MpLightning",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003808,
+      "name": "Notice Paper Skill Mp Wind",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_MpWind",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003809,
+      "name": "Notice Paper Skill Oongka Dash",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Oongka_Dash",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003810,
+      "name": "Notice Paper Skill Oongka Rotation Bash II",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Oongka_RotationBash_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003811,
+      "name": "Notice Paper Skill Oongka Ground Smash II",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Oongka_GroundSmash_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003812,
+      "name": "Notice Paper Skill Oongka Wrestle Combo",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Oongka_Wrestle_Combo",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003813,
+      "name": "Notice Paper Skill Oongka Aim Explosion Shot",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Oongka_AimExplosionShot",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003814,
+      "name": "Notice Paper Skill Damian Lunge Catch",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Damian_LungeCatch",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003815,
+      "name": "Notice Paper Skill Damian Turn Bash II",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Damian_TurnBash_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003816,
+      "name": "Notice Paper Skill Damian Quick Reload",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Damian_QuickReload",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003817,
+      "name": "Notice Paper Skill Damian Spinning Kick",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Damian_SpinningKick",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003818,
+      "name": "Notice Paper Skill Wrestle Grab Spin Throw",
+      "category": "Quest",
+      "internalName": "NoticePaper_Skill_Wrestle_GrabSpinThrow",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003819,
+      "name": "Collection Prop Ceramic 0057",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Ceramic_0057",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003820,
+      "name": "Collection Prop Ceramic 0058",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Ceramic_0058",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003821,
+      "name": "Collection Prop Ceramic 0059",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Ceramic_0059",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003822,
+      "name": "Collection Prop Ceramic 0056",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Ceramic_0056",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003823,
+      "name": "Item gimmick resourcestorage 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_resourcestorage_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003824,
+      "name": "Item gimmick collectionstorage 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collectionstorage_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003825,
+      "name": "Item gimmick foodstorage 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_foodstorage_0001",
+      "maxStack": 100,
+      "derived": true
     },
     {
       "itemKey": 1003826,
@@ -38284,6 +38692,22 @@
       "maxStack": 20
     },
     {
+      "itemKey": 1003836,
+      "name": "Quest Paper Foodstorage",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Foodstorage",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003837,
+      "name": "Quest Paper Heavy Foodstorage",
+      "category": "Quest",
+      "internalName": "Quest_Paper_HeavyFoodstorage",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
       "itemKey": 1003838,
       "name": "White Bear Claws",
       "category": "Misc",
@@ -38354,6 +38778,30 @@
       "maxStack": 1
     },
     {
+      "itemKey": 1003848,
+      "name": "Equip Sturdy Broom",
+      "category": "Misc",
+      "internalName": "Equip_Sturdy_Broom",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003849,
+      "name": "Wood Branch 01",
+      "category": "Misc",
+      "internalName": "Wood_Branch_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003850,
+      "name": "Wood Branch 02",
+      "category": "Misc",
+      "internalName": "Wood_Branch_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
       "itemKey": 1003851,
       "name": "Varnia Refinement Token",
       "category": "Misc",
@@ -38380,6 +38828,14 @@
       "category": "Misc",
       "internalName": "Inventory_Expansion_Sellable_4",
       "maxStack": 20
+    },
+    {
+      "itemKey": 1003908,
+      "name": "Bamboo Branch 01",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_01",
+      "maxStack": 100,
+      "derived": true
     },
     {
       "itemKey": 1003909,
@@ -38422,6 +38878,5926 @@
       "category": "Misc",
       "internalName": "Alustin_Journal_Book_VI",
       "maxStack": 1
+    },
+    {
+      "itemKey": 1003915,
+      "name": "Item gimmick birdfeeder 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_birdfeeder_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003916,
+      "name": "Greyfur Fabric Armor CI",
+      "category": "Equipment",
+      "internalName": "Greyfur_Fabric_Armor_CI",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1003918,
+      "name": "Boss Reward Quick Learner Charm",
+      "category": "Misc",
+      "internalName": "Boss_Reward_QuickLearner_Charm",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003919,
+      "name": "Boss Reward Efficiency Charm",
+      "category": "Misc",
+      "internalName": "Boss_Reward_Efficiency_Charm",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003920,
+      "name": "Pet Phoenix Feather",
+      "category": "Misc",
+      "internalName": "Pet_Phoenix_Feather",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003921,
+      "name": "Pet Phoenix Amulet",
+      "category": "Misc",
+      "internalName": "Pet_Phoenix_Amulet",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003924,
+      "name": "Pet Armor Marni Helm",
+      "category": "Equipment",
+      "internalName": "PetArmor_Marni_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1003925,
+      "name": "Pet Armor Marni Armor",
+      "category": "Equipment",
+      "internalName": "PetArmor_Marni_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1003927,
+      "name": "Pail Cup Oath",
+      "category": "Misc",
+      "internalName": "Pail_Cup_Oath",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003928,
+      "name": "Demian Greyfur Fabric Cloak I",
+      "category": "Equipment",
+      "internalName": "Demian_Greyfur_Fabric_Cloak_I",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1003929,
+      "name": "Pet Bond Amulet",
+      "category": "Misc",
+      "internalName": "Pet_Bond_Amulet",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003930,
+      "name": "Item gimmick collection prop Ceramic 0021",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collection_prop_Ceramic_0021",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003931,
+      "name": "Item gimmick collection prop Ceramic 0023",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collection_prop_Ceramic_0023",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003932,
+      "name": "Item gimmick collection prop Ceramic 0033",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collection_prop_Ceramic_0033",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003933,
+      "name": "Item gimmick collection prop Ceramic 0034",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collection_prop_Ceramic_0034",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003934,
+      "name": "Item gimmick collection prop Ceramic 0036",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collection_prop_Ceramic_0036",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003935,
+      "name": "Item gimmick collection prop Ceramic 0040",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collection_prop_Ceramic_0040",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003936,
+      "name": "Item gimmick collection prop Ceramic 0042",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collection_prop_Ceramic_0042",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003937,
+      "name": "Item gimmick collection prop Ceramic 0043",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collection_prop_Ceramic_0043",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003938,
+      "name": "Item gimmick collection prop Ceramic 0044",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collection_prop_Ceramic_0044",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003939,
+      "name": "Item gimmick collection prop Ceramic 0048",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collection_prop_Ceramic_0048",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003940,
+      "name": "Item gimmick collection prop Ceramic 0049",
+      "category": "Misc",
+      "internalName": "Item_gimmick_collection_prop_Ceramic_0049",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003941,
+      "name": "Item gimmick item tool book 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_item_tool_book_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003942,
+      "name": "Item gimmick dff luxuryfurniture cabinet 01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_cabinet_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003943,
+      "name": "Item gimmick dff luxuryfurniture cabinet 02",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_cabinet_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003944,
+      "name": "Item gimmick dff luxuryfurniture cabinet 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_cabinet_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003945,
+      "name": "Item cabinet 02",
+      "category": "Misc",
+      "internalName": "Item_cabinet_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003946,
+      "name": "Item cabinet 02 index01",
+      "category": "Misc",
+      "internalName": "Item_cabinet_02_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003947,
+      "name": "Item cabinet 03",
+      "category": "Misc",
+      "internalName": "Item_cabinet_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003948,
+      "name": "Item cabinet 03 index01",
+      "category": "Misc",
+      "internalName": "Item_cabinet_03_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003949,
+      "name": "Item cabinet 0003",
+      "category": "Misc",
+      "internalName": "Item_cabinet_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003950,
+      "name": "Item cabinet 05",
+      "category": "Misc",
+      "internalName": "Item_cabinet_05",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003951,
+      "name": "Item cabinet 05 index01",
+      "category": "Misc",
+      "internalName": "Item_cabinet_05_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003952,
+      "name": "Item cabinet 11",
+      "category": "Misc",
+      "internalName": "Item_cabinet_11",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003953,
+      "name": "Item cabinet 11 index01",
+      "category": "Misc",
+      "internalName": "Item_cabinet_11_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003954,
+      "name": "Item cabinet 0002",
+      "category": "Misc",
+      "internalName": "Item_cabinet_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003955,
+      "name": "Item cabinet 12",
+      "category": "Misc",
+      "internalName": "Item_cabinet_12",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003956,
+      "name": "Item cabinet 15",
+      "category": "Misc",
+      "internalName": "Item_cabinet_15",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003957,
+      "name": "Item cabinet 19",
+      "category": "Misc",
+      "internalName": "Item_cabinet_19",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003958,
+      "name": "Item cabinet 19 index01",
+      "category": "Misc",
+      "internalName": "Item_cabinet_19_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003959,
+      "name": "Item cabinet 0001",
+      "category": "Misc",
+      "internalName": "Item_cabinet_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003960,
+      "name": "Item cabinet 23",
+      "category": "Misc",
+      "internalName": "Item_cabinet_23",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003961,
+      "name": "Item dresser 01",
+      "category": "Misc",
+      "internalName": "Item_dresser_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003962,
+      "name": "Item dresser 01 index01",
+      "category": "Misc",
+      "internalName": "Item_dresser_01_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003963,
+      "name": "Item dresser 0001",
+      "category": "Misc",
+      "internalName": "Item_dresser_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003964,
+      "name": "Item dresser 03",
+      "category": "Misc",
+      "internalName": "Item_dresser_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003965,
+      "name": "Item dresser 03 index01",
+      "category": "Misc",
+      "internalName": "Item_dresser_03_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003966,
+      "name": "Item dresser 04",
+      "category": "Misc",
+      "internalName": "Item_dresser_04",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003967,
+      "name": "Item bookcase 02",
+      "category": "Misc",
+      "internalName": "Item_bookcase_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003968,
+      "name": "Item bookcase 02 index01",
+      "category": "Misc",
+      "internalName": "Item_bookcase_02_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003969,
+      "name": "Item bookcase 0001",
+      "category": "Misc",
+      "internalName": "Item_bookcase_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003970,
+      "name": "Item dff luxuryfurniture bed 02",
+      "category": "Misc",
+      "internalName": "Item_dff_luxuryfurniture_bed_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003971,
+      "name": "Item dff luxuryfurniture bed 03",
+      "category": "Misc",
+      "internalName": "Item_dff_luxuryfurniture_bed_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003972,
+      "name": "Item dff luxuryfurniture bed 04",
+      "category": "Misc",
+      "internalName": "Item_dff_luxuryfurniture_bed_04",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003973,
+      "name": "Item in dff bed 06",
+      "category": "Misc",
+      "internalName": "Item_in_dff_bed_06",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003974,
+      "name": "Item in dff bed 06 dem",
+      "category": "Misc",
+      "internalName": "Item_in_dff_bed_06_dem",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003975,
+      "name": "Item dff luxuryfurniture bed 01",
+      "category": "Misc",
+      "internalName": "Item_dff_luxuryfurniture_bed_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003976,
+      "name": "Item closet 01",
+      "category": "Misc",
+      "internalName": "Item_closet_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003977,
+      "name": "Item closet 01 index01",
+      "category": "Misc",
+      "internalName": "Item_closet_01_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003978,
+      "name": "Item cabinet 14",
+      "category": "Misc",
+      "internalName": "Item_cabinet_14",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003979,
+      "name": "Item closet 02",
+      "category": "Misc",
+      "internalName": "Item_closet_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003980,
+      "name": "Item gimmick hanger top lamp 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_hanger_top_lamp_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003981,
+      "name": "Item gimmick hanger top lamp 0001 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_hanger_top_lamp_0001_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003982,
+      "name": "Item gimmick hanger top lamp 0001 index02",
+      "category": "Misc",
+      "internalName": "Item_gimmick_hanger_top_lamp_0001_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003983,
+      "name": "Item gimmick hanger top lamp 0003",
+      "category": "Misc",
+      "internalName": "Item_gimmick_hanger_top_lamp_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003984,
+      "name": "Item gimmick hanger top lamp 0003 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_hanger_top_lamp_0003_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003985,
+      "name": "Item gimmick hanger top lamp 0003 index02",
+      "category": "Misc",
+      "internalName": "Item_gimmick_hanger_top_lamp_0003_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003986,
+      "name": "Item gimmick hanger side lamp 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_hanger_side_lamp_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003987,
+      "name": "Item gimmick hanger side lamp 0001 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_hanger_side_lamp_0001_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003988,
+      "name": "Item gimmick hanger side lamp 0001 index02",
+      "category": "Misc",
+      "internalName": "Item_gimmick_hanger_side_lamp_0001_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003989,
+      "name": "Item gimmick gemstone hanger top chandelier 0103",
+      "category": "Misc",
+      "internalName": "Item_gimmick_gemstone_hanger_top_chandelier_0103",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003990,
+      "name": "Item gimmick gemstone hanger top chandelier 0103 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_gemstone_hanger_top_chandelier_0103_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003991,
+      "name": "Item gimmick gemstone hanger top chandelier 0103 index02",
+      "category": "Misc",
+      "internalName": "Item_gimmick_gemstone_hanger_top_chandelier_0103_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003992,
+      "name": "Item cd lamp hanger legendanimal 0002",
+      "category": "Misc",
+      "internalName": "Item_cd_lamp_hanger_legendanimal_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003993,
+      "name": "Item Background Breakable Wood 280",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_280",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003994,
+      "name": "Item gimmick dff luxuryfurniture sofa 02",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_sofa_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003995,
+      "name": "Item gimmick dff luxuryfurniture stool 01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_stool_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003996,
+      "name": "Item gimmick dff luxuryfurniture chair 02",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_chair_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003997,
+      "name": "Item gimmick dff luxuryfurniture chair troll 03",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_chair_troll_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003998,
+      "name": "Item Background Breakable Wood 281",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_281",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1003999,
+      "name": "Item cd ex dpf flowerpot 16 housing",
+      "category": "Misc",
+      "internalName": "Item_cd_ex_dpf_flowerpot_16_housing",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004000,
+      "name": "Item cd ex dpf flowerpot 24 housing",
+      "category": "Misc",
+      "internalName": "Item_cd_ex_dpf_flowerpot_24_housing",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004001,
+      "name": "Item cd ex dpf flowerpot 61 housing",
+      "category": "Misc",
+      "internalName": "Item_cd_ex_dpf_flowerpot_61_housing",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004002,
+      "name": "Item cd ex dpf flowerpot 21 housing",
+      "category": "Misc",
+      "internalName": "Item_cd_ex_dpf_flowerpot_21_housing",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004003,
+      "name": "Item cd ex dpf flowerpot 37 housing",
+      "category": "Misc",
+      "internalName": "Item_cd_ex_dpf_flowerpot_37_housing",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004004,
+      "name": "Item cd ex dpf flowerpot 23 housing",
+      "category": "Misc",
+      "internalName": "Item_cd_ex_dpf_flowerpot_23_housing",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004005,
+      "name": "Item gimmick dff luxuryfurniture sofa 01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_sofa_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004006,
+      "name": "Item gimmick dff luxuryfurniture chair 04",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_chair_04",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004007,
+      "name": "Item gimmick dff luxuryfurniture chair 03",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_chair_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004008,
+      "name": "Item gimmick dff luxuryfurniture chair 01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_chair_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004009,
+      "name": "Item Background Breakable Wood 285",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_285",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004010,
+      "name": "Item gimmick in dff chair 0002",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dff_chair_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004011,
+      "name": "Item Background Breakable Wood 294",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_294",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004012,
+      "name": "Item Background Breakable Wood 290",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_290",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004013,
+      "name": "Item Background Breakable Wood 293",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_293",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004014,
+      "name": "Item Background Breakable Wood 295",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_295",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004015,
+      "name": "Item gimmick alchemy globe 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_alchemy_globe_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004016,
+      "name": "Item gimmick alchemy globe 0002",
+      "category": "Misc",
+      "internalName": "Item_gimmick_alchemy_globe_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004017,
+      "name": "Item Background Breakable Wood 323",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_323",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004018,
+      "name": "Item Background Breakable Wood 323 index01",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_323_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004019,
+      "name": "Item gimmick item tool bookstand 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_item_tool_bookstand_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004020,
+      "name": "Item gimmick in dff set chair 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dff_set_chair_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004021,
+      "name": "Item gimmick in dff chair 0003",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dff_chair_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004022,
+      "name": "Item gimmick in dff stand 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dff_stand_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004023,
+      "name": "Item Background Breakable Wood 297",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_297",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004024,
+      "name": "Item gimmick dff luxuryfurniture table 01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_table_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004025,
+      "name": "Item gimmick dff luxuryfurniture table 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_table_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004026,
+      "name": "Item gimmick dff luxuryfurniture table 02",
+      "category": "Misc",
+      "internalName": "Item_gimmick_dff_luxuryfurniture_table_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004027,
+      "name": "Item Background Breakable Wood 302",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_302",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004028,
+      "name": "Item gimmick in dff dressingtable 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dff_dressingtable_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004029,
+      "name": "Item Background Breakable Wood 303",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_303",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004030,
+      "name": "Item Background Breakable Wood 310",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_310",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004031,
+      "name": "Item Background Breakable Wood 311",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_311",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004032,
+      "name": "Item Background Breakable Wood 313",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_313",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004033,
+      "name": "Item gimmick in dff desk 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dff_desk_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004034,
+      "name": "Item Background Breakable Wood 257",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_257",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004035,
+      "name": "Item Background Breakable Wood 320",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_320",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004036,
+      "name": "Item gimmick in dff table 0002",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dff_table_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004037,
+      "name": "Item gimmick in dpf stool 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_stool_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004038,
+      "name": "Item Background Breakable Wood 230",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_230",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004039,
+      "name": "Item Background Breakable Wood 308",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_308",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004040,
+      "name": "Item Background Breakable Wood 304",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_304",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004041,
+      "name": "Item Background Breakable Wood 309",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_309",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004042,
+      "name": "Item Background Breakable Wood 363",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_363",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004043,
+      "name": "Item gimmick craft cook oven 03 housing",
+      "category": "Misc",
+      "internalName": "Item_gimmick_craft_cook_oven_03_housing",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004044,
+      "name": "Item gimmick craft cook oven 04 housing",
+      "category": "Misc",
+      "internalName": "Item_gimmick_craft_cook_oven_04_housing",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004045,
+      "name": "Item craft medicine 01 housing",
+      "category": "Misc",
+      "internalName": "Item_craft_medicine_01_housing",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004047,
+      "name": "Valteon Plate Armor Armor",
+      "category": "Equipment",
+      "internalName": "Valteon_PlateArmor_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004048,
+      "name": "Valteon Plate Armor Gloves",
+      "category": "Equipment",
+      "internalName": "Valteon_PlateArmor_Gloves",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004049,
+      "name": "Item Collection Prop Statue 0002",
+      "category": "Misc",
+      "internalName": "Item_Collection_Prop_Statue_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004050,
+      "name": "Item dff luxuryfurniture bed 0001",
+      "category": "Misc",
+      "internalName": "Item_dff_luxuryfurniture_bed_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004051,
+      "name": "Quest Paper Military Notice",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Military_Notice",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004052,
+      "name": "Quest Paper Askelund Judgment",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Askelund_Judgment",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004053,
+      "name": "Quest Paper Child Notice",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Child_Notice",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004054,
+      "name": "Quest Paper Beighen Notice",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Beighen_Notice",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004055,
+      "name": "Quest Wanted Paper Arsonist The Faceless",
+      "category": "Quest",
+      "internalName": "Quest_WantedPaper_Arsonist_TheFaceless",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004056,
+      "name": "Book Octabus Research Diary",
+      "category": "Quest",
+      "internalName": "Book_Octabus_Research_Diary",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004057,
+      "name": "Book Azerian Diary",
+      "category": "Quest",
+      "internalName": "Book_Azerian_Diary",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004058,
+      "name": "Book Old Kliff Diary",
+      "category": "Quest",
+      "internalName": "Book_Old_Kliff_Diary",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004059,
+      "name": "Book Tax Collection Ledger",
+      "category": "Quest",
+      "internalName": "Book_Tax_Collection_Ledger",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004060,
+      "name": "Book Urdavah Research Book",
+      "category": "Quest",
+      "internalName": "Book_Urdavah_Research_Book",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004061,
+      "name": "Book Dusty Diary",
+      "category": "Quest",
+      "internalName": "Book_Dusty_Diary",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004062,
+      "name": "Book Vordis Research Diary",
+      "category": "Quest",
+      "internalName": "Book_Vordis_Research_Diary",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004063,
+      "name": "Book Marni Tech Book",
+      "category": "Quest",
+      "internalName": "Book_Marni_Tech_Book",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004068,
+      "name": "Hexe Ring",
+      "category": "Misc",
+      "internalName": "Hexe_Ring",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004070,
+      "name": "Family Crest Surcoat",
+      "category": "Misc",
+      "internalName": "Family_Crest_Surcoat",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004071,
+      "name": "Zoo Entry Ticket",
+      "category": "Misc",
+      "internalName": "Zoo_Entry_Ticket",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004072,
+      "name": "Quest Paper Crowman Adoptation",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Crowman_Adoptation",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004073,
+      "name": "Quest Paper Bastion Secret",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Bastion_Secret",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004074,
+      "name": "Quest Paper Letter",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Letter",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004075,
+      "name": "Quest Paper Antumbra Contract",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Antumbra_Contract",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004076,
+      "name": "Quest Paper Gregor Letter",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Gregor_Letter",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004077,
+      "name": "Quest Paper Demeniss Police",
+      "category": "Quest",
+      "internalName": "Quest_Paper_DemenissPolice",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004080,
+      "name": "Quest Paper Master Doo Ideology",
+      "category": "Quest",
+      "internalName": "Quest_Paper_MasterDoo_Ideology",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004081,
+      "name": "Quest Paper Mine Fortress Blueprint",
+      "category": "Quest",
+      "internalName": "Quest_Paper_MineFortress_Blueprint",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004082,
+      "name": "Quest Paper Laser Tank Blueprint",
+      "category": "Quest",
+      "internalName": "Quest_Paper_LaserTank_Blueprint",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004083,
+      "name": "Quest Paper Marnihouse Blueprint",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Marnihouse_Blueprint",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004084,
+      "name": "Quest Paper Bio Experiment Blueprint",
+      "category": "Quest",
+      "internalName": "Quest_Paper_BioExperiment_Blueprint",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004089,
+      "name": "Quest Paper Bankruptcy Document",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Bankruptcy_Document",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004090,
+      "name": "Quest Paper Dismissal Document",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Dismissal_Document",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004093,
+      "name": "Quest Paper Verdict Treason",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Verdict_Treason",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004094,
+      "name": "Quest Paper Torn Order",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Torn_Order",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004095,
+      "name": "Quest Paper Zoo Flyer",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Zoo_Flyer",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004096,
+      "name": "Quest Paper Balthazar Memo",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Balthazar_Memo",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004097,
+      "name": "Quest Paper Wyvern Species Memo",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Wyvern_Species_Memo",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004098,
+      "name": "Quest Paper Merchant Warning",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Merchant_Warning",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004099,
+      "name": "Quest Paper Dead Hunter Journal",
+      "category": "Quest",
+      "internalName": "Quest_Paper_DeadHunter_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004103,
+      "name": "Quest Paper Longleaf Forest Patrol Record",
+      "category": "Quest",
+      "internalName": "Quest_Paper_LongleafForest_PatrolRecord",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004105,
+      "name": "Quest Paper Cult Order",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Cult_Order",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004108,
+      "name": "Bamboo Branch 02",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004109,
+      "name": "Item gimmick basecamp warehouse box 0002",
+      "category": "Misc",
+      "internalName": "Item_gimmick_basecamp_warehouse_box_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004110,
+      "name": "Recipe Book Pumpkin Helm",
+      "category": "Misc",
+      "internalName": "Recipe_Book_Pumpkin_Helm",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004111,
+      "name": "Antumbra Picket",
+      "category": "Misc",
+      "internalName": "Antumbra_Picket",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004112,
+      "name": "Item gimmick tumbleweed 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_tumbleweed_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004113,
+      "name": "Crowman Fabric Helm",
+      "category": "Equipment",
+      "internalName": "Crowman_Fabric_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004114,
+      "name": "Collection Prop Picture 0070",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Picture_0070",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004115,
+      "name": "Itemgimmick lamp side candle 0003",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_side_candle_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004116,
+      "name": "Itemgimmick lamp side candle 0003 index01",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_side_candle_0003_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004117,
+      "name": "Itemgimmick lamp side candle 0003 index02",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_side_candle_0003_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004118,
+      "name": "Itemgimmick lamp side candle 0001",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_side_candle_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004119,
+      "name": "Itemgimmick lamp side candle 0001 index01",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_side_candle_0001_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004120,
+      "name": "Itemgimmick lamp side candle 0001 index02",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_side_candle_0001_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004121,
+      "name": "Itemgimmick lamp side candle 0002",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_side_candle_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004122,
+      "name": "Itemgimmick lamp side candle 0002 index01",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_side_candle_0002_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004123,
+      "name": "Itemgimmick lamp side candle 0002 index02",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_side_candle_0002_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004124,
+      "name": "Itemgimmick lamp stand candlestick 0001",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_stand_candlestick_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004125,
+      "name": "Itemgimmick lamp stand candlestick 0001 index01",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_stand_candlestick_0001_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004126,
+      "name": "Itemgimmick lamp stand candlestick 0001 index02",
+      "category": "Misc",
+      "internalName": "Itemgimmick_lamp_stand_candlestick_0001_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004201,
+      "name": "The Faceless Helm",
+      "category": "Equipment",
+      "internalName": "TheFaceless_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004205,
+      "name": "Item Skill Abyss Gear Attack SPRecover LV2",
+      "category": "Misc",
+      "internalName": "Item_Skill_AbyssGear_Attack_SPRecover_LV2",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004206,
+      "name": "Collection Prop Picture 0071",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Picture_0071",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004207,
+      "name": "Collection Prop Picture 0072",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Picture_0072",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004208,
+      "name": "Collection Prop Picture 0073",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Picture_0073",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004209,
+      "name": "Collection Prop Picture 0074",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Picture_0074",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004210,
+      "name": "Collection Prop Picture 0075",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Picture_0075",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004211,
+      "name": "Collection Prop Picture 0076",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Picture_0076",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004212,
+      "name": "Quest Paper Child Notice 02",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Child_Notice_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004213,
+      "name": "Quest Paper Child Notice 03",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Child_Notice_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004214,
+      "name": "Quest Paper Child Notice 04",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Child_Notice_04",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004215,
+      "name": "Book Antumbra Temple",
+      "category": "Quest",
+      "internalName": "Book_Antumbra_Temple",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004216,
+      "name": "Book Ancient Lore",
+      "category": "Quest",
+      "internalName": "Book_Ancient_Lore",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004217,
+      "name": "Quest Paper Gregor Record",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Gregor_Record",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004220,
+      "name": "Quest Paper Moon Scribbles 01",
+      "category": "Quest",
+      "internalName": "Quest_Paper_MoonScribbles_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004221,
+      "name": "Quest Paper Moon Scribbles 02",
+      "category": "Quest",
+      "internalName": "Quest_Paper_MoonScribbles_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004222,
+      "name": "Quest Paper Moon Scribbles 03",
+      "category": "Quest",
+      "internalName": "Quest_Paper_MoonScribbles_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004223,
+      "name": "Quest Paper Merrick Seizure List",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Merrick_SeizureList",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004224,
+      "name": "Quest Paper Merrick Letter",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Merrick_Letter",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004225,
+      "name": "Quest Paper Noble Property List",
+      "category": "Quest",
+      "internalName": "Quest_Paper_NoblePropertyList",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004236,
+      "name": "Quest Paper Sentry Journal",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Sentry_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004241,
+      "name": "Quest Paper Delinquency Notice",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Delinquency_Notice",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004242,
+      "name": "Quest Paper Seizure Tag",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Seizure_Tag",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004243,
+      "name": "Quest Paper Heresy Warning Flyer",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Heresy_WarningFlyer",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004244,
+      "name": "Quest Paper Heresy Registry",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Heresy_Registry",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004260,
+      "name": "Quest Paper Ultimate Weapon Blueprint 01",
+      "category": "Quest",
+      "internalName": "Quest_Paper_UltimateWeapon_Blueprint_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004261,
+      "name": "Quest Paper Ultimate Weapon Blueprint 02",
+      "category": "Quest",
+      "internalName": "Quest_Paper_UltimateWeapon_Blueprint_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004262,
+      "name": "Quest Paper Orc Technical List",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Orc_TechnicalList",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004263,
+      "name": "Quest Paper Caliburn Soldiers Letter",
+      "category": "Quest",
+      "internalName": "Quest_Paper_CaliburnSoldiers_Letter",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004265,
+      "name": "Quest Wanted Paper Traitor Hit List",
+      "category": "Quest",
+      "internalName": "Quest_WantedPaper_Traitor_Hit_List",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004266,
+      "name": "Book Antumbra Temple II",
+      "category": "Quest",
+      "internalName": "Book_Antumbra_Temple_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004267,
+      "name": "Book Antumbra Temple III",
+      "category": "Quest",
+      "internalName": "Book_Antumbra_Temple_III",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004268,
+      "name": "Book Antumbra Temple IV",
+      "category": "Quest",
+      "internalName": "Book_Antumbra_Temple_IV",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004270,
+      "name": "Book Bastier Journal",
+      "category": "Quest",
+      "internalName": "Book_Bastier_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004271,
+      "name": "Book Biological Journal",
+      "category": "Quest",
+      "internalName": "Book_Biological_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004272,
+      "name": "Book Marni Ctrafing Journal",
+      "category": "Quest",
+      "internalName": "Book_Marni_CtrafingJournal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004273,
+      "name": "Book Biological Research Journal",
+      "category": "Quest",
+      "internalName": "Book_BiologicalResearch_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004274,
+      "name": "Book Orphanage Register 01",
+      "category": "Quest",
+      "internalName": "Book_Orphanage_Register_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004275,
+      "name": "Book Tristan Journal",
+      "category": "Quest",
+      "internalName": "Book_Tristan_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004276,
+      "name": "Book Askelund Slave Journal",
+      "category": "Quest",
+      "internalName": "Book_Askelund_SlaveJournal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004277,
+      "name": "Book Merrick Memoris 01",
+      "category": "Quest",
+      "internalName": "Book_Merrick_Memoris_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004278,
+      "name": "Book Sparring Journal",
+      "category": "Quest",
+      "internalName": "Book_Sparring_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004279,
+      "name": "Book Chaser Journal",
+      "category": "Quest",
+      "internalName": "Book_Chaser_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004280,
+      "name": "Book Tariv Storybook",
+      "category": "Quest",
+      "internalName": "Book_Tariv_Storybook",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004281,
+      "name": "Book Master Journal 01",
+      "category": "Quest",
+      "internalName": "Book_MasterJournal_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004283,
+      "name": "Book Heresy Manual 01",
+      "category": "Quest",
+      "internalName": "Book_Heresy_Manual_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004284,
+      "name": "Book Pursuers Journal 01",
+      "category": "Quest",
+      "internalName": "Book_Pursuers_Journal_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004285,
+      "name": "Book Confidential Record 01",
+      "category": "Quest",
+      "internalName": "Book_Confidential_Record_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004286,
+      "name": "Quest Paper Navy Inquiry Report",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Navy_Inquiry_Report",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004287,
+      "name": "Pet Attackable Amulet",
+      "category": "Misc",
+      "internalName": "Pet_Attackable_Amulet",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004288,
+      "name": "Book Technician Journal",
+      "category": "Quest",
+      "internalName": "Book_Technician_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004289,
+      "name": "Book Marni Airship Journal",
+      "category": "Quest",
+      "internalName": "Book_MarniAirship_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004290,
+      "name": "Book Airship Journal",
+      "category": "Quest",
+      "internalName": "Book_Airship_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004291,
+      "name": "Book Walter Document",
+      "category": "Quest",
+      "internalName": "Book_Walter_Document",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004292,
+      "name": "Book Ravok Journal 01",
+      "category": "Quest",
+      "internalName": "Book_Ravok_Journal_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004293,
+      "name": "Quest Faction Research Book",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Research_Book",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004294,
+      "name": "Quest Faction Urdavah Mount Study",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Urdavah_Mount_Study",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004295,
+      "name": "Quest Faction Gold Leaf Membership Pledge",
+      "category": "Quest",
+      "internalName": "Quest_Faction_GoldLeaf_Membership_Pledge",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004296,
+      "name": "Quest Faction Shai Record",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Shai_Record",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004297,
+      "name": "Quest Faction Herb Journal",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Herb_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004298,
+      "name": "Quest Faction Crimsondesert Chronicle",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Crimsondesert_Chronicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004299,
+      "name": "Quest Faction Pirate Logbook",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Pirate_Logbook",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004300,
+      "name": "Quest Faction Tariv Textbook",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Tariv_Textbook",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004301,
+      "name": "Quest Faction Solumena Doctrine",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Solumena_Doctrine",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004302,
+      "name": "Quest Faction Witch Journal",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Witch_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004303,
+      "name": "Quest Faction Pailune Chronicle",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Pailune_Chronicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004304,
+      "name": "Quest Faction Old Royal Edict",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Old_Royal_Edict",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004305,
+      "name": "Quest Faction Urdavah Letter",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Urdavah_Letter",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004306,
+      "name": "Quest Faction Wolf Pursuer Record",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Wolf_Pursuer_Record",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004307,
+      "name": "Quest Faction Payment Statement",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Payment_Statement",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004308,
+      "name": "Quest Faction Silvermoon Merchant Letter",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Silvermoon_Merchant_Letter",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004309,
+      "name": "Quest Faction Solumena Inspection Report",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Solumena_Inspection_Report",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004310,
+      "name": "Quest Faction Solumena Heresy Report",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Solumena_Heresy_Report",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004311,
+      "name": "Quest Faction Sizlek Plan",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Sizlek_Plan",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004312,
+      "name": "Quest Faction Neutralzone Strategy Report",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Neutralzone_Strategy_Report",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004313,
+      "name": "Quest Faction Bastier Report",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Bastier_Report",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004314,
+      "name": "Quest Faction Demeniss Notice",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Demeniss_Notice",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004315,
+      "name": "Pet Huntable Amulet",
+      "category": "Misc",
+      "internalName": "Pet_Huntable_Amulet",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004318,
+      "name": "Item Pinball Coin",
+      "category": "Misc",
+      "internalName": "Item_Pinball_Coin",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004319,
+      "name": "Visione Chip Alustin Journal 0001",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004320,
+      "name": "Visione Chip Alustin Journal 0002",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004321,
+      "name": "Visione Chip Alustin Journal 0003",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004322,
+      "name": "Visione Chip Alustin Journal 0004",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0004",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004323,
+      "name": "Visione Chip Alustin Journal 0005",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0005",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004324,
+      "name": "Visione Chip Alustin Journal 0006",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0006",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004325,
+      "name": "Visione Chip Alustin Journal 0007",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0007",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004326,
+      "name": "Visione Chip Alustin Journal 0008",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0008",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004327,
+      "name": "Visione Chip Alustin Journal 0009",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0009",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004328,
+      "name": "Visione Chip Alustin Journal 0010",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0010",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004329,
+      "name": "Visione Chip Alustin Journal 0011",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0011",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004330,
+      "name": "Visione Chip Alustin Journal 0012",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0012",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004331,
+      "name": "Visione Chip Alustin Journal 0013",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0013",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004332,
+      "name": "Visione Chip Alustin Journal 0014",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0014",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004333,
+      "name": "Visione Chip Alustin Journal 0015",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0015",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004334,
+      "name": "Visione Chip Alustin Journal 0016",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0016",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004335,
+      "name": "Visione Chip Alustin Journal 0017",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0017",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004336,
+      "name": "Visione Chip Alustin Journal 0018",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0018",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004337,
+      "name": "Visione Chip Alustin Journal 0019",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0019",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004338,
+      "name": "Visione Chip Alustin Journal 0020",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0020",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004339,
+      "name": "Visione Chip Alustin Journal 0021",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0021",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004340,
+      "name": "Visione Chip Alustin Journal 0022",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0022",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004341,
+      "name": "Visione Chip Alustin Journal 0023",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0023",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004342,
+      "name": "Visione Chip Alustin Journal 0024",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0024",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004343,
+      "name": "Visione Chip Alustin Journal 0025",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0025",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004344,
+      "name": "Visione Chip Alustin Journal 0026",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0026",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004345,
+      "name": "Visione Chip Alustin Journal 0027",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0027",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004346,
+      "name": "Visione Chip Alustin Journal 0028",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0028",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004347,
+      "name": "Visione Chip Alustin Journal 0029",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0029",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004348,
+      "name": "Visione Chip Alustin Journal 0030",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0030",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004349,
+      "name": "Visione Chip Alustin Journal 0031",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0031",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004350,
+      "name": "Visione Chip Alustin Journal 0032",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0032",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004351,
+      "name": "Visione Chip Alustin Journal 0033",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0033",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004352,
+      "name": "Visione Chip Alustin Journal 0034",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0034",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004353,
+      "name": "Visione Chip Alustin Journal 0035",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0035",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004354,
+      "name": "Visione Chip Alustin Journal 0036",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0036",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004355,
+      "name": "Visione Chip Alustin Journal 0037",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0037",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004356,
+      "name": "Visione Chip Alustin Journal 0038",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0038",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004357,
+      "name": "Visione Chip Alustin Journal 0039",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0039",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004358,
+      "name": "Visione Chip Alustin Journal 0040",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0040",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004359,
+      "name": "Visione Chip Alustin Journal 0041",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0041",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004360,
+      "name": "Visione Chip Alustin Journal 0042",
+      "category": "Misc",
+      "internalName": "Visione_Chip_Alustin_Journal_0042",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004361,
+      "name": "Legend Macaw Parrot Report",
+      "category": "Misc",
+      "internalName": "Legend_Macaw_Parrot_Report",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004362,
+      "name": "Legend Machine Eagle Report",
+      "category": "Misc",
+      "internalName": "Legend_Machine_Eagle_Report",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004363,
+      "name": "Quest Paper Lumberjack Testimony",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Lumberjack_Testimony",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004364,
+      "name": "Collection Prop Picture 0077",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Picture_0077",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004365,
+      "name": "Limerick Chain Mail Armor II",
+      "category": "Equipment",
+      "internalName": "Limerick_ChainMail_Armor_II",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004366,
+      "name": "Muglah Fabric Armor II",
+      "category": "Equipment",
+      "internalName": "Muglah_Fabric_Armor_II",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004367,
+      "name": "Orbs Fabric Armor I",
+      "category": "Equipment",
+      "internalName": "Orbs_Fabric_Armor_I",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004368,
+      "name": "Kahturaon Fabric Armor II",
+      "category": "Equipment",
+      "internalName": "Kahturaon_Fabric_Armor_II",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004369,
+      "name": "Wolf Pursuer Leather Armor II",
+      "category": "Equipment",
+      "internalName": "Wolf_Pursuer_Leather_Armor_II",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004370,
+      "name": "Hymns of Dusk Plate Armor Armor II",
+      "category": "Equipment",
+      "internalName": "Hymns_of_Dusk_PlateArmor_Armor_II",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004371,
+      "name": "Twilight Whistlers Plate Armor Armor IV",
+      "category": "Equipment",
+      "internalName": "Twilight_Whistlers_PlateArmor_Armor_IV",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004372,
+      "name": "Collection Prop Picture 0078",
+      "category": "Misc",
+      "internalName": "Collection_Prop_Picture_0078",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004373,
+      "name": "Broken Graymane Token",
+      "category": "Misc",
+      "internalName": "Broken_Graymane_Token",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004374,
+      "name": "Quest Paper Hyena Cave Recapture",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Hyena_Cave_Recapture",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004375,
+      "name": "Quest Hexe Marie Experiment",
+      "category": "Quest",
+      "internalName": "Quest_Hexe_Marie_Experiment",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004377,
+      "name": "Hexe Wooden Toy",
+      "category": "Misc",
+      "internalName": "Hexe_Wooden_Toy",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004379,
+      "name": "Item Abyss Gear Recipe Box I",
+      "category": "Misc",
+      "internalName": "Item_AbyssGear_Recipe_Box_I",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004380,
+      "name": "Item Abyss Gear Recipe Box II",
+      "category": "Misc",
+      "internalName": "Item_AbyssGear_Recipe_Box_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004381,
+      "name": "Item Abyss Gear Recipe Box III",
+      "category": "Misc",
+      "internalName": "Item_AbyssGear_Recipe_Box_III",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004382,
+      "name": "Item Abyss Gear Recipe Box IV",
+      "category": "Misc",
+      "internalName": "Item_AbyssGear_Recipe_Box_IV",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004383,
+      "name": "Item Abyss Gear Recipe Box V",
+      "category": "Misc",
+      "internalName": "Item_AbyssGear_Recipe_Box_V",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004384,
+      "name": "Item Abyss Gear Recipe Box VI",
+      "category": "Misc",
+      "internalName": "Item_AbyssGear_Recipe_Box_VI",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004386,
+      "name": "Book Kuku Bird Journal",
+      "category": "Quest",
+      "internalName": "Book_KukuBirdJournal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004387,
+      "name": "Book Wyvern Journal",
+      "category": "Quest",
+      "internalName": "Book_WyvernJournal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004388,
+      "name": "Item Egg Ku Ku",
+      "category": "Misc",
+      "internalName": "Item_Egg_KuKu",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004389,
+      "name": "Item Egg Wyvern",
+      "category": "Misc",
+      "internalName": "Item_Egg_Wyvern",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004393,
+      "name": "Scholarstone Book I",
+      "category": "Misc",
+      "internalName": "Scholarstone_Book_I",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004394,
+      "name": "Periodic Continental Situation Report",
+      "category": "Misc",
+      "internalName": "Periodic_Continental_Situation_Report",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004395,
+      "name": "Kuku Pot Trade Offer Report",
+      "category": "Misc",
+      "internalName": "Kuku_Pot_Trade_Offer_Report",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004397,
+      "name": "Bear Armor",
+      "category": "Equipment",
+      "internalName": "Bear_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004398,
+      "name": "Wolf Armor",
+      "category": "Equipment",
+      "internalName": "Wolf_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004399,
+      "name": "Giant Iguana Armor",
+      "category": "Equipment",
+      "internalName": "GiantIguana_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004400,
+      "name": "carmabirdsaurus Armor",
+      "category": "Equipment",
+      "internalName": "carmabirdsaurus_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004401,
+      "name": "Ku Kubird Armor",
+      "category": "Equipment",
+      "internalName": "KuKubird_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004402,
+      "name": "Ku Kubird Armor I",
+      "category": "Equipment",
+      "internalName": "KuKubird_Armor_I",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004403,
+      "name": "deer Armor",
+      "category": "Equipment",
+      "internalName": "deer_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004404,
+      "name": "Alpine Ibex Armor",
+      "category": "Equipment",
+      "internalName": "AlpineIbex_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004405,
+      "name": "Camel Armor",
+      "category": "Equipment",
+      "internalName": "Camel_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004406,
+      "name": "Warthog Armor",
+      "category": "Equipment",
+      "internalName": "Warthog_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004408,
+      "name": "Marni Knight Plate Armor Helm",
+      "category": "Equipment",
+      "internalName": "MarniKnight_PlateArmor_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004409,
+      "name": "Quest Faction Silvermoon Merchant Letter I",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Silvermoon_Merchant_Letter_I",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004410,
+      "name": "Quest Faction Silvermoon Merchant Letter II",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Silvermoon_Merchant_Letter_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004411,
+      "name": "Item gimmick in dpf carpet 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004412,
+      "name": "Item gimmick in dpf carpet 0002",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004413,
+      "name": "Item gimmick in dpf carpet 0003",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004414,
+      "name": "Item gimmick in dpf carpet 0004",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0004",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004415,
+      "name": "Item gimmick in dpf carpet 0005",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0005",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004416,
+      "name": "Item gimmick in dpf carpet 0006",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0006",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004417,
+      "name": "Item gimmick in dpf carpet 0006 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0006_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004418,
+      "name": "Item gimmick in dpf carpet 0007",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0007",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004419,
+      "name": "Item gimmick in dpf carpet 0008",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0008",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004420,
+      "name": "Item gimmick in dpf carpet 0008 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0008_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004421,
+      "name": "Item gimmick in dpf carpet 0009",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0009",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004422,
+      "name": "Item gimmick in dpf carpet 0010",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0010",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004423,
+      "name": "Item gimmick in dpf carpet 0010 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0010_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004424,
+      "name": "Item gimmick in dpf carpet 0011",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0011",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004425,
+      "name": "Item gimmick in dpf carpet 0011 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0011_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004426,
+      "name": "Item gimmick in dpf carpet 0012",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0012",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004427,
+      "name": "Item gimmick in dpf carpet 0012 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0012_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004430,
+      "name": "Pinball Fabric Helm",
+      "category": "Equipment",
+      "internalName": "Pinball_Fabric_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004431,
+      "name": "Ku Kubird Helm",
+      "category": "Equipment",
+      "internalName": "KuKubird_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004446,
+      "name": "wyvern Armor",
+      "category": "Equipment",
+      "internalName": "wyvern_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004459,
+      "name": "Wood Branch Usable",
+      "category": "Misc",
+      "internalName": "Wood_Branch_Usable",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004460,
+      "name": "Wood Branch Hard Usable",
+      "category": "Misc",
+      "internalName": "Wood_Branch_Hard_Usable",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004461,
+      "name": "Bamboo Branch Usable",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_Usable",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004462,
+      "name": "Bamboo Branch Hard Usable",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_Hard_Usable",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004463,
+      "name": "Wood Branch Wild Spirit",
+      "category": "Misc",
+      "internalName": "Wood_Branch_WildSpirit",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004464,
+      "name": "Wood Branch 01 II",
+      "category": "Misc",
+      "internalName": "Wood_Branch_01_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004465,
+      "name": "Wood Branch 01 III",
+      "category": "Misc",
+      "internalName": "Wood_Branch_01_III",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004466,
+      "name": "Wood Branch 01 IV",
+      "category": "Misc",
+      "internalName": "Wood_Branch_01_IV",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004467,
+      "name": "Wood Branch 01 V",
+      "category": "Misc",
+      "internalName": "Wood_Branch_01_V",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004468,
+      "name": "Wood Branch 01 VI",
+      "category": "Misc",
+      "internalName": "Wood_Branch_01_VI",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004469,
+      "name": "Wood Branch 01 VII",
+      "category": "Misc",
+      "internalName": "Wood_Branch_01_VII",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004470,
+      "name": "Wood Branch 01 VIII",
+      "category": "Misc",
+      "internalName": "Wood_Branch_01_VIII",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004471,
+      "name": "Wood Branch 01 IX",
+      "category": "Misc",
+      "internalName": "Wood_Branch_01_IX",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004472,
+      "name": "Wood Branch 01 X",
+      "category": "Misc",
+      "internalName": "Wood_Branch_01_X",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004473,
+      "name": "Wood Branch 02 II",
+      "category": "Misc",
+      "internalName": "Wood_Branch_02_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004474,
+      "name": "Wood Branch 02 III",
+      "category": "Misc",
+      "internalName": "Wood_Branch_02_III",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004475,
+      "name": "Wood Branch 02 IV",
+      "category": "Misc",
+      "internalName": "Wood_Branch_02_IV",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004476,
+      "name": "Wood Branch 02 V",
+      "category": "Misc",
+      "internalName": "Wood_Branch_02_V",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004477,
+      "name": "Wood Branch 02 VI",
+      "category": "Misc",
+      "internalName": "Wood_Branch_02_VI",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004478,
+      "name": "Wood Branch 02 VII",
+      "category": "Misc",
+      "internalName": "Wood_Branch_02_VII",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004479,
+      "name": "Wood Branch 02 VIII",
+      "category": "Misc",
+      "internalName": "Wood_Branch_02_VIII",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004480,
+      "name": "Wood Branch 02 IX",
+      "category": "Misc",
+      "internalName": "Wood_Branch_02_IX",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004481,
+      "name": "Wood Branch 02 X",
+      "category": "Misc",
+      "internalName": "Wood_Branch_02_X",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004482,
+      "name": "Bamboo Branch 01 II",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_01_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004483,
+      "name": "Bamboo Branch 01 III",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_01_III",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004484,
+      "name": "Bamboo Branch 01 IV",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_01_IV",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004485,
+      "name": "Bamboo Branch 01 V",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_01_V",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004486,
+      "name": "Bamboo Branch 01 VI",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_01_VI",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004487,
+      "name": "Bamboo Branch 01 VII",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_01_VII",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004488,
+      "name": "Bamboo Branch 01 VIII",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_01_VIII",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004489,
+      "name": "Bamboo Branch 01 IX",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_01_IX",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004490,
+      "name": "Bamboo Branch 01 X",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_01_X",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004491,
+      "name": "Bamboo Branch 02 II",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_02_II",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004492,
+      "name": "Bamboo Branch 02 III",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_02_III",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004493,
+      "name": "Bamboo Branch 02 IV",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_02_IV",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004494,
+      "name": "Bamboo Branch 02 V",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_02_V",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004495,
+      "name": "Bamboo Branch 02 VI",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_02_VI",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004496,
+      "name": "Bamboo Branch 02 VII",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_02_VII",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004497,
+      "name": "Bamboo Branch 02 VIII",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_02_VIII",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004498,
+      "name": "Bamboo Branch 02 IX",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_02_IX",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004499,
+      "name": "Bamboo Branch 02 X",
+      "category": "Misc",
+      "internalName": "Bamboo_Branch_02_X",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004502,
+      "name": "Pet Armor Fabric Helm Wyvern Baby",
+      "category": "Equipment",
+      "internalName": "PetArmor_Fabric_Helm_WyvernBaby",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004503,
+      "name": "Item Abyss Artifact Chest 2 7",
+      "category": "Misc",
+      "internalName": "Item_AbyssArtifact_Chest_2_7",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004504,
+      "name": "Item Abyss Artifact Chest 3",
+      "category": "Misc",
+      "internalName": "Item_AbyssArtifact_Chest_3",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004505,
+      "name": "Item Abyss Artifact Chest 5",
+      "category": "Misc",
+      "internalName": "Item_AbyssArtifact_Chest_5",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004506,
+      "name": "Item Pinball Coin Reward Bag",
+      "category": "Misc",
+      "internalName": "Item_Pinball_Coin_Reward_Bag",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004516,
+      "name": "Pet Armor Helm Cucubirdbaby",
+      "category": "Equipment",
+      "internalName": "PetArmor_Helm_Cucubirdbaby",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004537,
+      "name": "Item Collection Prop Automata 0001",
+      "category": "Misc",
+      "internalName": "Item_Collection_Prop_Automata_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004538,
+      "name": "Item Collection Prop Automata 0002",
+      "category": "Misc",
+      "internalName": "Item_Collection_Prop_Automata_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004539,
+      "name": "Item Collection Prop Automata 0003",
+      "category": "Misc",
+      "internalName": "Item_Collection_Prop_Automata_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004540,
+      "name": "Item Collection Prop Automata 0004",
+      "category": "Misc",
+      "internalName": "Item_Collection_Prop_Automata_0004",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004546,
+      "name": "License Operation Copper Paper Bank",
+      "category": "Misc",
+      "internalName": "License_Operation_CopperPaperBank",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004547,
+      "name": "Quest Faction Urdavah Eco Energy",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Urdavah_Eco_Energy",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004548,
+      "name": "Quest Faction Legendary Wolf",
+      "category": "Quest",
+      "internalName": "Quest_Faction_Legendary_Wolf",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004549,
+      "name": "Witch Wing Fan 01",
+      "category": "Misc",
+      "internalName": "Witch_WingFan_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004550,
+      "name": "Witch Wing Fan 02",
+      "category": "Misc",
+      "internalName": "Witch_WingFan_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004551,
+      "name": "Witch Wing Fan 03",
+      "category": "Misc",
+      "internalName": "Witch_WingFan_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004552,
+      "name": "Witch Wing Fan 04",
+      "category": "Misc",
+      "internalName": "Witch_WingFan_04",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004553,
+      "name": "Witch Wing Fan 05",
+      "category": "Misc",
+      "internalName": "Witch_WingFan_05",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004554,
+      "name": "Witch Wing Fan 06",
+      "category": "Misc",
+      "internalName": "Witch_WingFan_06",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004555,
+      "name": "Witch Wing Fan 07",
+      "category": "Misc",
+      "internalName": "Witch_WingFan_07",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004556,
+      "name": "Witch Wing Fan 08",
+      "category": "Misc",
+      "internalName": "Witch_WingFan_08",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004557,
+      "name": "Witch Wing Fan 09",
+      "category": "Misc",
+      "internalName": "Witch_WingFan_09",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004558,
+      "name": "Witch Wing Fan 10",
+      "category": "Misc",
+      "internalName": "Witch_WingFan_10",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004559,
+      "name": "Piranhas Report",
+      "category": "Misc",
+      "internalName": "Piranhas_Report",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004560,
+      "name": "Item gimmick tool blacksmithstone",
+      "category": "Misc",
+      "internalName": "Item_gimmick_tool_blacksmithstone",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004564,
+      "name": "Demian Greyfur Fabric Gloves",
+      "category": "Equipment",
+      "internalName": "Demian_Greyfur_Fabric_Gloves",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004565,
+      "name": "Item gimmick tool Flower Hanger 01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_tool_FlowerHanger_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004566,
+      "name": "Item gimmick tool Flower Hanger 02",
+      "category": "Misc",
+      "internalName": "Item_gimmick_tool_FlowerHanger_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004567,
+      "name": "Item gimmick sotdae set 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_sotdae_set_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004568,
+      "name": "Item gimmick sotdae set 0002",
+      "category": "Misc",
+      "internalName": "Item_gimmick_sotdae_set_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004569,
+      "name": "Item gimmick sotdae set 0003",
+      "category": "Misc",
+      "internalName": "Item_gimmick_sotdae_set_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004570,
+      "name": "Item gimmick sotdae set 0004",
+      "category": "Misc",
+      "internalName": "Item_gimmick_sotdae_set_0004",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004571,
+      "name": "Item gimmick sotdae set 0005",
+      "category": "Misc",
+      "internalName": "Item_gimmick_sotdae_set_0005",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004572,
+      "name": "Item gimmick sotdae set 0006",
+      "category": "Misc",
+      "internalName": "Item_gimmick_sotdae_set_0006",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004573,
+      "name": "Item gimmick sotdae set 0007",
+      "category": "Misc",
+      "internalName": "Item_gimmick_sotdae_set_0007",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004574,
+      "name": "Item gimmick sotdae set 0008",
+      "category": "Misc",
+      "internalName": "Item_gimmick_sotdae_set_0008",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004575,
+      "name": "Item gimmick sotdae set 0009",
+      "category": "Misc",
+      "internalName": "Item_gimmick_sotdae_set_0009",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004576,
+      "name": "Item gimmick sotdae set 0010",
+      "category": "Misc",
+      "internalName": "Item_gimmick_sotdae_set_0010",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004577,
+      "name": "Item hanger streetlamp flowerpot 01",
+      "category": "Misc",
+      "internalName": "Item_hanger_streetlamp_flowerpot_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004578,
+      "name": "Item hanger streetlamp flowerpot 02",
+      "category": "Misc",
+      "internalName": "Item_hanger_streetlamp_flowerpot_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004579,
+      "name": "Item hanger streetlamp flowerpot 03",
+      "category": "Misc",
+      "internalName": "Item_hanger_streetlamp_flowerpot_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004580,
+      "name": "Item hanger streetlamp flowerpot 04",
+      "category": "Misc",
+      "internalName": "Item_hanger_streetlamp_flowerpot_04",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004581,
+      "name": "Item gimmick jukebox 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_jukebox_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004582,
+      "name": "Item lamp streetlamp 03",
+      "category": "Misc",
+      "internalName": "Item_lamp_streetlamp_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004583,
+      "name": "Item lamp streetlamp 03 index01",
+      "category": "Misc",
+      "internalName": "Item_lamp_streetlamp_03_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004584,
+      "name": "Item lamp streetlamp 03 index02",
+      "category": "Misc",
+      "internalName": "Item_lamp_streetlamp_03_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004585,
+      "name": "Item gimmick lamp streetlamp 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_lamp_streetlamp_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004586,
+      "name": "Item gimmick lamp streetlamp 0001 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_lamp_streetlamp_0001_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004587,
+      "name": "Item gimmick lamp streetlamp 0001 index02",
+      "category": "Misc",
+      "internalName": "Item_gimmick_lamp_streetlamp_0001_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004588,
+      "name": "Item drinkingfountain 01",
+      "category": "Consumable",
+      "internalName": "Item_drinkingfountain_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004589,
+      "name": "Item dpf fountain 01",
+      "category": "Misc",
+      "internalName": "Item_dpf_fountain_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004590,
+      "name": "Item dpf fountain 09",
+      "category": "Misc",
+      "internalName": "Item_dpf_fountain_09",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004591,
+      "name": "Item dpf fountain 02",
+      "category": "Misc",
+      "internalName": "Item_dpf_fountain_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004592,
+      "name": "Item dpf fountain 02 desert",
+      "category": "Misc",
+      "internalName": "Item_dpf_fountain_02_desert",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004593,
+      "name": "Item dpf fountain 06",
+      "category": "Misc",
+      "internalName": "Item_dpf_fountain_06",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004595,
+      "name": "Item gimmick craft anvil 01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_craft_anvil_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004596,
+      "name": "Item gimmick craft cook campfire 04",
+      "category": "Misc",
+      "internalName": "Item_gimmick_craft_cook_campfire_04",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004597,
+      "name": "Item gimmick craft cook campfire 05",
+      "category": "Misc",
+      "internalName": "Item_gimmick_craft_cook_campfire_05",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004598,
+      "name": "Item gimmick well 0001",
+      "category": "Misc",
+      "internalName": "Item_gimmick_well_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004599,
+      "name": "Item gimmick well 0001 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_well_0001_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004600,
+      "name": "Item gimmick well 0002",
+      "category": "Misc",
+      "internalName": "Item_gimmick_well_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004601,
+      "name": "Item gimmick well 0003",
+      "category": "Misc",
+      "internalName": "Item_gimmick_well_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004602,
+      "name": "Item gimmick well 0004",
+      "category": "Misc",
+      "internalName": "Item_gimmick_well_0004",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004603,
+      "name": "Item gimmick well 0004 index01",
+      "category": "Misc",
+      "internalName": "Item_gimmick_well_0004_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004604,
+      "name": "Nairah Basic Leather Cloak",
+      "category": "Equipment",
+      "internalName": "Nairah_Basic_Leather_Cloak",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004605,
+      "name": "Yann Basic Leather Cloak",
+      "category": "Equipment",
+      "internalName": "Yann_Basic_Leather_Cloak",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004606,
+      "name": "Item catwheel 01",
+      "category": "Misc",
+      "internalName": "Item_catwheel_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004607,
+      "name": "Item catwheel 02",
+      "category": "Misc",
+      "internalName": "Item_catwheel_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004608,
+      "name": "Animal Spirit",
+      "category": "Misc",
+      "internalName": "Animal_Spirit",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004610,
+      "name": "item Collection Prop Luxury 0001 index01",
+      "category": "Misc",
+      "internalName": "item_Collection_Prop_Luxury_0001_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004611,
+      "name": "item Collection Prop Luxury 0002",
+      "category": "Misc",
+      "internalName": "item_Collection_Prop_Luxury_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004612,
+      "name": "item Collection Prop Luxury 0002 index01",
+      "category": "Misc",
+      "internalName": "item_Collection_Prop_Luxury_0002_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004614,
+      "name": "item Collection prop Luxury 0003 index01",
+      "category": "Misc",
+      "internalName": "item_Collection_prop_Luxury_0003_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004615,
+      "name": "item Collection Prop Luxury 0004",
+      "category": "Misc",
+      "internalName": "item_Collection_Prop_Luxury_0004",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004620,
+      "name": "item Collection Prop Luxury 0008 index01",
+      "category": "Misc",
+      "internalName": "item_Collection_Prop_Luxury_0008_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004623,
+      "name": "Item lamp firepot 01 on",
+      "category": "Misc",
+      "internalName": "Item_lamp_firepot_01_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004624,
+      "name": "Item lamp firepot 03 on",
+      "category": "Misc",
+      "internalName": "Item_lamp_firepot_03_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004625,
+      "name": "Item lamp firepot 04 on",
+      "category": "Misc",
+      "internalName": "Item_lamp_firepot_04_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004626,
+      "name": "Item lamp firepot 05 on",
+      "category": "Misc",
+      "internalName": "Item_lamp_firepot_05_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004627,
+      "name": "Item lamp firepot 06 on",
+      "category": "Misc",
+      "internalName": "Item_lamp_firepot_06_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004628,
+      "name": "Item lamp brazier 02 on",
+      "category": "Misc",
+      "internalName": "Item_lamp_brazier_02_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004629,
+      "name": "Item lamp standtorch 01 on",
+      "category": "Misc",
+      "internalName": "Item_lamp_standtorch_01_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004630,
+      "name": "Item lamp standtorch 02 on",
+      "category": "Misc",
+      "internalName": "Item_lamp_standtorch_02_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004631,
+      "name": "Bastion Plate Armor Cloak",
+      "category": "Equipment",
+      "internalName": "Bastion_PlateArmor_Cloak",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004632,
+      "name": "Tarandus Plate Armor Cloak",
+      "category": "Equipment",
+      "internalName": "Tarandus_PlateArmor_Cloak",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004637,
+      "name": "Item gimmick in dpf carpet 0013",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0013",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004638,
+      "name": "Item gimmick in dpf carpet 0014",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0014",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004639,
+      "name": "Item gimmick in dpf carpet 0015",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0015",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004640,
+      "name": "Item gimmick in dpf carpet 0016",
+      "category": "Misc",
+      "internalName": "Item_gimmick_in_dpf_carpet_0016",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004641,
+      "name": "Recipe Item gimmick tool blacksmithstone",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_tool_blacksmithstone",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004642,
+      "name": "Recipe Item gimmick craft anvil 01",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_craft_anvil_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004643,
+      "name": "Recipe Item gimmick craft cook campfire 04",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_craft_cook_campfire_04",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004644,
+      "name": "Recipe Item gimmick craft cook campfire 05",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_craft_cook_campfire_05",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004645,
+      "name": "Recipe Item lamp firepot 01 on",
+      "category": "Misc",
+      "internalName": "Recipe_Item_lamp_firepot_01_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004646,
+      "name": "Recipe Item lamp firepot 03 on",
+      "category": "Misc",
+      "internalName": "Recipe_Item_lamp_firepot_03_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004647,
+      "name": "Recipe Item lamp firepot 04 on",
+      "category": "Misc",
+      "internalName": "Recipe_Item_lamp_firepot_04_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004648,
+      "name": "Recipe Item lamp firepot 05 on",
+      "category": "Misc",
+      "internalName": "Recipe_Item_lamp_firepot_05_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004649,
+      "name": "Recipe Item lamp firepot 06 on",
+      "category": "Misc",
+      "internalName": "Recipe_Item_lamp_firepot_06_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004650,
+      "name": "Recipe Item lamp brazier 02 on",
+      "category": "Misc",
+      "internalName": "Recipe_Item_lamp_brazier_02_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004651,
+      "name": "Recipe Item lamp standtorch 01 on",
+      "category": "Misc",
+      "internalName": "Recipe_Item_lamp_standtorch_01_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004652,
+      "name": "Recipe Item lamp standtorch 02 on",
+      "category": "Misc",
+      "internalName": "Recipe_Item_lamp_standtorch_02_on",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004653,
+      "name": "Recipe Item gimmick sotdae set 0001",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_sotdae_set_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004654,
+      "name": "Recipe Item gimmick sotdae set 0002",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_sotdae_set_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004655,
+      "name": "Recipe Item gimmick sotdae set 0003",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_sotdae_set_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004656,
+      "name": "Recipe Item gimmick sotdae set 0004",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_sotdae_set_0004",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004657,
+      "name": "Recipe Item gimmick sotdae set 0005",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_sotdae_set_0005",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004658,
+      "name": "Recipe Item gimmick sotdae set 0006",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_sotdae_set_0006",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004659,
+      "name": "Recipe Item gimmick sotdae set 0007",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_sotdae_set_0007",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004660,
+      "name": "Recipe Item gimmick sotdae set 0008",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_sotdae_set_0008",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004661,
+      "name": "Recipe Item gimmick sotdae set 0009",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_sotdae_set_0009",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004662,
+      "name": "Recipe Item gimmick sotdae set 0010",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_sotdae_set_0010",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004663,
+      "name": "Recipe Item lamp streetlamp 03",
+      "category": "Misc",
+      "internalName": "Recipe_Item_lamp_streetlamp_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004664,
+      "name": "Recipe Item lamp streetlamp 03 index01",
+      "category": "Misc",
+      "internalName": "Recipe_Item_lamp_streetlamp_03_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004665,
+      "name": "Recipe Item lamp streetlamp 03 index02",
+      "category": "Misc",
+      "internalName": "Recipe_Item_lamp_streetlamp_03_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004666,
+      "name": "Recipe Item gimmick lamp streetlamp 0001",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_lamp_streetlamp_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004667,
+      "name": "Recipe Item gimmick lamp streetlamp 0001 index01",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_lamp_streetlamp_0001_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004668,
+      "name": "Recipe Item gimmick lamp streetlamp 0001 index02",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_lamp_streetlamp_0001_index02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004669,
+      "name": "Recipe Item hanger streetlamp flowerpot 01",
+      "category": "Misc",
+      "internalName": "Recipe_Item_hanger_streetlamp_flowerpot_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004670,
+      "name": "Recipe Item hanger streetlamp flowerpot 02",
+      "category": "Misc",
+      "internalName": "Recipe_Item_hanger_streetlamp_flowerpot_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004671,
+      "name": "Recipe Item hanger streetlamp flowerpot 03",
+      "category": "Misc",
+      "internalName": "Recipe_Item_hanger_streetlamp_flowerpot_03",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004672,
+      "name": "Recipe Item hanger streetlamp flowerpot 04",
+      "category": "Misc",
+      "internalName": "Recipe_Item_hanger_streetlamp_flowerpot_04",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004673,
+      "name": "Recipe Item gimmick tool Flower Hanger 01",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_tool_FlowerHanger_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004674,
+      "name": "Recipe Item gimmick tool Flower Hanger 02",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_tool_FlowerHanger_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004675,
+      "name": "Recipe Item gimmick well 0001",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_well_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004676,
+      "name": "Recipe Item gimmick well 0001 index01",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_well_0001_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004677,
+      "name": "Recipe Item gimmick well 0002",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_well_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004678,
+      "name": "Recipe Item gimmick well 0003",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_well_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004679,
+      "name": "Recipe Item gimmick well 0004",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_well_0004",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004680,
+      "name": "Recipe Item gimmick well 0004 index01",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_well_0004_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004681,
+      "name": "Recipe Item drinkingfountain 01",
+      "category": "Consumable",
+      "internalName": "Recipe_Item_drinkingfountain_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004682,
+      "name": "Recipe Item dpf fountain 01",
+      "category": "Misc",
+      "internalName": "Recipe_Item_dpf_fountain_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004683,
+      "name": "Recipe Item dpf fountain 09",
+      "category": "Misc",
+      "internalName": "Recipe_Item_dpf_fountain_09",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004684,
+      "name": "Recipe Item dpf fountain 02",
+      "category": "Misc",
+      "internalName": "Recipe_Item_dpf_fountain_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004685,
+      "name": "Recipe Item dpf fountain 02 desert",
+      "category": "Misc",
+      "internalName": "Recipe_Item_dpf_fountain_02_desert",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004686,
+      "name": "Recipe Item dpf fountain 06",
+      "category": "Misc",
+      "internalName": "Recipe_Item_dpf_fountain_06",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004687,
+      "name": "Recipe Item fountain statue 02",
+      "category": "Misc",
+      "internalName": "Recipe_Item_fountain_statue_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004695,
+      "name": "Recipe Item catwheel 01",
+      "category": "Misc",
+      "internalName": "Recipe_Item_catwheel_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004696,
+      "name": "Recipe Item catwheel 02",
+      "category": "Misc",
+      "internalName": "Recipe_Item_catwheel_02",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004697,
+      "name": "Recipe Item Collection Prop Automata 0001",
+      "category": "Misc",
+      "internalName": "Recipe_Item_Collection_Prop_Automata_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004698,
+      "name": "Recipe Item Collection Prop Automata 0002",
+      "category": "Misc",
+      "internalName": "Recipe_Item_Collection_Prop_Automata_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004699,
+      "name": "Recipe Item Collection Prop Automata 0003",
+      "category": "Misc",
+      "internalName": "Recipe_Item_Collection_Prop_Automata_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004700,
+      "name": "Recipe Item Collection Prop Automata 0004",
+      "category": "Misc",
+      "internalName": "Recipe_Item_Collection_Prop_Automata_0004",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004701,
+      "name": "Recipe Item gimmick in dpf carpet 0001",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004702,
+      "name": "Recipe Item gimmick in dpf carpet 0002",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0002",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004703,
+      "name": "Recipe Item gimmick in dpf carpet 0003",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0003",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004704,
+      "name": "Recipe Item gimmick in dpf carpet 0004",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0004",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004705,
+      "name": "Recipe Item gimmick in dpf carpet 0005",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0005",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004706,
+      "name": "Recipe Item gimmick in dpf carpet 0006",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0006",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004707,
+      "name": "Recipe Item gimmick in dpf carpet 0006 index01",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0006_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004708,
+      "name": "Recipe Item gimmick in dpf carpet 0007",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0007",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004709,
+      "name": "Recipe Item gimmick in dpf carpet 0008",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0008",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004710,
+      "name": "Recipe Item gimmick in dpf carpet 0008 index01",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0008_index01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004711,
+      "name": "Recipe Item gimmick in dpf carpet 0009",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0009",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004718,
+      "name": "Pet Slot Expansion 1",
+      "category": "Misc",
+      "internalName": "Pet_Slot_Expansion_1",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004720,
+      "name": "Pet Slot Expansion 3",
+      "category": "Misc",
+      "internalName": "Pet_Slot_Expansion_3",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004725,
+      "name": "Pet Slot Expansion 1 2",
+      "category": "Misc",
+      "internalName": "Pet_Slot_Expansion_1_2",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004726,
+      "name": "Pet Slot Expansion 1 3",
+      "category": "Misc",
+      "internalName": "Pet_Slot_Expansion_1_3",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004763,
+      "name": "Pet Slot Expansion 2 1",
+      "category": "Misc",
+      "internalName": "Pet_Slot_Expansion_2_1",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004764,
+      "name": "Pet Slot Expansion 2 2",
+      "category": "Misc",
+      "internalName": "Pet_Slot_Expansion_2_2",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004765,
+      "name": "Pet Slot Expansion 2 3",
+      "category": "Misc",
+      "internalName": "Pet_Slot_Expansion_2_3",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004771,
+      "name": "Item fountain statue 01",
+      "category": "Misc",
+      "internalName": "Item_fountain_statue_01",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004772,
+      "name": "Trust Plate Armor Helm",
+      "category": "Equipment",
+      "internalName": "Trust_PlateArmor_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004773,
+      "name": "Wildness Plate Armor Helm",
+      "category": "Equipment",
+      "internalName": "Wildness_PlateArmor_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004774,
+      "name": "Tenacity Plate Armor Helm",
+      "category": "Equipment",
+      "internalName": "Tenacity_PlateArmor_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004775,
+      "name": "Silencer Plate Armor Helm",
+      "category": "Equipment",
+      "internalName": "Silencer_PlateArmor_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004776,
+      "name": "Steelmaw Plate Armor Helm",
+      "category": "Equipment",
+      "internalName": "Steelmaw_PlateArmor_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004777,
+      "name": "Pet Slot Expansion Start",
+      "category": "Misc",
+      "internalName": "Pet_Slot_Expansion_Start",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004778,
+      "name": "Melion Leather Cloak",
+      "category": "Equipment",
+      "internalName": "Melion_Leather_Cloak",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004779,
+      "name": "Cornia Leather Boots",
+      "category": "Equipment",
+      "internalName": "Cornia_Leather_Boots",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004780,
+      "name": "Fighter Fabric Armor",
+      "category": "Equipment",
+      "internalName": "Fighter_Fabric_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004781,
+      "name": "Bounty Hunter Leather Cloak",
+      "category": "Equipment",
+      "internalName": "BountyHunter_Leather_Cloak",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004800,
+      "name": "Sermena Fabric Armor",
+      "category": "Equipment",
+      "internalName": "Sermena_Fabric_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004801,
+      "name": "Rovenia Fabric Armor",
+      "category": "Equipment",
+      "internalName": "Rovenia_Fabric_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004802,
+      "name": "Bellania Leather Armor",
+      "category": "Equipment",
+      "internalName": "Bellania_Leather_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004803,
+      "name": "Frenoa Plate Armor Armor",
+      "category": "Equipment",
+      "internalName": "Frenoa_PlateArmor_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004804,
+      "name": "Rivenheim Fabric Armor",
+      "category": "Equipment",
+      "internalName": "Rivenheim_Fabric_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004805,
+      "name": "Duskmoon Fabric Armor",
+      "category": "Equipment",
+      "internalName": "Duskmoon_Fabric_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004810,
+      "name": "Lone Bomb Leather Armor",
+      "category": "Equipment",
+      "internalName": "LoneBomb_Leather_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004811,
+      "name": "Oak Barrel Mimic Leather Armor",
+      "category": "Equipment",
+      "internalName": "OakBarrel_Mimic_Leather_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004812,
+      "name": "Blacksmith Leather Armor",
+      "category": "Equipment",
+      "internalName": "Blacksmith_Leather_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004818,
+      "name": "Valnos Leather Armor",
+      "category": "Equipment",
+      "internalName": "Valnos_Leather_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004820,
+      "name": "Mardain Leather Armor",
+      "category": "Equipment",
+      "internalName": "Mardain_Leather_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004821,
+      "name": "Stein Leather Armor",
+      "category": "Equipment",
+      "internalName": "Stein_Leather_Armor",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004824,
+      "name": "Huskall Fabric Cloak",
+      "category": "Equipment",
+      "internalName": "Huskall_Fabric_Cloak",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004825,
+      "name": "Silvarin Fabric Cloak",
+      "category": "Equipment",
+      "internalName": "Silvarin_Fabric_Cloak",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004826,
+      "name": "Quest Paper Ward List",
+      "category": "Quest",
+      "internalName": "Quest_Paper_Ward_List",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004827,
+      "name": "Drop Item Quest Paper Cult Order",
+      "category": "Misc",
+      "internalName": "DropItem_Quest_Paper_Cult_Order",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004828,
+      "name": "Recipe Item gimmick jukebox 0001",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_jukebox_0001",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004829,
+      "name": "Common Flag III",
+      "category": "Misc",
+      "internalName": "Common_Flag_III",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004838,
+      "name": "Small Fire Bomb",
+      "category": "Consumable",
+      "internalName": "Small_Fire_Bomb",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004839,
+      "name": "Duskmoon Fabric Cloak",
+      "category": "Equipment",
+      "internalName": "Duskmoon_Fabric_Cloak",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004848,
+      "name": "Light Arrowhead Leather Cloak",
+      "category": "Equipment",
+      "internalName": "Light_Arrowhead_Leather_Cloak",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004858,
+      "name": "Recipe Item gimmick in dpf carpet 0013",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0013",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004859,
+      "name": "Recipe Item gimmick in dpf carpet 0014",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0014",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004860,
+      "name": "Recipe Item gimmick in dpf carpet 0015",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0015",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004861,
+      "name": "Recipe Item gimmick in dpf carpet 0016",
+      "category": "Misc",
+      "internalName": "Recipe_Item_gimmick_in_dpf_carpet_0016",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004879,
+      "name": "Deer King Crown Helm",
+      "category": "Equipment",
+      "internalName": "DeerKing_Crown_Helm",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004880,
+      "name": "Item Fire Fly Box",
+      "category": "Misc",
+      "internalName": "Item_FireFly_Box",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004882,
+      "name": "Orcu Mer Fabric Gloves I",
+      "category": "Equipment",
+      "internalName": "OrcuMer_Fabric_Gloves_I",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004883,
+      "name": "Redleader Plate Armor Armor I",
+      "category": "Equipment",
+      "internalName": "Redleader_PlateArmor_Armor_I",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1004893,
+      "name": "Recipe Titan Plate Armor Armor",
+      "category": "Misc",
+      "internalName": "Recipe_Titan_PlateArmor_Armor",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004894,
+      "name": "Recipe Paphneil Plate Armor Armor",
+      "category": "Misc",
+      "internalName": "Recipe_Paphneil_PlateArmor_Armor",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004895,
+      "name": "Recipe king Lost People Plate Armor Armor",
+      "category": "Misc",
+      "internalName": "Recipe_king_LostPeople_PlateArmor_Armor",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004904,
+      "name": "Quest Paper Marni Dragon Boss Rescue",
+      "category": "Quest",
+      "internalName": "Quest_Paper_MarniDragon_Boss_Rescue",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1004910,
+      "name": "Hernand Bond",
+      "category": "Misc",
+      "internalName": "Hernand_Bond",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005046,
+      "name": "Trade Millennial Snow Ginseng",
+      "category": "Misc",
+      "internalName": "Trade_MillennialSnowGinseng",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005047,
+      "name": "Trade Royal Jelly",
+      "category": "Misc",
+      "internalName": "Trade_RoyalJelly",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005048,
+      "name": "Trade Spirit Mushroom",
+      "category": "Misc",
+      "internalName": "Trade_SpiritMushroom",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005049,
+      "name": "Trade Scripture",
+      "category": "Misc",
+      "internalName": "Trade_Scripture",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005050,
+      "name": "Trade Glowing Mushroom",
+      "category": "Misc",
+      "internalName": "Trade_GlowingMushroom",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005051,
+      "name": "Trade White Deer Leather",
+      "category": "Misc",
+      "internalName": "Trade_WhiteDeerLeather",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005052,
+      "name": "Trade Spyglass",
+      "category": "Misc",
+      "internalName": "Trade_Spyglass",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005053,
+      "name": "Trade Horseshoe",
+      "category": "Misc",
+      "internalName": "Trade_Horseshoe",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005054,
+      "name": "Trade Nutritious Jerky",
+      "category": "Misc",
+      "internalName": "Trade_NutritiousJerky",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005055,
+      "name": "Trade Cannon Gunpowder",
+      "category": "Misc",
+      "internalName": "Trade_CannonGunpowder",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005056,
+      "name": "Trade Compass",
+      "category": "Misc",
+      "internalName": "Trade_Compass",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005057,
+      "name": "Trade Flint Set",
+      "category": "Misc",
+      "internalName": "Trade_FlintSet",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005058,
+      "name": "Trade Glacialstone",
+      "category": "Misc",
+      "internalName": "Trade_Glacialstone",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005059,
+      "name": "Trade Frost Ghost Tear",
+      "category": "Misc",
+      "internalName": "Trade_FrostGhostTear",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005060,
+      "name": "Trade Sulfur Crystal",
+      "category": "Misc",
+      "internalName": "Trade_SulfurCrystal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005061,
+      "name": "Trade Lightning Wood",
+      "category": "Misc",
+      "internalName": "Trade_LightningWood",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005062,
+      "name": "Trade Rosin",
+      "category": "Misc",
+      "internalName": "Trade_Rosin",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005063,
+      "name": "Trade Rock Salt",
+      "category": "Misc",
+      "internalName": "Trade_RockSalt",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005064,
+      "name": "Trade Table Clock",
+      "category": "Misc",
+      "internalName": "Trade_TableClock",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005065,
+      "name": "Trade Pearl",
+      "category": "Misc",
+      "internalName": "Trade_Pearl",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005066,
+      "name": "Trade Coolant",
+      "category": "Misc",
+      "internalName": "Trade_Coolant",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005067,
+      "name": "Trade Tool Set",
+      "category": "Misc",
+      "internalName": "Trade_ToolSet",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005068,
+      "name": "Trade Premium Oil",
+      "category": "Misc",
+      "internalName": "Trade_PremiumOil",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005069,
+      "name": "Trade Model Ship",
+      "category": "Misc",
+      "internalName": "Trade_ModelShip",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005070,
+      "name": "Trade Opuntia Chocolate",
+      "category": "Misc",
+      "internalName": "Trade_OpuntiaChocolate",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005071,
+      "name": "Trade Scorpion Amber",
+      "category": "Misc",
+      "internalName": "Trade_ScorpionAmber",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005072,
+      "name": "Trade Oasis Water",
+      "category": "Misc",
+      "internalName": "Trade_OasisWater",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005073,
+      "name": "Trade Ritual Bowl",
+      "category": "Misc",
+      "internalName": "Trade_RitualBowl",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005074,
+      "name": "Trade Millennial Snow Ginseng Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_MillennialSnowGinseng_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005075,
+      "name": "Trade Royal Jelly Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_RoyalJelly_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005076,
+      "name": "Trade Spirit Mushroom Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_SpiritMushroom_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005077,
+      "name": "Trade Scripture Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_Scripture_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005078,
+      "name": "Trade Glowing Mushroom Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_GlowingMushroom_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005079,
+      "name": "Trade White Deer Leather Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_WhiteDeerLeather_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005080,
+      "name": "Trade Spyglass Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_Spyglass_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005081,
+      "name": "Trade Horseshoe Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_Horseshoe_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005082,
+      "name": "Trade Nutritious Jerky Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_NutritiousJerky_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005083,
+      "name": "Trade Cannon Gunpowder Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_CannonGunpowder_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005084,
+      "name": "Trade Compass Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_Compass_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005085,
+      "name": "Trade Flint Set Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_FlintSet_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005086,
+      "name": "Trade Glacialstone Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_Glacialstone_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005087,
+      "name": "Trade Frost Ghost Tear Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_FrostGhostTear_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005088,
+      "name": "Trade Sulfur Crystal Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_SulfurCrystal_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005089,
+      "name": "Trade Lightning Wood Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_LightningWood_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005090,
+      "name": "Trade Rosin Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_Rosin_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005091,
+      "name": "Trade Rock Salt Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_RockSalt_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005092,
+      "name": "Trade Table Clock Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_TableClock_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005093,
+      "name": "Trade Pearl Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_Pearl_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005094,
+      "name": "Trade Coolant Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_Coolant_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005095,
+      "name": "Trade Tool Set Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_ToolSet_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005096,
+      "name": "Trade Premium Oil Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_PremiumOil_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005097,
+      "name": "Trade Model Ship Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_ModelShip_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005098,
+      "name": "Trade Opuntia Chocolate Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_OpuntiaChocolate_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005099,
+      "name": "Trade Scorpion Amber Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_ScorpionAmber_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005100,
+      "name": "Trade Oasis Water Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_OasisWater_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005101,
+      "name": "Trade Ritual Bowl Packed In Vehicle",
+      "category": "Misc",
+      "internalName": "Trade_RitualBowl_PackedInVehicle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005302,
+      "name": "Scrap Queen Goblin Two Hand Spear",
+      "category": "Misc",
+      "internalName": "ScrapQueen_Goblin_TwoHandSpear",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005363,
+      "name": "Book Sebastian Diary Reeddevil",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_Reeddevil",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005364,
+      "name": "Book Sebastian Diary Ludvig",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_Ludvig",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005365,
+      "name": "Book Sebastian Diary Gregor",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_Gregor",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005366,
+      "name": "Book Sebastian Diary Caliburn",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_Caliburn",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005367,
+      "name": "Book Sebastian Diary Master Doo",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_MasterDoo",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005368,
+      "name": "Book Sebastian Diary Hexe Marie",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_HexeMarie",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005369,
+      "name": "Book Sebastian Diary Mine Fortress",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_MineFortress",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005370,
+      "name": "Book Sebastian Diary Valvegard Wall Fort",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_ValvegardWallFort",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005371,
+      "name": "Book Sebastian Diary Marni Lab",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_MarniLab",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005372,
+      "name": "Book Sebastian Diary The Faceless",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_TheFaceless",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005373,
+      "name": "Book Sebastian Diary Deer King",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_DeerKing",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005374,
+      "name": "Book Sebastian Diary White Bear",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_WhiteBear",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005375,
+      "name": "Book Sebastian Diary Golden Knight Merrick",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_GoldenKnightMerrick",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005376,
+      "name": "Book Sebastian Diary Trukan",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_Trukan",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005377,
+      "name": "Book Sebastian Diary Titan",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_Titan",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005378,
+      "name": "Book Sebastian Diary Marni Excavatron",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_MarniExcavatron",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005379,
+      "name": "Book Sebastian Diary The Scarlet Excecutioner",
+      "category": "Quest",
+      "internalName": "Book_Sebastian_Diary_TheScarletExcecutioner",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005380,
+      "name": "book folktales Kailok",
+      "category": "Quest",
+      "internalName": "book_folktales_Kailok",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005381,
+      "name": "book folktales Nuclear",
+      "category": "Quest",
+      "internalName": "book_folktales_Nuclear",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005382,
+      "name": "book folktales Imp Banquet",
+      "category": "Quest",
+      "internalName": "book_folktales_Imp_Banquet",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005383,
+      "name": "book folktales Crow Caller",
+      "category": "Quest",
+      "internalName": "book_folktales_CrowCaller",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005384,
+      "name": "book folktales Cassius Morten",
+      "category": "Quest",
+      "internalName": "book_folktales_CassiusMorten",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005385,
+      "name": "book folktales Ludvig One Armed",
+      "category": "Quest",
+      "internalName": "book_folktales_Ludvig_OneArmed",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005386,
+      "name": "book folktales Myurdin",
+      "category": "Quest",
+      "internalName": "book_folktales_Myurdin",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005387,
+      "name": "book folktales Fortain",
+      "category": "Quest",
+      "internalName": "book_folktales_Fortain",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005388,
+      "name": "book folktales Bastier",
+      "category": "Quest",
+      "internalName": "book_folktales_Bastier",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005389,
+      "name": "book folktales Golem Dragon",
+      "category": "Quest",
+      "internalName": "book_folktales_GolemDragon",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005390,
+      "name": "book folktales Seraphim",
+      "category": "Quest",
+      "internalName": "book_folktales_Seraphim",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005391,
+      "name": "book folktales Sizlek",
+      "category": "Quest",
+      "internalName": "book_folktales_Sizlek",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005392,
+      "name": "book folktales Gwen Kraver",
+      "category": "Quest",
+      "internalName": "book_folktales_Gwen_Kraver",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005393,
+      "name": "book folktales Hemon Beindel",
+      "category": "Quest",
+      "internalName": "book_folktales_Hemon_Beindel",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005394,
+      "name": "book folktales Tarandus",
+      "category": "Quest",
+      "internalName": "book_folktales_Tarandus",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005395,
+      "name": "book folktales Golden Knight Merrick",
+      "category": "Quest",
+      "internalName": "book_folktales_GoldenKnightMerrick",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005396,
+      "name": "book folktales Muskan",
+      "category": "Quest",
+      "internalName": "book_folktales_Muskan",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005397,
+      "name": "book folktales Darkness King",
+      "category": "Quest",
+      "internalName": "book_folktales_Darkness_King",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005398,
+      "name": "book folktales Ancient Priscus",
+      "category": "Quest",
+      "internalName": "book_folktales_AncientPriscus",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005399,
+      "name": "book folktales Ancient Praevus",
+      "category": "Quest",
+      "internalName": "book_folktales_AncientPraevus",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005400,
+      "name": "book folktales Boss Hyena Skevald",
+      "category": "Quest",
+      "internalName": "book_folktales_BossHyenaSkevald",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005401,
+      "name": "book folktales Varnia Dragon",
+      "category": "Quest",
+      "internalName": "book_folktales_Varnia_Dragon",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005402,
+      "name": "book folktales Aircastle",
+      "category": "Quest",
+      "internalName": "book_folktales_Aircastle",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005404,
+      "name": "Grace Hidden Dagger",
+      "category": "Misc",
+      "internalName": "Grace_HiddenDagger",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005405,
+      "name": "Imp Banquet Horn",
+      "category": "Misc",
+      "internalName": "Imp_Banquet_Horn",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005406,
+      "name": "Lave Myurdin Ring",
+      "category": "Misc",
+      "internalName": "LaveMyurdin_Ring",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005407,
+      "name": "Bastier Seal Letter",
+      "category": "Misc",
+      "internalName": "Bastier_Seal_Letter",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005408,
+      "name": "Scorched Hand Mirror",
+      "category": "Misc",
+      "internalName": "Scorched_HandMirror",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005409,
+      "name": "Karzul Slaughter Ledger",
+      "category": "Misc",
+      "internalName": "Karzul_SlaughterLedger",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005410,
+      "name": "Whith Horn Child Boots",
+      "category": "Equipment",
+      "internalName": "WhithHorn_ChildBoots",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1005411,
+      "name": "Paper White Crow Witch Letter",
+      "category": "Misc",
+      "internalName": "Paper_WhiteCrow_Witch_Letter",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005412,
+      "name": "Paper Engineer Working Memo",
+      "category": "Misc",
+      "internalName": "Paper_Engineer_Working_Memo",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005413,
+      "name": "To White Bear From Myurdin Letter",
+      "category": "Misc",
+      "internalName": "ToWhiteBear_FromMyurdin_Letter",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005414,
+      "name": "Mechanicus Marni Memo",
+      "category": "Misc",
+      "internalName": "Mechanicus_Marni_Memo",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005415,
+      "name": "Arboria Caretaker Journal",
+      "category": "Misc",
+      "internalName": "Arboria_Caretaker_Journal",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005446,
+      "name": "Demian Greyfur Fabric Cloak II",
+      "category": "Equipment",
+      "internalName": "Demian_Greyfur_Fabric_Cloak_II",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1005529,
+      "name": "Black Bears Wanted Paper Greyfur Oongka",
+      "category": "Misc",
+      "internalName": "BlackBears_WantedPaper_Greyfur_Oongka",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005530,
+      "name": "Black Bears Wanted Paper Greyfur Yann",
+      "category": "Misc",
+      "internalName": "BlackBears_WantedPaper_Greyfur_Yann",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005531,
+      "name": "Black Bears Wanted Paper Greyfur Nairah",
+      "category": "Misc",
+      "internalName": "BlackBears_WantedPaper_Greyfur_Nairah",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005532,
+      "name": "Black Bears Wanted Paper Greyfur Andrew",
+      "category": "Misc",
+      "internalName": "BlackBears_WantedPaper_Greyfur_Andrew",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005533,
+      "name": "Black Bears Wanted Paper Greyfur Russo",
+      "category": "Misc",
+      "internalName": "BlackBears_WantedPaper_Greyfur_Russo",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005534,
+      "name": "Black Bears Wanted Paper Greyfur Roy",
+      "category": "Misc",
+      "internalName": "BlackBears_WantedPaper_Greyfur_Roy",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005538,
+      "name": "Bandit Greyfur Hunting Map",
+      "category": "Misc",
+      "internalName": "Bandit_Greyfur_HuntingMap",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005539,
+      "name": "Item Background Breakable Wood 11",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_11",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005540,
+      "name": "Item Background Breakable Wood 10",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_10",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005600,
+      "name": "Item Background Breakable Wood 339",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_339",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005601,
+      "name": "Item Background Breakable Wood 340",
+      "category": "Misc",
+      "internalName": "Item_Background_Breakable_Wood_340",
+      "maxStack": 100,
+      "derived": true
+    },
+    {
+      "itemKey": 1005668,
+      "name": "Marni Devotee Plate Armor Helm Improved",
+      "category": "Equipment",
+      "internalName": "Marni_Devotee_PlateArmor_Helm_Improved",
+      "maxStack": 1,
+      "derived": true
+    },
+    {
+      "itemKey": 1005852,
+      "name": "New Game Silver Pack",
+      "category": "Misc",
+      "internalName": "NewGame_Silver_Pack",
+      "maxStack": 100,
+      "derived": true
     },
     {
       "itemKey": 1163002,
@@ -41502,6 +47878,14 @@
       "category": "Equipment",
       "internalName": "Raging_Tempests_Leader_Leather_Gloves",
       "maxStack": 1
+    },
+    {
+      "itemKey": 10021720,
+      "name": "Gold Bar Fake",
+      "category": "Misc",
+      "internalName": "GoldBar_Fake",
+      "maxStack": 100,
+      "derived": true
     },
     {
       "itemKey": 15724234,
