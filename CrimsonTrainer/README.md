@@ -22,16 +22,21 @@ foram pesquisados na memória do jogo em execução (padrões relaxados + desmon
 | Player | Max contribution | rebaseado (match único, mesma sequência de instruções) |
 | Player | Max trust (people/pets) | rebaseado no *upsert* do registro de confiança (0x68 bytes; caminho "achou → copia por cima", match único), **não verificado in-game** |
 | Player | Max trust (horse) | funciona (AOB original) |
+| Player | Max trust — shop NPCs & novos conhecidos | novo (tabela mul0 1.00.04): os dois caminhos "registro novo" do mesmo upsert (append `+6F` e primeiro elemento `+B8` a partir da âncora do caminho "achou"), gravam 100 em +20, **não verificado in-game** |
+| Player | Level & EXP editor | novo (mul0 "getData"): hook no getter de nível (`+C50FB40`, chamado de 10 lugares) captura o registro (`cData+8` = level, `+10` = EXP) e a tela mostra/edita os dois; abrir a tela de personagem dispara a captura, **não verificado in-game** |
 | Inventory | Items don't decrease v1 / v2 | funciona (hook unificado) |
 | Inventory | Gain multiplier ×9 / ×99 / ×99999 | rebaseado no hook unificado |
 | Inventory | 99.999 copper ao vender | rebaseado (`[rbx+D0]` → `[rbx+D8]`, match único) |
 | Inventory | Stack lock | rebaseado no hook unificado |
+| Inventory | Unlimited money | novo (mul0): modo do hook unificado que pula todo decremento da entrada cujo índice runtime é o do cobre (item key 1, "Silver"/`Money_Copper`); o índice é escrito na cave quando a tabela runtime carrega |
 | Inventory | Inventory slots (capacidade "239 / 240") | novo: acha os containers do inventário principal na heap (~2 s) e grava a capacidade (50–1.400; padrão 1.000) nas duas cópias que o jogo mantém; *Keep* reaplica a cada segundo. Ver "Slots do inventário" abaixo |
 | Items | Grade do inventário + spawner | a tela mostra o inventário como grade de slots lida do jogo a cada 2 s (ícone do item vindo do crimsondb.gg — baixado uma vez e guardado em `%LocalAppData%CrimsonTrainericons` —, letra colorida por categoria quando não há ícone, badge com a contagem, abas por container, filtro); clicar num slot e escolher um item da lista grava índice runtime + contagem nas duas cópias do slot ("Put in slot") ou só a contagem ("Set count only"). Lista lida da **tabela runtime do jogo** (`[[CrimsonDesert.exe+6C2E2E8]+28]`, 6.813 itens); o slot guarda o **índice runtime**, não o itemKey. O fluxo antigo por hook (troca no próximo uso/drop) fica em "advanced" |
 | Sets | Galeria de conjuntos de armadura | novo: os 103 conjuntos do catálogo do vulkk.com (foto, classe, resistência, região, personagem) com as peças resolvidas na lista de itens (99 conjuntos com peça, 362 peças); clicar num set e em *Spawn set* grava cada peça por cima de um item do inventário principal. Ver "Conjuntos de armadura" abaixo |
 | World | Time scale | rebaseado (`CD0/CD4` → `CE0/CE4`, código ao redor idêntico) |
 | World | Instant horse capture | rebaseado no integrador do medidor (progresso += tempo × taxa, min em +18 / máx em +1C como na tabela), **não verificado in-game** |
 | World | Wild West archery | rebaseado (`mov eax,[rsi+10] / cmp [rsi+14],eax / setae dl`, match único; mesma semântica alvo/pontuação), **não verificado in-game** |
+| World | Super movement speed | novo (mul0): no update do controlador (`[controller+2B8]` = transform: posição +90/+94/+98, velocidade +C0/+C4/+C8) empurra a posição por `velocidade × mult × 0,01` por frame (mult padrão 6), **não verificado in-game** |
+| World | Super jump | novo (mul0): no mesmo transform, enquanto a velocidade vertical é positiva soma `boost` (padrão 0,2) ao Y por frame; a cláusula da flag de pulo (+1B4) do mul0 ficou de fora por não estar verificada no 2.01.00, **não verificado in-game** |
 | World | Durabilidade 100 / sem dano | rebaseado, **não verificado in-game** |
 | World | Perfect parry | AOB encontrado; marcado BROKEN na própria tabela |
 | Character | Kliff / Damiane body & head scale | scan de memória inteira (como o Lua da tabela) |
@@ -80,6 +85,16 @@ Os índices das resistências ainda não são conhecidos — o binário tem as s
 `IceResistance` e `ElectricityResistance`, mas a ordem do array vem dos dados do jogo. Para achar:
 abra o editor, equipe/desequipe uma peça com resistência a fogo e o índice que mudar acende
 **CHANGED** por ~6 s; marque-o **MAX** (fica salvo em `settings.json`).
+
+### Tabela do mul0 (Crimson Desert v1.00.04.CT)
+
+Segunda fonte de scripts: a tabela do [mul0](https://mul0.com/) para a 1.00.04. O que ela tem que a v21
+não tinha foi rebaseado para o 2.01.00 em [Cheats/TableScripts.cs](Cheats/TableScripts.cs)
+(`MaxTrustNewRecords`, `LevelRecord`, `MoveSpeed`, `JumpHeight`) e no modo `moneyMode` do hook
+unificado. Sites que ficam a um deslocamento fixo de uma âncora (os dois caminhos do trust) levam
+`HookSite.Expect` com os bytes esperados, para uma mudança de layout ser recusada em vez de patchar a
+instrução errada. O "Teleport" e o "Max Trust" dela já existiam aqui (seção Teleport / Max trust — people
+& pets).
 
 ### Conjuntos de armadura (Sets)
 

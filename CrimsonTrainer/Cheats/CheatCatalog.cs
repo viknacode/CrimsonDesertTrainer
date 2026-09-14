@@ -21,6 +21,11 @@ internal sealed class CheatCatalog
     public const string ArcheryId = "archery";
     public const string DurabilityId = "durability";
     public const string EasyParryId = "easy_parry";
+    public const string MaxTrustNewId = "max_trust_new";
+    public const string UnlimitedMoneyId = "unlimited_money";
+    public const string LevelRecordId = "level_record";
+    public const string MoveSpeedId = "move_speed";
+    public const string JumpHeightId = "jump_height";
 
     private const string Rebased = "AOB re-located for patch 2.01.00 by scanning the live game (the table's original no longer exists).";
     private const string Unverified = " The new site could not be verified in-game yet — if it does nothing or misbehaves, turn it off and report it.";
@@ -28,6 +33,7 @@ internal sealed class CheatCatalog
     public IReadOnlyList<Cheat> Cheats { get; }
     public PlayerStats PlayerStats { get; }
     public PlayerPosition PlayerPosition { get; }
+    public LevelRecord LevelRecord { get; }
     public IReadOnlyList<BodyScaleTarget> BodyScales { get; }
 
     public ToggleCheat Toggle(string id) => (ToggleCheat)Cheats.First(c => c.Id == id);
@@ -36,6 +42,7 @@ internal sealed class CheatCatalog
     public CheatCatalog(GameProcess game)
     {
         var playerPointers = TableScripts.PlayerPointers(game);
+        var levelRecord = TableScripts.LevelRecord(game);
 
         // One hook shared by four inventory features (see TableScripts.InventoryCount).
         var inventory = new SharedInjection(TableScripts.InventoryCount(game));
@@ -68,6 +75,20 @@ internal sealed class CheatCatalog
                 Description = "Writes the 350 trust cap directly into the horse's trust field.",
                 HowTo = "Perform any trust-gaining action with the horse.",
             },
+            new ToggleCheat(TableScripts.MaxTrustNewRecords(game))
+            {
+                Id = MaxTrustNewId, Name = "Max trust — shop NPCs & new acquaintances", Section = CheatSection.Player,
+                Description = "The other half of the trust hook: when the game creates a trust record for someone you had no record with yet (shop NPCs, first greeting), it is created with 100 trust. mul0's \"Max Trust Shop NPC\", rebased to the two new-record paths of the 2.01.00 upsert." + Unverified,
+                HowTo = "Talk to, greet or trade with an NPC you have never interacted with.",
+                Credits = "mul0",
+            },
+            new ToggleCheat(levelRecord)
+            {
+                Id = LevelRecordId, Name = "Level & EXP editor", Section = CheatSection.Player,
+                Description = "Captures the character's level / EXP record the moment the game reads the level (mul0's \"getData\", rebased to the 2.01.00 level getter), then lets you overwrite both numbers.",
+                HowTo = "Turn on, then open the character / status screen so the game reads your level. The fields fill in once it did.",
+                Credits = "mul0",
+            },
 
             // ---------------- Inventory ----------------
             new ChoiceCheat(new[]
@@ -99,6 +120,13 @@ internal sealed class CheatCatalog
                 Id = CopperId, Name = "Gain 99,999 copper on sell", Section = CheatSection.Inventory,
                 Description = "Writes 99,999 into the copper balance on every sale — a direct write, independent of the multiplier. " + Rebased,
                 HowTo = "Sell any item.",
+            },
+            new ToggleCheat(Feature("money", "moneyMode", 1))
+            {
+                Id = UnlimitedMoneyId, Name = "Unlimited money", Section = CheatSection.Inventory,
+                Description = "Copper never goes down: the inventory-count hook skips every decrement of the copper entry (item key 1) and leaves everything else alone. mul0's \"Unlimited Money\" on the 2.01.00 unified hook.",
+                HowTo = "Buy anything — the price is not taken. Needs the item table (read automatically after attaching).",
+                Credits = "mul0",
             },
             new ToggleCheat(Feature("lock", "lockMode", 1))
             {
@@ -134,6 +162,19 @@ internal sealed class CheatCatalog
                 Id = ArcheryId, Name = "Wild West archery / shooting", Section = CheatSection.World,
                 Description = "Sets the target score to 1 and your score to 0 every time the minigame checks them — the first hit wins. " + Rebased + Unverified,
             },
+            new ToggleCheat(TableScripts.MoveSpeed(game))
+            {
+                Id = MoveSpeedId, Name = "Super movement speed", Section = CheatSection.World,
+                Description = "Every frame the character is pushed along its own horizontal velocity by velocity × multiplier × 0.01, so running, riding and sprinting cover more ground. mul0's \"Super Movement Speed\" (his Super = 6), rebased to the 2.01.00 controller update." + Unverified,
+                Warning = "Position is nudged each frame — walls and ledges can be clipped through at high multipliers.",
+                Credits = "mul0",
+            },
+            new ToggleCheat(TableScripts.JumpHeight(game))
+            {
+                Id = JumpHeightId, Name = "Super jump", Section = CheatSection.World,
+                Description = "While the character is rising, its height gets an extra boost every frame. mul0's \"Super Jump\" (he added 0.2 per frame on the way up), rebased to the 2.01.00 controller update." + Unverified,
+                Credits = "mul0",
+            },
             new ChoiceCheat(new[]
             {
                 new ChoiceOption("off", "Off", (IActivation?)null),
@@ -157,6 +198,7 @@ internal sealed class CheatCatalog
 
         PlayerStats = new PlayerStats(game, playerPointers);
         PlayerPosition = new PlayerPosition(game, playerPointers);
+        LevelRecord = new LevelRecord(game, levelRecord);
         BodyScales = new[] { BodyScaleTarget.Kliff(), BodyScaleTarget.Damiane() };
     }
 

@@ -68,7 +68,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
             _ => throw new InvalidOperationException($"Unknown cheat type {c.GetType().Name}"),
         }).ToList();
 
-        PlayerCheats = Cheats.Where(c => c.Section == CheatSection.Player && c.Id != CheatCatalog.PlayerPointersId).ToList();
+        PlayerCheats = Cheats.Where(c => c.Section == CheatSection.Player && c.Id != CheatCatalog.PlayerPointersId && c.Id != CheatCatalog.LevelRecordId).ToList();
         InventoryCheats = Cheats.Where(c => c.Section == CheatSection.Inventory && c.Id != CheatCatalog.ItemSwapperId).ToList();
         WorldCheats = Cheats.Where(c => c.Section == CheatSection.World).ToList();
 
@@ -89,6 +89,20 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
             return Guard(() => stack.Cheat.SetVar("lockAmount", value));
         }, hint: "0 = keep the count it had; any other value = the stack becomes exactly this.");
 
+        var moveSpeed = Toggle(CheatCatalog.MoveSpeedId);
+        moveSpeed.AddField("mul", "Speed multiplier", "6", text =>
+        {
+            if (!ValueFieldViewModel.TryParseFloat(text, out float value) || value < 1f || value > 30f) return "Enter a number between 1 and 30 (1 = normal speed).";
+            return Guard(() => moveSpeed.Cheat.SetVarSingle("speedMul", value));
+        }, hint: "1 = normal · 6 = mul0's \"Super\" · applies while the cheat is on.");
+
+        var jump = Toggle(CheatCatalog.JumpHeightId);
+        jump.AddField("boost", "Boost per frame", "0.2", text =>
+        {
+            if (!ValueFieldViewModel.TryParseFloat(text, out float value) || value < 0f || value > 5f) return "Enter a number between 0 and 5 (0 = normal jump).";
+            return Guard(() => jump.Cheat.SetVarSingle("jumpBoost", value));
+        }, hint: "Added to the height every frame while rising. 0.2 = mul0's \"Super Jump\".");
+
         var swapper = Toggle(CheatCatalog.ItemSwapperId);
         var swapField = swapper.AddField("swapId", "Swap target (runtime #)", "0", text =>
         {
@@ -101,6 +115,12 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
         InventorySlots = new InventorySlotsViewModel(this);
         InventoryGrid = new InventoryGridViewModel(this, Spawner, InventorySlots);
         Sets = new SetsViewModel(this, ArmorSetCatalog.LoadEmbedded(), Spawner, InventorySlots);
+        Level = new LevelViewModel(this, Toggle(CheatCatalog.LevelRecordId));
+        // "Unlimited money" needs the runtime index of the copper item (key 1): refreshed whenever the table (re)loads.
+        Spawner.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName == nameof(SpawnerViewModel.IsTableLoaded)) PushMoneyIndex();
+        };
         Teleport = new TeleportViewModel(this, Toggle(CheatCatalog.PlayerPointersId), _settings);
         InventorySlots.PropertyChanged += (_, e) =>
         {
@@ -145,6 +165,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
     public InventorySlotsViewModel InventorySlots { get; }
     public InventoryGridViewModel InventoryGrid { get; }
     public SetsViewModel Sets { get; }
+    public LevelViewModel Level { get; }
     public TeleportViewModel Teleport { get; }
     public IconCache Icons { get; }
     public IReadOnlyList<BodyScaleViewModel> BodyScales { get; }
@@ -306,6 +327,16 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
         }
     }
 
+    /// <summary>Tells the inventory hook which runtime index is copper (-1 = unknown, so nothing matches).</summary>
+    private void PushMoneyIndex()
+    {
+        var money = Toggle(CheatCatalog.UnlimitedMoneyId);
+        int index = Spawner.LookupKey(1)?.Index ?? -1;
+        try { money.Cheat.SetVar("moneyIndex", index); }
+        catch (Exception ex) when (ex is InvalidOperationException or Win32Exception) { AddLog($"Unlimited money: could not set the copper index ({ex.Message}).", LogLevel.Warning); }
+        if (index < 0 && money.IsOn) AddLog("Unlimited money: the item table is not loaded, so copper cannot be recognised yet (Items → Reload table).", LogLevel.Warning);
+    }
+
     private void NudgeTimeScale(float delta)
     {
         if (!ValueFieldViewModel.TryParseFloat(_timeScaleField.Text, out float current)) current = 1f;
@@ -406,6 +437,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
     {
         if (_disposed || !IsAttached) return;
         Player.Tick();
+        Level.Tick();
         Spawner.Tick();
         Teleport.Tick();
     }
@@ -479,7 +511,9 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
         foreach (var vm in Cheats)
             vm.Bind(catalog.Cheats.First(c => c.Id == vm.Id));
         Player.Bind(game is null ? null : catalog.PlayerStats);
+        Level.Bind(game is null ? null : catalog.LevelRecord);
         Teleport.Bind(game is null ? null : catalog.PlayerPosition);
+        PushMoneyIndex();
         for (int i = 0; i < BodyScales.Count; i++)
             BodyScales[i].Bind(game);
         InventorySlots.Bind(game);

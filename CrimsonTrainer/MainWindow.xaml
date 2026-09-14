@@ -459,6 +459,47 @@
                                 </StackPanel>
                             </Border>
 
+                            <!-- Level & EXP editor (mul0's getData) -->
+                            <Border Style="{StaticResource Card}" AutomationProperties.AutomationId="LevelCard">
+                                <StackPanel DataContext="{Binding Level}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Style="{StaticResource CardTitle}" Text="{Binding Hook.Name}" VerticalAlignment="Center"/>
+                                        <Border Grid.Column="1" Style="{StaticResource ActiveChip}" Margin="10,0,0,0" DataContext="{Binding Hook}">
+                                            <TextBlock Style="{StaticResource ChipText}" Foreground="{StaticResource Success}" Text="ACTIVE"/>
+                                        </Border>
+                                        <ContentControl Grid.Column="2" Content="{Binding Hook.Bindings[0]}" ContentTemplate="{StaticResource HotkeyChipTemplate}" Margin="12,0,0,0"/>
+                                        <CheckBox Grid.Column="3" Style="{StaticResource ToggleSwitch}" Margin="14,0,0,0" IsChecked="{Binding Hook.IsOn}" IsEnabled="{Binding Hook.CanInteract}"/>
+                                    </Grid>
+                                    <TextBlock Style="{StaticResource Body}" Margin="0,8,0,0" Text="{Binding Hook.Description}"/>
+                                    <TextBlock Style="{StaticResource Small}" Margin="0,6,0,0" Foreground="{StaticResource Warning}" Text="{Binding Hook.UnavailableReason}"
+                                               Visibility="{Binding Hook.UnavailableReason, Converter={StaticResource NotEmptyToVisibility}}"/>
+                                    <Grid Margin="0,12,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Margin="0,0,28,0">
+                                            <TextBlock Style="{StaticResource Eyebrow}" Text="LEVEL"/>
+                                            <TextBlock Style="{StaticResource Mono}" Foreground="{StaticResource Text}" FontSize="20" Text="{Binding LevelText}"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1" Margin="0,0,28,0">
+                                            <TextBlock Style="{StaticResource Eyebrow}" Text="EXP"/>
+                                            <TextBlock Style="{StaticResource Mono}" Foreground="{StaticResource Text}" FontSize="20" Text="{Binding ExpText}"/>
+                                        </StackPanel>
+                                        <TextBlock Grid.Column="2" Style="{StaticResource Small}" VerticalAlignment="Bottom" Text="{Binding StatusText}"/>
+                                    </Grid>
+                                    <ItemsControl ItemsSource="{Binding Fields}" ItemTemplate="{StaticResource ValueFieldTemplate}" Margin="0,6,0,0"/>
+                                    <TextBlock Style="{StaticResource Small}" Margin="0,8,0,0" Text="{Binding Hook.HowTo}"/>
+                                </StackPanel>
+                            </Border>
+
                             <ItemsControl ItemsSource="{Binding PlayerCheats}"/>
                         </StackPanel>
 

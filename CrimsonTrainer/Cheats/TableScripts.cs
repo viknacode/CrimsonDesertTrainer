@@ -83,8 +83,9 @@ internal static class TableScripts
     //       mov dword [r11],0
     //       add rsp,50 / pop rbx / ret
     //   so "Items Don't Decrease" (v1/v2), the gain multiplier (old: add [r8+rdi+10],rcx),
-    //   the stack lock and the item swapper (old: sub [rdx+rax+10],rcx) all live here,
-    //   selected by cave variables. rcx/r8/r9/r10 are dead after the hook (the function
+    //   the stack lock, the item swapper (old: sub [rdx+rax+10],rcx) and "Unlimited Money"
+    //   (mul0's 1.00.04 table: same decrement hook, only for the entry whose item is the
+    //   copper currency) all live here, selected by cave variables. rcx/r8/r9/r10 are dead after the hook (the function
     //   returns right away), so they can be used freely.
     // ------------------------------------------------------------------
     private const string ItemNoDecAob = "48 89 53 10 4C 89 D8 41 C7 03 00 00 00 00";
@@ -101,6 +102,8 @@ internal static class TableScripts
             var lockAmount = b.Var("lockAmount");
             var swapMode = b.Var("swapMode");       // 0 off · 1 = decrements rewrite the slot to swapId × 1
             var swapId = b.Var("swapId");
+            var moneyMode = b.Var("moneyMode");     // 0 off · 1 = decrements of the copper entry are skipped
+            var moneyIndex = b.Var("moneyIndex");   // runtime index of the copper item (key 1), written on attach
             var lastEntry = b.Var("lastEntry");     // the inventory entry the game touched last (spawner target)
             var lastOld = b.Var("lastOld");         // its count before the change
             var lastNew = b.Var("lastNew");         // the count the game wanted to write
@@ -110,6 +113,7 @@ internal static class TableScripts
             var increment = a.CreateLabel("increment");
             var decrement = a.CreateLabel("decrement");
             var notSwap = a.CreateLabel("notSwap");
+            var notMoney = a.CreateLabel("notMoney");
             var noLock = a.CreateLabel("noLock");
             var keepOld = a.CreateLabel("keepOld");
             var skipWrite = a.CreateLabel("skipWrite");
@@ -137,8 +141,14 @@ internal static class TableScripts
             a.lea(rdx, __[r8 + rcx]);                  // new = old + amount
             a.jmp(doWrite);
 
-            // ---- count going down: swapper, then lock, then don't-decrease ----
+            // ---- count going down: money, then swapper, then lock, then don't-decrease ----
             a.Label(ref decrement);
+            a.cmp(__qword_ptr[moneyMode], 0);
+            a.je(notMoney);
+            a.mov(ecx, __dword_ptr[rbx + 0x08]);       // runtime item index of the entry (low dword)
+            a.cmp(ecx, __dword_ptr[moneyIndex]);
+            a.je(skipWrite);                           // copper never goes down
+            a.Label(ref notMoney);
             a.cmp(__qword_ptr[swapMode], 0);
             a.je(notSwap);
             a.mov(rcx, __qword_ptr[swapId]);
@@ -349,6 +359,166 @@ internal static class TableScripts
             a.mov(__dword_ptr[rsi + 0x10], 1);         // target -> 1 (first hit wins)
             a.mov(eax, __dword_ptr[rsi + 0x10]);       // original compare (flags feed the setae after return)
             a.cmp(__dword_ptr[rsi + 0x14], eax);
+            b.Return(hook);
+        });
+    }
+
+    // ------------------------------------------------------------------
+    // Max Trust - new records (mul0's "Max Trust Shop NPC")  (freejumpmem+160 / +170)
+    //   1.00.04: the first-insert path of the same trust upsert: movups [rax+10],xmm2 / movups [rax+20],xmm3
+    //            -> "mov [rax+10],#100". 2.01.00: the upsert (see MaxTrustPeople) has two paths for a
+    //            record that is not there yet — append (vmovups [rcx+rax+20],ymm1, +6F from the found-path
+    //            anchor) and first element (vmovups [rax+20],ymm2, +B8). Both patched: copy, then trust := 100.
+    //            (The same sequences exist in an unrelated container at +1E2C2xx, hence the anchor + Expect.)
+    // ------------------------------------------------------------------
+    private const string TrustFoundPathAob = "48 83 C1 68 48 39 D1 75 ?? EB ?? C5 FC 10 07 C5 FC 11 01 C5 FC 10 4F 20 C5 FC 11 49 20";
+
+    public static Injection MaxTrustNewRecords(GameProcess game)
+    {
+        var append = new HookSite
+        {
+            Name = "TrustAppend", Pattern = P(TrustFoundPathAob), Offset = 0x6F, Length = 6, Slot = 0x160, Entry = "append",
+            Expect = P("C5 FC 11 4C 01 20"),
+        };
+        var first = new HookSite
+        {
+            Name = "TrustFirst", Pattern = P(TrustFoundPathAob), Offset = 0xB8, Length = 5, Slot = 0x170, Entry = "first",
+            Expect = P("C5 FC 11 50 20"),
+        };
+        return new Injection(game, "Max trust (new records)", new[] { append, first }, (b, _) =>
+        {
+            var a = b.Asm;
+            b.Entry("append");
+            a.vmovups(__ymmword_ptr[rcx + rax + 0x20], ymm1);   // original
+            a.mov(__dword_ptr[rcx + rax + 0x20], 100);
+            b.Return(append);
+
+            b.Entry("first");
+            a.vmovups(__ymmword_ptr[rax + 0x20], ymm2);         // original
+            a.mov(__dword_ptr[rax + 0x20], 100);
+            b.Return(first);
+        });
+    }
+
+    // ------------------------------------------------------------------
+    // Character level / EXP record (mul0's "getData")  (freejumpmem+180)
+    //   1.00.04: hooked "mov r13d,[r9+08] / mov [rbp+2F8],r13d" right after the record lookup and
+    //            kept r9 as cData (level at cData+8, EXP at cData+10).
+    //   2.01.00: the lookup moved into a getter (thunk CrimsonDesert.exe+1761300 -> +C50FB40, called
+    //            from ten places) that ends with
+    //              lea rax,[r9+8] / test rax,rax / je / mov eax,[rax+8] <- hook (8 bytes) / mov rbx,[rsp+8] / ret
+    //            so rax is exactly mul0's cData. The cave stores it and lets the getter finish.
+    // ------------------------------------------------------------------
+    public static Injection LevelRecord(GameProcess game)
+    {
+        var hook = new HookSite
+        {
+            Name = "LevelGetter", Pattern = P("49 8D 41 08 48 85 C0 74 EF 8B 40 08 48 8B 5C 24 08 C3"),
+            Offset = 9, Length = 8, Slot = 0x180, Entry = "newmem",
+        };
+        return new Injection(game, "Level / EXP record", new[] { hook }, (b, _) =>
+        {
+            var a = b.Asm;
+            var cData = b.Var("cData");
+            var hits = b.Var("hits");
+            b.Entry("newmem");
+            a.mov(__qword_ptr[cData], rax);            // record + 8: level at +8, EXP at +10
+            a.inc(__qword_ptr[hits]);
+            a.mov(eax, __dword_ptr[rax + 0x08]);       // original
+            a.mov(rbx, __qword_ptr[rsp + 0x08]);       // original
+            b.Return(hook);                            // -> ret
+        });
+    }
+
+    // ------------------------------------------------------------------
+    // Movement speed (mul0's "getMoveSpeed" / "Super Movement Speed")  (freejumpmem+190)
+    //   The character-controller update reads the transform (2.01.00: [controller+2B8]; position at
+    //   +90/+94/+98, velocity at +C0/+C4/+C8, scale at +180). mul0 nudged the position along the
+    //   horizontal velocity every frame: pos.xz += vel.xz × mul × 0.01. Same trick here, at the
+    //   equivalent site (unique):
+    //     mov rax,[rsi+2B8] / vxorps / vinsertps / vmulps xmm1,xmm0,[rax+180]
+    //     vmovups xmm0,[rax+90]   <- hook (+1D, 8 bytes)
+    //     vsubps xmm1,xmm0,xmm1 / vsubps xmm8,xmm1,[rbx]
+    //   xmm0 is the hooked load's own destination and xmm8 is overwritten two instructions later,
+    //   so both are free; flags are dead until the next cmp.
+    // ------------------------------------------------------------------
+    public static Injection MoveSpeed(GameProcess game)
+    {
+        var hook = new HookSite
+        {
+            Name = "MoveSpeed",
+            Pattern = P("48 8B 86 B8 02 00 00 C5 F8 57 C0 C4 E3 79 21 05 ?? ?? ?? ?? 10 C5 F8 59 88 80 01 00 00 C5 F8 10 80 90 00 00 00 C5 F8 5C C9 C5 70 5C 03"),
+            Offset = 0x1D, Length = 8, Slot = 0x190, Entry = "newmem", Expect = P("C5 F8 10 80 90 00 00 00"),
+        };
+        return new Injection(game, "Movement speed", new[] { hook }, (b, _) =>
+        {
+            var a = b.Asm;
+            var mul = b.Var("speedMul", BitConverter.SingleToUInt32Bits(1.0f));   // 1 = off
+            var step = b.Var("speedStep", BitConverter.SingleToUInt32Bits(0.01f));
+            var original = a.CreateLabel("original");
+            var skipX = a.CreateLabel("skipX");
+            var skipZ = a.CreateLabel("skipZ");
+            b.Entry("newmem");
+            a.cmp(__dword_ptr[mul], 0x3F800000);       // multiplier 1.0 -> nothing to do
+            a.je(original);
+            a.vmovss(xmm8, __dword_ptr[mul]);
+            a.vmulss(xmm8, xmm8, __dword_ptr[step]);   // mul × 0.01
+            a.cmp(__dword_ptr[rax + 0xC0], 0);
+            a.je(skipX);
+            a.vmovss(xmm0, __dword_ptr[rax + 0xC0]);   // vel.x
+            a.vmulss(xmm0, xmm0, xmm8);
+            a.vaddss(xmm0, xmm0, __dword_ptr[rax + 0x90]);
+            a.vmovss(__dword_ptr[rax + 0x90], xmm0);   // pos.x += vel.x × k
+            a.Label(ref skipX);
+            a.cmp(__dword_ptr[rax + 0xC8], 0);
+            a.je(skipZ);
+            a.vmovss(xmm0, __dword_ptr[rax + 0xC8]);   // vel.z
+            a.vmulss(xmm0, xmm0, xmm8);
+            a.vaddss(xmm0, xmm0, __dword_ptr[rax + 0x98]);
+            a.vmovss(__dword_ptr[rax + 0x98], xmm0);   // pos.z += vel.z × k
+            a.Label(ref skipZ);
+            a.Label(ref original);
+            a.vmovups(xmm0, __xmmword_ptr[rax + 0x90]); // original
+            b.Return(hook);
+        });
+    }
+
+    // ------------------------------------------------------------------
+    // Jump height (mul0's "getJump" / "Super Jump")  (freejumpmem+1A0)
+    //   Same transform, at the site that follows the vertical-velocity bookkeeping (unique):
+    //     mov rax,[rbx+2B8] / vxorps / vinsertps / vmulps xmm1,xmm0,[rax+180] <- hook (+15, 8 bytes)
+    //     vmovups xmm0,[rax+90] / vsubps xmm2,xmm0,xmm1 / vpermilps ...
+    //   While the vertical velocity (+C4) is positive the position's Y (+94) gets an extra boost
+    //   per frame (mul0 added 0.2 on the way up, plus mul × 0.1 while the jump flag at +1B4 was
+    //   set — that flag's offset is not verified for 2.01.00, so only the velocity clause is kept).
+    //   xmm0 is live (input of the hooked vmulps); xmm1 (its destination) and xmm2 (overwritten
+    //   two instructions later) are the scratch registers.
+    // ------------------------------------------------------------------
+    public static Injection JumpHeight(GameProcess game)
+    {
+        var hook = new HookSite
+        {
+            Name = "JumpHeight",
+            Pattern = P("48 8B 83 B8 02 00 00 C5 F8 57 C0 C4 E3 79 21 05 ?? ?? ?? ?? 10 C5 F8 59 88 80 01 00 00 C5 F8 10 80 90 00 00 00 C5 F8 5C D1 C4 63 79 04 CA AA"),
+            Offset = 0x15, Length = 8, Slot = 0x1A0, Entry = "newmem", Expect = P("C5 F8 59 88 80 01 00 00"),
+        };
+        return new Injection(game, "Jump height", new[] { hook }, (b, _) =>
+        {
+            var a = b.Asm;
+            var boost = b.Var("jumpBoost");            // float added to Y per frame while rising; 0 = off
+            var original = a.CreateLabel("original");
+            b.Entry("newmem");
+            a.cmp(__dword_ptr[boost], 0);
+            a.je(original);
+            a.vmovss(xmm1, __dword_ptr[rax + 0xC4]);   // vel.y
+            a.vxorps(xmm2, xmm2, xmm2);
+            a.vcomiss(xmm1, xmm2);
+            a.jbe(original);                           // not rising
+            a.vmovss(xmm2, __dword_ptr[boost]);
+            a.vaddss(xmm2, xmm2, __dword_ptr[rax + 0x94]);
+            a.vmovss(__dword_ptr[rax + 0x94], xmm2);   // pos.y += boost
+            a.Label(ref original);
+            a.vmulps(xmm1, xmm0, __xmmword_ptr[rax + 0x180]); // original
             b.Return(hook);
         });
     }

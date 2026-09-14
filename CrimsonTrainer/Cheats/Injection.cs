@@ -24,6 +24,12 @@ internal sealed class HookSite
     /// <summary>Cave label the trampoline jumps to.</summary>
     public required string Entry { get; init; }
 
+    /// <summary>
+    /// Bytes that must be at the injection point (used when the point is reached by an
+    /// <see cref="Offset"/> from a pattern elsewhere in the function, so a layout change is caught).
+    /// </summary>
+    public AobPattern? Expect { get; init; }
+
     public nint Address { get; internal set; }
     public byte[] Original { get; internal set; } = Array.Empty<byte>();
     public nint Return => Address + Length;
@@ -151,6 +157,8 @@ internal sealed class Injection
             {
                 hook.Address = Locate(hook.Pattern, hook.Offset, hook.Name, moduleImage);
                 hook.Original = _game.Read(hook.Address, hook.Length);
+                if (hook.Expect is { } expect && !expect.MatchesAt(hook.Original, 0))
+                    throw new InvalidOperationException($"{hook.Name}: the code at pattern+{hook.Offset:X} is not the expected instruction in this game version.");
             }
             foreach (var nop in Nops)
             {
