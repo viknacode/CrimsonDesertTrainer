@@ -28,6 +28,7 @@ foram pesquisados na memória do jogo em execução (padrões relaxados + desmon
 | Inventory | Stack lock | rebaseado no hook unificado |
 | Inventory | Inventory slots (capacidade "239 / 240") | novo: acha os containers do inventário principal na heap (~2 s) e grava a capacidade (50–1.400; padrão 1.000) nas duas cópias que o jogo mantém; *Keep* reaplica a cada segundo. Ver "Slots do inventário" abaixo |
 | Items | Grade do inventário + spawner | a tela mostra o inventário como grade de slots lida do jogo a cada 2 s (ícone do item vindo do crimsondb.gg — baixado uma vez e guardado em `%LocalAppData%CrimsonTrainericons` —, letra colorida por categoria quando não há ícone, badge com a contagem, abas por container, filtro); clicar num slot e escolher um item da lista grava índice runtime + contagem nas duas cópias do slot ("Put in slot") ou só a contagem ("Set count only"). Lista lida da **tabela runtime do jogo** (`[[CrimsonDesert.exe+6C2E2E8]+28]`, 6.813 itens); o slot guarda o **índice runtime**, não o itemKey. O fluxo antigo por hook (troca no próximo uso/drop) fica em "advanced" |
+| Sets | Galeria de conjuntos de armadura | novo: os 103 conjuntos do catálogo do vulkk.com (foto, classe, resistência, região, personagem) com as peças resolvidas na lista de itens (99 conjuntos com peça, 362 peças); clicar num set e em *Spawn set* grava cada peça por cima de um item do inventário principal. Ver "Conjuntos de armadura" abaixo |
 | World | Time scale | rebaseado (`CD0/CD4` → `CE0/CE4`, código ao redor idêntico) |
 | World | Instant horse capture | rebaseado no integrador do medidor (progresso += tempo × taxa, min em +18 / máx em +1C como na tabela), **não verificado in-game** |
 | World | Wild West archery | rebaseado (`mov eax,[rsi+10] / cmp [rsi+14],eax / setae dl`, match único; mesma semântica alvo/pontuação), **não verificado in-game** |
@@ -79,6 +80,27 @@ Os índices das resistências ainda não são conhecidos — o binário tem as s
 `IceResistance` e `ElectricityResistance`, mas a ordem do array vem dos dados do jogo. Para achar:
 abra o editor, equipe/desequipe uma peça com resistência a fogo e o índice que mudar acende
 **CHANGED** por ~6 s; marque-o **MAX** (fica salvo em `settings.json`).
+
+### Conjuntos de armadura (Sets)
+
+`Resources/armor_sets.json` vem do [catálogo do vulkk.com](https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/)
+(103 conjuntos: nome, apelido, classe, resistência, Abyss Gear, região, personagem, foto). O site fica
+atrás do Cloudflare, então a extração foi feita pelo navegador do usuário; `Resources/sets.tsv` é o
+que saiu do catálogo e `Resources/build-sets.js` (Node) gera o JSON a partir dele: as peças de cada conjunto são procuradas em `item_names.json` pelo nome
+do set (com apelidos manuais — "Ashclaw (Black Bear)" → "Black Bears' …", "Martial Monk" → "Trukan …",
+"Fallen Kingdom" → "… of the Fallen Kingdom"), uma peça por slot (Helm / Armor / Gloves / Boots / Cloak),
+excluindo blueprints, armas e estandartes e preferindo o nome que começa pelo set e sem sufixo de
+variante. 99 conjuntos têm peças; Baltheon, Delesyian Military, Knight of Carnage e Tommaso Guard não
+existem na lista de itens (1.13+). As fotos estão em `Resources/sets/*.jpg` (248×372, ~2,5 MB no
+total, embutidas como `Resource`).
+
+Como o trainer não cria entradas novas no pool do inventário (os campos internos de uma entrada
+— id de instância, tags, timestamps — não são conhecidos o bastante para sintetizar uma), *Spawn set*
+faz o mesmo que "Put in slot" para cada peça: escolhe as N entradas do inventário principal com o
+maior valor em `+90` (hora de criação, ou seja, os itens pegos mais recentemente), nunca uma que já
+seja peça do set, mostra antes a lista "WILL REPLACE" (slot, item e quantidade que somem) e grava
+índice runtime + contagem 1 nas duas cópias do container. Dica: pegue N itens de lixo antes de
+spawnar. A prévia é refeita a cada 2 s enquanto a tela está aberta e de novo no clique.
 
 ### Ícones dos itens
 
@@ -138,13 +160,14 @@ CrimsonTrainer/
   App.xaml, MainWindow.xaml(.cs)      janela (rail de navegação, seções, barra de status, captura de hotkey)
   Themes/Theme.xaml                   paleta e estilos (switch, segmentado, chips, textbox, listbox…)
   Views/CheatTemplates.xaml           templates dos cards de cheat, campos e hotkeys
-  ViewModels/                         MainViewModel (sessão), CheatViewModel, Player/Spawner/InventoryGrid/InventorySlots/BodyScale
+  ViewModels/                         MainViewModel (sessão), CheatViewModel, Player/Spawner/InventoryGrid/InventorySlots/Sets/BodyScale
   Cheats/Injection.cs                 cave + hooks + slots + variáveis (Iced)
   Cheats/TableScripts.cs              scripts (originais da tabela e rebaseados para 2.01.00)
   Cheats/Cheat.cs, CheatCatalog.cs    modelo (toggle / choice / feature compartilhada) e catálogo
   Cheats/PlayerStats.cs, BodyScale.cs cadeia de ponteiros e escala corporal
   Items/ItemDatabase.cs               busca nos itens (JSON embutido em Resources/)
   Items/InventoryScanner.cs           containers (header 0x30) e entradas (0xC8) do inventário do jogador
+  Items/ArmorSetCatalog.cs            conjuntos de armadura (armor_sets.json embutido) + Resources/sets/*.jpg
   Hotkeys/                            RegisterHotKey + captura
   Settings/AppSettings.cs             persistência
   Memory/, Native/                    processo, AOB, P/Invoke

@@ -148,6 +148,49 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!-- Armor set gallery: one tile per set, picture on top -->
+        <Style x:Key="SetGrid" TargetType="ListBox" BasedOn="{StaticResource DarkListBox}">
+            <Setter Property="VirtualizingPanel.IsVirtualizing" Value="False"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                        <Setter Property="ToolTip" Value="{Binding ToolTipText}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Border x:Name="Tile" Width="150" Height="258" Margin="4" CornerRadius="12" Padding="6"
+                                            Background="{StaticResource Bg3}" BorderBrush="{StaticResource Border}" BorderThickness="1">
+                                        <ContentPresenter/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="Tile" Property="BorderBrush" Value="{StaticResource Faint}"/>
+                                            <Setter TargetName="Tile" Property="Background" Value="{StaticResource Bg4}"/>
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="Tile" Property="BorderBrush" Value="{StaticResource Accent}"/>
+                                            <Setter TargetName="Tile" Property="BorderThickness" Value="2"/>
+                                            <Setter TargetName="Tile" Property="Background" Value="{StaticResource Bg4}"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
     <Grid>
@@ -696,6 +739,160 @@
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
+                        </StackPanel>
+
+                        <!-- ===== Sets ===== -->
+                        <StackPanel Visibility="{Binding SelectedSection.Key, Converter={StaticResource EqualsToVisibility}, ConverterParameter=sets}">
+                            <Border Style="{StaticResource Card}" AutomationProperties.AutomationId="SetsCard">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel>
+                                            <TextBlock Style="{StaticResource CardTitle}" Text="Armor sets"/>
+                                            <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0"
+                                                       Text="Every outfit from the vulkk.com catalog. Click a set to see its pieces, then Spawn: each piece is written over one of the items you picked up most recently (the list shows exactly which), because inventory entries cannot be created from outside the game."/>
+                                        </StackPanel>
+                                        <TextBlock Grid.Column="1" Style="{StaticResource Small}" VerticalAlignment="Top" Margin="12,2,0,0" Text="{Binding Sets.CountText}"/>
+                                    </Grid>
+
+                                    <Grid Margin="0,12,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Background="{StaticResource Bg2}" BorderBrush="{StaticResource Border}" BorderThickness="1"
+                                                CornerRadius="11" Padding="2" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                            <StackPanel Orientation="Horizontal">
+                                                <RadioButton Style="{StaticResource Segment}" GroupName="setchar" Content="All" MinWidth="70"
+                                                             IsChecked="{Binding Sets.CharacterFilter, Converter={StaticResource EnumEquals}, ConverterParameter=All}"/>
+                                                <RadioButton Style="{StaticResource Segment}" GroupName="setchar" Content="Kliff &amp; Oongka" MinWidth="110"
+                                                             IsChecked="{Binding Sets.CharacterFilter, Converter={StaticResource EnumEquals}, ConverterParameter=Kliff}"/>
+                                                <RadioButton Style="{StaticResource Segment}" GroupName="setchar" Content="Damiane" MinWidth="90"
+                                                             IsChecked="{Binding Sets.CharacterFilter, Converter={StaticResource EnumEquals}, ConverterParameter=Damiane}"/>
+                                            </StackPanel>
+                                        </Border>
+                                        <Grid Grid.Column="1" VerticalAlignment="Top" Margin="12,0,0,0">
+                                            <TextBox x:Name="SetSearchBox" AutomationProperties.AutomationId="SetSearchBox" Style="{StaticResource DarkTextBox}"
+                                                     Text="{Binding Sets.SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                                            <TextBlock Text="Search sets, pieces, region, resistance…" Foreground="{StaticResource Faint}" Margin="12,0,0,0" VerticalAlignment="Center" IsHitTestVisible="False">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Text, ElementName=SetSearchBox}" Value="">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Grid>
+                                    </Grid>
+
+                                    <ListBox Style="{StaticResource SetGrid}" MaxHeight="560" Margin="0,8,0,0" AutomationProperties.AutomationId="SetGrid"
+                                             ItemsSource="{Binding Sets.Sets}" SelectedItem="{Binding Sets.Selected}">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type vm:ArmorSetViewModel}">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Border CornerRadius="8" Background="{StaticResource Bg0}" Width="136" Height="196">
+                                                        <Border.Clip>
+                                                            <RectangleGeometry Rect="0,0,136,196" RadiusX="8" RadiusY="8"/>
+                                                        </Border.Clip>
+                                                        <Image Source="{Binding Image}" Stretch="UniformToFill" Width="136" Height="196" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                                    </Border>
+                                                    <TextBlock Grid.Row="1" Text="{Binding Name}" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource Text}" Margin="2,6,2,0"
+                                                               TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"/>
+                                                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="2,4,0,0">
+                                                        <TextBlock Style="{StaticResource Small}" FontSize="10.5" Text="{Binding ArmorClass}" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" MaxWidth="92"/>
+                                                        <TextBlock Style="{StaticResource Small}" FontSize="10.5" Foreground="{StaticResource Faint}" Text=" · "/>
+                                                        <TextBlock Style="{StaticResource Small}" FontSize="10.5" Text="{Binding PieceCount}"/>
+                                                        <TextBlock Style="{StaticResource Small}" FontSize="10.5" Text=" pc"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Selected set: pieces, what gets replaced, spawn -->
+                            <Border Style="{StaticResource Card}" AutomationProperties.AutomationId="SetDetailsCard"
+                                    Visibility="{Binding Sets.HasSelection, Converter={StaticResource BoolToVisibility}}">
+                                <Grid DataContext="{Binding Sets}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border CornerRadius="10" Background="{StaticResource Bg0}" VerticalAlignment="Top" Margin="0,0,18,0" Width="200" Height="300">
+                                        <Border.Clip>
+                                            <RectangleGeometry Rect="0,0,200,300" RadiusX="10" RadiusY="10"/>
+                                        </Border.Clip>
+                                        <Image Source="{Binding Selected.Image}" Width="200" Height="300" Stretch="UniformToFill" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    </Border>
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock Style="{StaticResource CardTitle}" Text="{Binding SelectedTitle}"/>
+                                        <WrapPanel Margin="0,8,0,0">
+                                            <Border Style="{StaticResource Chip}" Margin="0,0,6,6"><TextBlock Style="{StaticResource ChipText}" Foreground="{StaticResource Text}" Text="{Binding Selected.ArmorClass}"/></Border>
+                                            <Border Style="{StaticResource Chip}" Margin="0,0,6,6"><TextBlock Style="{StaticResource ChipText}" Foreground="{StaticResource Text}"><Run Text="Resistance: "/><Run Text="{Binding Selected.Resistance, Mode=OneWay}"/></TextBlock></Border>
+                                            <Border Style="{StaticResource Chip}" Margin="0,0,6,6"><TextBlock Style="{StaticResource ChipText}" Foreground="{StaticResource Text}"><Run Text="Abyss gear: "/><Run Text="{Binding Selected.AbyssGear, Mode=OneWay}"/></TextBlock></Border>
+                                            <Border Style="{StaticResource Chip}" Margin="0,0,6,6"><TextBlock Style="{StaticResource ChipText}" Foreground="{StaticResource Text}" Text="{Binding Selected.Source}"/></Border>
+                                            <Border Style="{StaticResource Chip}" Margin="0,0,6,6"><TextBlock Style="{StaticResource ChipText}" Foreground="{StaticResource Text}" Text="{Binding Selected.Character}"/></Border>
+                                        </WrapPanel>
+
+                                        <TextBlock Style="{StaticResource Eyebrow}" Text="PIECES" Margin="0,10,0,4"/>
+                                        <ItemsControl ItemsSource="{Binding Selected.Pieces}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate DataType="{x:Type vm:SetPieceViewModel}">
+                                                    <Grid Margin="0,3">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="56"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Style="{StaticResource Small}" Foreground="{StaticResource Muted}" Text="{Binding SlotLabel}" VerticalAlignment="Center"/>
+                                                        <TextBlock Grid.Column="1" Style="{StaticResource Body}" Foreground="{StaticResource Text}" Text="{Binding Name}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+                                                        <TextBlock Grid.Column="2" FontSize="11" VerticalAlignment="Center" Margin="10,0,0,0" Text="{Binding StatusText}">
+                                                            <TextBlock.Style>
+                                                                <Style TargetType="TextBlock" BasedOn="{StaticResource Mono}">
+                                                                    <Setter Property="Foreground" Value="{StaticResource Warning}"/>
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding IsReady}" Value="True">
+                                                                            <Setter Property="Foreground" Value="{StaticResource Success}"/>
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </TextBlock.Style>
+                                                        </TextBlock>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                        <TextBlock Style="{StaticResource Small}" Foreground="{StaticResource Warning}" Margin="0,4,0,0" Text="This set has no pieces in the trainer's item list (it was added by a later patch than the list covers)."
+                                                   Visibility="{Binding Selected.PieceCount, Converter={StaticResource EqualsToVisibility}, ConverterParameter=0}"/>
+
+                                        <TextBlock Style="{StaticResource Eyebrow}" Text="WILL REPLACE" Margin="0,12,0,4" Visibility="{Binding PlanText, Converter={StaticResource NotEmptyToVisibility}}"/>
+                                        <Border Background="{StaticResource Bg0}" CornerRadius="8" Padding="10,8" Visibility="{Binding PlanText, Converter={StaticResource NotEmptyToVisibility}}">
+                                            <TextBlock Style="{StaticResource Mono}" FontSize="11.5" Foreground="{StaticResource Text}" Text="{Binding PlanText}" TextWrapping="Wrap"/>
+                                        </Border>
+                                        <Grid Margin="0,12,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Style="{StaticResource Small}" Text="{Binding SpawnHint}" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                            <Button Grid.Column="1" Style="{StaticResource PrimaryButton}" Content="Spawn set" Command="{Binding SpawnCommand}" VerticalAlignment="Center" AutomationProperties.AutomationId="SpawnSetButton"/>
+                                        </Grid>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
                         </StackPanel>
 
                         <!-- ===== Teleport ===== -->

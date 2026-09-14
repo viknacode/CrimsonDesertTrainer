@@ -21,6 +21,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources/item_names.json" LogicalName="item_names.json" />
     <EmbeddedResource Include="Resources/icon_index.json" LogicalName="icon_index.json" />
+    <!-- Armor sets from the vulkk.com catalog (see README) and their pictures (pack URI /Resources/sets/<file>). -->
+    <EmbeddedResource Include="Resources/armor_sets.json" LogicalName="armor_sets.json" />
+    <Resource Include="Resources/sets/*.jpg" />
     <!-- Logo shown in the nav rail and on the Credits page (pack URI /Resources/logo.png);
          the .ico is the exe icon (ApplicationIcon) and the window/taskbar icon (Window.Icon). -->
     <Resource Include="Resources/logo.png" />

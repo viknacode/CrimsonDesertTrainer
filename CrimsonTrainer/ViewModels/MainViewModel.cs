@@ -100,6 +100,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
         Spawner = new SpawnerViewModel(this, db, Icons, swapper, swapField, dispatcher);
         InventorySlots = new InventorySlotsViewModel(this);
         InventoryGrid = new InventoryGridViewModel(this, Spawner, InventorySlots);
+        Sets = new SetsViewModel(this, ArmorSetCatalog.LoadEmbedded(), Spawner, InventorySlots);
         Teleport = new TeleportViewModel(this, Toggle(CheatCatalog.PlayerPointersId), _settings);
         InventorySlots.PropertyChanged += (_, e) =>
         {
@@ -115,6 +116,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
             new SectionViewModel("player", "Player", "", "Stats, godmode, trust, contribution"),
             new SectionViewModel("inventory", "Inventory", "", "Infinite items, multipliers, stack lock"),
             new SectionViewModel("items", "Items", "", "Spawn any item into your inventory"),
+            new SectionViewModel("sets", "Sets", "", "Armor sets from the catalog, one click"),
             new SectionViewModel("teleport", "Teleport", "", "Coordinates, waypoints, map marker"),
             new SectionViewModel("world", "World", "", "Time scale, horses, minigames, durability"),
             new SectionViewModel("character", "Character", "", "Body & head scale"),
@@ -142,6 +144,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
     public SpawnerViewModel Spawner { get; }
     public InventorySlotsViewModel InventorySlots { get; }
     public InventoryGridViewModel InventoryGrid { get; }
+    public SetsViewModel Sets { get; }
     public TeleportViewModel Teleport { get; }
     public IconCache Icons { get; }
     public IReadOnlyList<BodyScaleViewModel> BodyScales { get; }
@@ -212,6 +215,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
         {
             if (!Set(ref _selectedSection, value)) return;
             InventoryGrid.IsActive = value.Key == "items";
+            Sets.IsActive = value.Key == "sets";
             Teleport.IsActive = value.Key == "teleport";
         }
     }
@@ -394,6 +398,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
         {
             InventorySlots.Tick();
             InventoryGrid.Tick();
+            Sets.Tick();
         }
     }
 
@@ -479,6 +484,7 @@ public sealed class MainViewModel : ObservableObject, ITrainerHost, IDisposable
             BodyScales[i].Bind(game);
         InventorySlots.Bind(game);
         InventoryGrid.Bind(game);
+        Sets.Bind(game);
         Raise(nameof(ActiveCount));
         Raise(nameof(ActiveText));
     }

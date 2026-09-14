@@ -34,9 +34,10 @@ public sealed record InventoryContainer(nint Address, nint Pool, int PoolEntries
 
 /// <summary>
 /// One occupied pool entry (0xC8 bytes): <c>+00</c> instance id (-1 when free), <c>+08</c> runtime
-/// item index (low dword), <c>+10</c> count, <c>+60</c> per-instance data, <c>+90</c> creation time.
+/// item index (low dword), <c>+10</c> count, <c>+60</c> per-instance data, <c>+90</c> creation time
+/// (<see cref="Created"/>, larger = obtained more recently).
 /// </summary>
-public sealed record InventoryEntry(int Slot, nint Address, long InstanceId, int RuntimeIndex, long Count);
+public sealed record InventoryEntry(int Slot, nint Address, long InstanceId, int RuntimeIndex, long Count, long Created = 0);
 
 /// <summary>Finds every item container the player has and reads what is in them.</summary>
 internal static class InventoryScanner
@@ -127,7 +128,7 @@ internal static class InventoryScanner
             long count = BitConverter.ToInt64(buf, o + 0x10);
             int index = (int)(BitConverter.ToInt64(buf, o + 8) & 0xFFFF_FFFF);
             if (count < 0 || index < 0) continue;
-            entries.Add(new InventoryEntry(i, container.Entry(i), id, index, count));
+            entries.Add(new InventoryEntry(i, container.Entry(i), id, index, count, BitConverter.ToInt64(buf, o + 0x90)));
         }
         return entries;
     }

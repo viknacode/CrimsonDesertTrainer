@@ -81,6 +81,7 @@ public sealed class SpawnerViewModel : ObservableObject
     private RuntimeItemTable? _table;
     private List<SpawnItem> _items = new();
     private Dictionary<int, SpawnItem> _byIndex = new();
+    private Dictionary<long, SpawnItem> _byKey = new();
     private string _searchText = "";
     private SpawnItem? _selected;
     private string _countText = "1";
@@ -117,6 +118,9 @@ public sealed class SpawnerViewModel : ObservableObject
 
     /// <summary>The item at a runtime index, when the table is loaded and knows it.</summary>
     public SpawnItem? Lookup(int runtimeIndex) => _byIndex.TryGetValue(runtimeIndex, out var item) ? item : null;
+
+    /// <summary>The item with a given item key (the number in item_names.json), when the table knows it.</summary>
+    public SpawnItem? LookupKey(long key) => _byKey.TryGetValue(key, out var item) ? item : null;
     public bool SwapperOn => _swapper.IsOn;
     public bool HasHoveredSlot => _hoveredSlot != 0;
     public bool CanSpawnNow => Selected is not null && IsTableLoaded && SwapperOn && HasHoveredSlot && _game is not null;
@@ -182,6 +186,7 @@ public sealed class SpawnerViewModel : ObservableObject
         _table = null;
         _items = new List<SpawnItem>();
         _byIndex = new Dictionary<int, SpawnItem>();
+        _byKey = new Dictionary<long, SpawnItem>();
         TableVersion++;
         _hoveredSlot = 0;
         _lastHoveredIndex = -1;
@@ -222,6 +227,8 @@ public sealed class SpawnerViewModel : ObservableObject
                         : new SpawnItem(row.Key, row.Value, info.Name, info.Category, info.MaxStack, true, _icons);
                 }).ToList();
                 _byIndex = _items.ToDictionary(i => i.Index);
+                _byKey = new Dictionary<long, SpawnItem>();
+                foreach (var item in _items) _byKey.TryAdd(item.Key, item);
                 TableVersion++;
                 int named = _items.Count(i => i.Known);
                 TableStatus = $"{_items.Count:N0} items read from the game ({named:N0} with names, {_items.Count - named:N0} new / unnamed)";

@@ -1,0 +1,3512 @@
+{
+ "source": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+ "sets": [
+  {
+   "id": "ashad",
+   "name": "Ashad",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Pailune, Demeniss",
+   "image": "Ashad-Plate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101101,
+     "name": "Ashad Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111168,
+     "name": "Ashad Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 121033,
+     "name": "Ashad Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 131023,
+     "name": "Ashad Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000681,
+     "name": "Ashad Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "ashclaw_black_bear",
+   "name": "Ashclaw",
+   "alias": "Black Bear",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Pailune",
+   "image": "Black-Bear-Heavy-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101053,
+     "name": "Black Bears' Leather Helm",
+     "variants": 1
+    },
+    {
+     "slot": "body",
+     "key": 1000873,
+     "name": "Black Bear Leather Armor",
+     "variants": 2
+    },
+    {
+     "slot": "hands",
+     "key": 123318,
+     "name": "Black Bear Leather Gloves",
+     "variants": 2
+    },
+    {
+     "slot": "feet",
+     "key": 1000995,
+     "name": "Black Bear Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000846,
+     "name": "Black Bears' Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "ashen_tarandus",
+   "name": "Ashen",
+   "alias": "Tarandus",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Pailune",
+   "image": "The-Ashen-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101046,
+     "name": "Tarandus Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111039,
+     "name": "Tarandus Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 121025,
+     "name": "Tarandus Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 133164,
+     "name": "Tarandus Leather Boots",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "ashen_wolf",
+   "name": "Ashen Wolf",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Pailune",
+   "image": "Ashen-Wolf-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1163251,
+     "name": "Ashen Wolf's Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1002101,
+     "name": "Ashen Wolf's Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 133072,
+     "name": "Ashen Wolf's Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000678,
+     "name": "Ashen Wolf's Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "ator_s_will_antumbra",
+   "name": "Ator's Will",
+   "alias": "Antumbra",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "None",
+   "abyssGear": "Standard",
+   "source": "Pywel",
+   "image": "Ators-Will-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101009,
+     "name": "Ator's Will Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 114300,
+     "name": "Ator's Will Cloth Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 124071,
+     "name": "Ator's Will Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 133269,
+     "name": "Ator's Will Leather Boots",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "belkandor",
+   "name": "Belkandor",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Demeniss, Delesyia, Crimson Desert",
+   "image": "Belkandor-Plate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000993,
+     "name": "Belkandor Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000978,
+     "name": "Belkandor Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1000987,
+     "name": "Belkandor Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000874,
+     "name": "Belkandor Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000982,
+     "name": "Belkandor Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "baltheon",
+   "name": "Baltheon",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Non-Standard",
+   "abyssGear": "Non-Standard",
+   "source": "Hernand",
+   "image": "Baltheon-Front-Preview.jpg",
+   "pieces": []
+  },
+  {
+   "id": "bandit",
+   "name": "Bandit",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Cloth (Light)",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Bandit-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1002268,
+     "name": "Bandit Cloth Armor",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1003675,
+     "name": "Bandit Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "bedure",
+   "name": "Bedure",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Bedure-Plate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101090,
+     "name": "Bedure Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 114521,
+     "name": "Bedure Chain Mail",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000268,
+     "name": "Bedure Chain Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "beekeeping",
+   "name": "Beekeeping",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Beekeeper-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1164002,
+     "name": "Beekeeping Suit",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 12413,
+     "name": "Beekeeping Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 12312,
+     "name": "Beekeeping Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000321,
+     "name": "Beekeeping Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "blackwing",
+   "name": "Blackwing",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand, Demeniss",
+   "image": "Blackwing-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 14415,
+     "name": "Blackwing Mask",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 113023,
+     "name": "Blackwing Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 12406,
+     "name": "Blackwing Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 133348,
+     "name": "Blackwing Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000270,
+     "name": "Blackwing Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "blinding_arrows",
+   "name": "Blinding Arrows",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Non-Standard",
+   "source": "Demeniss",
+   "image": "Blinding-Arrows-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 2133115,
+     "name": "Blinding Arrows' Cloth Cap",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 2133093,
+     "name": "Blinding Arrows Scout's Cloth Armor",
+     "variants": 8
+    }
+   ]
+  },
+  {
+   "id": "bolton",
+   "name": "Bolton",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Bolton-Plate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101002,
+     "name": "Bolton Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111165,
+     "name": "Bolton Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 133097,
+     "name": "Bolton Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000308,
+     "name": "Bolton Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "canta",
+   "name": "Canta",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Canta-Plate.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101122,
+     "name": "Canta Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 2111103,
+     "name": "Canta Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 121013,
+     "name": "Canta Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 131013,
+     "name": "Canta Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000313,
+     "name": "Canta Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "carta",
+   "name": "Carta",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "None",
+   "abyssGear": "Non-Standard",
+   "source": "Demeniss, Delesyia",
+   "image": "Carta-Plate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 14417,
+     "name": "Carta Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111214,
+     "name": "Carta Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 12412,
+     "name": "Carta Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 12307,
+     "name": "Carta Plate Boots",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "catfish_pirate",
+   "name": "Catfish Pirate",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid",
+   "resistance": "Fire",
+   "abyssGear": "Non-Standard",
+   "source": "Hernand, Delesyia",
+   "image": "Catfish-Pirate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1001258,
+     "name": "Catfish Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000041,
+     "name": "Sir Catfish's Armor",
+     "variants": 1
+    },
+    {
+     "slot": "hands",
+     "key": 1000139,
+     "name": "Sir Catfish's Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000140,
+     "name": "Sir Catfish's Plate Boots",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "chelcia",
+   "name": "Chelcia",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Non-Standard",
+   "source": "Demeniss",
+   "image": "Chelcia-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101054,
+     "name": "Chelcia Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 114629,
+     "name": "Chelcia Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 131022,
+     "name": "Chelcia Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000307,
+     "name": "Chelcia Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "civilian_disguise",
+   "name": "Civilian Disguise",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Cloth (Light)",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Pywel",
+   "image": "Civilian-Disguise-1-1.jpg",
+   "pieces": [
+    {
+     "slot": "back",
+     "key": 1000324,
+     "name": "Disguise Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "condemner_righteous_inquisitors",
+   "name": "Condemner",
+   "alias": "Righteous Inquisitors",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Fire, Lightning",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Condemner-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1002768,
+     "name": "Condemner's Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 2062522806,
+     "name": "Condemner's Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1003674,
+     "name": "Condemner's Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "crimson_chaser_crimson_warden",
+   "name": "Crimson Chaser",
+   "alias": "Crimson Warden",
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Crimson-Chaser-1-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 14405,
+     "name": "Crimson Chaser Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 8700,
+     "name": "Crimson Chaser Mail",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 14302,
+     "name": "Crimson Chaser Chain Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1001922,
+     "name": "Crimson Warden's Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000287,
+     "name": "Crimson Chaser Chain Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "cursed_soul_fortain_the_cursed_knight",
+   "name": "Cursed Soul",
+   "alias": "Fortain, the Cursed Knight",
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Cursed-Soul-1-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 14401,
+     "name": "Plate Helm of Cursed Soul",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 14101,
+     "name": "Plate Armor of Cursed Soul",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 14301,
+     "name": "Plate Gloves of Cursed Soul",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 14201,
+     "name": "Plate Boots of Cursed Soul",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000315,
+     "name": "Plate Cloak of Cursed Soul",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "dark_marksman_s_plate_samara_the_sandwatcher",
+   "name": "Dark Marksman's Plate",
+   "alias": "Samara, the Sandwatcher",
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Dark-Marksmans-Plate-with-Weapons-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1000057,
+     "name": "Dark Marksman's Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1000058,
+     "name": "Dark Marksman's Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000059,
+     "name": "Dark Marksman's Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000310,
+     "name": "Dark Marksman's Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "dark_ringleader",
+   "name": "Dark Ringleader",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Dark-Ringleader-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 104132,
+     "name": "Dark Ringleader's Cloth Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 2113206,
+     "name": "Dark Ringleader's Cloth Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 123279,
+     "name": "Dark Ringleader's Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000273,
+     "name": "Dark Ringleader's Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "delesyian_cloth",
+   "name": "Delesyian Cloth",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Cloth (Light)",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Delesyia",
+   "image": "Delesyian-Cloth-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 114606,
+     "name": "Delesyian Cloth Attire",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000278,
+     "name": "Delesyian Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "delesyian_guard",
+   "name": "Delesyian Guard",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Delesyia",
+   "image": "Delesyian-Guard-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1000897,
+     "name": "Delesyian Guard Captain's Armor",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000896,
+     "name": "Delesyian Guard Captain's Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "delesyian_military",
+   "name": "Delesyian Military",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Delesyia",
+   "image": "Delesyian-Military-1.jpg",
+   "pieces": []
+  },
+  {
+   "id": "demeniss_ceremonial",
+   "name": "Demeniss Ceremonial",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Demeniss-Ceremonial-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 2101035,
+     "name": "Demeniss Ceremonial Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1163804,
+     "name": "Demeniss Ceremonial Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000323,
+     "name": "Demeniss Ceremonial Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "demenissian_grand_general_lucian_bastier",
+   "name": "Demenissian Grand General",
+   "alias": "Lucian Bastier",
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Lightning",
+   "abyssGear": "Normal",
+   "source": "Demeniss, Hernand, Pailune",
+   "image": "Demenissian-Grand-General-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1000839,
+     "name": "Bastier Armor",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "demenissian_soldier",
+   "name": "Demenissian Soldier",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Demeniss-Soldier-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 2101021,
+     "name": "Demenissian Soldier Plate Helm",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "desert_marauder_helms",
+   "name": "Desert Marauder",
+   "alias": "Helms",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Crimson Desert",
+   "image": "Desert-Marauder-Helms-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000007,
+     "name": "Desert Marauder's Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1001169,
+     "name": "Desert Marauder's Plate Armor",
+     "variants": 2
+    },
+    {
+     "slot": "back",
+     "key": 1000318,
+     "name": "Desert Marauder's Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "dewhaven_standard",
+   "name": "Dewhaven Standard",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Delesyia, Hernand",
+   "image": "Dewhaven-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1003211,
+     "name": "Dewhaven Standard Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 113524,
+     "name": "Dewhaven Standard Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1001574,
+     "name": "Dewhaven Standard Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "dragon_flame_urdavahn",
+   "name": "Dragon Flame",
+   "alias": "Urdavahn",
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Crimson Desert",
+   "image": "Dragon-Flame-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 104184,
+     "name": "Dragon Flame Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 112078,
+     "name": "Dragon Flame Armor",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000286,
+     "name": "Dragon Flame Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "duskfang",
+   "name": "Duskfang",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Duskfang-Leather-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 2113218,
+     "name": "Duskfang Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 123329,
+     "name": "Duskfang Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000293,
+     "name": "Duskfang Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "fallen_kingdom",
+   "name": "Fallen Kingdom",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Armor-of-the-Fallen-Kingdom-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 103023,
+     "name": "Leather Helm of the Fallen Kingdom",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 113561,
+     "name": "Leather Armor of the Fallen Kingdom",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 121081,
+     "name": "Plate Gloves of the Fallen Kingdom",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 131046,
+     "name": "Plate Boots of the Fallen Kingdom",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000290,
+     "name": "Leather Cloak of the Fallen Kingdom",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "ferman",
+   "name": "Ferman",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Fire, Lightning",
+   "abyssGear": "Standard",
+   "source": "Delesyia",
+   "image": "Ferman-Plate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101011,
+     "name": "Ferman Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 2111099,
+     "name": "Ferman Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 121043,
+     "name": "Ferman Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 2133023,
+     "name": "Ferman Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000306,
+     "name": "Ferman Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "flame_knight_soldier",
+   "name": "Flame Knight Soldier",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Lightning",
+   "abyssGear": "Non-Standard",
+   "source": "Demeniss",
+   "image": "Flame-Knight-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1001927,
+     "name": "Flame Knight's Plate Helm",
+     "variants": 1
+    },
+    {
+     "slot": "feet",
+     "key": 2133203,
+     "name": "Flame Knight's Leather Boots",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "freesword",
+   "name": "Freesword",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand, Demeniss",
+   "image": "Freesword-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 2113099,
+     "name": "Wandering Freesword's Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 131106998,
+     "name": "Northern Freesword's Leather Gloves",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "frostcursed",
+   "name": "Frostcursed",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Ice",
+   "abyssGear": "Non-Standard",
+   "source": "Demeniss",
+   "image": "Frostcursed-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 14416,
+     "name": "Frostcursed Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111005,
+     "name": "Frostcursed Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 121017,
+     "name": "Frostcursed Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 14202,
+     "name": "Frostcursed Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000305,
+     "name": "Frostcursed Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "frozen_heart",
+   "name": "Frozen Heart",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Non-Standard",
+   "source": "Delesyia",
+   "image": "Frozen-Heart-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 14109,
+     "name": "Frozen Heart Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 14304,
+     "name": "Frozen Heart Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000900,
+     "name": "Frozen Heart Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000299,
+     "name": "Frozen Heart Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "golden_free_company_twilight_messengers",
+   "name": "Golden Free Company",
+   "alias": "Twilight Messengers",
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Crimson Desert",
+   "image": "Twilight-Messenger-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000624,
+     "name": "Golden Free Company's Plate Helm",
+     "variants": 1
+    },
+    {
+     "slot": "body",
+     "key": 1002759,
+     "name": "Twilight Messengers' Plate Armor",
+     "variants": 2
+    },
+    {
+     "slot": "hands",
+     "key": 1002661,
+     "name": "Twilight Messengers' Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1002758,
+     "name": "Twilight Messengers' Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "golden_greed",
+   "name": "Golden Greed",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Delesyia, Crimson Desert",
+   "image": "Golden-Greed-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000906,
+     "name": "Golden Greed Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111253,
+     "name": "Golden Greed Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 121071,
+     "name": "Golden Greed Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 131002,
+     "name": "Golden Greed Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000301,
+     "name": "Golden Greed Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "greymane",
+   "name": "Greymane",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Cloth (Light)",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Hernand, Pailune",
+   "image": "Greymane-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1002625,
+     "name": "Greymane Leather Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 113662,
+     "name": "Greymanes' Leather Armor",
+     "variants": 8
+    },
+    {
+     "slot": "hands",
+     "key": 1001279,
+     "name": "Greymane Cloth Gloves",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "grey_wolf",
+   "name": "Grey Wolf",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Non-Standard",
+   "source": "Hernand, Pailune",
+   "image": "Grey-Wolf-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 111050,
+     "name": "Grey Wolf Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 121050,
+     "name": "Grey Wolf Leather Gloves",
+     "variants": 1
+    },
+    {
+     "slot": "feet",
+     "key": 131050,
+     "name": "Grey Wolf Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000294,
+     "name": "Grey Wolf Leather Cloak",
+     "variants": 1
+    }
+   ]
+  },
+  {
+   "id": "helfryn",
+   "name": "Helfryn",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Non-Standard",
+   "source": "Demeniss",
+   "image": "Helfryn-Leather-1-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 12218,
+     "name": "Helfryn Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 12410,
+     "name": "Helfryn Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 133011,
+     "name": "Helfryn Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000291,
+     "name": "Helfryn Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "hernandian_banquet_attire",
+   "name": "Hernandian Banquet Attire",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Hernandian-Banquet-Attire-1.jpg",
+   "pieces": [
+    {
+     "slot": "feet",
+     "key": 12311,
+     "name": "Hernandian Banquet Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000326,
+     "name": "Hernandian Banquet Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "hernandian_honor_guard_barden_middler",
+   "name": "Hernandian Honor Guard",
+   "alias": "Barden Middler",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Hernandian-Honor-Guard-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 9102,
+     "name": "Hernandian Honor Guard Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 12409,
+     "name": "Hernandian Honor Guard Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 12308,
+     "name": "Hernandian Honor Guard Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000272,
+     "name": "Hernandian Honor Guard Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "hungering_fang",
+   "name": "Hungering Fang",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Non-Standard",
+   "source": "Pailune",
+   "image": "Hungering-Fang-Leather-Armor-1-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 12217,
+     "name": "Hungering Fang Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 12408,
+     "name": "Hungering Fang Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 12306,
+     "name": "Hungering Fang Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000289,
+     "name": "Hungering Fang Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "icewing",
+   "name": "Icewing",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Pailune, Hernand, Others",
+   "image": "Icewing-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101008,
+     "name": "Icewing Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111257,
+     "name": "Icewing Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 121069,
+     "name": "Icewing Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 131007,
+     "name": "Icewing Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000311,
+     "name": "Icewing Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "ironwilled_guardian_paulus",
+   "name": "Ironwilled Guardian",
+   "alias": "Paulus",
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand, Pailune",
+   "image": "Ironwilled-Guardian-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1163551,
+     "name": "Ironwilled Guardian's Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 123137,
+     "name": "Ironwilled Guardian's Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 133076,
+     "name": "Ironwilled Guardian's Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000342,
+     "name": "Ironwilled Guardian's Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "jackals",
+   "name": "Jackals",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Pailune",
+   "image": "Jackals-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000349,
+     "name": "Jackals' Leather Helm",
+     "variants": 1
+    },
+    {
+     "slot": "body",
+     "key": 2133172,
+     "name": "Jackals' Leather Armor",
+     "variants": 5
+    },
+    {
+     "slot": "hands",
+     "key": 1002984,
+     "name": "Jackals' Leather Gloves",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "jester",
+   "name": "Jester",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Jester-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 104175,
+     "name": "Jester Leather Mask",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 114624,
+     "name": "Jester Leather Coat",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 124069,
+     "name": "Jester Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000297,
+     "name": "Jester Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "knight_of_carnage_gregor_halberd_of_carnage",
+   "name": "Knight of Carnage",
+   "alias": "Gregor, Halberd of Carnage",
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Knight-of-Carnage-1.jpg",
+   "pieces": []
+  },
+  {
+   "id": "lauques",
+   "name": "Lauques",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "image-2.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 2101033,
+     "name": "Lauques Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 2114095,
+     "name": "Lauques Cloth Armor",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 2133045,
+     "name": "Lauques Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000330,
+     "name": "Lauques Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "lightning_bolt",
+   "name": "Lightning Bolt",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Lightning",
+   "abyssGear": "Non-Standard",
+   "source": "Pailune",
+   "image": "image-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1001325,
+     "name": "Lightning Bolt Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1001326,
+     "name": "Lightning Bolt Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1001327,
+     "name": "Lightning Bolt Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1001328,
+     "name": "Lightning Bolt Plate Boots",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "loyal_friendship",
+   "name": "Loyal Friendship",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Fire, Lightning",
+   "abyssGear": "Standard",
+   "source": "Delesyia",
+   "image": "Loyal-Friendship-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 103035,
+     "name": "Helm of Loyal Friendship",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111210,
+     "name": "Armor of Loyal Friendship",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000317,
+     "name": "Cloak of Loyal Friendship",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "martial_monk_t_rukan_the_ascended",
+   "name": "Martial Monk",
+   "alias": "T'Rukan the Ascended",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "None",
+   "abyssGear": "Standard",
+   "source": "Demeniss, Delesyia",
+   "image": "Martial-Monk-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1000319,
+     "name": "Trukan Cloth Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1000473,
+     "name": "Trukan Cloth Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000472,
+     "name": "Trukan Cloth Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1001926,
+     "name": "Trukan Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "mistcloaked_owl",
+   "name": "Mistcloaked Owl",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Crimson Desert",
+   "image": "Mistcloaked-Owl-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1001951,
+     "name": "Mistcloaked Owl Plate Helm",
+     "variants": 1
+    },
+    {
+     "slot": "body",
+     "key": 1000743,
+     "name": "Mistcloaked Owl Leather Armor",
+     "variants": 4
+    },
+    {
+     "slot": "feet",
+     "key": 1002359,
+     "name": "Mistcloaked Owl Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1003264,
+     "name": "Mistcloaked Owl Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "musket_border_guard_standard_dusksongs",
+   "name": "Musket Border Guard Standard",
+   "alias": "Dusksongs",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "None",
+   "abyssGear": "Standard",
+   "source": "Crimson Desert",
+   "image": "Musket-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101048,
+     "name": "Musket Border Guard Standard Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1001177,
+     "name": "Musket Border Guard Standard Armor",
+     "variants": 2
+    },
+    {
+     "slot": "hands",
+     "key": 1001181,
+     "name": "Dusksongs Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1001179,
+     "name": "Dusksongs Leather Boots",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "nibrak_cloth_goldleaf_soldier",
+   "name": "Nibrak Cloth",
+   "alias": "Goldleaf Soldier",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Nibrak-Cloth-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 2133199,
+     "name": "Goldleaf Soldier Cloth Headband",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000187,
+     "name": "Nibrak Cloth Armor",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "northern_fighter",
+   "name": "Northern Fighter",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Fire, Lightning",
+   "abyssGear": "Standard",
+   "source": "Pailune",
+   "image": "Northern-Fighter-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101117,
+     "name": "Northern Fighter's Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1164512,
+     "name": "Northern Fighter's Chain Mail",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 2133150,
+     "name": "Northern Fighter's Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 2131008,
+     "name": "Northern Fighter's Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000285,
+     "name": "Northern Fighter's Chain Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "odeck_s_protector",
+   "name": "Odeck's Protector",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Hernand, Pailune",
+   "image": "Odecks-Protector-Plate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000051,
+     "name": "Odeck's Protector Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000052,
+     "name": "Odeck's Protector Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1000053,
+     "name": "Odeck's Protector Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000054,
+     "name": "Odeck's Protector Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1002283,
+     "name": "Odeck's Protector Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "pailunese",
+   "name": "Pailunese",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Cloth (Light)",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Pailune",
+   "image": "Pailunese-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 104169,
+     "name": "Pailunese Hat",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 114600,
+     "name": "Pailunese Attire",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 14306,
+     "name": "Pailunese Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 134011,
+     "name": "Pailunese Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000277,
+     "name": "Pailunese Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "plate_armor_of_the_shadows",
+   "name": "Plate Armor of the Shadows",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Plate-Armor-of-the-Shadows-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000380,
+     "name": "Plate Helm of the Shadows",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000225,
+     "name": "Plate Armor of the Shadows",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1000381,
+     "name": "Plate Gloves of the Shadows",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000382,
+     "name": "Plate Boots of the Shadows",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000383,
+     "name": "Plate Cloak of the Shadows",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "pororin_shai_elder",
+   "name": "Pororin",
+   "alias": "Shai Elder",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Pororin-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 356742259,
+     "name": "Pororin Petal Hat",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1165011,
+     "name": "Pororin Cloth Attire",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000032,
+     "name": "Pororin Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "rabbit",
+   "name": "Rabbit",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Rabbit-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 104176,
+     "name": "Rabbit Leather Mask",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 114623,
+     "name": "Rabbit Leather Coat",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 134057,
+     "name": "Rabbit Cloth Boots",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "riding",
+   "name": "Riding",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Non-Upgradeable",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "None",
+   "source": "Hernand, Demeniss",
+   "image": "Riding-Set-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000247,
+     "name": "Leather Riding Hat",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000246,
+     "name": "Riding Attire",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000249,
+     "name": "Riding Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000274,
+     "name": "Riding Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "sahazhad_plate_varnian",
+   "name": "Sahazhad Plate",
+   "alias": "Varnian",
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Crimson Desert",
+   "image": "Sahazhad-Plate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 2101037,
+     "name": "Sahazhad Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111255,
+     "name": "Sahazhad Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 131041,
+     "name": "Sahazhad Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000314,
+     "name": "Sahazhad Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "scarlet_blade_bleed_bandits",
+   "name": "Scarlet Blade",
+   "alias": "Bleed Bandits",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Bleed-Bandit-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 333963940,
+     "name": "Scarlet Blades Gas Mask",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 114640,
+     "name": "Scarlet Blades Cloth Armor",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "scholastone_uniform",
+   "name": "Scholastone Uniform",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Scholastone-Uniform-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 103112,
+     "name": "Scholastone Cap",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1165010,
+     "name": "Scholastone Uniform",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 12310,
+     "name": "Scholastone Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000337,
+     "name": "Scholastone Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "schtump_calphadean_defender",
+   "name": "Schtump",
+   "alias": "Calphadean Defender",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Pywel",
+   "image": "Schtump-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 103029,
+     "name": "Schtump Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111108,
+     "name": "Schtump Cloth Armor",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1001940,
+     "name": "Schtump Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "scorchflame",
+   "name": "Scorchflame",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Non-Standard",
+   "source": "Hernand, Demeniss",
+   "image": "Scorchflame-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101056,
+     "name": "Scorchflame Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111249,
+     "name": "Scorchflame Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 121026,
+     "name": "Scorchflame Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 133178,
+     "name": "Scorchflame Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000300,
+     "name": "Scorchflame Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "shadowleaf",
+   "name": "Shadowleaf",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Non-Upgradeable",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Shadowleaf-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 2133206,
+     "name": "Shadowleaf Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1001886,
+     "name": "Shadowleaf Leather Armor",
+     "variants": 1
+    },
+    {
+     "slot": "hands",
+     "key": 2133207,
+     "name": "Shadowleaf Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 2133208,
+     "name": "Shadowleaf Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000331,
+     "name": "Shadowleaf Cloak",
+     "variants": 1
+    }
+   ]
+  },
+  {
+   "id": "skyblazer",
+   "name": "Skyblazer",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Lightning",
+   "abyssGear": "Non-Standard",
+   "source": "Hernand",
+   "image": "Skyblazer-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 9401,
+     "name": "Skyblazer Cloth Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 114590,
+     "name": "Skyblazer Cloth Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 12407,
+     "name": "Skyblazer Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000276,
+     "name": "Skyblazer Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "solas",
+   "name": "Solas",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Demeniss, Pailune",
+   "image": "Solas-Plate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101102,
+     "name": "Solas Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111169,
+     "name": "Solas Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 121034,
+     "name": "Solas Plate Gloves",
+     "variants": 1
+    },
+    {
+     "slot": "feet",
+     "key": 131024,
+     "name": "Solas Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000682,
+     "name": "Solas Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "st_halssius_priest",
+   "name": "St. Halssius Priest",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "St.-Halssius-Priest-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 9402,
+     "name": "St. Halssius Priest's Hat",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000021,
+     "name": "St. Halssius Priest Attire",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000325,
+     "name": "St. Halssius Priest's Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "sungrove_standard",
+   "name": "Sungrove Standard",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Sungrove-Plate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1002484,
+     "name": "Sungrove Standard Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1001402,
+     "name": "Sungrove Standard Plate Armor",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "sunset_reed_reed_devil",
+   "name": "Sunset Reed",
+   "alias": "Reed Devil",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Lightning",
+   "abyssGear": "Non-Standard",
+   "source": "Hernand",
+   "image": "Sunset-Reed-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 113742,
+     "name": "Sunset Reed Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 124067,
+     "name": "Sunset Reed Cloth Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 134056,
+     "name": "Sunset Reed Cloth Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000292,
+     "name": "Sunset Reed Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "tariv",
+   "name": "Tariv",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Cloth (Light)",
+   "resistance": "Ice",
+   "abyssGear": "Non-Standard",
+   "source": "Demeniss",
+   "image": "Tariv-Cloth-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 9103,
+     "name": "Tariv Cloth Attire",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 9302,
+     "name": "Tariv Cloth Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 9201,
+     "name": "Tariv Cloth Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000275,
+     "name": "Tariv Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "the_faceless_masked_liberators",
+   "name": "The Faceless",
+   "alias": "Masked Liberators",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Crimson Desert",
+   "image": "The-Faceless-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101111,
+     "name": "The Faceless's Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 111151,
+     "name": "The Faceless's Cloth Armor",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "tommaso_guard",
+   "name": "Tommaso Guard",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Delesyia, Crimson Desert",
+   "image": "Tommaso-Guard-1.jpg",
+   "pieces": []
+  },
+  {
+   "id": "the_masked_liberator",
+   "name": "The Masked Liberator",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Crimson Desert",
+   "image": "The-Masked-Liberators-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 114595,
+     "name": "The Masked Liberator's Cloth Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 123240,
+     "name": "The Masked Liberator's Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 133172,
+     "name": "The Masked Liberator's Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000279,
+     "name": "The Masked Liberator's Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "tiorant_blue_fangs",
+   "name": "Tiorant",
+   "alias": "Blue Fangs",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Pailune",
+   "image": "Blue-Fangs-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1002134,
+     "name": "Tiorant Cloth Armor",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1002135,
+     "name": "Tiorant Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "unyielding_hero_cassius_morten",
+   "name": "Unyielding Hero",
+   "alias": "Cassius Morten",
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Pywel",
+   "image": "Unyielding-Hero-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101003,
+     "name": "Cassius Morten's Plate Helm",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "unyielding_warrior",
+   "name": "Unyielding Warrior",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Unyielding-Warriors-Plate-Armor-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 101138,
+     "name": "Unyielding Warrior's Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 113696,
+     "name": "Unyielding Warrior's Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 131001,
+     "name": "Unyielding Warrior's Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000312,
+     "name": "Unyielding Warrior's Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "valortread",
+   "name": "Valortread",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Hernand, Crimson Desert",
+   "image": "Valortread-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000992,
+     "name": "Valortread Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000953,
+     "name": "Valortread Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1000985,
+     "name": "Valortread Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000872,
+     "name": "Valortread Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000981,
+     "name": "Valortread Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "weasel_leather",
+   "name": "Weasel Leather",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Weasel-Leather-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 12219,
+     "name": "Weasel Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 12411,
+     "name": "Weasel Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 12309,
+     "name": "Weasel Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000295,
+     "name": "Weasel Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "windmere_standard",
+   "name": "Windmere Standard",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Windmere-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1001413,
+     "name": "Windmere Standard Plate Armor",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "wolf_tracker",
+   "name": "Wolf Tracker",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Wolf-Tracker-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000200,
+     "name": "Wolf Tracker Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000179,
+     "name": "Wolf Tracker Cloth Armor",
+     "variants": 1
+    },
+    {
+     "slot": "hands",
+     "key": 1000180,
+     "name": "Wolf Tracker Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000181,
+     "name": "Wolf Tracker Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1003286,
+     "name": "Wolf Tracker Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "wyvernflames",
+   "name": "Wyvernflames",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Delesyia",
+   "image": "Wyvernflame-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 104106,
+     "name": "Wyvernflame Cloth Helm",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "ynitium",
+   "name": "Ynitium",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Demeniss, Pailune",
+   "image": "Ynitium-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1163044,
+     "name": "Ynitium Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1163045,
+     "name": "Ynitium Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1163046,
+     "name": "Ynitium Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000296,
+     "name": "Ynitium Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "yrkabel_staglord_s_acolytes",
+   "name": "Yrkabel",
+   "alias": "Staglord's Acolytes",
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand",
+   "image": "Yrkabel-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1002282,
+     "name": "Yrkabel Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1002742,
+     "name": "Yrkabel Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "ziggurat",
+   "name": "Ziggurat",
+   "alias": null,
+   "character": "Kliff & Oongka",
+   "armorClass": "Hybrid Cloth-Leather",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Ziggurat-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 2133137,
+     "name": "Ziggurat Cloth Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000882,
+     "name": "Ziggurat Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 2133133,
+     "name": "Ziggurat Leather Gloves",
+     "variants": 1
+    }
+   ]
+  },
+  {
+   "id": "autumn_banquet",
+   "name": "Autumn Banquet",
+   "alias": null,
+   "character": "Damiane",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Autumn-Banquet-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000769,
+     "name": "Autumn Banquet Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000008,
+     "name": "Autumn Banquet Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1000107,
+     "name": "Autumn Banquet Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000011,
+     "name": "Autumn Banquet Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1001131,
+     "name": "Autumn Banquet Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "demenissian_uniform",
+   "name": "Demenissian Uniform",
+   "alias": null,
+   "character": "Damiane",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Hernand, Demeniss",
+   "image": "Demenissian-Uniform-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1001559,
+     "name": "Demenissian Uniform Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1002297,
+     "name": "Demenissian Uniform Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1001579,
+     "name": "Demenissian Uniform Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1001560,
+     "name": "Demenissian Uniform Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "earth_s_honor",
+   "name": "Earth's Honor",
+   "alias": null,
+   "character": "Damiane",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Earths-Honor-1.jpg",
+   "pieces": [
+    {
+     "slot": "body",
+     "key": 1000009,
+     "name": "Leather Armor of Earth's Honor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1000043,
+     "name": "Leather Gloves of Earth's Honor",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000031,
+     "name": "Leather Boots of Earth's Honor",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000679,
+     "name": "Leather Cloak of Earth's Honor",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "elegant_carmine",
+   "name": "Elegant Carmine",
+   "alias": null,
+   "character": "Damiane",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Delesyia, Crimson Desert",
+   "image": "Elegant-Carmine-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000891,
+     "name": "Elegant Carmine Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000884,
+     "name": "Elegant Carmine Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1000886,
+     "name": "Elegant Carmine Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000887,
+     "name": "Elegant Carmine Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000885,
+     "name": "Elegant Carmine Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "executioner_of_darkness",
+   "name": "Executioner of Darkness",
+   "alias": null,
+   "character": "Damiane",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Demeniss, Delesyia",
+   "image": "Executioner-of-Darkness-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000842,
+     "name": "Executioner of Darkness Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 14300,
+     "name": "Executioner of Darkness Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 14200,
+     "name": "Executioner of Darkness Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000686,
+     "name": "Executioner of Darkness Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "fluttering_radiance",
+   "name": "Fluttering Radiance",
+   "alias": null,
+   "character": "Damiane",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "None",
+   "abyssGear": "Standard",
+   "source": "Hernand, Pailune",
+   "image": "Fluttering-Radiance-1-1.jpg",
+   "pieces": [
+    {
+     "slot": "hands",
+     "key": 2600031,
+     "name": "Fluttering Radiance Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000111,
+     "name": "Fluttering Radiance Plate Boots",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "goldlight",
+   "name": "Goldlight",
+   "alias": null,
+   "character": "Damiane",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Fire",
+   "abyssGear": "Standard",
+   "source": "Crimson Desert",
+   "image": "Goldlight-Plate-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 2600045,
+     "name": "Goldlight Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 2600043,
+     "name": "Goldlight Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 2600046,
+     "name": "Goldlight Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000685,
+     "name": "Goldlight Plate Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "light_of_the_battlefield",
+   "name": "Light of the Battlefield",
+   "alias": null,
+   "character": "Damiane",
+   "armorClass": "Plate (Heavy)",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Crimson Desert",
+   "image": "Light-of-the-Battlefield-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000805,
+     "name": "Light of the Battlefield Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 2600012,
+     "name": "Light of the Battlefield Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 2600032,
+     "name": "Light of the Battlefield Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000255,
+     "name": "Light of the Battlefield Plate Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000127,
+     "name": "Light of the Battlefield Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "official_knight",
+   "name": "Official Knight",
+   "alias": null,
+   "character": "Damiane",
+   "armorClass": "Hybrid",
+   "resistance": "Ice, Lightning",
+   "abyssGear": "Standard",
+   "source": "Demeniss",
+   "image": "Official-Knight-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 1000802,
+     "name": "Official Knight's Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000013,
+     "name": "Official Knight's Plate Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1000010,
+     "name": "Official Knight's Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000012,
+     "name": "Official Knight's Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1001133,
+     "name": "Official Knight's Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "wanderer_of_faith",
+   "name": "Wanderer of Faith",
+   "alias": null,
+   "character": "Damiane",
+   "armorClass": "Leather (Medium)",
+   "resistance": "Lightning",
+   "abyssGear": "Standard",
+   "source": "Demeniss, Delesyia",
+   "image": "Wanderer-of-Faith-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 14400,
+     "name": "Wanderer of Faith's Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 1000892,
+     "name": "Wanderer of Faith Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 1000894,
+     "name": "Wanderer of Faith Leather Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 1000895,
+     "name": "Wanderer of Faith Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1000893,
+     "name": "Wanderer of Faith Leather Cloak",
+     "variants": 0
+    }
+   ]
+  },
+  {
+   "id": "white_bloodwind",
+   "name": "White Bloodwind",
+   "alias": null,
+   "character": "Damiane",
+   "armorClass": "Hybrid Leather-Plate",
+   "resistance": "Ice",
+   "abyssGear": "Standard",
+   "source": "Pywel",
+   "image": "White-Bloodwind-1.jpg",
+   "pieces": [
+    {
+     "slot": "head",
+     "key": 2600019,
+     "name": "White Bloodwind Plate Helm",
+     "variants": 0
+    },
+    {
+     "slot": "body",
+     "key": 113460,
+     "name": "White Bloodwind Leather Armor",
+     "variants": 0
+    },
+    {
+     "slot": "hands",
+     "key": 2600030,
+     "name": "White Bloodwind Plate Gloves",
+     "variants": 0
+    },
+    {
+     "slot": "feet",
+     "key": 2600036,
+     "name": "White Bloodwind Leather Boots",
+     "variants": 0
+    },
+    {
+     "slot": "back",
+     "key": 1001259,
+     "name": "White Bloodwind Cloth Cloak",
+     "variants": 0
+    }
+   ]
+  }
+ ]
+}

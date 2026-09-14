@@ -9,6 +9,7 @@
     <infra:BoolToVisibilityConverter x:Key="InverseBoolToVisibility" Invert="True"/>
     <infra:InverseBoolConverter x:Key="InverseBool"/>
     <infra:RatioToWidthConverter x:Key="RatioToWidth"/>
+    <infra:EnumEqualsConverter x:Key="EnumEquals"/>
 
     <!-- ========== Palette ========== -->
     <Color x:Key="Bg0Color">#0B0D11</Color>
