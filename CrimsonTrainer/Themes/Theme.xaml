@@ -253,8 +253,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
-                    <Border x:Name="Pill" CornerRadius="999" Padding="9,3" Background="{StaticResource Bg3}"
-                            BorderBrush="{StaticResource Border}" BorderThickness="1">
+                    <Border x:Name="Pill" CornerRadius="7" Padding="9,3" Background="{StaticResource Bg3}"
+                            BorderBrush="{StaticResource Border}" BorderThickness="1" SnapsToDevicePixels="True" UseLayoutRounding="True">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
                                           TextElement.FontSize="10.5" TextElement.FontWeight="Bold"
                                           TextElement.Foreground="{TemplateBinding Foreground}"/>
@@ -288,8 +288,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
-                    <Border x:Name="Pill" CornerRadius="999" Padding="9,3" Background="{StaticResource Bg3}"
-                            BorderBrush="{StaticResource Border}" BorderThickness="1">
+                    <Border x:Name="Pill" CornerRadius="7" Padding="9,3" Background="{StaticResource Bg3}"
+                            BorderBrush="{StaticResource Border}" BorderThickness="1" SnapsToDevicePixels="True" UseLayoutRounding="True">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
                                           TextElement.FontSize="10.5" TextElement.FontWeight="Bold"
                                           TextElement.Foreground="{TemplateBinding Foreground}"/>
